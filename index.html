@@ -1,20 +1,632 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Teilchenzoo</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>TEILCHENZOO 3</h1>
+<html><head>
+<base href="" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>Teilchenzoo-App</title>
+<script src="shared/lib/modernizr/modernizr.custom.js"></script>
+<script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
+
+<link rel="stylesheet" href="shared/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
+
+<link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+<link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
+<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/lib/fastclick.js"></script>
+<script src="shared/js/script.js"></script>
+<link rel="stylesheet/less" type="text/css" href="shared/css/styles.less" />
+<script src="shared/lib/less/less-1.4.1.min.js"></script>
+<script src="shared/lib/respond/respond.min.js"></script>
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+	$("div[data-role=page]").bind("pagebeforeshow", function (e, data) {
+		$.mobile.silentScroll(0);
+		$.mobile.changePage.defaults.transition = 'slide';
+	});
+//	initApp();
+});//]]>  
+</script>
+</head>
+<body class="app">
+
+<div data-role="page" class="page" id="page-home">
+  
+  <div data-role="header">
+  	<h1>Teilchenzoo</h1>
+			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+ 	</div><!-- .header -->
+  
+	<div class="content paintedWood clearfix">
+  
+		<img class="img-responsive" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+    
+		<div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
+    
+      <div class="col-md-3">
+        <h2>Ausstellung</h2>
+        <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
+      </div>
+      <div class="col-md-3">
+        <h2>Teilch-o-mat</h2>
+        <p><span class="question">Unter den Bausteinen der modernen Teilchenphysik gibt es Federgewichte, Einzelgänger, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
+      </div>
+      <div class="col-md-3">
+        <h2>Filme</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="col-md-3">
+        <h2>Steckbriefe</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      </div>
+		</div>
+	</div><!-- /.content -->
+  
+  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+
+
+<div data-role="page" class="page" id="page-exhibition">
+  <div data-role="header">
+    <h1>Teilchenzoo-Ausstellung</h1>
+		  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+   </div>
+  <!-- /header -->
+	<div class="content paintedWood clearfix">
+  
+		<img class="img-responsive hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
+    <img class="img-responsive" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+    
+  
+    
+        	<div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
+
+      <div class="col-md-6 col-md-push-6">
+        <h2 class="fitText">Woraus ist die Welt gemacht?</h2>
+        <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
+      </div>
+      <div class="col-md-6 col-md-pull-6">
+              <div class="img-responsive" id="teilchenzoo_teaser_teilchen_roll_stage"></div>
+      </div>
+
+    </div>
+    <div class="row homeRow paintedGray">
+      <div class="col-md-6 col-md-push-6">
+        <h2 class="fitText">Welches Teilchen passt zu dir?</h2>
+        <p><span class="question">Unter den Bausteinen der modernen Teilchenphysik gibt es Federgewichte, Einzelgänger, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
+      </div>
+      <div class="col-md-6 col-md-pull-6">
+        <div id="quizTeaser"></div>       
+      </div>
+    </div>
+    <div class="row homeRow paintedGray">
+      <div class="col-md-8">
+        <h2 class="fitText">Wir suchen Antworten<br>
+          und finden Fragen</h2>
+        <p><span class="question">Auch wenn die Teilchenphysik in den letzten 150 Jahren unglaubliche Antworten fand – viele spannende Fragen bleiben offen:</span> <span class="answer">Wieso gibt es so viele Elementarteilchen? Sind es alle? Und kann unser aktuelles Weltbild überhaupt stimmen? Der »Teilchenzoo« zeigt, wie Forscherinnen und Forscher bei DESY immer tiefer in Materie und Kosmos blicken. Mach Dich mit auf die Reise!</span></p>
+      </div>
+      <div class="col-md-4">
+        <div id="questions_teaser_container"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="images/teaser_exclamationmark.png" alt="" class="questions_teaser"><!--<img src="_images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="_images/teaser_exclamationmark.png" alt="" class="questions_teaser"><img src="_images/teaser_exclamationmark.png" alt="" class="questions_teaser">--> 
         </div>
+      </div>
+    </div>
+    <div class="row homeRow paintedGray"  style="margin-top: 48px">
+      <div class="col-md-8">
+        <h2>Bleib auf dem Laufenden!</h2>
+        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden. Du kannst dich auch über Twitter und Facebook über Neuigkeiten zur Ausstellung informieren lassen.</p>
+      </div>
+      <div class="col-md-4">
+
+<form name="subscription_form" id="subscription_form" method="get" action="de/images/neuigkeiten">
+<label for="email_address" id="subscription_form_label">E-Mail-Addresse:</label> <input  style="margin-top: 24px;" class="form-control" name="email_address" id="email_address" type="email" placeholder="E-Mail-Adresse">
+<input name="add" class="btn btn-default btn-lg btn-block btn-success" type="submit" value="Adresse hinzufügen" style="margin-top: 12px;">
+          <p id="privacy_promise" style="margin-top: 12px;">Versprochen: Wir werden Deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+        </form>
+      </div>
+    </div>
+    
+      <div class="row homeRow paintedGray  clearfix">
+    
+       <div class="col-md-6">
+       		<h2>Öffnungszeiten und Preise</h2>
+           <p>Die Sonderausstellung Teilchenzoo im Universum<span class="reg">&reg;</span> Bremen findet von 26. September 2013 bis 30. Juni 2014 statt, </p>
+      		<ul>
+        		<li>montags bis freitags: von 9:00 bis 18:00 Uhr</li>
+        		<li>samstags, sonntags und feiertags: von 10:00 bis 18:00 Uhr</li>
+      		</ul>
+      		<p>Die Sonderausstellung kann mit einem Ticket des Universum<span class="reg">&reg;</span> Bremen besucht werden. <a href="http://www.universum-bremen.de/de/startseite/information/eintrittspreise.html">Zu den Eintrittspreisen</a></p>
+		</div>
+       <div class="col-md-6">
+       		<h2>Ort und Hinkommen</h2>
+			<p>Das Universum<span class="reg">&reg;</span> Bremen befindet sich<br/>
+        Wiener Str. 1a<br/>
+        28359 Bremen</p>
+      <p><a href="http://goo.gl/maps/txkRq">Google Maps</a></p>
+      <h4>Mit dem Auto</h4>
+      <p>Sie erreichen das Universum<span class="reg">&reg;</span> über die Autobahn A 27 Abfahrt Bremen Universität. Nach Verlassen der Autobahn biegen Sie an der zweiten Möglichkeit rechts in die Universitätsallee ein. Nach etwa 500 Metern sehen Sie das Universum<span class="reg">&reg;</span> auf der rechten Seite.</p>
+      <p>Das Universum<span class="reg">&reg;</span> Bremen liegt außerhalb der Bremer Umweltzone. </p>
+      <h4>Mit öffentlichen Verkehrsmitteln</h4>
+      <p>Die Straßenbahnlinie 6 bringt Sie in 15 Minuten vom Hauptbahnhof Richtung Universität zum Universum<span class="reg">&reg;</span> Bremen (Haltestelle Universität/NW1). In etwa 5 Gehminuten entlang der Universitätsallee erreichen Sie das Universum<span class="reg">&reg;</span> Bremen.</p>
+  	</div>
+	</div>
+	</div><!-- /.content -->
+
+  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+
+<div data-role="page" class="page" id="page-particlomatic">
+  <div data-role="header">
+    <h1>Teilch-o-mat</h1>
+	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	</div> <!-- /header -->
+  
+  <div class="content paintedWood">
+  <div class="row paintedGray">
+    <div class="col-md-12">
+  		<h1>Welches Teilchen passt zu dir?</h1>
+      </div>
+  </div>
+  
+	<div class="row">
+      <div class="col-md-6">
+        <div id="quiz-form-panel" class="paintedGray">
+          <form id="quiz-form">
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">federleicht</div>
+                <div class="ui-block-b" style="text-align:center;">normal</div>
+                <div class="ui-block-c" style="text-align:right;">superschwer</div>
+              </div>
+              <!-- /grid-b -->
+              
+              <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
+              <p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher pessimistisch oder optimistisch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">pessimistisch / negativ</div>
+                <div class="ui-block-b" style="text-align:center;">neutral</div>
+                <div class="ui-block-c" style="text-align:right;">optimistisch / positiv</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Das einfach negativ geladene Elektron bekommt -100 Punkte, das einfach positiv W-Plus +100 Punkte. Der Rest verteilt sich dazwischen. </p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich wirft nichts aus der Bahn.</div>
+                <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Hast Du ein zerbrechliches Gemüt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! Bin empfindlich wie eine Seifenblase.</div>
+              </div>
+              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
+              <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
+              <!-- /grid-b --> 
+              
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wechselst Du zwischen verschiedenen Persönlichkeiten?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-oscillation" id="quiz-oscillation" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich gibt es nur einmal.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! In mir schlummern viele Seelen.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Es gibt drei Neutrinotypen: Elektron-, Myon- und Tauon-Neutrino. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrinostypen erhalten daher 100 Punkte, der Rest bekommt nix.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist Du ein Gruppenmensch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-confined" id="quiz-confined" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich bin Einzelgänger und lieber alleine.</div>
+                <div class="ui-block-b" style="text-align:right;">Ohne Freunde oder Familie geht gar nichts.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenmenschfaktor der Quarks ist 100, der der restlichen Teilchen liegt bei Null.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du schüchtern?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich stehe gern im Rampenlicht!</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein Mauerblümchen.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
+              <p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist Du kommunikativ?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-communicativeness" id="quiz-communicativeness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich rede nicht gerne.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich rede viel.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Die Wechselwirkungen zwischen Teilchen wird in der Physik durch &hellip; ähm &hellip; Teilchen beschrieben. Auch wenn der Vergleich ein wenig hinkt: Die Wechselwirkungsteilchen bekomme eine Kommunikativität von 100 Punkten, der Rest geht leer aus.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Schaust Du gern in Spiegel?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-parityviolating" id="quiz-parityviolating" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Spiegel bringen mir nichts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Prozesse, an denen die W's und das Z-Null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-Null. </p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lebst Du in einer Traumwelt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich träume allerhöchstens nachts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich tauche gerne in die Fantasie ab.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest geht leer aus. </p>
+            </div>
+            <!--
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="submit" data-theme="d">Cancel</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-theme="a">Submit</button>
+                </div>
+              </fieldset>
+              -->
+            
+          </form>
+        </div>
+        <!-- /quiz-form --> 
+      </div>
+      <div class="col-md-6 ">
+        <div id="quiz-result">
+          <div id="quiz-2d-graph" class="clearfix paintedGray">
+            <div id="leptons"></div>
+            <div id="quarks"></div>
+            <div id="remaining"></div>
+          </div>
+          <div id="quiz-top3"  class="clearfix paintedGray"> </div>
+        </div>
+        <!-- /quiz-result --> 
         
-        
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+      </div>
+      </div>
+    </div>
+    <!-- /content --> 
+  
+  
+    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+
+
+
+<div data-role="page" class="page" id="page-videos">
+  <div data-role="header">
+    <h1>Teilchenzoo-Filme</h1>
+	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	</div><!-- /header -->
+  
+  <div data-role="content" class="paintedWood">
+  
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="encylopedia_table" style="width: 91%; margin: auto;">
+  <tr>
+    <td><a data-toggle="modal" href="#electronModal"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_list_description_introduction.png" alt="" class="img-responsive"/></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive"/></td>
+  </tr>
+  <tr class="lastRow">
+    <td><img src="images/video_teasers/video_list_description_details.png" alt="" class="img-responsive"/></td>
+    <td>&nbsp;</td>
+    <td><img src="images/video_teasers/video_list_description_outlook.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive"/></td>
+  </tr>
+</table>    
+    
+    
+    
+    
+    
+  </div><!-- /content -->
+  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+
+
+<div data-role="page" class="page" id="page-content">
+  <div data-role="header">
+    <h1>Steckbriefe</h1>
+	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	</div> <!-- /header -->
+  
+  <div data-role="content" class="paintedWood">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="encylopedia_table" style="width: 90%; margin: auto;">
+  <tr>
+    <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
+    <td><a data-toggle="modal" href="#electronModal"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img" id="electron_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/myon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="myon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/tauon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="tauon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/encyclopedia_teasers/photon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="photon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="img-responsive encyclopedia_teaser_img" id="w_minus_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/z_null.png" alt="" class="img-responsive encyclopedia_teaser_img" id="z_null_encyclopedia_teaser_img"/></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="electron_neutrino_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="myon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="tauon_encyclopedia_teaser_img"/></td>
+    <td>&nbsp;</td>
+    <td><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="img-responsive encyclopedia_teaser_img" id="w_plus_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/gluon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="gluon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/graviton.png" alt="" class="img-responsive encyclopedia_teaser_img" id="graviton_encyclopedia_teaser_img"/></td>
+    <td>&nbsp;</td>
+  </tr>
+    <tr>
+    <td>&nbsp;</td>
+    <td colspan="3"><img src="images/encyclopedia_teasers/list_description_neutrinos_quarks.png" alt="" class="img-responsive"/></td>
+    <td>&nbsp;</td>
+	  <td colspan="3"><img src="images/encyclopedia_teasers/list_description_interaction.png" alt="" class="img-responsive"/></td>
+  </tr>
+
+  <tr class="">
+    <td>&nbsp;</td>
+    <td><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="img-responsive encyclopedia_teaser_img" id="up_quark_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="img-responsive encyclopedia_teaser_img" id="charm_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="img-responsive encyclopedia_teaser_img" id="top_encyclopedia_teaser_img"/></td>
+    <td>&nbsp;</td>
+	    <td><img src="images/encyclopedia_teasers/higgs.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="higgs_encyclopedia_teaser_img"/></td>
+	<td colspan="2"><img src="images/encyclopedia_teasers/list_description_higgs.png" alt="" class="img-responsive" /></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="lastRow">
+    <td>&nbsp;</td>
+    <td><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="down_quark_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="strange_quark_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="bottom_quark_encyclopedia_teaser_img"/></td>
+    <td>&nbsp;</td>
+		<td colspan="2"><img src="images/encyclopedia_teasers/list_description_wimps.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/encyclopedia_teasers/wimp.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="wimp_encyclopedia_teaser_img"/></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="electronModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title">Elektron</h3>
+        </div>
+        <div class="modal-body">
+<h4>Steckbrief: Welche Eigenschaften haben Elektronen?</h4>
+<p>Elektronen sind wohl jedem bekannt. Als Baustein von Atomen sind diese Elementarteilchen überall enthalten. Ihr Name geht auf das griechische Wort für Bernstein zurück, an dem Elektrizität erstmals beobachtet wurde. Elektronen sind äußerst stabil. Bisher wurde noch kein Zerfall von Elektronen beobachtet. Sie sind negativ elektrisch geladen und werden somit als impulsive Pessimisten charakterisiert. Die Größe ihrer Ladung wird Elementarladung genannt. Aufgrund dieser Ladung und ihres geringen Gewichts lassen sich bewegte Elektronen durch einen Magneten leicht ablenken. Obwohl Elektronen Bindungen eingehen, werden sie als Einzelgänger bezeichnet: Nur ungern teilen sie ihren Platz im Atom mit anderen Elektronen.</p>
+<h4>Vorkommen: Wo findet man Elektronen?</h4>
+<p>Elektronen prägen unseren Alltag. Ohne sie würde kein Strom fließen, kein Fernsehgerät funktionieren und kein Apfel existieren. Gebunden in Atomen, bilden Elektronen die leichte Atomhülle. Viele chemische Eigenschaften von Atomen und deren Verbindungen beruhen auf den Eigenschaften und Wechselwirkungen dieser gebundenen Elektronen. Da Elektronen sehr leicht sind, tragen sie zum Gewicht von Materie hingegen so gut wie gar nichts bei: In einem Kilogramm Mehl wiegen diese leichtgewichtigen Teilchen nur rund ein viertel Gramm. Freie Elektronen werden etwa in alten Röhrenmonitoren oder Röntgengeräten beschleunigt und abgebremst. Besonders energiereiche freie Elektronen sind als radioaktive Beta-Strahlung unterwegs. </p>
+<h4>Äußerst stabil: Was zeichnet Elektronen aus?</h4>
+<p>Elektronen sind äußerst stabil. Dass sie zerfallen, ist bisher noch nicht beobachtet worden. Sie besitzen eine sehr, sehr lange Lebensdauer. Die große Stabilität von Elektronen lässt sich durch ihre geringe Masse sowie ihre Ladung erklären: Zerfallen Elementarteilchen, verschwinden sie nicht einfach spurlos, sondern wandeln sich in andere Teilchen um. Diese Zerfälle folgen bestimmten Regeln: Ladung und Masse bzw. Energie müssen erhalten bleiben. Da Elektronen die leichtesten, geladenen Elementarteilchen sind, können sie nicht in leichtere Teilchen zerfallen. Treffen Elektronen jedoch auf ihre Antiteilchen, vernichten sie sich und zerstrahlen. </p>
+<h4>Kompakte Materie: Was zeichnet Elektronen aus?</h4>
+<p>Elektronen haben eine besondere Eigenschaft. Sie teilen nur ungern ihren Platz in einem Atom. Das erkannte zuerst der Physiker Wolfgang Pauli. Deshalb wird diese Eigenschaft auch Pauli-Ausschlussprinzip genannt. Mit Hilfe dieses Prinzips lässt sich der genaue Aufbau von Atomen beschreiben. Es besagt, dass jedes Elektron eines Atoms seinen eigenen Energiezustand besitzt. Dieses antisoziale Verhalten von Elektronen ist auch dafür verantwortlich, dass Atome sich nicht durchdringen und damit Materie kompakt ist. Treffen zwei Atome aufeinander, können sich ihre Atomhüllen nicht überlappen. Dazu müssten sich Elektronen kurzzeitig den Platz teilen - was sie jedoch nicht tun. </p>
+<h4>Elementarladung: Wie wurde die Elementarladung entdeckt?</h4>
+<p>Noch bevor das Elektron als Elementarteilchen nachgewiesen wurde, sagten verschiedene Wissenschaftler eine unteilbare Menge der elektrischen Ladung voraus. Jede positive oder negative Ladung sollte sich aus ganzzahligen Vielfachen dieser kleinsten Elektrizitätsmenge zusammensetzen. 1909 bestimmte Robert Millikan die Größe dieser Elementarladung. Für diese Leistung erhielt er 1923 den Nobelpreis für Physik. Inzwischen wurden jedoch Elementarteilchen entdeckt, die Bruchteile der Elementarladung besitzen, die Quarks. Diese treten jedoch immer in Gruppen auf, die wiederum ganzzahlige Elementarladungen besitzen. </p>
+<h4>Entdeckung: Wie wurde das Elektron nachgewiesen?</h4>
+<p>Das Elektron ist quasi das älteste Elementarteilchen. Es wurde bereits 1897 von Joseph John Thomson nachgewiesen. Er konnte zeigen, dass in einer Kathodenstrahlröhre immer die gleichen Teilchen aus dem Kathodenmaterial austreten und durch ein elektrisches Feld beschleunigt werden. Diese Teilchen nannte er zuerst &bdquo;corpuscule&ldquo;. Später nannte man sie Negatron aufgrund ihrer negativen Ladung. Heute sind sie als Elektronen bekannt. Thomson konnte auch nachweisen, dass sich bewegte Elektronen durch ein Magnetfeld ablenken lassen. Diese Erkenntnisse nutzen Röhrenmonitore, Elektronenmikroskope oder Teilchenbeschleuniger.</p>
+<h4>Quantentheorie: Welche Erkenntnisse liefern Elektronen?</h4>
+<p>Freie Elektronen spielten bei der Entwicklung der Quantentheorie eine wichtige Rolle. Ihre Eigenschaften als Teilchen waren bereits bekannt, als der Physiker Louis-Victor de Broglie 1924 den Begriff der Materiewelle prägte. Elektronen sollten als Quantenobjekte sowohl Eigenschaften von Teilchen als auch von Wellen besitzen. 1960 gelang ein besonders schönes Experiment, welches die Teilchen- und Welleneigenschaften von Elektronen gemeinsam nachwies. Dazu wurden Elektronen beschleunigt, auf einen Doppelspalt gelenkt und auf einer dahinter liegenden Fotoplatte aufgenommen. Jedes einzelne Elektron erzeugte einen Punkt, die Punkte vieler Elektronen ergaben ein für Wellen typisches Streifenmuster. </p>
+<h4>Atommodelle: Wie stellt man sich gebundene Elektronen vor?</h4>
+<p>Je mehr man über Elektronen wusste, desto genauer wurde auch das Bild von Atomen. Im Atommodell von Niels Bohr umkreisen Elektronen den Atomkern, wie Planeten die Sonne. Derartige Atome wären gar nicht stabil. Das Schalenmodell integriert quantentheoretische Eigenschaften von Elektronen. Sie werden jedoch als klassische Teilchen visualisiert. Als eine Interpretation der präzisen quantentheoretischen Beschreibung lässt sich das Wahrscheinlichkeitsmodell verstehen. Dabei besitzen Elektronen keinen exakten Aufenthaltsort mehr. Vielmehr werden Wahrscheinlichkeiten für mögliche Orte angegeben. Im Orbitalmodell werden diese Wahrscheinlichkeiten in Ladungsdichten übersetzt.</p>
+<h4>Beschleunigung: Wie werden Elektronen eingesetzt?</h4>
+<p> Elektronen werden auch eingesetzt, um andere allerkleinste Strukturen zu erforschen. In Teilchenbeschleunigern werden Elektronen beschleunigt und für Stoßexperimente genutzt. Wie werden Elektronen auf Trab gebracht? Hochfrequente elektrische Wechselfelder führen die geladenen Teilchen mit und beschleunigen sie - ähnlich wie ein Surfer auf einer Wasserwelle. Um den Energieaufwand für die Beschleunigung zu minimieren, werden die baumkuchenähnlichen Beschleuniger mit flüssigem Helium gekühlt. So werden die sogenannten Hohlraumresonatoren supraleitend und verlieren ihren elektrischen Widerstand. Damit die Elektronen freie Fahrt haben und nicht mit störenden Luftmolekülen zusammenprallen, fliegen sie durch ein Ultrahochvakuum. </p>
+<h4>Ablenkung: Wie werden Elektronen eingesetzt?</h4>
+<p>Um Elektronen oder andere elektrisch geladene Teilchen effizient zu beschleunigen, bewegen sie sich in riesigen Ringbeschleunigern sozusagen im Kreisverkehr. Dabei werden die Elektronen auf geraden Teilstücken beschleunigt und mit Hilfe von Ablenkmagneten auf der Kreisbahn gehalten. Bei jeder Runde nimmt die Energie der Teilchen zu. Damit die Elektronen immer auf der Bahn bleiben, muss die Stärke der Magnetfelder passend erhöht werden. Auch das elektrische Feld zur Beschleunigung muss sich der Geschwindigkeit der Teilchen anpassen. Magnetfeld und elektrisches Feld werden synchronisiert. Der Name DESY spiegelt dies wider: Deutsches Elektronen-Synchrotron.</p>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+
+  </div><!-- /content -->
+  
+  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+
+
+<div data-role="page" class="page" id="page-options">
+  <div data-role="header">
+    <h1>Optionen</h1>
+	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+	</div><!-- /header -->
+  
+    <div data-role="content" class="paintedWood">
+  <h1 class="title">Optionen</h1>
+    <form>
+      <fieldset data-role="controlgroup">
+        <input type="radio" name="radio-language" id="radio-language_DE_DU" value="DE_DU" checked="checked">
+        <label for="radio-language_DE_DU">Deutsch (Du)</label>
+        <input type="radio" name="radio-language" id="radio-language_DE_SIE" value="DE_SIE">
+        <label for="radio-language_DE_SIE">Deutsch (Sie)</label>
+        <input type="radio" name="radio-language" id="radio-language_EN" value="EN">
+        <label for="radio-language_EN">English</label>
+      </fieldset>
+    </form>
+    
+    <!-- The sliders -->
+    
+    <div class="colorful-slider blue">
+      <div class="slider-handle"></div>
+    </div>
+    <div class="colorful-slider green">
+      <div class="slider-handle"></div>
+    </div>
+    <div class="colorful-slider orange">
+      <div class="slider-handle"></div>
+    </div>
+    
+    <!-- Old school float clearing -->
+    <div class="clear"></div>
+ 	</div><!-- /.content -->
+  
+  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript">
+	app.initialize();
+</script>
+
+
+</body>
+<!-- /#page-settings -->
 </html>
