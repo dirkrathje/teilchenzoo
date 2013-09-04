@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(sourcesanspro-reg.eot);
+  src: 
+url(sourcesanspro-reg.eot) format('embedded-opentype'), 
+url(sourcesanspro-reg.woff) format('woff');
+}

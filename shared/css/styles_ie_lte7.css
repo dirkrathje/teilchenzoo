@@ -1,0 +1,21 @@
+.no-borderimage .paintedGray {
+    background-color: white !important;
+}
+  
+
+  
+  @media (min-width: 768px) {
+  .page {
+  }
+  }
+
+
+.col-md-6 {
+}
+
+#ielte7_message {
+	display: block;
+	background-color: red;
+	padding: 10px;
+	text-align: center;
+}
