@@ -18,17 +18,26 @@
   }
 }
 @media (min-width: 768px) {
+  .app .content {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
   .page {
     background: url(wood.jpg) left top repeat;
   }
   .borderimage .paintedWood {
-    margin: 0px 25px;
+    margin: 0px 0px;
     border-style: solid;
     border-width: 50px 50px 50px 50px;
-    -moz-border-image: url(background-paint.png) 55 68 74 79 repeat;
-    -webkit-border-image: url(background-paint.png) 55 68 74 79 repeat;
-    -o-border-image: url(background-paint.png) 55 68 74 79 repeat;
-    border-image: url(background-paint.png) 55 68 74 79 fill repeat;
+    -moz-border-image: url(background-paint.png) 56 68 74 79 repeat;
+    -webkit-border-image: url(background-paint.png) 56 68 74 79 repeat;
+    -o-border-image: url(background-paint.png) 56 68 74 79 repeat;
+    border-image: url(background-paint.png) 56 68 74 79 fill repeat;
   }
   .borderimage .paintedGray {
     border-style: solid;
@@ -66,17 +75,19 @@
   background-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.7);
 }
-#sitemenu {
-  font-size: 130%;
-  text-align: center;
-  padding: 0px;
+#header {
   line-height: 1em;
   background-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 10px;
   margin: 0px 0px;
 }
+#languageSelector {
+  float: right;
+}
 #sitemenu ul {
+  font-size: 130%;
+  text-align: center;
   color: #999999;
   list-style: none;
 }
@@ -469,3 +480,91 @@ ol {
 #sitemenu_particlomatic {
   display: none !important;
 }
+.navigation_description {
+  font-family: 'SansCulottesRegular';
+  font-size: 2em;
+  position: absolute;
+}
+#video_page_introduction {
+  top: 150px;
+  left: 50%;
+}
+#video_page_insight {
+  bottom: 200px;
+  left: 150px;
+}
+#video_page_outlook {
+  bottom: 125px;
+  right: 350px;
+}
+body .modal-dialog {
+  width: 90% !important;
+  /* desired relative width */
+
+  left: 5%;
+  /* (100%-width)/2 */
+
+  /* place center */
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.encylopedia_table td {
+  margin: 0px;
+  line-height: 0px;
+  padding: 5px;
+  width: 10%;
+}
+.encylopedia_table tr {
+  margin: 0px;
+}
+.encyclopedia_teaser_img {
+  -webkit-box-shadow: 3px 3px 3px #333;
+}
+#electron_encyclopedia_teaser_img,
+#myon_encyclopedia_teaser_img,
+#tauon_encyclopedia_teaser_img,
+#electron_neutrino_encyclopedia_teaser_img,
+#myon_neutrino_encyclopedia_teaser_img,
+#tauon_neutrino_encyclopedia_teaser_img,
+#up_quark_encyclopedia_teaser_img,
+#down_quark_encyclopedia_teaser_img,
+#charm_quark_encyclopedia_teaser_img,
+#strange_quark_encyclopedia_teaser_img,
+#top_quark_encyclopedia_teaser_img,
+#bottom_quark_encyclopedia_teaser_img,
+#photon_encyclopedia_teaser_img,
+#w_plus_encyclopedia_teaser_img,
+#z_null_encyclopedia_teaser_img,
+#w_minus_encyclopedia_teaser_img,
+#gluon_encyclopedia_teaser_img,
+#graviton_encyclopedia_teaser_img,
+#wimp_encyclopedia_teaser_img,
+#higgs_encyclopedia_teaser_img {
+  -webkit-transform: rotate(-0.5deg);
+}
+#electron_encyclopedia_teaser_img,
+#electron_neutrino_encyclopedia_teaser_img,
+#tauon_neutrino_encyclopedia_teaser_img,
+#down_quark_encyclopedia_teaser_img,
+#top_quark_encyclopedia_teaser_img,
+#bottom_quark_encyclopedia_teaser_img,
+#z_null_encyclopedia_teaser_img,
+#gluon_encyclopedia_teaser_img,
+#graviton_encyclopedia_teaser_img,
+#higgs_encyclopedia_teaser_img {
+  -webkit-transform: rotate(1deg);
+}
+#up_quark_encyclopedia_teaser_img,
+#strange_quark_encyclopedia_teaser_img,
+#w_plus_encyclopedia_teaser_img {
+  -webkit-transform: rotate(-1deg);
+}
+/*
+.ui-bar-a {
+	background-color: rgba(128,128,128,0.5);
+}
+.ui-btn-up-a {
+	background: none;
+}
+*/
