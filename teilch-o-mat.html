@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html><head>
+<base href="" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<title>Teilchenzoo-App</title>
+<script src="shared/lib/modernizr/modernizr.custom.js"></script>
+<script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
+
+<link rel="stylesheet" href="shared/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
+
+<link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+<link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
+<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/lib/fastclick.js"></script>
+<script src="shared/js/script.js"></script>
+<link rel="stylesheet/less" type="text/css" href="shared/css/styles.less" />
+<script src="shared/lib/less/less-1.4.1.min.js"></script>
+<script src="shared/lib/respond/respond.min.js"></script>
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+	$("div[data-role=page]").bind("pagebeforeshow", function (e, data) {
+		$.mobile.silentScroll(0);
+		$.mobile.changePage.defaults.transition = 'slide';
+	});
+//	initApp();
+});//]]>  
+</script>
+</head>
+<body class="app">
+
+
+  <div data-role="header">
+    <h1>Teilch-o-mat</h1>
+	  <a rel="external" href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+		<a rel="external" href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	</div> <!-- /header -->
+  
+  <div class="content paintedWood">
+  <div class="row paintedGray">
+    <div class="col-md-12">
+  		<h1>Welches Teilchen passt zu dir?</h1>
+      </div>
+  </div>
+  
+	<div class="row">
+      <div class="col-md-6">
+        <div id="quiz-form-panel" class="paintedGray">
+          <form id="quiz-form">
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">federleicht</div>
+                <div class="ui-block-b" style="text-align:center;">normal</div>
+                <div class="ui-block-c" style="text-align:right;">superschwer</div>
+              </div>
+              <!-- /grid-b -->
+              
+              <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
+              <p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher pessimistisch oder optimistisch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">pessimistisch / negativ</div>
+                <div class="ui-block-b" style="text-align:center;">neutral</div>
+                <div class="ui-block-c" style="text-align:right;">optimistisch / positiv</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Das einfach negativ geladene Elektron bekommt -100 Punkte, das einfach positiv W-Plus +100 Punkte. Der Rest verteilt sich dazwischen. </p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich wirft nichts aus der Bahn.</div>
+                <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Hast Du ein zerbrechliches Gemüt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! Bin empfindlich wie eine Seifenblase.</div>
+              </div>
+              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
+              <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
+              <!-- /grid-b --> 
+              
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wechselst Du zwischen verschiedenen Persönlichkeiten?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-oscillation" id="quiz-oscillation" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich gibt es nur einmal.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! In mir schlummern viele Seelen.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Es gibt drei Neutrinotypen: Elektron-, Myon- und Tauon-Neutrino. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrinostypen erhalten daher 100 Punkte, der Rest bekommt nix.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist Du ein Gruppenmensch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-confined" id="quiz-confined" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich bin Einzelgänger und lieber alleine.</div>
+                <div class="ui-block-b" style="text-align:right;">Ohne Freunde oder Familie geht gar nichts.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenmenschfaktor der Quarks ist 100, der der restlichen Teilchen liegt bei Null.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du schüchtern?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich stehe gern im Rampenlicht!</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein Mauerblümchen.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
+              <p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist Du kommunikativ?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-communicativeness" id="quiz-communicativeness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich rede nicht gerne.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich rede viel.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Die Wechselwirkungen zwischen Teilchen wird in der Physik durch &hellip; ähm &hellip; Teilchen beschrieben. Auch wenn der Vergleich ein wenig hinkt: Die Wechselwirkungsteilchen bekomme eine Kommunikativität von 100 Punkten, der Rest geht leer aus.</p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Schaust Du gern in Spiegel?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-parityviolating" id="quiz-parityviolating" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Spiegel bringen mir nichts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Prozesse, an denen die W's und das Z-Null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-Null. </p>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lebst Du in einer Traumwelt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich träume allerhöchstens nachts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich tauche gerne in die Fantasie ab.</div>
+              </div>
+              <!-- /grid-b -->
+              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest geht leer aus. </p>
+            </div>
+            <!--
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="submit" data-theme="d">Cancel</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-theme="a">Submit</button>
+                </div>
+              </fieldset>
+              -->
+            
+          </form>
+        </div>
+        <!-- /quiz-form --> 
+      </div>
+      <div class="col-md-6 ">
+        <div id="quiz-result">
+          <div id="quiz-2d-graph" class="clearfix paintedGray">
+            <div id="leptons"></div>
+            <div id="quarks"></div>
+            <div id="remaining"></div>
+          </div>
+          <div id="quiz-top3"  class="clearfix paintedGray"> </div>
+        </div>
+        <!-- /quiz-result --> 
+        
+      </div>
+      </div>
+    </div>
+    <!-- /content --> 
+  
+  
+    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+    <div data-role="navbar">
+      <ul>
+        <li><a rel="external" href="index.html#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
+        <li><a rel="external" href="#" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+        <li><a rel="external" href="index.html#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+        <li><a rel="external" href="index.html#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+      </ul>
+    </div> <!-- /.navbar -->
+  </div><!-- /.footer -->
+</div><!-- /page-->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript">
+	app.initialize();
+</script>
+
+
+</body>
+<!-- /#page-settings -->
+</html>
