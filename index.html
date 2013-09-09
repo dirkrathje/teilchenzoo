@@ -31,7 +31,6 @@
 
 <body class="app">
 
-
 <div data-role="page" class="page" id="page-home">
   
   <div data-role="header">
@@ -115,6 +114,8 @@
     </div> <!-- /.navbar -->
   </div><!-- /.footer -->
 </div><!-- /page #home-->
+
+
 
 
 <div data-role="page" class="page" id="page-particlomatic">
@@ -368,6 +369,8 @@
 </div><!-- /page-->
 
 
+
+
 <div data-role="page" class="page" id="page-videos">
   <div data-role="header">
     <h1>Teilchenzoo-Filme</h1>
@@ -408,7 +411,7 @@
     <iframe src="steckbriefe/electron.html" width="900" height="500" seamless></iframe>
  
 </div>
--->    
+    -->
     
     
   </div><!-- /content -->
@@ -425,20 +428,19 @@
 
 
 
-
 <div data-role="page" class="page" id="page-content">
   <div data-role="header">
     <h1>Steckbriefe</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div> <!-- /header -->
   
   <div data-role="content" class="paintedWood">
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="encylopedia_table" style="width: 90%; margin: auto;">
+<table class="encylopedia_table" style="width: 90%; margin: auto;">
   <tr>
     <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
-    <td><a data-toggle="modal" href="#electronModal"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img" id="electron_encyclopedia_teaser_img"/></td>
+    <td><a data-toggle="modal" href="#electronModal"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img" id="electron_encyclopedia_teaser_img"/></a></td>
     <td><img src="images/encyclopedia_teasers/myon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="myon_encyclopedia_teaser_img"/></td>
     <td><img src="images/encyclopedia_teasers/tauon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="tauon_encyclopedia_teaser_img"/></td>
     <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
@@ -449,13 +451,12 @@
   <tr>
     <td>&nbsp;</td>
     <td><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="electron_neutrino_encyclopedia_teaser_img"/></td>
-    <td><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="myon_encyclopedia_teaser_img"/></td>
-    <td><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="tauon_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="myon_neutrino_encyclopedia_teaser_img"/></td>
+    <td><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img" id="tauon_neutrino_encyclopedia_teaser_img"/></td>
     <td>&nbsp;</td>
     <td><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="img-responsive encyclopedia_teaser_img" id="w_plus_encyclopedia_teaser_img"/></td>
     <td><img src="images/encyclopedia_teasers/gluon.png" alt="" class="img-responsive encyclopedia_teaser_img" id="gluon_encyclopedia_teaser_img"/></td>
     <td><img src="images/encyclopedia_teasers/graviton.png" alt="" class="img-responsive encyclopedia_teaser_img" id="graviton_encyclopedia_teaser_img"/></td>
-    <td>&nbsp;</td>
   </tr>
     <tr>
     <td>&nbsp;</td>
@@ -472,7 +473,6 @@
     <td>&nbsp;</td>
 	    <td><img src="images/encyclopedia_teasers/higgs.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="higgs_encyclopedia_teaser_img"/></td>
 	<td colspan="2"><img src="images/encyclopedia_teasers/list_description_higgs.png" alt="" class="img-responsive" /></td>
-    <td>&nbsp;</td>
   </tr>
   <tr class="lastRow">
     <td>&nbsp;</td>
@@ -482,12 +482,11 @@
     <td>&nbsp;</td>
 		<td colspan="2"><img src="images/encyclopedia_teasers/list_description_wimps.png" alt="" class="img-responsive"/></td>
     <td><img src="images/encyclopedia_teasers/wimp.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="wimp_encyclopedia_teaser_img"/></td>
-    <td>&nbsp;</td>
   </tr>
 </table>
 
   <!-- Modal -->
-  <div class="modal fade" id="electronModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="electronModal" tabindex="-1" role="dialog" >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -527,7 +526,6 @@
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -541,7 +539,7 @@
 <div data-role="page" class="page" id="page-options">
   <div data-role="header">
     <h1>Optionen</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
 	</div><!-- /header -->
   
     <div data-role="content" class="paintedWood">
@@ -556,27 +554,11 @@
         <label for="radio-language_EN">English</label>
       </fieldset>
     </form>
-    
-    <!-- The sliders -->
-    
-    <div class="colorful-slider blue">
-      <div class="slider-handle"></div>
-    </div>
-    <div class="colorful-slider green">
-      <div class="slider-handle"></div>
-    </div>
-    <div class="colorful-slider orange">
-      <div class="slider-handle"></div>
-    </div>
-    
-    <!-- Old school float clearing -->
-    <div class="clear"></div>
- 	</div><!-- /.content -->
+    </div><!-- /.content -->
   
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -585,11 +567,12 @@
   </div><!-- /.footer -->
 </div><!-- /page-->
 
-<script type="text/javascript" src="phonegap.js"></script>
+<!--
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 	app.initialize();
 </script>
-
+-->
 
 </body>
 <!-- /#page-settings -->
