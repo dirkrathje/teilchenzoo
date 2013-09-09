@@ -217,7 +217,8 @@ $(document).on('pageinit', function(){
 	updateQuiz();
 	//$("#quiz-form input").trigger("change");
 	
-	$("#particlomatic_info_toggle").click(function(){
+	
+	$("#particlomatic_info_toggle").on("click", function(){
 		$(".particlomaticHelp").toggle(); 
 		
 	});
