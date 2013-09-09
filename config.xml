@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="de.desy.teilchenzoo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Teilchenzoo</name>
-    <description>Description</description>
+    <description>Woraus ist die Welt gemacht? Und welches Teilchen passt zu Dir?</description>
     <author email="pr@desy.de" href="http://teilchenzoo.desy.de">Dirk Rathje / DESY</author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
