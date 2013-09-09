@@ -368,38 +368,51 @@
 </div><!-- /page-->
 
 
-
 <div data-role="page" class="page" id="page-videos">
   <div data-role="header">
     <h1>Teilchenzoo-Filme</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div><!-- /header -->
   
   <div data-role="content" class="paintedWood">
   
-<table width="100%" border="0" cellspacing="0" cellpadding="0" class="encylopedia_table" style="width: 91%; margin: auto;">
+<table class="video_teaser_table">
   <tr>
-    <td><a data-toggle="modal" href="#electronModal"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive"/></td>
+    <td><a href="#popupVideo" data-rel="popup"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_1"/></a></td>
+    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_2"/></td>
     <td><img src="images/video_teasers/video_list_description_introduction.png" alt="" class="img-responsive"/></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_3"/></td>
+    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_4"/></td>
+    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_5"/></td>
+    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_6"/></td>
   </tr>
   <tr class="lastRow">
     <td><img src="images/video_teasers/video_list_description_details.png" alt="" class="img-responsive"/></td>
     <td>&nbsp;</td>
     <td><img src="images/video_teasers/video_list_description_outlook.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_7"/></td>
   </tr>
 </table>    
+ 
+<div data-role="popup" id="popupBasic">
+  <p>This is a completely basic popup, no options set.<p>
+</div>
+
+<div data-role="popup" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="popupVideo ui-content" data-position-to="window">
+ 
+    <iframe src="steckbriefe/electron.html" width="900" height="500" seamless></iframe>
+ 
+</div>
     
-    
+<div data-role="popup" id="popupVideo_1" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+<h1>Hello</h1>
+<p>sdfjkhasdkjfhasdkjfhs</p>
+<!--    <iframe src="http://player.vimeo.com/video/41135183" width="497" height="298" seamless></iframe> -->
+</div>    
     
     
     
@@ -407,7 +420,6 @@
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -415,6 +427,7 @@
     </div> <!-- /.navbar -->
   </div><!-- /.footer -->
 </div><!-- /page-->
+
 
 
 
