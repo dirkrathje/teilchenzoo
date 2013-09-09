@@ -142,11 +142,11 @@ function getQuizTop3View(quizModel) {
 
 	result += "<h2>" + particles[quizModel.sortedResults[0].particle].title_de + "</h2>";
 	result += "<p>Elektronen gibt es überall: in Steckdosen, in Röntgenröhren und in jedem Atom. Elektronen sind negativ geladen. (Daher nennen wir sie hier pessimistisch.) Ihre geringe Masse macht sie selbst für Elementarteilchen zu Leichtgewichten. Negative Ladung und geringe Masse sorgen für leichte Ablenkbarkeit durch Magnete. Elektronen gelten als stabil, da ihr Zerfall noch nicht beobachtet wurde. Das Elektron wurde im Jahr 1897 als erstes der Elementarteilchen nachgewiesen (Es steht gern im Rampenlicht). Sein Name geht auf das griechische Wort für Bernstein zurück, der in frühen Versuchen mit Elektrizität eine wichtige Rolle gespielt hat.</p>"; 
-		result += "<ol>"; 
+	/*	result += "<ol>"; 
 	result += "<li>" + particles[quizModel.sortedResults[0].particle].title_de + "</li>"; 
 	result += "<li>" + particles[quizModel.sortedResults[1].particle].title_de + "</li>"; 
 	result += "<li>" + particles[quizModel.sortedResults[2].particle].title_de + "</li>"; 
-	result += "</ol>"; 
+	result += "</ol>"; */
 	return result; 
 	
 	return "getQuizTop3View";	
@@ -210,12 +210,17 @@ $(document).on('pageinit', function(){
 		$("#countdownNrOfDays").html(countdownDays);
 	}
 	
+
 	
 //	$("#quiz-mass input").bind("change", function(event, ui){updateQuiz();});
-	$("#quiz-form input").change(function(event, ui){updateQuiz();});
+	$("#quiz-form input").on("change",  $.throttle(200, function(event, ui){updateQuiz();}));
 	updateQuiz();
 	//$("#quiz-form input").trigger("change");
 	
+	$("#particlomatic_info_toggle").click(function(){
+		$(".particlomaticHelp").toggle(); 
+		
+	});
 
 	
 });

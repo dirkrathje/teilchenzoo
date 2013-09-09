@@ -46,19 +46,19 @@
     <div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
     
       <div class="col-md-4">
-<h2><a href="#page-particlomatic"  data-transition="none">Teilch-o-mat</a></h2>
-        <p><span class="question">In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
-      	<img src="images/home_icons/ue_sym_teilchomat.png" class="img-responsive" alt=""/>
+			<h2><a href="#page-particlomatic"  data-transition="none">Teilch-o-mat</a></h2>
+      	<img src="images/home_icons/ue_sym_teilchomat.png" class="img-responsive home_icon" alt=""/>
+	        <p><span class="question">In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
       </div>
       <div class="col-md-4">
         <h2><a href="#page-videos"  data-transition="none">Filme</a></h2>
+      	<img src="images/home_icons/ue_sym_video.png" class="img-responsive  home_icon" alt=""/>
         <p><span class="question">Der »Teilchenzoo« zeigt nicht nur Teilchen, sondern auch echte Physikerinnen und Physiker.</span> <span class="answer">Sieben unterhaltsame Videos nehmen Dich mit in die Welt der Teilchenphysik.</span></p>      
-      	<img src="images/home_icons/ue_sym_video.png" class="img-responsive" alt=""/>
       </div>
       <div class="col-md-4">
         <h2><a href="#page-content"  data-transition="none">Steckbriefe</a></h2>
+       	<img src="images/home_icons/ue_sym_steckbrief.png" class="img-responsive  home_icon" alt=""/>
         <p><span class="question">Du willst es richtig wissen und mehr Informationen zu den Themen der Ausstellung abrufen?</span> <span class="answer">Detailinfos zu den Bewohnern des »Teilchenzoo« gibt es hier.</span></p>      
-       	<img src="images/home_icons/ue_sym_steckbrief.png" class="img-responsive" alt=""/>
      </div>
 		</div>
     
@@ -127,9 +127,7 @@
   
   <div class="content paintedWood">
   
-  <diV>
-  	<div>Mehr Infos? <a href="#">Klick hier</a>!</div>
-  </diV>
+  <div style="float: right;"><span id="particlomatic_info_toggle_label">Mehr Infos?</span> <span id="particlomatic_info_toggle">Klick hier</a>!</div>
   
   	<div class="row">
       <div class="col-md-6"><img src="images/particlomatic_descriptions_1.png" alt="[Icon] Bestimme Deine Eigenschaften!" class="img-responsive"/></div>
@@ -140,7 +138,6 @@
   
 	<div class="row">
       <div class="col-md-6">
-        <div id="quiz-form-panel" class="">
           <form id="quiz-form">
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -158,13 +155,9 @@
               </div>
               <!-- /grid-b -->
               
-								<div class="panel panel-default">
-                <div id="particlomaticHelpMass" class="panel-collapse collapse">
-                		<div class="panel-body">
+								<div class="particlomaticHelp">
                     <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
                    	<p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
-                  </div>
-                </div>
               </div>
               
             </div>
@@ -183,12 +176,8 @@
                 <div class="ui-block-c" style="text-align:right;">optimistisch / positiv</div>
               </div>
               <!-- /grid-b -->
-								<div class="panel panel-default">
-                <div id="particlomaticHelpCharge" class="panel-collapse collapse">
-                		<div class="panel-body">
-			              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen. </p>
-                 </div>
-                </div>
+								<div class="particlomaticHelp">
+		              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen. </p>
               </div>
               
               
@@ -208,7 +197,9 @@
                 <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
               </div>
               <!-- /grid-b -->
-              <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
+							  <div class="particlomaticHelp">
+	                <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -223,8 +214,10 @@
                 <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
                 <div class="ui-block-b" style="text-align:right;">Ja! Bin superempfindlich.</div>
               </div>
-              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
+							  <div class="particlomaticHelp">
+	              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
               <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
+	           </div>
               <!-- /grid-b --> 
               
             </div>
@@ -242,7 +235,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ja! In mir schlummern viele Seelen.</div>
               </div>
               <!-- /grid-b -->
-              <p>Es gibt drei Neutrinotypen: Elektron-, Myon- und Tauon-Neutrino. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrinostypen erhalten daher 100 Punkte, der Rest bekommt nix.</p>
+ 							  <div class="particlomaticHelp">
+	             <p>Es gibt drei Neutrinotypen: Elektron-, Myon- und Tauon-Neutrino. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrinostypen erhalten daher 100 Punkte, der Rest bekommt nix.</p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -258,7 +253,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ohne Freunde oder Familie geht gar nichts.</div>
               </div>
               <!-- /grid-b -->
-              <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenmenschfaktor der Quarks ist 100, der der restlichen Teilchen liegt bei Null.</p>
+							  <div class="particlomaticHelp">
+	              <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenmenschfaktor der Quarks ist 100, der der restlichen Teilchen liegt bei Null.</p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -274,8 +271,10 @@
                 <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein schüchternes Mauerblümchen.</div>
               </div>
               <!-- /grid-b -->
-              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
-              <p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+							  <div class="particlomaticHelp">
+	              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
+              		<p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -291,7 +290,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ja, ich rede viel.</div>
               </div>
               <!-- /grid-b -->
-              <p>Die Wechselwirkungen zwischen Teilchen wird in der Physik durch &hellip; ähm &hellip; Teilchen beschrieben. Auch wenn der Vergleich ein wenig hinkt: Die Wechselwirkungsteilchen bekomme eine Kommunikativität von 100 Punkten, der Rest geht leer aus.</p>
+							  <div class="particlomaticHelp">
+	              <p>Die Wechselwirkungen zwischen Teilchen wird in der Physik durch &hellip; ähm &hellip; Teilchen beschrieben. Auch wenn der Vergleich ein wenig hinkt: Die Wechselwirkungsteilchen bekomme eine Kommunikativität von 100 Punkten, der Rest geht leer aus.</p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -307,7 +308,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
               </div>
               <!-- /grid-b -->
-              <p>Prozesse, an denen die W's und das Z-null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-null. </p>
+							  <div class="particlomaticHelp">
+	              <p>Prozesse, an denen die W's und das Z-null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-null. </p>
+	           </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -323,7 +326,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ich tauche gerne in die Fantasie ab.</div>
               </div>
               <!-- /grid-b -->
-              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
+							  <div class="particlomaticHelp">
+	              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
+	           </div>
             </div>
             <!--
             <fieldset class="ui-grid-a">
@@ -337,17 +342,16 @@
               -->
             
           </form>
-        </div>
         <!-- /quiz-form --> 
       </div>
       <div class="col-md-6">
+          <div id="quiz-top3"  class="clearfix paintedGray"> </div>
         <div id="quiz-result">
           <div id="quiz-2d-graph" class="clearfix paintedGray">
             <div id="leptons"></div>
             <div id="quarks"></div>
             <div id="remaining"></div>
           </div>
-          <div id="quiz-top3"  class="clearfix paintedGray"> </div>
         </div>
         <!-- /quiz-result --> 
         
