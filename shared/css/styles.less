@@ -157,6 +157,7 @@ padding: 0px 25px 10px 25px;
  background: -o-linear-gradient(top, @startColor, @endColor);
 }
 
+
 input.ui-slider-input {
 	display : none !important;
 }
@@ -480,7 +481,7 @@ span.reg {
 #quiz-form {
 }
 .quiz-form-item {
-margin-bottom: 60px;
+margin-bottom: 20px;
 }
 #quiz-result {
 }
@@ -516,7 +517,7 @@ float: left;
 float: right;
 }
 #test_result_2d {
-	width: 200px;
+	width: 160px;
 	background-color: white;
 }
 
@@ -539,14 +540,14 @@ td.particelThumbnail {
 	line-height: 1em;
 	padding: 0px;
 	padding-right: 10px;
-	width: 50px;
+	width: 30px;
 }
 td.value {
 	}
 
 #particle_teaser_table img{
 	width: 100%;
-	height:auto;
+	height: auto;
 }
 #particle_teaser_table td {
 	width: 25%;
@@ -555,12 +556,17 @@ td.value {
 	width: 30px;	
 }
 #quizTeaser .quizResultTable {
-width: 100%; 	
+	width: 100px; 	
 }
 
 #quiz-2d-graph .quizResultTable {
-	width: 30%;
-	float: left; 	
+	width: 100px;
+
+}
+
+#quiz-2d-graph div {
+		float: left; 	
+		width: 100px;
 
 }
 
@@ -619,6 +625,10 @@ ol {
 }
 
 
+
+
+
+
 body .modal-dialog {
   width: 90% !important; /* desired relative width */
   left: 5%; /* (100%-width)/2 */
@@ -638,10 +648,36 @@ body .modal-dialog {
 	margin: 0px;}
 
 
-
-
+.quiz-form-item,
+.video_teaser_img, 
 .encyclopedia_teaser_img {
-	-webkit-box-shadow: 3px 3px 3px #333;
+	-webkit-box-shadow: 2px 2px 4px #666;
+}
+
+.quiz-form-item {
+	padding: 10px;
+	border: 1px solid lightgray;
+	background-color: #FAFAFA;
+}
+
+#video_teaser_img_2,
+#video_teaser_img_4,
+#video_teaser_img_5,
+#video_teaser_img_7,
+#video_teaser_img_8 {
+	-webkit-transform:rotate(-0.5deg);
+}
+
+#video_teaser_img_1,
+#video_teaser_img_3,
+#video_teaser_img_6 {
+	-webkit-transform:rotate(+0.5deg);
+}
+
+
+#video_teaser_img_7 {
+	-webkit-transform:rotate(1deg);
+
 }
 
 
@@ -696,3 +732,30 @@ body .modal-dialog {
 	background: none;
 }
 */
+
+.ui-body-c .ui-link:visited, .ui-body-c .ui-link:hover, .ui-body-c .ui-link:active,
+.ui-body-c .ui-link {
+	color: black;
+}
+
+
+.panel {
+	border: none; 
+	background: none; 
+	box-shadow: none; 
+	-webkit-box-shadow: none;
+}
+.panel-default>.panel-heading {
+	border: none; 
+}
+.ui-body-c .ui-link {
+	font-weight: normal;
+	text-decoration: underline;
+}
+.panel-body,
+.panel-heading {
+	padding: 0;
+}
+.panel-heading {
+	padding-bottom: 1em;
+}

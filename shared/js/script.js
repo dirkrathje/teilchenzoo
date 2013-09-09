@@ -140,13 +140,13 @@ function getQuizTop3View(quizModel) {
 	
 	result += "<div id='rank1'><img class='rank1_img' src='images/particles/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>"; 
 
-
-	result += "<ol>"; 
+	result += "<h2>" + particles[quizModel.sortedResults[0].particle].title_de + "</h2>";
+	result += "<p>Elektronen gibt es überall: in Steckdosen, in Röntgenröhren und in jedem Atom. Elektronen sind negativ geladen. (Daher nennen wir sie hier pessimistisch.) Ihre geringe Masse macht sie selbst für Elementarteilchen zu Leichtgewichten. Negative Ladung und geringe Masse sorgen für leichte Ablenkbarkeit durch Magnete. Elektronen gelten als stabil, da ihr Zerfall noch nicht beobachtet wurde. Das Elektron wurde im Jahr 1897 als erstes der Elementarteilchen nachgewiesen (Es steht gern im Rampenlicht). Sein Name geht auf das griechische Wort für Bernstein zurück, der in frühen Versuchen mit Elektrizität eine wichtige Rolle gespielt hat.</p>"; 
+		result += "<ol>"; 
 	result += "<li>" + particles[quizModel.sortedResults[0].particle].title_de + "</li>"; 
 	result += "<li>" + particles[quizModel.sortedResults[1].particle].title_de + "</li>"; 
 	result += "<li>" + particles[quizModel.sortedResults[2].particle].title_de + "</li>"; 
 	result += "</ol>"; 
-	result += "<p>Hier steht Text, der die Hautpeigenschaften des ausgewählten Teilchens erläutert. Hier steht Text, der die Hautpeigenschaften des ausgewählten Teilchens erläutert. Hier steht Text, der die Hautpeigenschaften des ausgewählten Teilchens erläutert. Hier steht Text, der die Hautpeigenschaften des ausgewählten Teilchens erläutert. Hier steht Text, der die Hautpeigenschaften des ausgewählten Teilchens erläutert. </p>"; 
 	return result; 
 	
 	return "getQuizTop3View";	
@@ -195,8 +195,10 @@ function updateQuizTeaser(scrollPosition) {
 }
 
 
-$(function() {
-	
+$(document).on('pageinit', function(){
+ 
+
+
 	FastClick.attach(document.body);
 
 	/*	if ($.event.props.join('|').replace('layerX|layerY|', ''))
@@ -207,6 +209,7 @@ $(function() {
 		$("#countdown").show(); 
 		$("#countdownNrOfDays").html(countdownDays);
 	}
+	
 	
 //	$("#quiz-mass input").bind("change", function(event, ui){updateQuiz();});
 	$("#quiz-form input").change(function(event, ui){updateQuiz();});
@@ -320,3 +323,54 @@ function sortByKey(array, key) {
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }	
+
+$( document ).on( "pageinit", function() {
+    $( ".popupVideo iframe" )
+        .attr( "width", 0 )
+        .attr( "height", 0 );
+ 
+    $( ".popupVideo" ).on({
+        popupbeforeposition: function() {
+            var size = scale( 900, 500, 15, 1 ),
+                w = size.width,
+                h = size.height;
+ 
+            $( ".popupVideo iframe" )
+                .attr( "width", w )
+                .attr( "height", h );
+        },
+        popupafterclose: function() {
+            $( ".popupVideo iframe" )
+                .attr( "width", 0 )
+                .attr( "height", 0 );
+        }
+    });
+});
+
+
+// jquery mobile popup scaling
+function scale( width, height, padding, border ) {
+    var scrWidth = $( window ).width() - 30,
+        scrHeight = $( window ).height() - 30,
+        ifrPadding = 2 * padding,
+        ifrBorder = 2 * border,
+        ifrWidth = width + ifrPadding + ifrBorder,
+        ifrHeight = height + ifrPadding + ifrBorder,
+        h, w;
+ 
+    if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+        w = ifrWidth;
+        h = ifrHeight;
+    } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+        w = scrWidth;
+        h = ( scrWidth / ifrWidth ) * ifrHeight;
+    } else {
+        h = scrHeight;
+        w = ( scrHeight / ifrHeight ) * ifrWidth;
+    }
+ 
+    return {
+        'width': w - ( ifrPadding + ifrBorder ),
+        'height': h - ( ifrPadding + ifrBorder )
+    };
+};

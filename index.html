@@ -3,9 +3,8 @@
 <head>
 <base href="" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 <title>Teilchenzoo-App</title>
-<!--<script src="shared/lib/modernizr/modernizr.custom.js"></script>-->
 <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
@@ -22,15 +21,17 @@ $(function() {
 });
 </script>
 
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
 <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
 <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
-<link rel="stylesheet" href="shared/lib/reset/reset.css">
-
-<link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
-<!--<script src="shared/lib/less/less-1.4.1.min.js"></script>-->
 
 <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+
+<!--<link rel="stylesheet" type="text/css" href="shared/css/styles.css" />-->
+<link rel="stylesheet/less" type="text/css" href="shared/css/styles.less" />
+<script src="shared/lib/less/less-1.4.1.min.js"></script>
+
 
 <script src="shared/js/script.js"></script>
 <!--
@@ -50,38 +51,75 @@ $(function(){
   
   <div data-role="header">
   	<h1>Teilchenzoo</h1>
-			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
  	</div><!-- .header -->
   
 	<div class="content paintedWood clearfix">
   
 		<img class="img-responsive" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
     
-		<div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
+	   
+    <div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
     
-      <div class="col-md-3">
-        <h2>Ausstellung (<a rel="external" href="pagesFastClick.html">TEST</a>)</h2>
-        <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
+      <div class="col-md-4">
+        <h2><a href="#page-particlomatic"  data-transition="none">Teilch-o-mat</a></h2>
+        <p><span class="question">In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
       </div>
-      <div class="col-md-3">
-        <h2><a rel="external" href="teilch-o-mat.html">Teilch-o-mat</a></h2>
-        <p><span class="question">Unter den Bausteinen der modernen Teilchenphysik gibt es Federgewichte, Einzelgänger, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>      
+      <div class="col-md-4">
+        <h2><a href="#page-videos"  data-transition="none">Filme</a></h2>
+        <p><span class="question">Der »Teilchenzoo« zeigt nicht nur Teilchen, sondern auch echte Physikerinnen und Physiker.</span> <span class="answer">Sieben unterhaltsame Videos nehmen Dich mit in die Welt der Teilchenphysik.</span></p>      
       </div>
-      <div class="col-md-3">
-        <h2>Filme</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="col-md-3">
-        <h2>Steckbriefe</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <div class="col-md-4">
+        <h2><a href="#page-content"  data-transition="none">Steckbriefe</a></h2>
+        <p><span class="question">Du willst es richtig wissen und mehr Informationen zu den Themen der Ausstellung abrufen?</span> <span class="answer">Detailinfos zu den Bewohnern des »Teilchenzoo« gibt es hier.</span></p>      
       </div>
 		</div>
+    
+    
+    <div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
+    
+      <div class="col-md-6 col-md-push-6">
+        <h2 class="fitText">Woraus ist die Welt gemacht?</h2>
+        <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
+      </div>
+      <div class="col-md-6 col-md-pull-6">
+              <div class="img-responsive" id="teilchenzoo_teaser_teilchen_roll_stage"></div>
+      </div>
+      
+     </div>
+     <div class="row homeRow paintedGray  clearfix">
+    
+       <div class="col-md-6">
+       		<h2>Öffnungszeiten und Preise</h2>
+           <p>Die Sonderausstellung Teilchenzoo im Universum<span class="reg">&reg;</span> Bremen findet von 26. September 2013 bis 30. Juni 2014 statt, </p>
+      		<ul>
+        		<li>montags bis freitags: von 9:00 bis 18:00 Uhr</li>
+        		<li>samstags, sonntags und feiertags: von 10:00 bis 18:00 Uhr</li>
+      		</ul>
+      		<p>Die Sonderausstellung kann mit einem Ticket des Universum<span class="reg">&reg;</span> Bremen besucht werden. <a href="http://www.universum-bremen.de/de/startseite/information/eintrittspreise.html">Zu den Eintrittspreisen</a></p>
+		</div>
+       <div class="col-md-6">
+       		<h2>Ort und Hinkommen</h2>
+			<p>Das Universum<span class="reg">&reg;</span> Bremen befindet sich<br/>
+        Wiener Str. 1a<br/>
+        28359 Bremen</p>
+      <p><a href="http://goo.gl/maps/txkRq">Google Maps</a></p>
+      <h4>Mit dem Auto</h4>
+      <p>Sie erreichen das Universum<span class="reg">&reg;</span> über die Autobahn A 27 Abfahrt Bremen Universität. Nach Verlassen der Autobahn biegen Sie an der zweiten Möglichkeit rechts in die Universitätsallee ein. Nach etwa 500 Metern sehen Sie das Universum<span class="reg">&reg;</span> auf der rechten Seite.</p>
+      <p>Das Universum<span class="reg">&reg;</span> Bremen liegt außerhalb der Bremer Umweltzone. </p>
+      <h4>Mit öffentlichen Verkehrsmitteln</h4>
+      <p>Die Straßenbahnlinie 6 bringt Sie in 15 Minuten vom Hauptbahnhof Richtung Universität zum Universum<span class="reg">&reg;</span> Bremen (Haltestelle Universität/NW1). In etwa 5 Gehminuten entlang der Universitätsallee erreichen Sie das Universum<span class="reg">&reg;</span> Bremen.</p>
+  	</div>
+    
+		</div>
+    
+    
+    
 	</div><!-- /.content -->
   
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -95,8 +133,8 @@ $(function(){
 <div data-role="page" class="page" id="page-exhibition">
   <div data-role="header">
     <h1>Teilchenzoo-Ausstellung</h1>
-		  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+		  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+			<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
    </div>
   <!-- /header -->
 	<div class="content paintedWood clearfix">
@@ -137,6 +175,7 @@ $(function(){
         </div>
       </div>
     </div>
+    <!--
     <div class="row homeRow paintedGray"  style="margin-top: 48px">
       <div class="col-md-8">
         <h2>Bleib auf dem Laufenden!</h2>
@@ -151,7 +190,7 @@ $(function(){
         </form>
       </div>
     </div>
-    
+    -->
       <div class="row homeRow paintedGray  clearfix">
     
        <div class="col-md-6">
@@ -181,7 +220,6 @@ $(function(){
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -194,29 +232,35 @@ $(function(){
 <div data-role="page" class="page" id="page-particlomatic">
   <div data-role="header">
     <h1>Teilch-o-mat</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div> <!-- /header -->
   
   <div class="content paintedWood">
-  <div class="row paintedGray">
-    <div class="col-md-12">
-  		<h1>Welches Teilchen passt zu dir?</h1>
-      </div>
-  </div>
+  
+  <diV>
+  	<div>Mehr Infos? <a href="#">Klick hier</a>!</div>
+  </diV>
+  
+  	<div class="row">
+      <div class="col-md-6"><img src="images/particlomatic_descriptions_1.png" alt="[Icon] Bestimme Deine Eigenschaften!" class="img-responsive"/></div>
+      <div class="col-md-6"><img src="images/particlomatic_descriptions_2.png" alt="[Icon] Sieh', welches Teilchen am besten zu Dir passt!" class="img-responsive"/></div>
+		</div> <!-- .row --> 
+  
+
   
 	<div class="row">
       <div class="col-md-6">
-        <div id="quiz-form-panel" class="paintedGray">
+        <div id="quiz-form-panel" class="">
           <form id="quiz-form">
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
                 <tr>
                   <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
-                  <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich? (<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#particlomaticHelpMass">Info</a>)</h2></td>
                   <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
                 </tr>
-              </table>
+              </table>	
               <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
               <div class="ui-grid-b slide-description">
                 <div class="ui-block-a" style="text-align:left;">federleicht</div>
@@ -225,14 +269,21 @@ $(function(){
               </div>
               <!-- /grid-b -->
               
-              <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
-              <p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
+								<div class="panel panel-default">
+                <div id="particlomaticHelpMass" class="panel-collapse collapse">
+                		<div class="panel-body">
+                    <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
+                   	<p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
+                  </div>
+                </div>
+              </div>
+              
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
                 <tr>
                   <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
-                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher pessimistisch oder optimistisch?</h2></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher pessimistisch oder optimistisch?  (<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#particlomaticHelpCharge">Info</a>)</h2></td>
                   <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
                 </tr>
               </table>
@@ -243,8 +294,17 @@ $(function(){
                 <div class="ui-block-c" style="text-align:right;">optimistisch / positiv</div>
               </div>
               <!-- /grid-b -->
-              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Das einfach negativ geladene Elektron bekommt -100 Punkte, das einfach positiv W-Plus +100 Punkte. Der Rest verteilt sich dazwischen. </p>
-            </div>
+								<div class="panel panel-default">
+                <div id="particlomaticHelpCharge" class="panel-collapse collapse">
+                		<div class="panel-body">
+			              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver drauf. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen. </p>
+                 </div>
+                </div>
+              </div>
+              
+              
+              
+             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
                 <tr>
@@ -255,7 +315,7 @@ $(function(){
               </table>
               <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
               <div class="ui-grid-a slide-description">
-                <div class="ui-block-a" style="text-align:left;">Nein, mich wirft nichts aus der Bahn.</div>
+                <div class="ui-block-a" style="text-align:left;">Mich wirft nichts aus der Bahn.</div>
                 <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
               </div>
               <!-- /grid-b -->
@@ -272,7 +332,7 @@ $(function(){
               <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
               <div class="ui-grid-a slide-description">
                 <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
-                <div class="ui-block-b" style="text-align:right;">Ja! Bin empfindlich wie eine Seifenblase.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! Bin superempfindlich.</div>
               </div>
               <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
               <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
@@ -322,7 +382,7 @@ $(function(){
               <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
               <div class="ui-grid-a slide-description">
                 <div class="ui-block-a" style="text-align:left;">Nein, ich stehe gern im Rampenlicht!</div>
-                <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein Mauerblümchen.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein schüchternes Mauerblümchen.</div>
               </div>
               <!-- /grid-b -->
               <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
@@ -358,7 +418,7 @@ $(function(){
                 <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
               </div>
               <!-- /grid-b -->
-              <p>Prozesse, an denen die W's und das Z-Null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-Null. </p>
+              <p>Prozesse, an denen die W's und das Z-null beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Klingt verrückt, ist aber so. Daher 100 Punkte an W-minus, W-plus und Z-null. </p>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -371,10 +431,10 @@ $(function(){
               <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
               <div class="ui-grid-a slide-description">
                 <div class="ui-block-a" style="text-align:left;">Ich träume allerhöchstens nachts.</div>
-                <div class="ui-block-b" style="text-align:right;">Ja, ich tauche gerne in die Fantasie ab.</div>
+                <div class="ui-block-b" style="text-align:right;">Ich tauche gerne in die Fantasie ab.</div>
               </div>
               <!-- /grid-b -->
-              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest geht leer aus. </p>
+              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
             </div>
             <!--
             <fieldset class="ui-grid-a">
@@ -391,7 +451,7 @@ $(function(){
         </div>
         <!-- /quiz-form --> 
       </div>
-      <div class="col-md-6 ">
+      <div class="col-md-6">
         <div id="quiz-result">
           <div id="quiz-2d-graph" class="clearfix paintedGray">
             <div id="leptons"></div>
@@ -411,7 +471,6 @@ $(function(){
     <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -426,34 +485,48 @@ $(function(){
 <div data-role="page" class="page" id="page-videos">
   <div data-role="header">
     <h1>Teilchenzoo-Filme</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div><!-- /header -->
   
   <div data-role="content" class="paintedWood">
   
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="encylopedia_table" style="width: 91%; margin: auto;">
   <tr>
-    <td><a data-toggle="modal" href="#electronModal"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive"/></td>
+    <td><a href="#popupVideo" data-rel="popup"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_1"/></td>
+    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_2"/></td>
     <td><img src="images/video_teasers/video_list_description_introduction.png" alt="" class="img-responsive"/></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_3"/></td>
+    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_4"/></td>
+    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_5"/></td>
+    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_6"/></td>
   </tr>
   <tr class="lastRow">
     <td><img src="images/video_teasers/video_list_description_details.png" alt="" class="img-responsive"/></td>
     <td>&nbsp;</td>
     <td><img src="images/video_teasers/video_list_description_outlook.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive"/></td>
+    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_7"/></td>
   </tr>
 </table>    
+ 
+<div data-role="popup" id="popupBasic">
+  <p>This is a completely basic popup, no options set.<p>
+</div>
+
+<div data-role="popup" class="popupVideo" id="popupVideo" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content" data-position-to="window">
+ 
+    <iframe src="steckbriefe/electron.html" width="900" height="500" seamless></iframe>
+ 
+</div>
     
-    
+<div data-role="popup" id="popupVideo_1" data-overlay-theme="a" data-theme="d" data-tolerance="15,15" class="ui-content">
+<h1>Hello</h1>
+<p>sdfjkhasdkjfhasdkjfhs</p>
+<!--    <iframe src="http://player.vimeo.com/video/41135183" width="497" height="298" seamless></iframe> -->
+</div>    
     
     
     
@@ -461,7 +534,6 @@ $(function(){
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -475,8 +547,8 @@ $(function(){
 <div data-role="page" class="page" id="page-content">
   <div data-role="header">
     <h1>Steckbriefe</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
-		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="slideup">Optionen</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div> <!-- /header -->
   
   <div data-role="content" class="paintedWood">
@@ -573,7 +645,6 @@ $(function(){
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -587,7 +658,7 @@ $(function(){
 <div data-role="page" class="page" id="page-options">
   <div data-role="header">
     <h1>Optionen</h1>
-	  <a href="#page-home" data-icon="home" data-transition="slidedown">Übersicht</a>
+	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
 	</div><!-- /header -->
   
     <div data-role="content" class="paintedWood">
@@ -602,27 +673,11 @@ $(function(){
         <label for="radio-language_EN">English</label>
       </fieldset>
     </form>
-    
-    <!-- The sliders -->
-    
-    <div class="colorful-slider blue">
-      <div class="slider-handle"></div>
-    </div>
-    <div class="colorful-slider green">
-      <div class="slider-handle"></div>
-    </div>
-    <div class="colorful-slider orange">
-      <div class="slider-handle"></div>
-    </div>
-    
-    <!-- Old school float clearing -->
-    <div class="clear"></div>
- 	</div><!-- /.content -->
+    </div><!-- /.content -->
   
   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
     <div data-role="navbar">
       <ul>
-        <li><a href="#page-exhibition" data-role="tab" data-transition="none">Ausstellung</a></li>
         <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
         <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
         <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
@@ -631,11 +686,12 @@ $(function(){
   </div><!-- /.footer -->
 </div><!-- /page-->
 
-<script type="text/javascript" src="phonegap.js"></script>
+<!--
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 	app.initialize();
 </script>
-
+-->
 
 </body>
 <!-- /#page-settings -->
