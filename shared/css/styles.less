@@ -473,17 +473,24 @@ span.reg {
 
 
 
-
-
-
-
-
-#quiz-form {
+#quiz-form-col {
+	height: 540px;
+	overflow: scroll;
+	
 }
+
+
+#particlomatic_result_bestMatch p {
+	font-size: 90%;
+}
+
+
+
+
+
 .quiz-form-item {
-margin-bottom: 20px;
-}
-#quiz-result {
+	padding: 0px 0px;
+margin-bottom: 10px;
 }
 .quiz-form-item h2  {
 	font-size: 120%;
@@ -534,16 +541,33 @@ float: right;
 	float: right;
 	margin-left: 20px;
 }
-td.particelThumbnail {
+
+.quizResultTable tr {
+	margin-bottom: 40px;
+	border-bottom: 5px solid #EEEEEE;
+}
+
+.quizResultTable td.particleThumbnail {
 	text-align: right; 
 	font-size: 80%;
 	line-height: 1em;
 	padding: 0px;
 	padding-right: 10px;
 	width: 30px;
+	background-color: #FaFAFA;
+	vertical-align: middle;
 }
-td.value {
-	}
+.quizResultTable td.particleThumbnail img {
+	width: 50px;	
+}
+
+.quizResultTable td.value {
+		background-color: #FaFAFA;
+	vertical-align: middle;
+}
+
+
+
 
 #particle_teaser_table img{
 	width: 100%;
@@ -552,21 +576,19 @@ td.value {
 #particle_teaser_table td {
 	width: 25%;
 }
-.quizResultTable img {
-	width: 30px;	
-}
 #quizTeaser .quizResultTable {
 	width: 100%; 	
 }
 
-#quiz-2d-graph .quizResultTable {
-	width: 100px;
+#particlomatic_result_table .quizResultTable {
+	width: 100%;
+	margin-top: 20px;
 
 }
 
-#quiz-2d-graph div {
+#particlomatic_result_table div {
 		float: left; 	
-		width: 100px;
+		width: 33%;
 
 }
 
@@ -577,7 +599,8 @@ ol {
 
 .rank1_img {
 	float: right; 
-	width: 50%;	
+	width: 40%;
+	margin: 0px;	
 }
 
 #page_news h3 {
@@ -654,16 +677,20 @@ body .modal-dialog {
 	margin: 0px;}
 
 
-.quiz-form-item,
 .video_teaser_img, 
 .encyclopedia_teaser_img {
-	-webkit-box-shadow: 2px 2px 4px #666;
+	-webkit-box-shadow: 2px 2px 4px #666; 
 }
-
 .quiz-form-item {
-	padding: 10px;
-	border: 1px solid lightgray;
-	background-color: #FAFAFA;
+	
+/*	border: 1px solid lightgray;*/
+	border-style: solid;
+	border-width: 27px;
+	-moz-border-image: url(background-paint-box.png) 27 repeat;
+	-webkit-border-image: url(background-paint-box.png) 27 repeat;
+	-o-border-image: url(background-paint-box.png) 27 repeat;
+	border-image: url(background-paint-box.png) 27 27 27 27 fill repeat;	
+	
 }
 
 #video_teaser_img_2,
@@ -769,9 +796,7 @@ body .modal-dialog {
 .home_icon {
 	float: right;
 	width: 20%;
-	border: 1px solid lightgray;
 	background-color: #FAFAFA;
-	-webkit-box-shadow: 2px 2px 4px #666;
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
@@ -793,4 +818,48 @@ body .modal-dialog {
 }
 #page_news #sitemenu_news {
 	font-weight: bold; 
+}
+
+
+.nav-tabs a {
+		text-decoration: none !important;
+}
+
+em {
+	font-style:italic;
+}
+
+
+.ui-header {
+
+}
+
+#page-particlomatic .content {
+	heigth: 100%;
+	position: absolute; 
+	top: 40px;
+	bottom: 410px;
+}
+
+#particlomatic_info .particle {
+	width: 20%;
+}
+
+.ui-slider-handle {
+background: rgb(0,166,235);
+
+border: 1px solid rgb(0,166,235);
+
+}
+.ui-body-c 
+.btn-info {
+	color: #fff !important;
+	font-weight: bold;
+	text-decoration: none;
+background-color: rgb(0,166,235);
+border-color: rgb(0,166,235);
+}
+
+#particlomatic_result_top3 td {
+	vertical-align: middle;
 }

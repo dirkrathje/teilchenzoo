@@ -3,13 +3,13 @@
 <head>
 <base href="" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
 <title>Teilchenzoo-App</title>
 <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
-<script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/scrollToFixed/jquery-scrolltofixed-min.js"></script>
 <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
 <script type="text/javascript" src="shared/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
 <link rel="stylesheet" href="shared/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
@@ -125,21 +125,24 @@
 		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div> <!-- /header -->
   
-  <div class="content paintedWood">
-  
+  <div class="content paintedWood" style="padding-top: 0px">
+<!--  
   <div style="float: right;"><span id="particlomatic_info_toggle_label">Mehr Infos?</span> <span id="particlomatic_info_toggle">Klick hier</a>!</div>
-  
-  	<div class="row">
+  -->
+  <!--
+  	<div class="row"  style="width: 100%">
       <div class="col-md-6"><img src="images/particlomatic_descriptions_1.png" alt="[Icon] Bestimme Deine Eigenschaften!" class="img-responsive"/></div>
       <div class="col-md-6"><img src="images/particlomatic_descriptions_2.png" alt="[Icon] Sieh', welches Teilchen am besten zu Dir passt!" class="img-responsive"/></div>
-		</div> <!-- .row --> 
+		</div>--> <!-- .row --> 
   
-
-  
-	<div class="row">
-      <div class="col-md-6">
+ 
+	<div class="row" style="width: 100%">
+      <div class="col-md-6" id="quiz-form-col">
           <form id="quiz-form">
-            <div class="quiz-form-item">
+            <div class="quiz-form-item" style="text-align: center;">
+            <a class="btn btn-info btn-sm" id="particlomatic_button_reset">Werte zurücksetzen</a>
+            <a class="btn btn-info btn-sm" id="particlomatic_button_info" data-toogle-text="Beschreibung ausblenden">Beschreibung einblenden</a>
+</div>            <div class="quiz-form-item">
               <table class="quiz-form-item-title">
                 <tr>
                   <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
@@ -156,8 +159,9 @@
               <!-- /grid-b -->
               
 								<div class="particlomaticHelp">
-                    <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist jedoch gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
-                   	<p>Für Alleswissenwoller: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: 100*sqrt(1-(m[MeV]/m_top[MeV]-1)^2)</p>
+                    <p>Wie wir Menschen sind auch Elemtarteilchen verschieden schwer. Die Bandbreite ist dabei gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
+<!--                   	<p><strong>Für Alleswissenwoller</strong>: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: $$100\times\sqrt{1-(m/m_{top}-1)^2}$$</p>
+    -->         
               </div>
               
             </div>
@@ -165,15 +169,15 @@
               <table class="quiz-form-item-title">
                 <tr>
                   <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
-                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher pessimistisch oder optimistisch?</h2></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher<br> pessimistisch oder optimistisch?</h2></td>
                   <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
                 </tr>
               </table>
               <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
               <div class="ui-grid-b slide-description">
-                <div class="ui-block-a" style="text-align:left;">pessimistisch / negativ</div>
-                <div class="ui-block-b" style="text-align:center;">neutral</div>
-                <div class="ui-block-c" style="text-align:right;">optimistisch / positiv</div>
+                <div class="ui-block-a" style="text-align:left;">pessimistisch<br>(negativ)</div>
+                <div class="ui-block-b" style="text-align:center;">gelassen<br>(neutral)</div>
+                <div class="ui-block-c" style="text-align:right;">optimistisch<br>(positiv)</div>
               </div>
               <!-- /grid-b -->
 								<div class="particlomaticHelp">
@@ -215,9 +219,9 @@
                 <div class="ui-block-b" style="text-align:right;">Ja! Bin superempfindlich.</div>
               </div>
 							  <div class="particlomaticHelp">
-	              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradisische Ewigkeit.</p>
-              <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
-	           </div>
+	              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradiesische Ewigkeit.</p>
+<!--              <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
+	  -->         </div>
               <!-- /grid-b --> 
               
             </div>
@@ -273,8 +277,8 @@
               <!-- /grid-b -->
 							  <div class="particlomaticHelp">
 	              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkenenn gegeben. Das Elektron kennt man seit 1897, das Higgs wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
-              		<p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
-	           </div>
+<!--              		<p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+	  -->         </div>
             </div>
             <div class="quiz-form-item">
               <table class="quiz-form-item-title">
@@ -344,16 +348,38 @@
           </form>
         <!-- /quiz-form --> 
       </div>
-      <div class="col-md-6">
-          <div id="quiz-top3"  class="clearfix paintedGray"> </div>
-        <div id="quiz-result">
-          <div id="quiz-2d-graph" class="clearfix paintedGray">
-            <div id="leptons"></div>
-            <div id="quarks"></div>
-            <div id="remaining"></div>
-          </div>
-        </div>
-        <!-- /quiz-result --> 
+      <div class="col-md-6 paintedGray" id="particlomatic_result">
+      
+      
+      <ul class="nav nav-tabs" id="particlomatic_result_tab">
+    			<li class="active"><a href="#particlomatic_info" data-toggle="tab">Info</a></li>
+			<li class=""><a href="#particlomatic_result_table" data-toggle="tab">Tabelle</a></li>
+				<li class=""><a href="#particlomatic_result_bestMatch" data-toggle="tab">BestMatch<sup>TM</sup></a></li>
+				<li class=""><a href="#particlomatic_result_top3" data-toggle="tab">Top-3</a></li>
+  		</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="particlomatic_info" style="padding-top: 1em;">
+    <h1>Teilch-o-mat</h1>
+  <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
+  <ol>
+  <li>Lege deine Eigenschaften fest!</li>
+  <li>Sieh', welches Teilchen am besten zu dir passt.</li>
+	</ol>  
+  <p><img class="particle" src="images/particles/myon.png"><img class="particle" src="images/particles/down_quark.png"><img class="particle" src="images/particles/w_plus.png"><img class="particle" src="images/particles/gluon.png"><img class="particle" src="images/particles/photon.png"><img class="particle" src="images/particles/electron_neutrino.png"><img class="particle" src="images/particles/up_quark.png"><img class="particle" src="images/particles/higgs.png"><img class="particle" src="images/particles/electron.png"><img class="particle" src="images/particles/bottom_quark.png"></p>
+  
+  
+  </div>
+  <div class="tab-pane" id="particlomatic_result_bestMatch"></div>
+  <div class="tab-pane" id="particlomatic_result_table">
+  	<div id="leptons"></div>
+    <div id="quarks"></div>
+    <div id="remaining"></div>
+	</div>
+  <div class="tab-pane" id="particlomatic_result_top3"></div>
+  
+</div>
+
         
       </div>
       </div>
@@ -387,7 +413,7 @@
 <table class="video_teaser_table">
   <tr>
     <td><a href="#popupVideo" data-rel="popup"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_1"/></a></td>
-    <td><img src="images/video_teasers/video_2.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_2"/></td>
+    <td><a href="videos/video_1.mp4" rel="external"><img src="images/video_teasers/video_2.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_2"/></a></td>
     <td><img src="images/video_teasers/video_list_description_introduction.png" alt="" class="img-responsive"/></td>
     <td>&nbsp;</td>
   </tr>
