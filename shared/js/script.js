@@ -241,28 +241,34 @@ $(document).on('pageinit', function(){
 	updateQuiz(); 
 	show_particlomatic_info = false; 
 	
-	$("#particlomatic_button_info").on("click", function(event) {
+				$("#particlomatic_button_hide_info").hide(); 
+
+	$("#particlomatic_button_show_info").on("click", function(event) {
 			event.preventDefault();
-			var data_toogle_text = $(this).attr("data-toogle-text");
-			$(this).attr("data-toogle-text", $(this).html());
-			if ($(this).html(data_toogle_text))
-			$(".particlomaticHelp").toggle(); 
-		
+			$(this).hide(); 
+			$("#particlomatic_button_hide_info").show(); 
+			$(".particlomaticHelp").show(); 	
+	});
+	$("#particlomatic_button_hide_info").on("click", function(event) {
+			event.preventDefault();
+			$(this).hide(); 
+			$("#particlomatic_button_show_info").show(); 
+			$(".particlomaticHelp").hide(); 	
 	});
 	
 	$("#particlomatic_button_reset").on("click", function(event) {
 		
 		event.preventDefault();
 		
-		show_particlomatic_info = true;
-			$("#quiz-form input").each(function(){
+		$("#quiz-form input").each(function(){
 			var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) /2 ;
 			$(this).val(mediumValue);
 			$(this).slider('refresh');
+			$('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');	
 		});
-	show_particlomatic_info = false;
+	
 		
-		$('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');		
+		
 	});
 });
 
