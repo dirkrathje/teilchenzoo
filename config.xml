@@ -38,4 +38,8 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />-->
     <access origin="http://127.0.0.1*" />
+		<feature name="debug-server" required="true">
+   <param name="domain" value="http://debug.build.phonegap.com"/>
+   <param name="key" value="qedqed"/>
+</feature>
 </widget>
