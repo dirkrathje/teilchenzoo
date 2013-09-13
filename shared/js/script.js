@@ -58,9 +58,7 @@ function getQuizModel(inputValues)  {
 		var propertiesLength = inputValues.length; 
 		var distance = 0; 
 		for (var j = 0; j < propertiesLength ; j++) {
-			
 			distance += Math.pow(inputValues[j]-particle.properties[j], 2);
-			//console.log(new Date() + i+ ":" + inputValues[j] + " - " + particle.properties[j]);
 		}		
 		distance = Math.sqrt(distance); 
 		bestMatches.push(distance);
@@ -266,10 +264,36 @@ $(document).on('pageinit', function(){
 			$(this).slider('refresh');
 			$('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');	
 		});
-	
-		
 		
 	});
+	
+	
+	$("#ecyclopedia_index a").on("click", function(event) {
+				event.preventDefault();
+	
+	
+		var contentFileName = "encyclopedia/" + $(this).attr("href").substr(1) + ".html";
+		$("#ecyclopedia_stage").load(contentFileName);
+			
+		var animationFileName = "animations/photon/photon_embedded.html";
+			//var animationFileName = "encyclopedia/photon.html";
+		$("#ecyclopedia_stage_animation").load(animationFileName);
+			
+	/*	$("#encylopedia_table a").on("click", function(event) {
+				event.preventDefault();
+	
+		var fileName = "encyclopedia/" + $(this).attr("href").substr(1) + ".html";
+		$("#ecyclopedia_stage").load(fileName);	*/
+
+		
+
+		
+	});
+	
+	
+	
+	
+	
 });
 
 
