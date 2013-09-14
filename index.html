@@ -398,10 +398,10 @@
 		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
 	</div><!-- /header -->
   
-  <div data-role="content"  class="content paintedWood" style="min-height: 1200px;">
+  <div data-role="content"  class="content" style="min-height: 1200px; background-color: black;	">
   
   <div class="row" style="width: 99%;">
-  
+  <!--
 <table class="video_teaser_table">
   <tr>
     <td><a href="#popupVideo" data-rel="popup"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive video_teaser_img" id="video_teaser_img_1"/></a></td>
@@ -422,18 +422,66 @@
     <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_7"/></td>
   </tr>
 </table>   
+-->
 
-
-
-<div id="video_stage">Loading the player...</div>
+ 
+<div id="video_stage" style="">Loading the player...</div>
 
 <script type="text/javascript">
     jwplayer("video_stage").setup({
-        file: "media/videos/video_1.mp4"
+			playlist: [{
+       image: "images/video_teasers/video_1.png",
+       file: "media/videos/video_1.mp4", 
+       title: "Was sind Teilchen?"
+    },
+		{
+       image: "images/video_teasers/video_2.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Einführung",
+				description: "Die Welt von Higgs, Quarks und Photonen"
+    },
+		{
+       image: "images/video_teasers/video_3.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Elektronen",
+				description: "Das Elektron und seine Verwandten"
+    },
+		{
+       image: "images/video_teasers/video_4.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Quarks",
+				description: "Up-Quark, Down-Quark und ihre Geschwister"
+    },
+			{
+       image: "images/video_teasers/video_5.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Kräfte",
+				description: "Photonen, Gluonen und andere Austauschteilchen"
+    },
+		{
+       image: "images/video_teasers/video_6.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Higgs",
+				description: "Higgs und das Rätsel der Masse"
+    },
+		{
+       image: "images/video_teasers/video_7.png",
+       file: "media/videos/video_1.mp4", 
+       	title: "Ausblick",
+				description: "Offenen Fragen und mögliche Antworten"
+    },
+	
+		],
+     height: 600,
+    listbar: {
+        position: 'right',
+        size: 300
+    },
+    width: "1024px"
     });
 </script>
 
- 
+
 </div>
  
  <!--
