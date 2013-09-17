@@ -120,7 +120,7 @@
 
 
 <div data-role="page" class="page" id="page-particlomatic">
-  <div data-role="header">
+  <div data-role="header"  data-position="fixed" >
     <h1>Teilch-o-mat</h1>
 	  <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
 		<a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
@@ -128,14 +128,41 @@
   
   <div data-role="content" class="content paintedWood" style="min-height: 1200px;">
  
-	<div class="row" style="width: 100%">
+	<div class="row" style="width: 99%; overflow: hidden;">
+  
+      <div class="col-md-6 " id="particlomatic_result">
+      
+ 				<div class="quiz-form-item" style="text-align: center;" id="particlomatic_result_control">
+            <a class="btn btn-success particlomatic_result_control_button btn-lg" href="#particlomatic_info" id="particlomatic_result_control_info">Info</a>
+            <a class="btn btn-info particlomatic_result_control_button btn-lg" href="#particlomatic_result_table" id="particlomatic_result_control_table"><i class="icon-white icon-align-left"></i>Tabelle</a> 
+            <a class="btn btn-info particlomatic_result_control_button btn-lg" href="#particlomatic_result_top3" id="particlomatic_result_control_top3">Top-3</a> 
+				</div>
+
+  <div class="particlomatic_result_pane paintedGray" id="particlomatic_info" style="padding-top: 0em;">
+    <h1 style="">Teilch-o-mat</h1>
+  <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
+  <p>Bist du eine Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
+  <p><img class="particle" src="images/particles/myon.png"><img class="particle" src="images/particles/down_quark.png"><img class="particle" src="images/particles/w_plus.png"><img class="particle" src="images/particles/gluon.png"><img class="particle" src="images/particles/photon.png"><img class="particle" src="images/particles/electron_neutrino.png"><img class="particle" src="images/particles/up_quark.png"><img class="particle" src="images/particles/higgs.png"><img class="particle" src="images/particles/electron.png"><img class="particle" src="images/particles/bottom_quark.png"></p>
+  	</div>
+  
+<!--  <div class="paintedGray" id="particlomatic_result_bestMatch"></div>-->
+  <div class="paintedGray clearfix particlomatic_result_pane" id="particlomatic_result_table">
+  	<div id="leptons"></div>
+    <div id="quarks"></div>
+    <div id="remaining"></div>
+	</div>
+  <div class="paintedGray particlomatic_result_pane" id="particlomatic_result_top3"></div>
+  
+</div>
+
       <div class="col-md-6" id="quiz-form-col">
           <form id="quiz-form">
             <div class="quiz-form-item" style="text-align: center;">
-            <a class="btn btn-info btn-sm" id="particlomatic_button_reset">Werte zurücksetzen</a>
-            <a class="btn btn-info btn-sm" id="particlomatic_button_show_info">Beschreibung einblenden</a> 
-            <a class="btn btn-info btn-sm" id="particlomatic_button_hide_info">Beschreibung ausblenden</a> 
-</div>            <div class="quiz-form-item">
+            <a class="btn btn-info btn-lg" id="particlomatic_button_reset">Löschen</a>
+            <a class="btn btn-info btn-lg" id="particlomatic_button_show_info">Beschreibung</a> 
+            <a class="btn btn-success btn-lg" id="particlomatic_button_hide_info">Beschreibung</a> 
+							</div>            
+            <div class="quiz-form-item">
               <table class="quiz-form-item-title">
                 <tr>
                   <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
@@ -324,7 +351,7 @@
               </div>
               <!-- /grid-b -->
 							  <div class="particlomaticHelp">
-	              <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
+	              <p>Bis auf die Gravitonen und Wimps wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
 	           </div>
             </div>
             <!--
@@ -341,37 +368,7 @@
           </form>
         <!-- /quiz-form --> 
       </div>
-      <div class="col-md-6 paintedGray" id="particlomatic_result">
-      
-      
-      <ul class="nav nav-tabs" id="particlomatic_result_tab">
-    			<li class="active"><a href="#particlomatic_info" data-toggle="tab">Info</a></li>
-			<li class=""><a href="#particlomatic_result_table" data-toggle="tab">Tabelle</a></li>
-				<li class=""><a href="#particlomatic_result_bestMatch" data-toggle="tab">BestMatch<sup>TM</sup></a></li>
-				<li class=""><a href="#particlomatic_result_top3" data-toggle="tab">Top-3</a></li>
-  		</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="particlomatic_info" style="padding-top: 1em;">
-    <h1>Teilch-o-mat</h1>
-  <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
-  <p>Bist du eine Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
-  <p><img class="particle" src="images/particles/myon.png"><img class="particle" src="images/particles/down_quark.png"><img class="particle" src="images/particles/w_plus.png"><img class="particle" src="images/particles/gluon.png"><img class="particle" src="images/particles/photon.png"><img class="particle" src="images/particles/electron_neutrino.png"><img class="particle" src="images/particles/up_quark.png"><img class="particle" src="images/particles/higgs.png"><img class="particle" src="images/particles/electron.png"><img class="particle" src="images/particles/bottom_quark.png"></p>
-  
-  
-  </div>
-  <div class="tab-pane" id="particlomatic_result_bestMatch"></div>
-  <div class="tab-pane" id="particlomatic_result_table">
-  	<div id="leptons"></div>
-    <div id="quarks"></div>
-    <div id="remaining"></div>
-	</div>
-  <div class="tab-pane" id="particlomatic_result_top3"></div>
-  
-</div>
-
         
-      </div>
       </div>
     </div>
     <!-- /content --> 
@@ -477,7 +474,7 @@
         position: 'right',
         size: 300
     },
-    width: "1024px"
+    width: "100%"
     });
 </script>
 

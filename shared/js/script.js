@@ -101,7 +101,7 @@ function getQuizView(model)  {
 		
 				tableView += "<tr>";
 //				tableView += "<td class='name'>" + particle.title_de + "</td>";
-				tableView += "<td class='particleThumbnail'><img src='images/particles/" + particle.name + ".png' alt=''/></td>";
+				tableView += "<td class='particleThumbnail'><img src='images/particles_cropped/" + particle.name + ".png' alt=''/></td>";
 				tableView += "<td class='value'><div class='resultBin' style='background-color: " + particle['rgb'] + "; width: " + normalizedValue + "%;'></td>";
 		
 		
@@ -138,12 +138,22 @@ function getQuizTop3View(quizModel) {
 	var result = ""; 
 	
 	result += "<table><tr>";
-	result += "<td style='width: 5%;'><h2>1.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[0].particle].title_de  + " <h2></td><td style='width: 30%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[0].particle].name + ".png'>" + "</td>";	
+	result += "<td style='width: 5%;'><h2>1.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[0].particle].title_de  + " <h2></td><td style='width: 20%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[0].particle].name + ".png'>" + "</td>";	
 	result += "</tr><tr>"; 
-		result += "<td><h2>2.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[1].particle].title_de  + " <h2></td><td style='width: 30%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[1].particle].name + ".png'>" + "</td>";	
+		result += "<td><h2>2.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[1].particle].title_de  + " <h2></td><td style='width: 20%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[1].particle].name + ".png'>" + "</td>";	
 	result += "</tr><tr>"; 
-		result += "<td><h2>3.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[2].particle].title_de  + " <h2></td><td style='width: 30%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[2].particle].name + ".png'>" + "</td>";	
+		result += "<td><h2>3.</h2></td><td style='width: 50%;'><h2>" + particles[quizModel.sortedResults[2].particle].title_de  + " <h2></td><td style='width: 20%;'>" +"<img style='width: 100%' src='images/particles/" + particles[quizModel.sortedResults[2].particle].name + ".png'>" + "</td>";	
 	result += "</tr></table>";
+	
+	result = "<div class='particlomatic_result_top3_rank'><h2>1. " + particles[quizModel.sortedResults[0].particle].title_de  + " </h2>";
+	result += "<div class='body'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>"; 
+	result += "<p class='particleDescription'>" + particles[quizModel.sortedResults[0].particle].description_de  + "</p></div></div>"; 
+	result += "<div class='particlomatic_result_top3_rank'><h2>2. " + particles[quizModel.sortedResults[1].particle].title_de  + " </h2>"; 
+	result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[1].particle].name + ".png'></div>"; 
+	result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[1].particle].description_de  + "</p></div></div>"; 
+	result += "<div class='particlomatic_result_top3_rank'><h2>3. " + particles[quizModel.sortedResults[2].particle].title_de  + " </h2>"; 
+	result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[2].particle].name + ".png'></div>"; 
+	result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[2].particle].description_de  + "</p></div></div>"; 
 	
 	/*
 	result += "<h2> 1. " + +  + "</h2>";
@@ -181,15 +191,21 @@ function updateQuiz(event) {
 	quizModel.particleToBeShown  = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1];
 	$("#particlomatic_result_table #remaining").html(getQuizView(quizModel)); 
 	
-	$("#particlomatic_result_bestMatch").html(getBestMatchView(quizModel)); 
+/*	$("#particlomatic_result_bestMatch").html(getBestMatchView(quizModel)); */
 	$("#particlomatic_result_top3").html(getQuizTop3View(quizModel)); 
 	
-		
+		$("#particlomatic_result_top3 h2").on("click", function() {
+		$(".body", $(this).parent().parent).hide(); 
+		$(".body", $(this).parent()).show(); 
+	});
+
+	
+	/*	
 	if (show_particlomatic_info) {
 			$('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');	
 	} else if ($('#particlomatic_result #particlomatic_info').hasClass("active")) {
 		$('#particlomatic_result_tab a[href="#particlomatic_result_table"]').tab('show');	
-	}
+	}*/
 	
 	
 }
@@ -217,7 +233,7 @@ $(document).on('pageinit', function(){
 		$("#countdownNrOfDays").html(countdownDays);
 	}
 
-	$("#quiz-form input").on("change",  $.throttle(200, function(event, ui) {updateQuiz();}));
+	$("#quiz-form input").on("change",  $.throttle(400, function(event, ui) {updateQuiz();}));
 	show_particlomatic_info = true; 
 	updateQuiz(); 
 	show_particlomatic_info = false; 
@@ -236,6 +252,28 @@ $(document).on('pageinit', function(){
 			$("#particlomatic_button_show_info").show(); 
 			$(".particlomaticHelp").hide(); 	
 	});
+	
+	
+	$("#particlomatic_info").show(); 
+	$("#particlomatic_result_table").hide(); 
+	$("#particlomatic_result_top3").hide(); 
+	
+	
+	$(".particlomatic_result_control_button").on("click", function(){
+		
+		$(".particlomatic_result_control_button").removeClass("btn-success");
+		$(".particlomatic_result_control_button").addClass("btn-info");
+
+		$(this).removeClass("btn-info");
+		$(this).addClass("btn-success");
+		
+		$(".particlomatic_result_pane").hide(); 
+		var paneId = $(this).attr("href");
+		$(paneId).show(); 	
+		
+	});
+	
+	
 	
 	$("#particlomatic_button_reset").on("click", function(event) {
 		
@@ -259,7 +297,6 @@ $(document).on('pageinit', function(){
 		$("#ecyclopedia_stage").load(contentFileName);
 			
 		var animationFileName = "animations/photon/photon_embedded.html";
-			//var animationFileName = "encyclopedia/photon.html";
 		$("#ecyclopedia_stage_animation").load(animationFileName);
 			
 	/*	$("#encylopedia_table a").on("click", function(event) {
@@ -269,11 +306,13 @@ $(document).on('pageinit', function(){
 		$("#ecyclopedia_stage").load(fileName);	*/
 
 		
-
-		
 	});
 	
 	
+	//$("#particlomatic_result").scrollToFixed({marginTop: 0}); 
+	
+	
+
 	
 	
 	
@@ -329,10 +368,8 @@ var animateScroll = function(targetElement, speed){
 	var newBackgroundPosition  = newBackgroundPositionX + "px 0px";
 	
 
-	//console.log(targetElement.css('background-position') + " ---- " + newBackgroundPosition);
-	
 
-    $(targetElement).animate(
+  $(targetElement).animate(
 		{
     		backgroundPosition: newBackgroundPosition
 		},
@@ -390,53 +427,3 @@ function sortByKey(array, key) {
     });
 }	
 
-$( document ).on( "pageinit", function() {
-    $( ".popupVideo iframe" )
-        .attr( "width", 0 )
-        .attr( "height", 0 );
- 
-    $( ".popupVideo" ).on({
-        popupbeforeposition: function() {
-            var size = scale( 900, 500, 15, 1 ),
-                w = size.width,
-                h = size.height;
- 
-            $( ".popupVideo iframe" )
-                .attr( "width", w )
-                .attr( "height", h );
-        },
-        popupafterclose: function() {
-            $( ".popupVideo iframe" )
-                .attr( "width", 0 )
-                .attr( "height", 0 );
-        }
-    });
-});
-
-
-// jquery mobile popup scaling
-function scale( width, height, padding, border ) {
-    var scrWidth = $( window ).width() - 30,
-        scrHeight = $( window ).height() - 30,
-        ifrPadding = 2 * padding,
-        ifrBorder = 2 * border,
-        ifrWidth = width + ifrPadding + ifrBorder,
-        ifrHeight = height + ifrPadding + ifrBorder,
-        h, w;
- 
-    if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
-        w = ifrWidth;
-        h = ifrHeight;
-    } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
-        w = scrWidth;
-        h = ( scrWidth / ifrWidth ) * ifrHeight;
-    } else {
-        h = scrHeight;
-        w = ( scrHeight / ifrHeight ) * ifrWidth;
-    }
- 
-    return {
-        'width': w - ( ifrPadding + ifrBorder ),
-        'height': h - ( ifrPadding + ifrBorder )
-    };
-};
