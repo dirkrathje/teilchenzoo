@@ -194,18 +194,19 @@ function updateQuiz(event) {
 /*	$("#particlomatic_result_bestMatch").html(getBestMatchView(quizModel)); */
 	$("#particlomatic_result_top3").html(getQuizTop3View(quizModel)); 
 	
-		$("#particlomatic_result_top3 h2").on("click", function() {
+	$("#particlomatic_result_top3 h2").on("click", function() {
 		$(".body", $(this).parent().parent).hide(); 
 		$(".body", $(this).parent()).show(); 
 	});
 
+				
 	
-	/*	
+		
 	if (show_particlomatic_info) {
-			$('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');	
-	} else if ($('#particlomatic_result #particlomatic_info').hasClass("active")) {
-		$('#particlomatic_result_tab a[href="#particlomatic_result_table"]').tab('show');	
-	}*/
+			$('#particlomatic_result_control_info').trigger("click");
+	} else if ($('#particlomatic_result_control_info').hasClass("btn-success")) {
+		$('#particlomatic_result_control_table').trigger("click");
+	}
 	
 	
 }
