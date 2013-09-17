@@ -13,7 +13,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 6356, function(sym, e) {
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 6750, function(sym, e) {
          sym.play();
 
       });

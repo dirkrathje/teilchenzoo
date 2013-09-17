@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html><head>
+<base href="../">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Teilch-o-mat – Teilchenzoo</title>
+<script src="shared/lib/modernizr/modernizr.custom.js"></script>
+<script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
+<link rel="stylesheet" href="shared/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
+<link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+<link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
+
+<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+<script src="shared/lib/fastclick.js"></script>
+<script src="shared/js/script.js"></script>
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
+<![endif]-->
+<link rel="stylesheet/less" type="text/css" href="shared/css/styles.less" />
+<script src="shared/lib/less/less-1.4.1.min.js"></script>
+
+<script src="shared/lib/respond/respond.min.js"></script>
+</head> 
+<body class="website">
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+	initPageHome();
+});//]]>  
+</script>
+<div class="page" id="page-particlomatic">
+
+	<div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht besonders gut dargestellt. Es gibt viele kostenlose Alternativen.</div>
+	
+  <div id="header">
+	<div id="sitemenu"><ul><li id="sitemenu_home"><a href="../de">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="../teilch-o-mat">Teilch-o-mat</a></li><li id="sitemenu_news"><a href="../neuigkeiten">Neuigkeiten</a></li></ul></div>
+  </div>  
+  
+  
+  
+ <div data-role="content" class="content paintedWood" style="min-height: 1200px; overflow:hidden;">
+ 
+ 
+	<div class="row" style="width: 99%; overflow: hidden;">
+  
+      <div class="col-md-6 " id="particlomatic_result">
+      
+ 				<div class="quiz-form-item" style="text-align: center;" id="particlomatic_result_control">
+            <a class="btn btn-success particlomatic_result_control_button" href="#particlomatic_info" id="particlomatic_result_control_info">Info</a>
+            <a class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_table" id="particlomatic_result_control_table"><i class="icon-white icon-align-left"></i>Tabelle</a> 
+            <a class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_top3" id="particlomatic_result_control_top3">Top-3</a> 
+				</div>
+
+  <div class="particlomatic_result_pane clearfix paintedGray" id="particlomatic_info" style="padding-top: 0em;">
+    <h1 style="">Teilch-o-mat</h1>
+  <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
+  <p>Bist du eine Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
+  <p><img class="particle" src="images/particles/myon.png"><img class="particle" src="images/particles/down_quark.png"><img class="particle" src="images/particles/w_plus.png"><img class="particle" src="images/particles/gluon.png"><img class="particle" src="images/particles/photon.png"><img class="particle" src="images/particles/electron_neutrino.png"><img class="particle" src="images/particles/up_quark.png"><img class="particle" src="images/particles/higgs.png"><img class="particle" src="images/particles/electron.png"><img class="particle" src="images/particles/bottom_quark.png"></p>
+  	</div>
+  
+<!--  <div class="paintedGray" id="particlomatic_result_bestMatch"></div>-->
+  <div class="paintedGray clearfix particlomatic_result_pane" id="particlomatic_result_table">
+  	<div id="leptons"></div>
+    <div id="quarks"></div>
+    <div id="remaining"></div>
+	</div>
+  <div class="paintedGray particlomatic_result_pane clearfix" id="particlomatic_result_top3"></div>
+  
+</div>
+
+      <div class="col-md-6" id="quiz-form-col" style="overflow:hidden;">
+          <form id="quiz-form">
+            <div class="quiz-form-item" style="text-align: center;">
+            <a class="btn btn-info" id="particlomatic_button_reset">Löschen</a>
+            <a class="btn btn-info" id="particlomatic_button_show_info">Beschreibung</a> 
+            <a class="btn btn-success" id="particlomatic_button_hide_info">Beschreibung</a> 
+							</div>            
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
+                </tr>
+              </table>	
+              <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">federleicht</div>
+                <div class="ui-block-b" style="text-align:center;">normal</div>
+                <div class="ui-block-c" style="text-align:right;">superschwer</div>
+              </div>
+              <!-- /grid-b -->
+              
+								<div class="particlomaticHelp">
+                    <p>Wie wir Menschen sind auch Elementarteilchen verschieden schwer. Die Bandbreite ist dabei gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos. </p>
+<!--                   	<p><strong>Für Alleswissenwoller</strong>: Um das breite Massenspektrum abzudecken, müssen wir ein bisschen tricksen: $$100\times\sqrt{1-(m/m_{top}-1)^2}$$</p>
+    -->         
+              </div>
+              
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du eher<br> pessimistisch oder optimistisch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
+              <div class="ui-grid-b slide-description">
+                <div class="ui-block-a" style="text-align:left;">pessimistisch<br>(negativ)</div>
+                <div class="ui-block-b" style="text-align:center;">gelassen<br>(neutral)</div>
+                <div class="ui-block-c" style="text-align:right;">optimistisch<br>(positiv)</div>
+              </div>
+              <!-- /grid-b -->
+								<div class="particlomaticHelp">
+		              <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver unterwegs. Elemtarteilchen haben eine elektrische Ladung, die negativ oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen. </p>
+              </div>
+              
+              
+              
+             </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Mich wirft nichts aus der Bahn.</div>
+                <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+	                <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
+	           </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Hast du ein zerbrechliches Gemüt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! Bin superempfindlich.</div>
+              </div>
+							  <div class="particlomaticHelp">
+	              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradiesische Ewigkeit.</p>
+<!--              <p>Für Alleswissenwoller: Wert = -4*log_{10}(Lebensdauer in Sekunden) [wenn endliche Lebensdauer, ansonsten 0]</p>
+	  -->         </div>
+              <!-- /grid-b --> 
+              
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Wechselst du zwischen verschiedenen Persönlichkeiten?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-oscillation" id="quiz-oscillation" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, mich gibt es nur einmal.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja! In mir schlummern viele Seelen.</div>
+              </div>
+              <!-- /grid-b -->
+ 							  <div class="particlomaticHelp">
+	             <p>Es gibt drei verschiedene Neutrino-Sorten: Elektron-, Myon- und Tauon-Neutrinos. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrino-Sorten erhalten daher 100 Punkte, der Rest bekommt nix.</p>
+	           </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du ein Gruppenmensch?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-confined" id="quiz-confined" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich bin Einzelgänger und lieber alleine.</div>
+                <div class="ui-block-b" style="text-align:right;">Ohne Freunde oder Familie geht gar nichts.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+	              <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenwesenwert der Quarks ist daher 100, der der restlichen Teilchen liegt bei Null.</p>
+	           </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du schüchtern?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich stehe gern im Rampenlicht!</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein schüchternes Mauerblümchen.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+	              <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkennen gegeben. Das Elektron kennt man seit 1897, das Higgs-Teilchen wurde erst im Jahr 2013 nachgewiesen. Je später sich ein Teilchen zu erkennen gegeben hat, umso mehr Punkte bekommt es.</p>
+<!--              		<p>Für Alleswissenwoller: Wert = (Entdeckungsjahr - 1897) / (2013-1897)*100/2 für entdeckte Teilchen, 100 für Graviton und WIMP.</p>
+	  -->         </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Bist du kommunikativ?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-communicativeness" id="quiz-communicativeness" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Nein, ich rede nicht gerne.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich unterhalte gerne.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+		              <p>In der modernen Physik werden Kräfte zwischen Teilchen durch den Austausch von Teilchen beschrieben. Über diese Teilchen können andere Teilchen quasi kommunizieren: Die Wechselwirkungsteilchen bekommen hier daher 100 Punkte, der Rest geht leer aus. Im »Teilchenzoo« sind diese Teilchen an offenen Mündern zu erkennen.</p>
+	           </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Schaust du gern in Spiegel?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-parityviolating" id="quiz-parityviolating" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Spiegel bringen mir nichts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+	              <p>Prozesse, an denen die W- und das Z-Teilchen beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Das hat lange für Aufregung gesorgt, weil man dachte, dass das eigentlich nicht sein kann. Daher 100 Punkte an W-minus, W-plus und Z-null.</p>
+	           </div>
+            </div>
+            <div class="quiz-form-item">
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
+                  <td class="quiz-form-item-title-middle-td"><h2>Lebst du in einer Traumwelt?</h2></td>
+                  <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
+                </tr>
+              </table>
+              <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
+              <div class="ui-grid-a slide-description">
+                <div class="ui-block-a" style="text-align:left;">Ich träume allerhöchstens nachts.</div>
+                <div class="ui-block-b" style="text-align:right;">Ich tauche gerne in die Fantasie ab.</div>
+              </div>
+              <!-- /grid-b -->
+							  <div class="particlomaticHelp">
+	              <p>Bis auf die Gravitonen und Wimps wurden alle Teilchen nachgewiesen. Daher bekommen die beiden hundert Punkte, der Rest keine.</p>
+	           </div>
+            </div>
+            <!--
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a">
+                  <button type="submit" data-theme="d">Cancel</button>
+                </div>
+                <div class="ui-block-b">
+                  <button type="submit" data-theme="a">Submit</button>
+                </div>
+              </fieldset>
+              -->
+            
+          </form>
+        <!-- /quiz-form --> 
+      </div>
+        
+      </div>
+    </div>
+    <!-- /content --> 
+  
+  </div>
+  <!--
+	<div id="footer" class="clearfix">
+    
+		<h2>Ein Gemeinschaftsprojekt</h2>
+		<p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+		<p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+		<p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+		<p> <a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+  </div>-->
+</div>
+</body>
+</html>

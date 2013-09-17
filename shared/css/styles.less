@@ -18,12 +18,32 @@
 	width: 12%;
 	height: auto;
 }
+#quiz-form-col {
+	margin-top: 50px;
+}
 
 @media (min-width: @screen-medium-device) {
   .questions_teaser {
     width: 25%;
     height: auto;
   }
+	
+	#particlomatic_result {
+	position: fixed; 
+	left: 40px;
+	z-index: 0;
+	width: 45%;
+}
+
+#quiz-form-col {
+/*	height: 640px;
+	overflow: scroll;*/
+	float: right; 
+}
+#quiz-form-col {
+	margin-top: 0px;
+}
+
 
 }
 
@@ -38,32 +58,33 @@
 }
 	
 	
+	
 .page {
 	background: url(wood.jpg) left top repeat;
 }
 	
 
 .borderimage .paintedWood {
-	margin: 0px 0px;
+	margin: 0;
 	border-style: solid;
-	border-width: 50px 50px 50px 50px;
-	-moz-border-image: url(background-paint.png) 56 68 74 79 repeat;
-	-webkit-border-image: url(background-paint.png) 56 68 74 79 repeat;
-	-o-border-image: url(background-paint.png) 56 68 74 79 repeat;
-	border-image: url(background-paint.png) 56 68 74 79 fill repeat;
+	border-width: 50px;
+	-moz-border-image: url(background-paint.png) 50repeat;
+	-webkit-border-image: url(background-paint.png) 50 repeat;
+	-o-border-image: url(background-paint.png) 50 repeat;
+	border-image: url(background-paint.png) 50  fill repeat;
 }
 .borderimage .paintedGray {
 	border-style: solid;
-	border-width: 27px;
-	-moz-border-image: url(background-paint-box.png) 27 repeat;
-	-webkit-border-image: url(background-paint-box.png) 27 repeat;
-	-o-border-image: url(background-paint-box.png) 27 repeat;
-	border-image: url(background-paint-box.png) 27 27 27 27 fill repeat;	
+	border-width: 25px;
+	-moz-border-image: url(background-paint-box.png) 25 repeat;
+	-webkit-border-image: url(background-paint-box.png) 25 repeat;
+	-o-border-image: url(background-paint-box.png) 25 repeat;
+	border-image: url(background-paint-box.png) 25 25 25 25 fill repeat;	
 	margin: 0px;	
 }
 
 .no-borderimage .content {
-	padding: 25px;
+	padding: 20px;
 }
 
 .no-borderimage .paintedWood {
@@ -473,20 +494,6 @@ span.reg {
 
 
 
-#quiz-form-col {
-/*	height: 640px;
-	overflow: scroll;*/
-	float: right; 
-	
-}
-
-
-#particlomatic_result {
-	position: fixed; 
-	left: 40px;
-	z-index: 0;
-	width: 45%;
-}
 	
 #particlomatic_button_hide_info {
 
@@ -566,7 +573,6 @@ float: right;
 	padding: 0px;
 	padding-right: 10px;
 	width: 30px;
-	background-color: #FaFAFA;
 	vertical-align: middle;
 	height: 50px;
 }
@@ -575,7 +581,6 @@ float: right;
 }
 
 .quizResultTable td.value {
-		background-color: #FaFAFA;
 	vertical-align: middle;
 }
 
@@ -849,6 +854,7 @@ em {
 
 #page-particlomatic .content {
 	background-color: none;
+	padding-top: -0px;
 }
 
 #particlomatic_info .particle {
@@ -862,9 +868,9 @@ border: 1px solid rgb(0,166,235);
 
 }
 .ui-body-c .btn-info,
-	.ui-body-c .btn-success {
+.ui-body-c .btn-success {
 	color: #fff !important;
-		text-decoration: none;
+	text-decoration: none;
 }
 
 .ui-body-c .btn-info {
@@ -892,7 +898,6 @@ border-color: rgb(0,166,235);
 }
 
 #ecyclopedia_index {
-	
 	height: 100px;
 	overflow:scroll;
 	overflow-y:hidden;

@@ -1,7 +1,8 @@
 {
 
-	"pref__general__AutoKeyframePropertiesArmed":"false",
-	"viewStartY":"0",
+	"HTMLFileName":"down_quark.html",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
+	"viewStartMs":"6934.554841567",
 	"symbol_stage":{
 		"dummyStageParentWidth":"550px",
 		"dummyStageParentHeight":"400px",
@@ -46,7 +47,7 @@
 			"timelineColor3":"0x734a5f",
 			"animationEnabled":"false",
 			"timelineColor":"0xdb619d"},
-		"element_${_doqleftarm}":{
+		"element_${_Ellipse}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
 			"animationEnabled":"true",
@@ -56,21 +57,22 @@
 			"timelineColor3":"0x456a55",
 			"animationEnabled":"true",
 			"timelineColor":"0x50bd82"},
-		"element_${_Stage}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
-			"timelineColor":"0xeedf79"},
+		"element_${_RoundRectCopy}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
+			"animationEnabled":"false",
+			"timelineColor":"0xffd46d"},
 		"element_${_doqrightiris}":{
 			"timelineColor2":"0x107faa",
 			"timelineColor3":"0x295a6d",
 			"animationEnabled":"true",
 			"timelineColor":"0x008dc8"},
-		"element_${_doqleftpupil}":{
+		"hGuides":"311px",
+		"element_${_Ellipse2}":{
 			"timelineColor2":"0x168c84",
 			"timelineColor3":"0x2a605c",
 			"animationEnabled":"true",
 			"timelineColor":"0x00a096"},
-		"defaultStageParentWidth":"550px",
 		"element_${_doqmouth}":{
 			"timelineColor2":"0x326a96",
 			"timelineColor3":"0x385063",
@@ -87,18 +89,17 @@
 			"timelineColor3":"0x7e4b52",
 			"animationEnabled":"true",
 			"timelineColor":"0xfb657a"},
-		"element_${_Ellipse2}":{
+		"defaultStageParentWidth":"550px",
+		"element_${_doqleftpupil}":{
 			"timelineColor2":"0x168c84",
 			"timelineColor3":"0x2a605c",
 			"animationEnabled":"true",
 			"timelineColor":"0x00a096"},
-		"hGuides":"311px",
-		"element_${_RoundRectCopy}":{
-			"timelineColor2":"0xd8b467",
-			"timelineColor3":"0x81714f",
-			"animationEnabled":"false",
-			"timelineColor":"0xffd46d"},
-		"element_${_Ellipse}":{
+		"element_${_Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"timelineColor":"0xeedf79"},
+		"element_${_doqleftarm}":{
 			"timelineColor2":"0x81aa62",
 			"timelineColor3":"0x5b6c4d",
 			"animationEnabled":"true",
@@ -119,13 +120,13 @@
 \
    }}\
 }",
-	"StageZoomFactor":"100",
-	"pixelsPerMs":"0.044004868660223",
-	"SnapToGuides":"false",
-	"usedBOM":"false",
+	"viewStartY":"0",
+	"pixelsPerMs":"0.30083400767381",
+	"CompZoomFactor":"100",
 	"stage-Default Timeline_mark_ms":"-1",
+	"usedBOM":"false",
 	"nextElementColorIndex":"7",
-	"stage-Default Timeline_playhead_ms":"0",
+	"stage-Default Timeline_playhead_ms":"8250",
 	"pref__general__FilterNonAnimatedElements":"false",
-	"HTMLFileName":"down_quark.html",
-	"CompZoomFactor":"100"}
+	"SnapToGuides":"false",
+	"StageZoomFactor":"100"}

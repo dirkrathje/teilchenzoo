@@ -22,4 +22,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    })("stage");
    //Edge symbol end:'stage'
 
+   //=========================================================
+   
+   //Edge symbol: 'Symbol_1'
+   (function(symbolName) {   
+   
+   })("Symbol_1");
+   //Edge symbol end:'Symbol_1'
+
 })(jQuery, AdobeEdge, "EDGE-8981430");

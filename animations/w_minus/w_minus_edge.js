@@ -53,12 +53,6 @@ var symbols = {
                fill:["rgba(0,0,0,0)",im+"wminleftleg.png",'0px','0px']
             },
             {
-               id:'wminrightleg',
-               type:'image',
-               rect:['152px','268px','46px','59px','auto','auto'],
-               fill:["rgba(0,0,0,0)",im+"wminrightleg.png",'0px','0px']
-            },
-            {
                id:'wminsat',
                type:'image',
                rect:['107px','0px','58px','90px','auto','auto'],
@@ -81,6 +75,18 @@ var symbols = {
             borderRadius:["10px","10px","10px","10px"],
             fill:["rgba(218,0,27,1.00)"],
             stroke:[0,"rgba(0,0,0,1)","none"]
+         },
+         {
+            id:'wminfoot',
+            type:'image',
+            rect:['306px','332px','46px','18px','auto','auto'],
+            fill:["rgba(0,0,0,0)",im+"wminfoot.png",'0px','0px']
+         },
+         {
+            id:'wminleg',
+            type:'image',
+            rect:['306px','291px','46px','43px','auto','auto'],
+            fill:["rgba(0,0,0,0)",im+"wminleg.png",'0px','0px']
          }],
          symbolInstances: [
 
@@ -88,6 +94,16 @@ var symbols = {
       },
    states: {
       "Base State": {
+         "${_wminfoot}": [
+            ["style", "top", '332px'],
+            ["style", "-webkit-transform-origin", [0,0], {valueTemplate:'@@0@@% @@1@@%'} ],
+            ["style", "-moz-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-ms-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "msTransformOrigin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-o-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "left", '306px'],
+            ["transform", "rotateZ", '0deg']
+         ],
          "${_RoundRect}": [
             ["style", "top", '246px'],
             ["style", "height", '4px'],
@@ -107,14 +123,14 @@ var symbols = {
             ["style", "border-top-right-radius", [47,47], {valueTemplate:'@@0@@px @@1@@px'} ]
          ],
          "${_wminhead}": [
-            ["style", "height", '139px'],
             ["style", "top", '87px'],
+            ["style", "height", '139px'],
             ["style", "left", '0px'],
             ["style", "width", '255px']
          ],
          "${_wminleftleg}": [
-            ["style", "height", '59px'],
             ["style", "top", '268px'],
+            ["style", "height", '59px'],
             ["style", "left", '66px'],
             ["style", "width", '41px']
          ],
@@ -125,40 +141,32 @@ var symbols = {
             ["style", "left", '403px'],
             ["style", "width", '6px']
          ],
-         "${_wminbody}": [
-            ["style", "height", '73px'],
-            ["style", "top", '203px'],
-            ["style", "left", '0px'],
-            ["style", "width", '255px']
-         ],
-         "${_Stage}": [
-            ["color", "background-color", 'rgba(255,255,255,1)'],
-            ["style", "overflow", 'hidden'],
-            ["style", "height", '400px'],
-            ["style", "width", '550px']
+         "${_wminleg}": [
+            ["style", "left", '306px'],
+            ["style", "top", '291px']
          ],
          "${_wminsat}": [
-            ["style", "height", '90px'],
             ["style", "top", '0px'],
+            ["style", "height", '90px'],
             ["style", "left", '107px'],
             ["style", "width", '58px']
          ],
-         "${_wminrightleg}": [
-            ["style", "-webkit-transform-origin", [0,0], {valueTemplate:'@@0@@% @@1@@%'} ],
-            ["style", "-moz-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-ms-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "msTransformOrigin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-o-transform-origin", [0,0],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["transform", "rotateZ", '0deg'],
-            ["style", "height", '59px'],
-            ["style", "top", '268px'],
-            ["style", "left", '152px'],
-            ["style", "width", '46px']
+         "${_Stage}": [
+            ["color", "background-color", 'rgba(255,255,255,1)'],
+            ["style", "width", '550px'],
+            ["style", "height", '400px'],
+            ["style", "overflow", 'hidden']
          ],
          "${_Group}": [
-            ["style", "height", '327px'],
             ["style", "top", '23px'],
+            ["style", "height", '327px'],
             ["style", "left", '154px'],
+            ["style", "width", '255px']
+         ],
+         "${_wminbody}": [
+            ["style", "top", '203px'],
+            ["style", "height", '73px'],
+            ["style", "left", '0px'],
             ["style", "width", '255px']
          ]
       }
@@ -172,28 +180,34 @@ var symbols = {
          timeline: [
             { id: "eid43", tween: [ "style", "${_RoundRect2}", "height", '74px', { fromValue: '63px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
             { id: "eid54", tween: [ "style", "${_RoundRect2}", "height", '63px', { fromValue: '74px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
-            { id: "eid76", tween: [ "style", "${_RoundRect2}", "top", '174px', { fromValue: '183px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
-            { id: "eid81", tween: [ "style", "${_RoundRect2}", "top", '183px', { fromValue: '174px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
+            { id: "eid77", tween: [ "style", "${_wminhead}", "top", '78px', { fromValue: '87px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
+            { id: "eid82", tween: [ "style", "${_wminhead}", "top", '87px', { fromValue: '78px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
             { id: "eid79", tween: [ "style", "${_RoundRect}", "top", '237px', { fromValue: '246px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
             { id: "eid84", tween: [ "style", "${_RoundRect}", "top", '246px', { fromValue: '237px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
             { id: "eid37", tween: [ "style", "${_RoundRectCopy}", "height", '18px', { fromValue: '4px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
             { id: "eid51", tween: [ "style", "${_RoundRectCopy}", "height", '4px', { fromValue: '18px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
-            { id: "eid89", tween: [ "transform", "${_wminrightleg}", "rotateZ", '-24deg', { fromValue: '0deg'}], position: 500, duration: 203, easing: "easeInOutBack" },
-            { id: "eid91", tween: [ "transform", "${_wminrightleg}", "rotateZ", '0deg', { fromValue: '-24deg'}], position: 703, duration: 98, easing: "easeInOutBack" },
-            { id: "eid120", tween: [ "transform", "${_wminrightleg}", "rotateZ", '-24deg', { fromValue: '0deg'}], position: 801, duration: 203, easing: "easeInOutBack" },
-            { id: "eid121", tween: [ "transform", "${_wminrightleg}", "rotateZ", '0deg', { fromValue: '-24deg'}], position: 1004, duration: 98, easing: "easeInOutBack" },
-            { id: "eid122", tween: [ "transform", "${_wminrightleg}", "rotateZ", '-24deg', { fromValue: '0deg'}], position: 1102, duration: 203, easing: "easeInOutBack" },
-            { id: "eid123", tween: [ "transform", "${_wminrightleg}", "rotateZ", '0deg', { fromValue: '-24deg'}], position: 1305, duration: 98, easing: "easeInOutBack" },
-            { id: "eid77", tween: [ "style", "${_wminhead}", "top", '78px', { fromValue: '87px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
-            { id: "eid82", tween: [ "style", "${_wminhead}", "top", '87px', { fromValue: '78px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
-            { id: "eid27", tween: [ "style", "${_wminbody}", "top", '207px', { fromValue: '203px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
-            { id: "eid53", tween: [ "style", "${_wminbody}", "top", '203px', { fromValue: '207px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
+            { id: "eid134", tween: [ "style", "${_wminfoot}", "-webkit-transform-origin", [0,0], { valueTemplate: '@@0@@% @@1@@%', fromValue: [0,0]}], position: 398, duration: 0 },
+            { id: "eid141", tween: [ "style", "${_wminfoot}", "-moz-transform-origin", [0,0], { valueTemplate: '@@0@@% @@1@@%', fromValue: [0,0]}], position: 398, duration: 0 },
+            { id: "eid142", tween: [ "style", "${_wminfoot}", "-ms-transform-origin", [0,0], { valueTemplate: '@@0@@% @@1@@%', fromValue: [0,0]}], position: 398, duration: 0 },
+            { id: "eid143", tween: [ "style", "${_wminfoot}", "msTransformOrigin", [0,0], { valueTemplate: '@@0@@% @@1@@%', fromValue: [0,0]}], position: 398, duration: 0 },
+            { id: "eid144", tween: [ "style", "${_wminfoot}", "-o-transform-origin", [0,0], { valueTemplate: '@@0@@% @@1@@%', fromValue: [0,0]}], position: 398, duration: 0 },
             { id: "eid36", tween: [ "style", "${_RoundRect}", "height", '18px', { fromValue: '4px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
             { id: "eid52", tween: [ "style", "${_RoundRect}", "height", '4px', { fromValue: '18px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
+            { id: "eid75", tween: [ "style", "${_wminsat}", "top", '-9px', { fromValue: '0px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
+            { id: "eid80", tween: [ "style", "${_wminsat}", "top", '0px', { fromValue: '-9px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
             { id: "eid78", tween: [ "style", "${_RoundRectCopy}", "top", '226px', { fromValue: '235px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
             { id: "eid83", tween: [ "style", "${_RoundRectCopy}", "top", '235px', { fromValue: '226px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
-            { id: "eid75", tween: [ "style", "${_wminsat}", "top", '-9px', { fromValue: '0px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
-            { id: "eid80", tween: [ "style", "${_wminsat}", "top", '0px', { fromValue: '-9px'}], position: 2579, duration: 671, easing: "easeInOutBack" }         ]
+            { id: "eid132", tween: [ "transform", "${_wminfoot}", "rotateZ", '0deg', { fromValue: '0deg'}], position: 0, duration: 0 },
+            { id: "eid135", tween: [ "transform", "${_wminfoot}", "rotateZ", '-26deg', { fromValue: '0deg'}], position: 250, duration: 148 },
+            { id: "eid136", tween: [ "transform", "${_wminfoot}", "rotateZ", '0deg', { fromValue: '-26deg'}], position: 398, duration: 153 },
+            { id: "eid137", tween: [ "transform", "${_wminfoot}", "rotateZ", '-26deg', { fromValue: '0deg'}], position: 551, duration: 148 },
+            { id: "eid138", tween: [ "transform", "${_wminfoot}", "rotateZ", '0deg', { fromValue: '-26deg'}], position: 699, duration: 153 },
+            { id: "eid139", tween: [ "transform", "${_wminfoot}", "rotateZ", '-26deg', { fromValue: '0deg'}], position: 852, duration: 148 },
+            { id: "eid140", tween: [ "transform", "${_wminfoot}", "rotateZ", '0deg', { fromValue: '-26deg'}], position: 1000, duration: 153 },
+            { id: "eid27", tween: [ "style", "${_wminbody}", "top", '207px', { fromValue: '203px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
+            { id: "eid53", tween: [ "style", "${_wminbody}", "top", '203px', { fromValue: '207px'}], position: 2579, duration: 671, easing: "easeInOutBack" },
+            { id: "eid76", tween: [ "style", "${_RoundRect2}", "top", '174px', { fromValue: '183px'}], position: 1850, duration: 729, easing: "easeInOutBack" },
+            { id: "eid81", tween: [ "style", "${_RoundRect2}", "top", '183px', { fromValue: '174px'}], position: 2579, duration: 671, easing: "easeInOutBack" }         ]
       }
    }
 }
