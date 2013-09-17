@@ -93,6 +93,7 @@
 	padding: 25px;
 }
 .no-borderimage .paintedGray {
+	border: none;
 	margin: 15px;
 	padding: 25px;
 	background-color: #EEEEEE;
@@ -699,7 +700,8 @@ body .modal-dialog {
 .encyclopedia_teaser_img {
 	-webkit-box-shadow: 2px 2px 4px #666; 
 }
-.quiz-form-item {
+
+.borderimage .quiz-form-item {
 	
 /*	border: 1px solid lightgray;*/
 	border-style: solid;
@@ -708,8 +710,14 @@ body .modal-dialog {
 	-webkit-border-image: url(background-paint-box.png) 27 repeat;
 	-o-border-image: url(background-paint-box.png) 27 repeat;
 	border-image: url(background-paint-box.png) 27 27 27 27 fill repeat;	
-	
 }
+
+.no-borderimage .quiz-form-item {
+	padding: 27px;
+	background-color: #E0E0E0;
+}
+	
+
 
 #video_teaser_img_2,
 #video_teaser_img_4,

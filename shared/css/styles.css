@@ -11,10 +11,28 @@
   width: 12%;
   height: auto;
 }
+#quiz-form-col {
+  margin-top: 50px;
+}
 @media (min-width: 992px) {
   .questions_teaser {
     width: 25%;
     height: auto;
+  }
+  #particlomatic_result {
+    position: fixed;
+    left: 40px;
+    z-index: 0;
+    width: 45%;
+  }
+  #quiz-form-col {
+    /*	height: 640px;
+  	overflow: scroll;*/
+  
+    float: right;
+  }
+  #quiz-form-col {
+    margin-top: 0px;
   }
 }
 @media (min-width: 768px) {
@@ -31,25 +49,25 @@
     background: url(wood.jpg) left top repeat;
   }
   .borderimage .paintedWood {
-    margin: 0px 0px;
+    margin: 0;
     border-style: solid;
-    border-width: 50px 50px 50px 50px;
-    -moz-border-image: url(background-paint.png) 56 68 74 79 repeat;
-    -webkit-border-image: url(background-paint.png) 56 68 74 79 repeat;
-    -o-border-image: url(background-paint.png) 56 68 74 79 repeat;
-    border-image: url(background-paint.png) 56 68 74 79 fill repeat;
+    border-width: 50px;
+    -moz-border-image: url(background-paint.png) 50repeat;
+    -webkit-border-image: url(background-paint.png) 50 repeat;
+    -o-border-image: url(background-paint.png) 50 repeat;
+    border-image: url(background-paint.png) 50 fill repeat;
   }
   .borderimage .paintedGray {
     border-style: solid;
-    border-width: 27px;
-    -moz-border-image: url(background-paint-box.png) 27 repeat;
-    -webkit-border-image: url(background-paint-box.png) 27 repeat;
-    -o-border-image: url(background-paint-box.png) 27 repeat;
-    border-image: url(background-paint-box.png) 27 27 27 27 fill repeat;
+    border-width: 25px;
+    -moz-border-image: url(background-paint-box.png) 25 repeat;
+    -webkit-border-image: url(background-paint-box.png) 25 repeat;
+    -o-border-image: url(background-paint-box.png) 25 repeat;
+    border-image: url(background-paint-box.png) 25 25 25 25 fill repeat;
     margin: 0px;
   }
   .no-borderimage .content {
-    padding: 25px;
+    padding: 20px;
   }
   .no-borderimage .paintedWood {
     background-color: white;
@@ -57,6 +75,7 @@
     padding: 25px;
   }
   .no-borderimage .paintedGray {
+    border: none;
     margin: 15px;
     padding: 25px;
     background-color: #EEEEEE;
@@ -97,7 +116,7 @@
 }
 #sitemenu li a {
   display: inline;
-  padding: 0px 15px;
+  margin: 0px 15px;
 }
 #sitemenu li:after {
   content: '|';
@@ -380,10 +399,14 @@ span.reg {
 .answer {
   color: black;
 }
-.quiz-form-item {
-  margin-bottom: 60px;
+#particlomatic_result_bestMatch p {
+  font-size: 100%;
 }
-#quiz-form-panel h2 {
+.quiz-form-item {
+  padding: 0px 0px;
+  margin-bottom: 10px;
+}
+.quiz-form-item h2 {
   font-size: 120%;
   line-height: 1em;
   margin: 0px;
@@ -412,7 +435,7 @@ span.reg {
   float: right;
 }
 #test_result_2d {
-  width: 200px;
+  width: 160px;
   background-color: white;
 }
 .resultBin {
@@ -428,13 +451,25 @@ span.reg {
   float: right;
   margin-left: 20px;
 }
-td.particelThumbnail {
+.quizResultTable tr {
+  margin-bottom: 40px;
+  border-bottom: 5px solid #EEEEEE;
+}
+.quizResultTable td.particleThumbnail {
   text-align: right;
   font-size: 80%;
   line-height: 1em;
   padding: 0px;
   padding-right: 10px;
+  width: 30px;
+  vertical-align: middle;
+  height: 50px;
+}
+.quizResultTable td.particleThumbnail img {
   width: 50px;
+}
+.quizResultTable td.value {
+  vertical-align: middle;
 }
 #particle_teaser_table img {
   width: 100%;
@@ -443,22 +478,24 @@ td.particelThumbnail {
 #particle_teaser_table td {
   width: 25%;
 }
-.quizResultTable img {
-  width: 30px;
-}
 #quizTeaser .quizResultTable {
   width: 100%;
 }
-#quiz-2d-graph .quizResultTable {
-  width: 30%;
+#particlomatic_result_table .quizResultTable {
+  width: 100%;
+  margin-top: 20px;
+}
+#particlomatic_result_table div {
   float: left;
+  width: 33%;
 }
 ol {
   list-style: decimal;
 }
 .rank1_img {
   float: right;
-  width: 50%;
+  width: 40%;
+  margin: 0px;
 }
 #page_news h3 {
   padding: 0px;
@@ -509,17 +546,53 @@ body .modal-dialog {
   margin-left: auto;
   margin-right: auto;
 }
+.video_teaser_table {
+  width: 91%;
+  margin: auto;
+}
+.video_teaser_table td,
 .encylopedia_table td {
   margin: 0px;
   line-height: 0px;
   padding: 5px;
   width: 10%;
 }
+.video_teaser_table tr,
 .encylopedia_table tr {
   margin: 0px;
 }
+.video_teaser_img,
 .encyclopedia_teaser_img {
-  -webkit-box-shadow: 3px 3px 3px #333;
+  -webkit-box-shadow: 2px 2px 4px #666;
+}
+.borderimage .quiz-form-item {
+  /*	border: 1px solid lightgray;*/
+
+  border-style: solid;
+  border-width: 27px;
+  -moz-border-image: url(background-paint-box.png) 27 repeat;
+  -webkit-border-image: url(background-paint-box.png) 27 repeat;
+  -o-border-image: url(background-paint-box.png) 27 repeat;
+  border-image: url(background-paint-box.png) 27 27 27 27 fill repeat;
+}
+.no-borderimage .quiz-form-item {
+  padding: 27px;
+  background-color: #E0E0E0;
+}
+#video_teaser_img_2,
+#video_teaser_img_4,
+#video_teaser_img_5,
+#video_teaser_img_7,
+#video_teaser_img_8 {
+  -webkit-transform: rotate(-0.5deg);
+}
+#video_teaser_img_1,
+#video_teaser_img_3,
+#video_teaser_img_6 {
+  -webkit-transform: rotate(0.5deg);
+}
+#video_teaser_img_7 {
+  -webkit-transform: rotate(1deg);
 }
 #electron_encyclopedia_teaser_img,
 #myon_encyclopedia_teaser_img,
@@ -568,3 +641,115 @@ body .modal-dialog {
 	background: none;
 }
 */
+.ui-body-c .ui-link:visited,
+.ui-body-c .ui-link:hover,
+.ui-body-c .ui-link:active,
+.ui-body-c .ui-link {
+  color: black;
+}
+.panel {
+  border: none;
+  background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.panel-default > .panel-heading {
+  border: none;
+}
+.ui-body-c .ui-link {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.panel-body,
+.panel-heading {
+  padding: 0;
+}
+.panel-heading {
+  padding-bottom: 1em;
+}
+.home_icon {
+  float: right;
+  width: 20%;
+  background-color: #FAFAFA;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+#particlomatic_info_toggle {
+  text-decoration: underline;
+}
+.particlomaticHelp {
+  display: none;
+}
+.website a {
+  color: black;
+  border-bottom: 1px dotted gray;
+}
+#page_home #sitemenu_home {
+  font-weight: bold;
+}
+#page_news #sitemenu_news {
+  font-weight: bold;
+}
+.nav-tabs a {
+  text-decoration: none !important;
+}
+em {
+  font-style: italic;
+}
+#page-particlomatic .content {
+  background-color: none;
+  padding-top: 0px;
+}
+#particlomatic_info .particle {
+  width: 20%;
+}
+.ui-slider-handle {
+  background: #00a6eb;
+  border: 1px solid #00a6eb;
+}
+.ui-body-c .btn-info,
+.ui-body-c .btn-success {
+  color: #fff !important;
+  text-decoration: none;
+}
+.ui-body-c .btn-info {
+  background-color: #00a6eb;
+  border-color: #00a6eb;
+}
+#particlomatic_result_top3 h2 {
+  cursor: pointer;
+}
+.particlomatic_result_top3_img {
+  float: right;
+  width: 20%;
+}
+.particleDescription {
+  font-size: 90%;
+}
+#page-content .encyclopedia_teaser_img {
+  width: 85px;
+  margin-right: 20px;
+}
+#ecyclopedia_index {
+  height: 100px;
+  overflow: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 99%;
+  margin-bottom: 30px;
+}
+#ecyclopedia_stage h1 {
+  font-size: 3em;
+}
+#ecyclopedia_stage h2 {
+  font-size: 1.5em;
+}
+a[href="#page-options"] {
+  display: none !important;
+}
+#page-videos.page {
+  background: none;
+}
+#page-videos .ui-content {
+  padding: 0px;
+}
