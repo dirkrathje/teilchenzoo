@@ -1,6 +1,3 @@
-#sitemenu_particlomatic {
-  display: none;
-}
 #ielte7_message {
   display: none;
 }
@@ -514,9 +511,6 @@ ol {
 .dtml {
   display: none;
 }
-#sitemenu_particlomatic {
-  display: none !important;
-}
 .navigation_description {
   font-family: 'SansCulottesRegular';
   font-size: 2em;
@@ -684,11 +678,10 @@ body .modal-dialog {
   color: black;
   border-bottom: 1px dotted gray;
 }
-#page_home #sitemenu_home {
-  font-weight: bold;
-}
-#page_news #sitemenu_news {
-  font-weight: bold;
+#page_home #sitemenu_home a,
+#page_news #sitemenu_news a,
+#page_particlomatic #sitemenu_particlomatic a {
+	font-weight: bold; 
 }
 .nav-tabs a {
   text-decoration: none !important;

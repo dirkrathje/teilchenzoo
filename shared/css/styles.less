@@ -2,9 +2,6 @@
 @screen-tablet: 768px; 
 @screen-medium-device: 992px; 
 
-#sitemenu_particlomatic {
-	display: none; 
-}
 
 #ielte7_message {	
 	display: none; 
@@ -640,10 +637,6 @@ ol {
 .dtml {
 	display: none;
 }
-#sitemenu_particlomatic {
-  display: none !important;
-}
-
 
 
 
@@ -738,6 +731,17 @@ body .modal-dialog {
 	-webkit-transform:rotate(1deg);
 
 }
+
+#page-content .h2intro {
+	color: rgba(0,0,0,0.5); 
+	display: block;
+}
+#page-content .h2intro:after
+{
+  content: ':';
+}
+
+
 
 
 #electron_encyclopedia_teaser_img,
@@ -839,13 +843,11 @@ body .modal-dialog {
 	color: black;
 	border-bottom: 1px dotted gray;
 }
-#page_home #sitemenu_home {
+#page_home #sitemenu_home a,
+#page_news #sitemenu_news a,
+#page_particlomatic #sitemenu_particlomatic a {
 	font-weight: bold; 
 }
-#page_news #sitemenu_news {
-	font-weight: bold; 
-}
-
 
 .nav-tabs a {
 		text-decoration: none !important;
