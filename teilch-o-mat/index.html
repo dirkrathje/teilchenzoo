@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html><head>
-<base href="http://teilchenzoo.dirk-rathje.de">
+<base href="../">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>Teilch-o-mat – Teilchenzoo</title>
 <script src="shared/lib/modernizr/modernizr.custom.js"></script>
 <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+<script src="shared/lib/fastclick.js"></script>
 <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
 <script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
@@ -21,19 +22,19 @@
 
 <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
-<script src="shared/lib/fastclick.js"></script>
 <script src="shared/js/script.js"></script>
-<!--[if lte IE 8]>
-<![endif]-->
 <link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
+<!--[if lte IE 8]>
 <link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
+<![endif]-->
 
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
 <script type='text/javascript'>//<![CDATA[ 
-$(function(){
-	initPageHome();
+	var jwplayer;
+	$(function(){
+initPageParticlomatic();
 });//]]>  
 </script>
 <div class="page" id="page_particlomatic">
@@ -43,8 +44,6 @@ $(function(){
   <div id="header">
 	<div id="sitemenu"><ul><li id="sitemenu_home"><a href="../de">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="../teilch-o-mat">Teilch-o-mat</a></li><li id="sitemenu_news"><a href="../neuigkeiten">Neuigkeiten</a></li></ul></div>
   </div>  
-  
-  
   
  <div data-role="content" class="content paintedWood" style="min-height: 1200px; overflow:hidden;">
  
@@ -66,7 +65,6 @@ $(function(){
   <p><img class="particle" src="images/particles/myon.png" alt="Myon"><img class="particle" src="images/particles/down_quark.png"  alt="Down-Quark"><img class="particle" src="images/particles/w_plus.png"  alt="W-Plus"><img class="particle" src="images/particles/gluon.png"  alt="Gluon"><img class="particle" src="images/particles/photon.png"  alt="Photon"><img class="particle" src="images/particles/electron_neutrino.png"  alt="Elektron-Neutrino"><img class="particle" src="images/particles/up_quark.png"  alt="Up-Quark"><img class="particle" src="images/particles/higgs.png"  alt="Higgs-Teilchen"><img class="particle" src="images/particles/electron.png"  alt="Elektron"><img class="particle" src="images/particles/bottom_quark.png"  alt="Bottom-Quark"></p>
   	</div>
   
-<!--  <div class="paintedGray" id="particlomatic_result_bestMatch"></div>-->
   <div class="paintedGray clearfix particlomatic_result_pane" id="particlomatic_result_table">
   	<div id="leptons"></div>
     <div id="quarks"></div>
@@ -293,7 +291,6 @@ $(function(){
     </div>
     <!-- /content --> 
   
-  <!--
 	<div id="footer" class="clearfix">
     
 		<h2>Ein Gemeinschaftsprojekt</h2>
@@ -301,7 +298,7 @@ $(function(){
 		<p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
 		<p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
 		<p> <a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
-  </div>-->
+  </div>
 </div>
 </body>
 </html>

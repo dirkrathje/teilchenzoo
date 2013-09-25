@@ -12,15 +12,22 @@
   margin-top: 50px;
 }
 @media (min-width: 992px) {
+  iframe {
+    position: fixed;
+    top: 290px;
+    right: 0px;
+  }
   .questions_teaser {
     width: 25%;
     height: auto;
   }
   #particlomatic_result {
-    position: fixed;
-    left: 40px;
-    z-index: 0;
-    width: 45%;
+    /*
+  	position: fixed; 
+  	left: 40px;
+  	z-index: 0;
+  	width: 45%;*/
+  
   }
   #quiz-form-col {
     /*	height: 640px;
@@ -588,6 +595,13 @@ body .modal-dialog {
 #video_teaser_img_7 {
   -webkit-transform: rotate(1deg);
 }
+#page-content .h2intro {
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+#page-content .h2intro:after {
+  content: ':';
+}
 #electron_encyclopedia_teaser_img,
 #myon_encyclopedia_teaser_img,
 #tauon_encyclopedia_teaser_img,
@@ -681,7 +695,7 @@ body .modal-dialog {
 #page_home #sitemenu_home a,
 #page_news #sitemenu_news a,
 #page_particlomatic #sitemenu_particlomatic a {
-	font-weight: bold; 
+  font-weight: bold;
 }
 .nav-tabs a {
   text-decoration: none !important;

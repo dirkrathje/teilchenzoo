@@ -23,9 +23,7 @@
 @media (min-width: @screen-medium-device) {
 	
 	iframe {
-	position: fixed;
-	top: 290px;
-	right: 0px;
+	
 }
 
   .questions_teaser {
@@ -33,21 +31,17 @@
     height: auto;
   }
 	
-	#particlomatic_result {
-	position: fixed; 
-	left: 40px;
-	z-index: 0;
-	width: 45%;
-}
+/*	#particlomatic_result {
+	}
 
 #quiz-form-col {
-/*	height: 640px;
-	overflow: scroll;*/
+	height: 640px;
+	overflow: scroll;
 	float: right; 
 }
 #quiz-form-col {
 	margin-top: 0px;
-}
+}*/
 
 
 }
@@ -685,6 +679,12 @@ body .modal-dialog {
 	margin: auto;
 }
 
+.encylopedia_table {
+	position: absolute; 
+	top: 5px;
+	left: 25px;
+}
+
 .video_teaser_table td,
 .encylopedia_table td {
 	margin: 0px; 
@@ -694,7 +694,8 @@ body .modal-dialog {
 }
 .video_teaser_table tr,
 .encylopedia_table tr {
-	margin: 0px;}
+	margin: 0px;
+}
 
 
 .video_teaser_img, 
@@ -748,7 +749,6 @@ body .modal-dialog {
 {
   content: ':';
 }
-
 
 
 
@@ -910,12 +910,13 @@ border-color: rgb(0,166,235);
 
 
 
+#page-content .encyclopedia_teaser_img,
 #page-content .encyclopedia_teaser_img {
 		width: 85px;
 	margin-right: 20px;
 }
 
-#ecyclopedia_index {
+#encyclopedia_index {
 	height: 100px;
 	overflow:scroll;
 	overflow-y:hidden;
