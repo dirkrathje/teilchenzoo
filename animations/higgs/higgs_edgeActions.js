@@ -23,6 +23,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
       });
       //Edge binding end
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7608, function(sym, e) {
+         sym.play();
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 
@@ -41,5 +47,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    
    })("bubble");
    //Edge symbol end:'bubble'
+
+   //=========================================================
+   
+   //Edge symbol: 'higgsout'
+   (function(symbolName) {   
+   
+   })("higgsout");
+   //Edge symbol end:'higgsout'
 
 })(jQuery, AdobeEdge, "EDGE-4827471");

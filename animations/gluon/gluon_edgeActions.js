@@ -13,7 +13,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7757, function(sym, e) {
+      
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 17593, function(sym, e) {
          sym.play();
 
       });
@@ -21,5 +23,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'gluon'
+   (function(symbolName) {   
+   
+   })("gluon");
+   //Edge symbol end:'gluon'
 
 })(jQuery, AdobeEdge, "EDGE-9579015");

@@ -88,11 +88,11 @@
 	"viewStartMs":"6729.4542457767",
 	"pref__general__AutoKeyframePropertiesArmed":"false",
 	"SnapToGuides":"false",
-	"TransitionIdCounter":"574",
+	"TransitionIdCounter":"603",
 	"CompZoomFactor":"100",
 	"StageZoomFactor":"100",
 	"pixelsPerMs":"0.21906002229737",
-	"stage-Default Timeline_playhead_ms":"8555",
+	"stage-Default Timeline_playhead_ms":"8000",
 	"usedBOM":"false",
 	"nextElementColorIndex":"2",
 	"pref__general__GenerateSmoothTransitions":"true",
@@ -171,6 +171,7 @@
 		"element_${_Stage}":{
 			"timelineColor2":"0xcbbd71",
 			"timelineColor3":"0x7b7652",
+			"animationEnabled":"false",
 			"timelineColor":"0xeedf79"},
 		"element_${_upmouth}":{
 			"timelineColor2":"0x5a558a",

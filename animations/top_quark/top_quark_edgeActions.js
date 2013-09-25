@@ -13,14 +13,17 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 12648, function(sym, e) {
-         // Zeitleiste von der angegebenen Position abspielen (ms oder Beschriftung)
-         sym.play(1828);
-
-      });
-      //Edge binding end
+      
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'top_quark'
+   (function(symbolName) {   
+   
+   })("top_quark");
+   //Edge symbol end:'top_quark'
 
 })(jQuery, AdobeEdge, "EDGE-217813");

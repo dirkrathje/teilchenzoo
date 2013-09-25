@@ -69,8 +69,8 @@
 			"animationEnabled":"true",
 			"timelineColor":"0x50bd82"}},
 	"pref__general__FilterNonAnimatedElements":"false",
-	"viewStartMs":"8545.3596833114",
-	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"viewStartMs":"36313.19140625",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
 	"symbol_stage":{
 		"dummyStageParentWidth":"420px",
 		"dummyStageParentHeight":"305px",
@@ -119,11 +119,11 @@
 			"timelineColor3":"0x2a605c",
 			"animationEnabled":"false",
 			"timelineColor":"0x00a096"},
-		"element_${_Stage}":{
-			"timelineColor2":"0xcbbd71",
-			"timelineColor3":"0x7b7652",
-			"animationEnabled":"false",
-			"timelineColor":"0xeedf79"},
+		"element_${_z_null}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"animationEnabled":"true",
+			"timelineColor":"0x2f73ad"},
 		"element_${_zbosbody}":{
 			"timelineColor2":"0xb099ce",
 			"timelineColor3":"0x70657c",
@@ -145,11 +145,11 @@
 			"timelineColor3":"0x2a6a61",
 			"animationEnabled":"false",
 			"timelineColor":"0x00bda4"},
-		"element_${_z_null}":{
-			"timelineColor2":"0x326a96",
-			"timelineColor3":"0x385063",
-			"animationEnabled":"true",
-			"timelineColor":"0x2f73ad"},
+		"element_${_Stage}":{
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"animationEnabled":"false",
+			"timelineColor":"0xeedf79"},
 		"element_${_ZBoson}":{
 			"timelineColor2":"0xd35d6e",
 			"timelineColor3":"0x7e4b52",
@@ -157,13 +157,13 @@
 			"timelineColor":"0xfb657a"}},
 	"TransitionIdCounter":"279",
 	"CompZoomFactor":"100",
-	"StageZoomFactor":"130",
-	"pixelsPerMs":"0.1820130487431",
-	"stage-Default Timeline_mark_ms":"-1",
 	"viewStartY":"0",
-	"usedBOM":"false",
+	"pixelsPerMs":"0.1820130487431",
+	"SnapToGuides":"false",
+	"stage-Default Timeline_playhead_ms":"37423",
+	"stage-Default Timeline_mark_ms":"-1",
 	"nextElementColorIndex":"13",
 	"pref__general__GenerateSmoothTransitions":"false",
 	"symbol_ZBoson":{},
-	"stage-Default Timeline_playhead_ms":"9168",
-	"SnapToGuides":"false"}
+	"StageZoomFactor":"130",
+	"usedBOM":"false"}

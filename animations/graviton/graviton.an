@@ -1,9 +1,13 @@
 {
 
-	"viewStartMs":"5194.5148290005",
-	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"HTMLFileName":"graviton.html",
 	"ModelData":"{\
 \"stage\": {\
+   \"timelines\": {\
+      \"Default Timeline\": {\
+      }\
+   }},\
+\"graviton\": {\
    \"timelines\": {\
       \"Default Timeline\": {\
       }\
@@ -17,57 +21,99 @@
 \
    }}\
 }",
-	"symbol_stage":{
-		"dummyStageParentWidth":"550px",
-		"element_${_grapupil}":{
-			"timelineColor2":"0x326a96",
-			"timelineColor3":"0x385063",
+	"symbol_graviton":{
+		"element_${_grairis}":{
+			"timelineColor2":"0x168c84",
+			"timelineColor3":"0x2a605c",
 			"animationEnabled":"true",
-			"timelineColor":"0x2f73ad"},
-		"dummyStageParentHeight":"400px",
+			"timelineColor":"0x00a096"},
+		"element_${_grabody2}":{
+			"timelineColor2":"0x4fa275",
+			"invisible":"false",
+			"timelineColor":"0x50bd82",
+			"animationEnabled":"true",
+			"timelineColor3":"0x456a55"},
 		"element_${_grabody1}":{
 			"timelineColor2":"0x81aa62",
 			"invisible":"false",
 			"timelineColor":"0x91c767",
 			"animationEnabled":"true",
 			"timelineColor3":"0x5b6c4d"},
-		"defaultStageParentHeight":"400px",
-		"element_${_grairis}":{
-			"timelineColor2":"0x168c84",
-			"timelineColor3":"0x2a605c",
-			"animationEnabled":"true",
-			"timelineColor":"0x00a096"},
-		"element_${_Ellipse}":{
-			"timelineColor2":"0x1095d2",
-			"timelineColor3":"0x29647e",
-			"animationEnabled":"true",
-			"timelineColor":"0x00a9fa"},
-		"defaultStageParentWidth":"550px",
 		"element_${_grabody3}":{
 			"timelineColor2":"0x1aa38f",
 			"invisible":"false",
 			"timelineColor":"0x00bda4",
 			"animationEnabled":"true",
 			"timelineColor3":"0x2a6a61"},
+		"element_${_grapupil}":{
+			"timelineColor2":"0x326a96",
+			"timelineColor3":"0x385063",
+			"animationEnabled":"true",
+			"timelineColor":"0x2f73ad"},
+		"element_${_Ellipse}":{
+			"timelineColor2":"0x1095d2",
+			"timelineColor3":"0x29647e",
+			"animationEnabled":"true",
+			"timelineColor":"0x00a9fa"}},
+	"pref__general__FilterNonAnimatedElements":"false",
+	"viewStartMs":"26703.30078125",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
+	"SnapToGuides":"false",
+	"TransitionIdCounter":"81",
+	"CompZoomFactor":"100",
+	"viewStartY":"0",
+	"pixelsPerMs":"0.2",
+	"stage-Default Timeline_mark_ms":"-1",
+	"nextElementColorIndex":"3",
+	"stage-Default Timeline_playhead_ms":"28413",
+	"usedBOM":"false",
+	"symbol_stage":{
+		"dummyStageParentWidth":"420px",
+		"element_${_grapupil}":{
+			"timelineColor2":"0xb099ce",
+			"timelineColor3":"0x70657c",
+			"animationEnabled":"false",
+			"timelineColor":"0xceaef4"},
+		"dummyStageParentHeight":"305px",
+		"element_${_grabody1}":{
+			"timelineColor2":"0xba5b89",
+			"timelineColor3":"0x734a5f",
+			"animationEnabled":"false",
+			"timelineColor":"0xdb619d"},
+		"element_${_Ellipse}":{
+			"timelineColor2":"0x5a558a",
+			"timelineColor3":"0x4a485e",
+			"animationEnabled":"false",
+			"timelineColor":"0x63599f"},
 		"element_${_Stage}":{
 			"timelineColor2":"0xcbbd71",
 			"timelineColor3":"0x7b7652",
 			"timelineColor":"0xeedf79"},
+		"defaultStageParentHeight":"305px",
+		"element_${_grairis}":{
+			"timelineColor2":"0xd35d6e",
+			"timelineColor3":"0x7e4b52",
+			"animationEnabled":"false",
+			"timelineColor":"0xfb657a"},
+		"element_${_grabody3}":{
+			"timelineColor2":"0xd8b467",
+			"timelineColor3":"0x81714f",
+			"animationEnabled":"false",
+			"timelineColor":"0xffd46d"},
+		"defaultStageParentWidth":"420px",
 		"element_${_grabody2}":{
-			"timelineColor2":"0x4fa275",
-			"invisible":"false",
-			"timelineColor":"0x50bd82",
+			"timelineColor2":"0xcbbd71",
+			"timelineColor3":"0x7b7652",
+			"animationEnabled":"false",
+			"timelineColor":"0xeedf79"},
+		"element_${_Rectangle}":{
+			"timelineColor2":"0x81aa62",
+			"timelineColor3":"0x5b6c4d",
+			"animationEnabled":"false",
+			"timelineColor":"0x91c767"},
+		"element_${_graviton}":{
+			"timelineColor2":"0x107faa",
+			"timelineColor3":"0x295a6d",
 			"animationEnabled":"true",
-			"timelineColor3":"0x456a55"}},
-	"TransitionIdCounter":"72",
-	"CompZoomFactor":"100",
-	"StageZoomFactor":"131",
-	"pixelsPerMs":"0.2",
-	"HTMLFileName":"graviton.html",
-	"stage-Default Timeline_mark_ms":"-1",
-	"usedBOM":"false",
-	"nextElementColorIndex":"8",
-	"stage-Default Timeline_playhead_ms":"7328",
-	"pref__general__FilterNonAnimatedElements":"false",
-	"SnapToGuides":"false",
-	"viewStartY":"0"}
+			"timelineColor":"0x008dc8"}},
+	"StageZoomFactor":"131"}

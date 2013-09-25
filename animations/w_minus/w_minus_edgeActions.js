@@ -15,6 +15,12 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
       
       
 
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 16978, function(sym, e) {
+         sym.play();
+
+      });
+      //Edge binding end
+
    })("stage");
    //Edge symbol end:'stage'
 

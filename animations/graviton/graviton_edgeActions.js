@@ -13,7 +13,11 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 7328, function(sym, e) {
+      
+
+      
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 28413, function(sym, e) {
          sym.play();
 
       });
@@ -21,5 +25,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'graviton'
+   (function(symbolName) {   
+   
+   })("graviton");
+   //Edge symbol end:'graviton'
 
 })(jQuery, AdobeEdge, "EDGE-12814302");

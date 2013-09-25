@@ -13,7 +13,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 6370, function(sym, e) {
+      
+
+      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 26034, function(sym, e) {
          sym.play();
 
       });
@@ -21,5 +23,13 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'strange_quark'
+   (function(symbolName) {   
+   
+   })("strange_quark");
+   //Edge symbol end:'strange_quark'
 
 })(jQuery, AdobeEdge, "EDGE-22654658");

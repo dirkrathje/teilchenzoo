@@ -13,13 +13,17 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 11632, function(sym, e) {
-         sym.play();
-
-      });
-      //Edge binding end
+      
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'taun_neutrino'
+   (function(symbolName) {   
+   
+   })("taun_neutrino");
+   //Edge symbol end:'taun_neutrino'
 
 })(jQuery, AdobeEdge, "EDGE-6428867");
