@@ -89,25 +89,27 @@
 \
    }}\
 }",
+	"Symbol_1-Default Timeline_playhead_ms":"0",
 	"pref__general__FilterNonAnimatedElements":"false",
-	"viewStartMs":"185",
-	"pref__general__AutoKeyframePropertiesArmed":"false",
+	"viewStartMs":"-25",
+	"pref__general__AutoKeyframePropertiesArmed":"true",
 	"SnapToGuides":"false",
-	"TransitionIdCounter":"402",
+	"TransitionIdCounter":"414",
 	"CompZoomFactor":"100",
 	"viewStartY":"0",
 	"pixelsPerMs":"0.2",
 	"usedBOM":"false",
 	"nextElementColorIndex":"4",
-	"stage-Default Timeline_playhead_ms":"2301",
+	"stage-Default Timeline_playhead_ms":"0",
 	"stage-Default Timeline_mark_ms":"-1",
 	"StageZoomFactor":"151",
 	"symbol_stage":{
 		"element_${_Symbol_1}":{
 			"timelineColor2":"0xcbbd71",
 			"timelineColor3":"0x7b7652",
-			"animationEnabled":"true",
-			"timelineColor":"0xeedf79"},
+			"timelineColor":"0xeedf79",
+			"timelineTreeOpened":"true",
+			"animationEnabled":"true"},
 		"dummyStageParentWidth":"550px",
 		"element_${_Myonpiksi}":{
 			"timelineColor2":"0xcbbd71",
