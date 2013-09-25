@@ -407,12 +407,12 @@ $(document).on('pageinit', function () {
         });
     });
 /*
-    $("#ecyclopedia_stage").load("encyclopedia/overview.html", function () {
-        $("#ecyclopedia_stage a").on("click", function (event) {
+    $("#encyclopedia_stage").load("encyclopedia/overview.html", function () {
+        $("#encyclopedia_stage a").on("click", function (event) {
 
             var contentFileName = "encyclopedia/" + $(this).attr("href").substr(1) + ".html";
             event.preventDefault();
-            $("#ecyclopedia_stage").load(contentFileName);
+            $("#encyclopedia_stage").load(contentFileName);
         });
     });*/
     $(".encyclopedia_link_detail").hide();
@@ -429,9 +429,9 @@ $(document).on('pageinit', function () {
         }
         var contentFileName = "encyclopedia/" + target + ".html";
         event.preventDefault();
-        $("#ecyclopedia_stage").load(contentFileName, function () {
+        $("#encyclopedia_stage").load(contentFileName, function () {
             console.log("2");
-            $("#ecyclopedia_stage a").on("click", function (event) {
+            $("#encyclopedia_stage a").on("click", function (event) {
 
                 var target2 = $(this).attr("href").substr(1);
                 if (target2 === "overview") {
@@ -443,7 +443,7 @@ $(document).on('pageinit', function () {
                 }
                 var contentFileName2 = "encyclopedia/" + target2 + ".html";
                 event.preventDefault();
-                $("#ecyclopedia_stage").load(contentFileName2);
+                $("#encyclopedia_stage").load(contentFileName2);
             });
         });
     });
@@ -494,10 +494,10 @@ $(document).on('pageinit', function () {
                     description: "Offenen Fragen und mögliche Antworten"
                 }*/
             ],
-            height: 600,
+            height: 688,
             listbar: {
                 position: 'right',
-                size: 300
+                size: 200
             },
             width: "100%"
         });
