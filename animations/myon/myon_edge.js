@@ -59,8 +59,7 @@ var symbols = {
             { id: "eid394", tween: [ "transform", "${_Symbol_1}", "scaleX", '1.34051', { fromValue: '1.34051'}], position: 2301, duration: 0 },
             { id: "eid396", tween: [ "style", "${_Symbol_1}", "left", '145px', { fromValue: '145px'}], position: 2301, duration: 0 },
             { id: "eid401", tween: [ "style", "${_Symbol_1}", "top", '45px', { fromValue: '45px'}], position: 2301, duration: 0 },
-            { id: "eid395", tween: [ "transform", "${_Symbol_1}", "scaleY", '1.34051', { fromValue: '1.34051'}], position: 2301, duration: 0 },
-            { id: "eid406", trigger: [ function executeSymbolFunction(e, data) { this._executeSymbolAction(e, data); }, ['play', '${_Symbol_1}', [] ], ""], position: 2301 }         ]
+            { id: "eid395", tween: [ "transform", "${_Symbol_1}", "scaleY", '1.34051', { fromValue: '1.34051'}], position: 2301, duration: 0 }         ]
       }
    }
 },
@@ -74,6 +73,12 @@ var symbols = {
    resizeInstances: false,
    content: {
    dom: [
+   {
+      id: 'Myrightleg',
+      type: 'image',
+      rect: ['142px','204px','60px','58px','auto','auto'],
+      fill: ['rgba(0,0,0,0)','images/Myrightleg.png','0px','0px']
+   },
    {
       id: 'Myleftleg',
       type: 'image',
@@ -93,10 +98,10 @@ var symbols = {
       fill: ['rgba(0,0,0,0)','images/Myonpiksi.png','0px','0px']
    },
    {
-      transform: [[0,0],[],[],['0.83256']],
-      id: 'MyonpiksiCopy9',
-      type: 'image',
       rect: ['-3px','16px','268px','212px','auto','auto'],
+      id: 'MyonpiksiCopy9',
+      transform: [[],[],[],['0.83256']],
+      type: 'image',
       fill: ['rgba(0,0,0,0)','images/Myonpiksi.png','0px','0px']
    },
    {
@@ -118,12 +123,6 @@ var symbols = {
       fill: ['rgba(0,0,0,0)','images/myleftiris.png','0px','0px']
    },
    {
-      id: 'Myrightleg',
-      type: 'image',
-      rect: ['142px','204px','60px','58px','auto','auto'],
-      fill: ['rgba(0,0,0,0)','images/Myrightleg.png','0px','0px']
-   },
-   {
       id: 'myleftpupil',
       type: 'image',
       rect: ['160px','118px','6px','6px','auto','auto'],
@@ -136,36 +135,36 @@ var symbols = {
       fill: ['rgba(0,0,0,0)','images/myrightpupil.png','0px','0px']
    },
    {
-      transform: [[0,0],['28']],
-      borderRadius: ['10px','10px','55px 55px','57px 57px'],
       rect: ['100px','92px','45px','21px','auto','auto'],
+      borderRadius: ['10px','10px','55px 55px','57px 57px'],
+      transform: [[],['28']],
       id: 'RoundRect',
       stroke: [0,'rgb(0, 0, 0)','none'],
       type: 'rect',
       fill: ['rgba(8,82,158,1.00)']
    },
    {
-      transform: [[0,0],['28']],
-      borderRadius: ['10px','10px','57px 57px','55px 55px'],
       rect: ['140px','84px','26px','31px','auto','auto'],
+      borderRadius: ['10px','10px','57px 57px','55px 55px'],
+      transform: [[],['28']],
       id: 'RoundRectCopy2',
       stroke: [0,'rgb(0, 0, 0)','none'],
       type: 'rect',
       fill: ['rgba(8,82,158,1.00)']
    },
    {
-      transform: [[0,0],['65'],[],['0.56965']],
-      borderRadius: ['48px 48px','17px 17px','10px','10px'],
       rect: ['84px','132px','47px','26px','auto','auto'],
+      borderRadius: ['48px 48px','17px 17px','10px','10px'],
+      transform: [[],['65'],[],['0.56965']],
       id: 'RoundRectCopy',
       stroke: [0,'rgb(0, 0, 0)','none'],
       type: 'rect',
       fill: ['rgba(8,82,158,1.00)']
    },
    {
-      transform: [[0,0],['65'],[],['0.56965']],
-      borderRadius: ['48px 48px','17px 17px','10px','10px'],
       rect: ['147px','129px','47px','26px','auto','auto'],
+      borderRadius: ['48px 48px','17px 17px','10px','10px'],
+      transform: [[],['65'],[],['0.56965']],
       id: 'RoundRectCopy3',
       stroke: [0,'rgb(0, 0, 0)','none'],
       type: 'rect',
@@ -182,32 +181,26 @@ var symbols = {
    },
    states: {
       "Base State": {
-         "${_MyonpiksiCopy10}": [
-            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
-            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["transform", "rotateZ", '-10deg'],
-            ["transform", "scaleX", '0.83256'],
-            ["style", "opacity", '0'],
-            ["style", "left", '-3px'],
-            ["style", "top", '16px'],
-            ["transform", "skewY", '0deg'],
-            ["transform", "skewX", '1deg'],
-            ["transform", "scaleY", '1']
+         "${_RoundRect}": [
+            ["style", "top", '76px'],
+            ["style", "border-bottom-left-radius", [57,57], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["transform", "rotateZ", '28deg'],
+            ["style", "border-bottom-right-radius", [55,55], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["style", "height", '21px'],
+            ["color", "background-color", 'rgba(8,82,158,1.00)'],
+            ["style", "left", '101px'],
+            ["style", "width", '45px']
          ],
-         "${_mynose}": [
-            ["style", "left", '136px'],
-            ["style", "top", '151px']
-         ],
-         "${_Myrightleg}": [
-            ["style", "left", '142px'],
-            ["style", "top", '204px']
-         ],
-         "${_myleftiris}": [
-            ["style", "left", '108px'],
-            ["style", "top", '115px']
+         "${_RoundRectCopy3}": [
+            ["color", "background-color", 'rgba(8,82,158,1)'],
+            ["style", "border-top-left-radius", [48,48], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["transform", "rotateZ", '65deg'],
+            ["transform", "scaleX", '0.56965'],
+            ["style", "left", '148px'],
+            ["style", "width", '47px'],
+            ["style", "top", '139px'],
+            ["style", "height", '26px'],
+            ["style", "border-top-right-radius", [17,17], {valueTemplate:'@@0@@px @@1@@px'} ]
          ],
          "${_MyonpiksiCopy9}": [
             ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
@@ -224,24 +217,25 @@ var symbols = {
             ["transform", "skewX", '1deg'],
             ["transform", "scaleY", '1']
          ],
+         "${symbolSelector}": [
+            ["style", "height", '264px'],
+            ["style", "width", '260px']
+         ],
+         "${_Myonface}": [
+            ["style", "left", '65px'],
+            ["style", "top", '61px']
+         ],
+         "${_myleftiris}": [
+            ["style", "left", '108px'],
+            ["style", "top", '115px']
+         ],
+         "${_myrightiris}": [
+            ["style", "left", '155px'],
+            ["style", "top", '114px']
+         ],
          "${_Myleftleg}": [
             ["style", "left", '70px'],
             ["style", "top", '203px']
-         ],
-         "${_myleftpupil}": [
-            ["style", "left", '160px'],
-            ["style", "top", '118px']
-         ],
-         "${_RoundRectCopy3}": [
-            ["color", "background-color", 'rgba(8,82,158,1)'],
-            ["style", "border-top-left-radius", [48,48], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["transform", "rotateZ", '65deg'],
-            ["transform", "scaleX", '0.56965'],
-            ["style", "left", '148px'],
-            ["style", "width", '47px'],
-            ["style", "top", '139px'],
-            ["style", "height", '26px'],
-            ["style", "border-top-right-radius", [17,17], {valueTemplate:'@@0@@px @@1@@px'} ]
          ],
          "${_RoundRectCopy}": [
             ["color", "background-color", 'rgba(8,82,158,1.00)'],
@@ -254,15 +248,20 @@ var symbols = {
             ["style", "height", '26px'],
             ["style", "border-top-right-radius", [17,17], {valueTemplate:'@@0@@px @@1@@px'} ]
          ],
-         "${_RoundRect}": [
-            ["style", "top", '76px'],
-            ["style", "border-bottom-left-radius", [57,57], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["transform", "rotateZ", '28deg'],
-            ["style", "border-bottom-right-radius", [55,55], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["style", "height", '21px'],
-            ["color", "background-color", 'rgba(8,82,158,1.00)'],
-            ["style", "left", '101px'],
-            ["style", "width", '45px']
+         "${_MyonpiksiCopy10}": [
+            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
+            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["transform", "rotateZ", '-10deg'],
+            ["transform", "scaleX", '0.83256'],
+            ["style", "opacity", '0'],
+            ["style", "left", '-3px'],
+            ["style", "top", '16px'],
+            ["transform", "skewY", '0deg'],
+            ["transform", "skewX", '1deg'],
+            ["transform", "scaleY", '1']
          ],
          "${_RoundRectCopy2}": [
             ["style", "top", '68px'],
@@ -274,17 +273,17 @@ var symbols = {
             ["style", "left", '141px'],
             ["style", "width", '26px']
          ],
-         "${symbolSelector}": [
-            ["style", "height", '264px'],
-            ["style", "width", '260px']
+         "${_mynose}": [
+            ["style", "left", '136px'],
+            ["style", "top", '151px']
          ],
          "${_myrightpupil}": [
             ["style", "left", '112px'],
             ["style", "top", '119px']
          ],
-         "${_Myonface}": [
-            ["style", "left", '65px'],
-            ["style", "top", '61px']
+         "${_Myrightleg}": [
+            ["style", "left", '142px'],
+            ["style", "top", '204px']
          ],
          "${_Myonpiksi}": [
             ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
@@ -299,9 +298,9 @@ var symbols = {
             ["style", "left", '-3px'],
             ["style", "top", '16px']
          ],
-         "${_myrightiris}": [
-            ["style", "left", '155px'],
-            ["style", "top", '114px']
+         "${_myleftpupil}": [
+            ["style", "left", '160px'],
+            ["style", "top", '118px']
          ]
       }
    },
@@ -358,10 +357,10 @@ var symbols = {
             { id: "eid338", tween: [ "style", "${_RoundRect}", "left", '100px', { fromValue: '101px'}], position: 950, duration: 215, easing: "swing" },
             { id: "eid326", tween: [ "style", "${_RoundRect}", "left", '100px', { fromValue: '100px'}], position: 1665, duration: 0, easing: "swing" },
             { id: "eid3", tween: [ "style", "${_Myonpiksi}", "-webkit-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid407", tween: [ "style", "${_Myonpiksi}", "-moz-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid408", tween: [ "style", "${_Myonpiksi}", "-ms-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid409", tween: [ "style", "${_Myonpiksi}", "msTransformOrigin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid410", tween: [ "style", "${_Myonpiksi}", "-o-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid414", tween: [ "style", "${_Myonpiksi}", "-moz-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid415", tween: [ "style", "${_Myonpiksi}", "-ms-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid416", tween: [ "style", "${_Myonpiksi}", "msTransformOrigin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid417", tween: [ "style", "${_Myonpiksi}", "-o-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
             { id: "eid336", tween: [ "style", "${_RoundRectCopy2}", "left", '140px', { fromValue: '141px'}], position: 950, duration: 215, easing: "swing" },
             { id: "eid346", tween: [ "style", "${_RoundRectCopy2}", "left", '141px', { fromValue: '140px'}], position: 1665, duration: 215, easing: "swing" },
             { id: "eid340", tween: [ "style", "${_RoundRectCopy3}", "left", '147px', { fromValue: '148px'}], position: 950, duration: 215, easing: "swing" },
