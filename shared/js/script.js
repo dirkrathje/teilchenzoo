@@ -3,7 +3,7 @@
 /*jslint regexp: true */
 /*global $, jQuery, FastClick, jwplayer*/
 
-function sortByKey(array, key) {
+function sortByKey(array, key) {    
     "use strict";
     return array.sort(function (a, b) {
         var x = a[key], y = b[key];
