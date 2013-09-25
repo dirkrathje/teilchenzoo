@@ -13,13 +13,17 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // Aliase für häufig
    (function(symbolName) {
       
       
-      Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 10076, function(sym, e) {
-         sym.play();
-
-      });
-      //Edge binding end
+      
 
    })("stage");
    //Edge symbol end:'stage'
+
+   //=========================================================
+   
+   //Edge symbol: 'w_plus'
+   (function(symbolName) {   
+   
+   })("w_plus");
+   //Edge symbol end:'w_plus'
 
 })(jQuery, AdobeEdge, "EDGE-21315373");
