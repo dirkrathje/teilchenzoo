@@ -32,17 +32,18 @@ function checkScreensaver() {
 
     if (hours > 7 || hours < 19) {
         $("#screensaver").hide();
+        $(document).bind('tap', function () {bypassScreensaver = false;} ); 
     } else {
         $("#screensaver").show();
+        $(document).bind('tap', function () {bypassScreensaver = true;} ); 
+
     }
     setTimeout(checkScreensaver, 3600);
 }
 
-
-
-var particlomaticOnlyUUIDs = [
+/*var particlomaticOnlyUUIDs = [
     "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
-];
+];*/
 
 var playlist_de = 
     [
@@ -411,7 +412,12 @@ function onReady() {
 
     FastClick.attach(document.body);
 
-    $(document).bind('tap', function () {bypassScreensaver = true;} ); 
+    if (appName == "Teilchomat") {
+        $("a[href='#page-home']").hide();
+        $("div[data-role='footer']").hide();
+        $.mobile.changePage($("#page-particlomatic"), "none");
+    }
+
     checkScreensaver();
 }
 
