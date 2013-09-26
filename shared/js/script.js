@@ -21,6 +21,7 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
+
 var bypassScreensaver = false;
 function checkScreensaver() {
     "use strict";
@@ -30,15 +31,13 @@ function checkScreensaver() {
         minutes = now.getMinutes(),
         seconds = now.getSeconds();
 
-    if (hours > 7 || hours < 19) {
+    if ((hours > 7 && hours < 19) || bypassScreensaver) {
         $("#screensaver").hide();
-        $(document).bind('tap', function () {bypassScreensaver = false;} ); 
     } else {
         $("#screensaver").show();
-        $(document).bind('tap', function () {bypassScreensaver = true;} ); 
-
+        bypassScreensaver = false;
     }
-    setTimeout(checkScreensaver, 3600);
+    setTimeout(checkScreensaver, 4000);
 }
 
 /*var particlomaticOnlyUUIDs = [
@@ -394,19 +393,6 @@ function updateQuizTeaser(scrollPosition) {
     $("#quizTeaser").html(getQuizView(quizModel));
 }
 
-/*function onDeviceReady() {
-    "use strict";
-
-    var uuid = device.uuid;
-    $("#UUID").html(uuid);
-
-    if ($.inArray(uuid, particlomaticOnlyUUIDs)) {
-        $("a[href='#page-home']").hide();
-        $("div[data-role='footer']").hide();
-    }
-}*/
-//document.addEventListener("deviceready", onDeviceReady, false);
-
 function onReady() {
     "use strict";
 
@@ -418,6 +404,7 @@ function onReady() {
         $.mobile.changePage($("#page-particlomatic"), "none");
     }
 
+    $(document).bind('tap', function () {bypassScreensaver = true;} ); 
     checkScreensaver();
 }
 
