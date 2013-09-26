@@ -1,7 +1,7 @@
 // JavaScript Document
 /*jslint browser: true*/
 /*jslint regexp: true */
-/*global $, jQuery, FastClick, jwplayer*/
+/*global $, jQuery, FastClick, jwplayer, device*/
 
 function sortByKey(array, key) {
     "use strict";
@@ -21,6 +21,10 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
+
+var particlomaticOnlyUUIDs = [
+    "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
+];
 
 var particles = [
         {
@@ -348,19 +352,26 @@ function updateQuizTeaser(scrollPosition) {
     $("#quizTeaser").html(getQuizView(quizModel));
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
+    "use strict";
 
-    var string = device.uuid;
-    alert(string);
+    var uuid = device.uuid;
+
+    if ($.inArray(uuid, particlomaticOnlyUUIDs)) {
+        $("a[href='#page-home']").hide();
+        $("div[data-role='footer']").hide();
+    }
 }
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onReady() {
+    "use strict";
 
     FastClick.attach(document.body);
 }
 
 function initParticlomatic() {
+    "use strict";
 
     $("#quiz-form input").on("change", $.throttle(400, function () {updateQuiz(); }));
     show_particlomatic_info = true;
@@ -412,17 +423,17 @@ function initParticlomatic() {
 }
 
 
-$(document).on("pageinit", "#page-particlomatic", function (event) {
+$(document).on("pageinit", "#page-particlomatic", function () {
     "use strict";
 
     initParticlomatic();
 });
 
 
-$(document).on("pageinit", "#page-videos", function (event) {
+$(document).on("pageinit", "#page-videos", function () {
     "use strict";
 
-    if (typeof(jwplayer) != "undefined") {
+    if (jwplayer !== "undefined") {
         jwplayer("video_stage").setup({
             playlist: [
                 {
@@ -479,49 +490,39 @@ $(document).on("pageinit", "#page-videos", function (event) {
 });
 
 
-$(document).on("pageinit", "#page-content", function (event) {
+$(document).on("pageinit", "#page-content", function () {
     "use strict";
 
     $(".encyclopedia_link_detail").hide();
     $("#encyclopedia_index a, #encyclopedia_overview a").on("click", function (event) {
 
-        var target = $(this).attr("href").substr(1);
+        var target = $(this).attr("href").substr(1),
+            contentFileName = "encyclopedia/" + target + ".html";
         if (target === "overview") {
-            $("#encyclopedia_overview").show(); 
+            $("#encyclopedia_overview").show();
             $(".encyclopedia_link_detail").hide();
-        } else {            
-            $("#encyclopedia_overview").hide(); 
+        } else {
+            $("#encyclopedia_overview").hide();
             $(".encyclopedia_link_detail").show();
         }
-        var contentFileName = "encyclopedia/" + target + ".html";
         event.preventDefault();
         $("#encyclopedia_stage").load(contentFileName, function () {
-            console.log("2");
             $("#encyclopedia_stage a").on("click", function (event) {
 
-                var target2 = $(this).attr("href").substr(1);
+                var target2 = $(this).attr("href").substr(1),
+                    contentFileName2 = "encyclopedia/" + target2 + ".html";
                 if (target2 === "overview") {
-                    $("#encyclopedia_overview").show(); 
+                    $("#encyclopedia_overview").show();
                     $(".encyclopedia_link_detail").hide();
-                } else {            
-                    $("#encyclopedia_overview").hide(); 
+                } else {
+                    $("#encyclopedia_overview").hide();
                     $(".encyclopedia_link_detail").show();
                 }
-                var contentFileName2 = "encyclopedia/" + target2 + ".html";
                 event.preventDefault();
                 $("#encyclopedia_stage").load(contentFileName2);
             });
         });
     });
-});
-
-
-
-$(document).on('pageinit', function () {
-    "use strict";
-
-
-
 });
 
 
@@ -582,7 +583,7 @@ function initPageHome() {
 
     $(window).on("scroll", $.throttle(100, function () {
 
-        var scrollTop = $(document).scrollTop(), 
+        var scrollTop = $(document).scrollTop(),
             scrollPosition = scrollTop / $(document).height();
 
         updateQuizTeaser((scrollPosition * 250 - 50) * 3);
@@ -592,7 +593,7 @@ function initPageHome() {
     $(window).on("scroll", function () {
 
         var scrollPosition = $(document).scrollTop() / $(document).height();
-	
+
         $(".test_teaser_text").each(function (index) {
 
             var value = animationFunctionSpike(scrollPosition * 2 - (index + 1) / 6, 0.1);
@@ -618,7 +619,7 @@ function initPageParticlomatic() {
     $(window).on("scroll", $.throttle(100, function () {
 
         if ($(document).width() > 992) {
-            var scrollTop = $(document).scrollTop(), 
+            var scrollTop = $(document).scrollTop(),
                 scrollPosition = scrollTop / $(document).height(),
                 quiz_form_col_height = $("#quiz-form-col").height(),
                 particlomatic_result_height = $("#particlomatic_result").height();
