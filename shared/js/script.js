@@ -26,6 +26,29 @@ var particlomaticOnlyUUIDs = [
     "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
 ];
 
+var playlist_de = 
+    [
+        {
+            image: "images/video_teasers/video_1.png",
+            file: "media/videos/video_1.mp4",
+            title: "Was sind Teilchen?"
+        },
+        {
+            image: "images/video_teasers/video_2.png",
+            file: "media/videos/video_1.mp4",
+            title: "Einführung",
+            description: "Die Welt von Higgs, Quarks und Photonen"
+        },
+        {
+            image: "images/video_teasers/video_3.png",
+            file: "media/videos/video_1.mp4",
+            title: "Elektronen &amp; Co.",
+            description: "Das Elektron und seine Verwandten"
+        }
+];
+
+var playlist = playlist_de;
+
 var particles = [
         {
             shortname: "e",
@@ -362,7 +385,6 @@ function onDeviceReady() {
         $("div[data-role='footer']").hide();
     }
 }
-document.addEventListener("deviceready", onDeviceReady, false);
 
 function onReady() {
     "use strict";
@@ -435,49 +457,7 @@ $(document).on("pageinit", "#page-videos", function () {
 
     if (jwplayer !== "undefined") {
         jwplayer("video_stage").setup({
-            playlist: [
-                {
-                    image: "images/video_teasers/video_1.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Was sind Teilchen?"
-                },
-                {
-                    image: "images/video_teasers/video_2.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Einführung",
-                    description: "Die Welt von Higgs, Quarks und Photonen"
-                },
-                {
-                    image: "images/video_teasers/video_3.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Elektronen",
-                    description: "Das Elektron und seine Verwandten"
-                }/*,
-                {
-                    image: "images/video_teasers/video_4.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Quarks",
-                    description: "Up-Quark, Down-Quark und ihre Geschwister"
-                },
-                {
-                    image: "images/video_teasers/video_5.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Kräfte",
-                    description: "Photonen, Gluonen und andere Austauschteilchen"
-                },
-                {
-                    image: "images/video_teasers/video_6.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Higgs",
-                    description: "Higgs und das Rätsel der Masse"
-                },
-                {
-                    image: "images/video_teasers/video_7.png",
-                    file: "media/videos/video_1.mp4",
-                    title: "Ausblick",
-                    description: "Offenen Fragen und mögliche Antworten"
-                }*/
-            ],
+            playlist: playlist,
             height: 688,
             listbar: {
                 position: 'right',
@@ -632,9 +612,7 @@ function initPageParticlomatic() {
                 $("#particlomatic_result").css("margin-top", quiz_form_col_height - particlomatic_result_height + "px");
             }
         }
-
     }));
-
 }
 
 
