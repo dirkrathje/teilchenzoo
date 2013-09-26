@@ -1,27 +1,20 @@
 .no-borderimage .paintedGray {
     background-color: white !important;
+}  
+.hidden-ie-lte8 {
+    display:none; 
+} 
+@media (min-width: 768px) {
 }
-  
-
-  
-  @media (min-width: 768px) {
-  .page {
-  }
-  }
-
-
-.col-md-6 {
-}
-
 #ielte7_message {
-	display: block;
-	background-color: red;
-	padding: 10px;
-	text-align: center;
+    display: block;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
 }
 #page_particlomatic {
-	display: none;
+    display: none;
 }
 #sitemenu_particlomatic {
-	display: none;
+    display: none;
 }
