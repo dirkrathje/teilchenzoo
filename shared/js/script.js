@@ -21,6 +21,7 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
+var bypassScreensaver = false;
 function checkScreensaver() {
     "use strict";
 
@@ -29,12 +30,12 @@ function checkScreensaver() {
         minutes = now.getMinutes(),
         seconds = now.getSeconds();
 
-    if (seconds % 2 === 0) {
+    if (hours > 7 || hours < 19) {
         $("#screensaver").hide();
     } else {
         $("#screensaver").show();
     }
-    setTimeout(checkScreensaver, 1000);
+    setTimeout(checkScreensaver, 3600);
 }
 
 
@@ -403,13 +404,15 @@ function onDeviceReady() {
         $("div[data-role='footer']").hide();
     }*/
 }
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
 function onReady() {
     "use strict";
 
     FastClick.attach(document.body);
-    //checkScreensaver();
+
+    $(document).bind('tap', function () {bypassScreensaver = true;} ); 
+    checkScreensaver();
 }
 
 function initParticlomatic() {
