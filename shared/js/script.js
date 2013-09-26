@@ -348,16 +348,20 @@ function updateQuizTeaser(scrollPosition) {
     $("#quizTeaser").html(getQuizView(quizModel));
 }
 
-$(document).on('pageinit', function () {
-    "use strict";
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
+    var string = device.uuid;
+    alert(string);
+}
+
+function onReady() {
+
+    console.log("onReady");
     FastClick.attach(document.body);
+}
 
-    var countdownDays = getCountdownDays();
-    if (countdownDays > 1) {
-        $("#countdown").show();
-        $("#countdownNrOfDays").html(countdownDays);
-    }
+function initParticlomatic() {
 
     $("#quiz-form input").on("change", $.throttle(400, function () {updateQuiz(); }));
     show_particlomatic_info = true;
@@ -406,49 +410,20 @@ $(document).on('pageinit', function () {
             $('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');
         });
     });
-/*
-    $("#encyclopedia_stage").load("encyclopedia/overview.html", function () {
-        $("#encyclopedia_stage a").on("click", function (event) {
+}
 
-            var contentFileName = "encyclopedia/" + $(this).attr("href").substr(1) + ".html";
-            event.preventDefault();
-            $("#encyclopedia_stage").load(contentFileName);
-        });
-    });*/
-    $(".encyclopedia_link_detail").hide();
 
-    $("#encyclopedia_index a, #encyclopedia_overview a").on("click", function (event) {
 
-        var target = $(this).attr("href").substr(1);
-        if (target === "overview") {
-            $("#encyclopedia_overview").show(); 
-            $(".encyclopedia_link_detail").hide();
-        } else {            
-            $("#encyclopedia_overview").hide(); 
-            $(".encyclopedia_link_detail").show();
-        }
-        var contentFileName = "encyclopedia/" + target + ".html";
-        event.preventDefault();
-        $("#encyclopedia_stage").load(contentFileName, function () {
-            console.log("2");
-            $("#encyclopedia_stage a").on("click", function (event) {
+$(document).on("pageinit", "#page-particlomatic", function (event) {
+    "use strict";
 
-                var target2 = $(this).attr("href").substr(1);
-                if (target2 === "overview") {
-                    $("#encyclopedia_overview").show(); 
-                    $(".encyclopedia_link_detail").hide();
-                } else {            
-                    $("#encyclopedia_overview").hide(); 
-                    $(".encyclopedia_link_detail").show();
-                }
-                var contentFileName2 = "encyclopedia/" + target2 + ".html";
-                event.preventDefault();
-                $("#encyclopedia_stage").load(contentFileName2);
-            });
-        });
-    });
+    initParticlomatic();
+});
 
-    console.log(typeof(jwplayer));
+
+$(document).on("pageinit", "#page-videos", function (event) {
+    "use strict";
+
     if (typeof(jwplayer) != "undefined") {
         jwplayer("video_stage").setup({
             playlist: [
@@ -502,6 +477,52 @@ $(document).on('pageinit', function () {
             width: "100%"
         });
     }
+
+});
+
+
+$(document).on("pageinit", "#page-content", function (event) {
+    "use strict";
+
+    $(".encyclopedia_link_detail").hide();
+    $("#encyclopedia_index a, #encyclopedia_overview a").on("click", function (event) {
+
+        var target = $(this).attr("href").substr(1);
+        if (target === "overview") {
+            $("#encyclopedia_overview").show(); 
+            $(".encyclopedia_link_detail").hide();
+        } else {            
+            $("#encyclopedia_overview").hide(); 
+            $(".encyclopedia_link_detail").show();
+        }
+        var contentFileName = "encyclopedia/" + target + ".html";
+        event.preventDefault();
+        $("#encyclopedia_stage").load(contentFileName, function () {
+            console.log("2");
+            $("#encyclopedia_stage a").on("click", function (event) {
+
+                var target2 = $(this).attr("href").substr(1);
+                if (target2 === "overview") {
+                    $("#encyclopedia_overview").show(); 
+                    $(".encyclopedia_link_detail").hide();
+                } else {            
+                    $("#encyclopedia_overview").hide(); 
+                    $(".encyclopedia_link_detail").show();
+                }
+                var contentFileName2 = "encyclopedia/" + target2 + ".html";
+                event.preventDefault();
+                $("#encyclopedia_stage").load(contentFileName2);
+            });
+        });
+    });
+});
+
+
+
+$(document).on('pageinit', function () {
+    "use strict";
+
+
 
 });
 
@@ -595,6 +616,7 @@ function initPageHome() {
 function initPageParticlomatic() {
     "use strict";
 
+    initParticlomatic();
     $(window).on("scroll", $.throttle(100, function () {
 
         if ($(document).width() > 992) {
