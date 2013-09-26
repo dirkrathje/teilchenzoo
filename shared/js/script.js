@@ -21,6 +21,23 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
+function checkScreensaver() {
+    "use strict";
+
+    var now = new Date(),
+        hours = now.getHours(),
+        minutes = now.getMinutes(),
+        seconds = now.getSeconds();
+
+    if (seconds % 2 === 0) {
+        $("#screensaver").hide();
+    } else {
+        $("#screensaver").show();
+    }
+    setTimeout(checkScreensaver, 1000);
+}
+
+
 
 var particlomaticOnlyUUIDs = [
     "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
@@ -377,22 +394,22 @@ function updateQuizTeaser(scrollPosition) {
 
 function onDeviceReady() {
     "use strict";
-
+/*
     var uuid = device.uuid;
     $("#UUID").html(uuid);
 
     if ($.inArray(uuid, particlomaticOnlyUUIDs)) {
         $("a[href='#page-home']").hide();
         $("div[data-role='footer']").hide();
-    }
+    }*/
 }
 document.addEventListener("deviceready", onDeviceReady, false);
-
 
 function onReady() {
     "use strict";
 
     FastClick.attach(document.body);
+    //checkScreensaver();
 }
 
 function initParticlomatic() {
@@ -617,7 +634,5 @@ function initPageParticlomatic() {
         }
     }));
 }
-
-
 
 
