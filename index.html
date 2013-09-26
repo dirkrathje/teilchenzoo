@@ -29,9 +29,9 @@
 
   <script src="shared/js/script.js"></script>
   <script>
-  /*
+  
   document.addEventListener("deviceready", onDeviceReady, false);
-  $(document).ready(function(){onReady();}); */
+  $(document).ready(function(){onReady();});
   </script>
 </head>
 
@@ -340,9 +340,7 @@
         </div>
         
       </div>
-    </div>
-    <!-- /content --> 
-
+    </div> <!-- /.content --> 
 
     <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
       <div data-role="navbar">
@@ -351,13 +349,9 @@
           <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
           <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
         </ul>
-      </div> 
-      <!-- /.navbar -->
-    </div>
-    <!-- /.footer -->
-  </div>
-  <!-- /page-->
-
+      </div> <!-- /.navbar -->
+    </div> <!-- /.footer -->
+  </div> <!-- /.page-->
 
 
 
@@ -365,185 +359,149 @@
     <div data-role="header">
       <h1>Teilchenzoo-Filme</h1>
       <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-      <a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
-    </div>
-    <!-- /header -->
+      <a href="#page-options" data-icon="gear" class="ui-btn-right" data-transition="none">Optionen</a>
+    </div> <!-- /.header -->
 
     <div data-role="content"  class="content" style="min-height: 1200px; background-color: black;	">
-
-  <!--
-<table class="video_teaser_table">
-  <tr>
-    <td><a href="#popupVideo" data-rel="popup"><img src="images/video_teasers/video_1.png" alt="" class="img-responsive video_teaser_img video_teaser_img_1"/></a></td>
-    <td><a href="videos/video_1.mp4" rel="external"><img src="images/video_teasers/video_2.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_2"/></a></td>
-    <td><img src="images/video_teasers/video_list_description_introduction.png" alt="" class="img-responsive"/></td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><img src="images/video_teasers/video_3.png" alt="" class="img-responsive video_teaser_img video_teaser_img_3"/></td>
-    <td><img src="images/video_teasers/video_4.png" alt="" class="img-responsive video_teaser_img video_teaser_img_4"/></td>
-    <td><img src="images/video_teasers/video_5.png" alt="" class="img-responsive video_teaser_img video_teaser_img_5"/></td>
-    <td><img src="images/video_teasers/video_6.png" alt="" class="img-responsive video_teaser_img video_teaser_img_6"/></td>
-  </tr>
-  <tr class="lastRow">
-    <td><img src="images/video_teasers/video_list_description_details.png" alt="" class="img-responsive"/></td>
-    <td>&nbsp;</td>
-    <td><img src="images/video_teasers/video_list_description_outlook.png" alt="" class="img-responsive"/></td>
-    <td><img src="images/video_teasers/video_7.png" alt="" class="img-responsive video_teaser_img"  id="video_teaser_img_7"/></td>
-  </tr>
-</table>   
--->
+      <div id="video_stage" style="">Loading the player...</div>
+    </div> <!-- /.content -->
+    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+        </ul>
+      </div> <!-- /.navbar -->
+    </div> <!-- /.footer -->
+  </div> <!-- /.page-->
 
 
-<div id="video_stage" style="">Loading the player...</div>
+  <div data-role="page" class="page" id="page-content">
+    <div data-role="header">
+      <h1>Steckbriefe</h1>
+      <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+      <a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
+    </div> <!-- /.header -->
+
+    <div data-role="content"  class="content paintedWood" style="min-height: 1200px; position: relative; overflow: hidden;">
+
+      <div id="encyclopedia_index">
+        <a href="#overview"><img src="images/encyclopedia_teasers/overview.png" alt="" class="encyclopedia_teaser_img overview_encyclopedia_teaser_img"/></a>
+        <a href="#electron" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a>
+        <a href="#myon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon.png" alt="" class="encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a>
+        <a href="#tauon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a>
+        <a href="#electron_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="encyclopedia_teaser_img electron_neutrino_encyclopedia_teaser_img"/></a>
+        <a href="#myon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="encyclopedia_teaser_img myon_neutrino_encyclopedia_teaser_img"/></a>
+        <a href="#tauon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="encyclopedia_teaser_img tauon_neutrino_encyclopedia_teaser_img"/></a>
+        <a href="#up_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="encyclopedia_teaser_img up_quark_encyclopedia_teaser_img"/></a>
+        <a href="#down_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="encyclopedia_teaser_img down_quark_encyclopedia_teaser_img"/></a>
+        <a href="#charm_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="encyclopedia_teaser_img charm_quark_encyclopedia_teaser_img"/></a>
+        <a href="#strange_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="encyclopedia_teaser_img strange_quark_encyclopedia_teaser_img"/></a>
+        <a href="#top_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="encyclopedia_teaser_img top_quark_encyclopedia_teaser_img"/></a>
+        <a href="#bottom_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="encyclopedia_teaser_img bottom_quark_encyclopedia_teaser_img"/></a>
+        <a href="#photon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/photon.png" alt="" class="encyclopedia_teaser_img photon_encyclopedia_teaser_img"/></a>
+        <a href="#w_minus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="encyclopedia_teaser_img w_minus_encyclopedia_teaser_img"/></a>
+        <a href="#z_null" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/z_null.png" alt="" class="encyclopedia_teaser_img z_null_encyclopedia_teaser_img"/></a>
+        <a href="#w_plus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="encyclopedia_teaser_img w_plus_encyclopedia_teaser_img"/></a>
+        <a href="#gluon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/gluon.png" alt="" class="encyclopedia_teaser_img gluon_encyclopedia_teaser_img"/></a>
+        <a href="#graviton" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/graviton.png" alt="" class="encyclopedia_teaser_img graviton_encyclopedia_teaser_img"/></a>
+        <a href="#higgs" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/higgs.png" alt="" class="encyclopedia_teaser_img higgs_encyclopedia_teaser_img"/></a>
+        <a href="#wimp" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="encyclopedia_teaser_img wimp_encyclopedia_teaser_img"/></a>
+        <a href="#antimatter" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/antimatter.png" alt="" class="encyclopedia_teaser_img antimatter_encyclopedia_teaser_img"/></a>
+      </div>
+      <table class="encylopedia_table" id="encyclopedia_overview" style="width: 90%; margin: auto;">
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="#electron"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#myon"><img src="images/encyclopedia_teasers/myon.png" alt="" class="img-responsive encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#tauon"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="img-responsive encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a></td>
+          <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
+          <td><a href="#photon"><img src="images/encyclopedia_teasers/photon.png" alt="" class="img-responsive encyclopedia_teaser_img photon_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#w_minus"><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="img-responsive encyclopedia_teaser_img w_minus_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#z_null"><img src="images/encyclopedia_teasers/z_null.png" alt="" class="img-responsive encyclopedia_teaser_img z_null_encyclopedia_teaser_img"/></a></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="#electron_neutrino"><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img electron_neutrino_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#myon_neutrino"><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img myon_neutrino_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#tauon_neutrino"><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img tauon_neutrino_encyclopedia_teaser_img"/></a></td>
+          <td>&nbsp;</td>
+          <td><a href="#w_plus"><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="img-responsive encyclopedia_teaser_img w_plus_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#gluon"><img src="images/encyclopedia_teasers/gluon.png" alt="" class="img-responsive encyclopedia_teaser_img gluon_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#graviton"><img src="images/encyclopedia_teasers/graviton.png" alt="" class="img-responsive encyclopedia_teaser_img graviton_encyclopedia_teaser_img"/></a></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="3"><img src="images/encyclopedia_teasers/list_description_neutrinos_quarks.png" alt="" class="img-responsive"/></td>
+          <td>&nbsp;</td>
+          <td colspan="3"><img src="images/encyclopedia_teasers/list_description_interaction.png" alt="" class="img-responsive"/></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="#up_quark"><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="img-responsive encyclopedia_teaser_img up_quark_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#charm_quark"><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="img-responsive encyclopedia_teaser_img charm_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#top_quark"><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="img-responsive encyclopedia_teaser_img top_encyclopedia_teaser_img"/></a></td>
+          <td>&nbsp;</td>
+          <td><a href="#higgs"><img src="images/encyclopedia_teasers/higgs.png" alt="" class="img-responsive encyclopedia_teaser_img" id="higgs_encyclopedia_teaser_img"/></a></td>
+          <td colspan="2"><img src="images/encyclopedia_teasers/list_description_higgs.png" alt="" class="img-responsive" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="#down_quark"><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="down_quark_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#strange_quark"><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="strange_quark_encyclopedia_teaser_img"/></a></td>
+          <td><a href="#bottom_quark"><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="bottom_quark_encyclopedia_teaser_img"/></a></td>
+          <td>&nbsp;</td>
+          <td colspan="2"><img src="images/encyclopedia_teasers/list_description_wimps.png" alt="" class="img-responsive"/></td>
+          <td><a href="#wimp"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="wimp_encyclopedia_teaser_img"/></a></td>
+        </tr>
+      </table>
+      <div id="encyclopedia_stage"></div>
+    </div> <!-- /.content -->
+
+    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+        </ul>
+      </div> <!-- /.navbar -->
+    </div> <!-- /.footer -->
+  </div> <!-- /.page-->
 
 
+  <div data-role="page" class="page" id="page-options">
 
-</div>
-<!-- /content -->
-<div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-  <div data-role="navbar">
-    <ul>
-      <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-      <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-      <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-    </ul>
-  </div> 
-  <!-- /.navbar -->
-</div>
-<!-- /.footer -->
-</div>
-<!-- /page-->
+    <div data-role="header">
+      <h1>Optionen</h1>
+      <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
+    </div> <!-- /.header -->
 
+    <div data-role="content" class="paintedWood">
+      <h1 class="title">Optionen</h1>
+      <form>
+        <fieldset data-role="controlgroup">
+          <input type="radio" name="radio-language" id="radio-language_DE_DU" value="DE_DU" checked="checked">
+          <label for="radio-language_DE_DU">Deutsch (Du)</label>
+          <input type="radio" name="radio-language" id="radio-language_DE_SIE" value="DE_SIE">
+          <label for="radio-language_DE_SIE">Deutsch (Sie)</label>
+          <input type="radio" name="radio-language" id="radio-language_EN" value="EN">
+          <label for="radio-language_EN">English</label>
+        </fieldset>
+      </form>
+    </div> <!-- /.content -->
 
-
-<div data-role="page" class="page" id="page-content">
-  <div data-role="header">
-    <h1>Steckbriefe</h1>
-    <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-    <a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
-  </div> <!-- /.header -->
-  
-  <div data-role="content"  class="content paintedWood" style="min-height: 1200px; position: relative; overflow: hidden;">
-
-    <div id="encyclopedia_index">
-      <a href="#overview"><img src="images/encyclopedia_teasers/overview.png" alt="" class="encyclopedia_teaser_img overview_encyclopedia_teaser_img"/></a>
-      <a href="#electron" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a>
-      <a href="#myon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon.png" alt="" class="encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a>
-      <a href="#tauon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a>
-      <a href="#electron_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="encyclopedia_teaser_img electron_neutrino_encyclopedia_teaser_img"/></a>
-      <a href="#myon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="encyclopedia_teaser_img myon_neutrino_encyclopedia_teaser_img"/></a>
-      <a href="#tauon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="encyclopedia_teaser_img tauon_neutrino_encyclopedia_teaser_img"/></a>
-      <a href="#up_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="encyclopedia_teaser_img up_quark_encyclopedia_teaser_img"/></a>
-      <a href="#down_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="encyclopedia_teaser_img down_quark_encyclopedia_teaser_img"/></a>
-      <a href="#charm_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="encyclopedia_teaser_img charm_quark_encyclopedia_teaser_img"/></a>
-      <a href="#strange_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="encyclopedia_teaser_img strange_quark_encyclopedia_teaser_img"/></a>
-      <a href="#top_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="encyclopedia_teaser_img top_quark_encyclopedia_teaser_img"/></a>
-      <a href="#bottom_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="encyclopedia_teaser_img bottom_quark_encyclopedia_teaser_img"/></a>
-      <a href="#photon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/photon.png" alt="" class="encyclopedia_teaser_img photon_encyclopedia_teaser_img"/></a>
-      <a href="#w_minus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="encyclopedia_teaser_img w_minus_encyclopedia_teaser_img"/></a>
-      <a href="#z_null" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/z_null.png" alt="" class="encyclopedia_teaser_img z_null_encyclopedia_teaser_img"/></a>
-      <a href="#w_plus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="encyclopedia_teaser_img w_plus_encyclopedia_teaser_img"/></a>
-      <a href="#gluon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/gluon.png" alt="" class="encyclopedia_teaser_img gluon_encyclopedia_teaser_img"/></a>
-      <a href="#graviton" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/graviton.png" alt="" class="encyclopedia_teaser_img graviton_encyclopedia_teaser_img"/></a>
-      <a href="#higgs" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/higgs.png" alt="" class="encyclopedia_teaser_img higgs_encyclopedia_teaser_img"/></a>
-      <a href="#wimp" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="encyclopedia_teaser_img wimp_encyclopedia_teaser_img"/></a>
-      <a href="#antimatter" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/antimatter.png" alt="" class="encyclopedia_teaser_img antimatter_encyclopedia_teaser_img"/></a>
-    </div>
-    <table class="encylopedia_table" id="encyclopedia_overview" style="width: 90%; margin: auto;">
-      <tr>
-       <td>&nbsp;</td>
-       <td><a href="#electron"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#myon"><img src="images/encyclopedia_teasers/myon.png" alt="" class="img-responsive encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#tauon"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="img-responsive encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a></td>
-       <td><img src="images/encyclopedia_teasers/empty.png" alt="" class="img-responsive"/></td>
-       <td><a href="#photon"><img src="images/encyclopedia_teasers/photon.png" alt="" class="img-responsive encyclopedia_teaser_img photon_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#w_minus"><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="img-responsive encyclopedia_teaser_img w_minus_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#z_null"><img src="images/encyclopedia_teasers/z_null.png" alt="" class="img-responsive encyclopedia_teaser_img z_null_encyclopedia_teaser_img"/></a></td>
-     </tr>
-     <tr>
-       <td>&nbsp;</td>
-       <td><a href="#electron_neutrino"><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img electron_neutrino_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#myon_neutrino"><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img myon_neutrino_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#tauon_neutrino"><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="img-responsive encyclopedia_teaser_img tauon_neutrino_encyclopedia_teaser_img"/></a></td>
-       <td>&nbsp;</td>
-       <td><a href="#w_plus"><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="img-responsive encyclopedia_teaser_img w_plus_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#gluon"><img src="images/encyclopedia_teasers/gluon.png" alt="" class="img-responsive encyclopedia_teaser_img gluon_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#graviton"><img src="images/encyclopedia_teasers/graviton.png" alt="" class="img-responsive encyclopedia_teaser_img graviton_encyclopedia_teaser_img"/></a></td>
-     </tr>
-     <tr>
-       <td>&nbsp;</td>
-       <td colspan="3"><img src="images/encyclopedia_teasers/list_description_neutrinos_quarks.png" alt="" class="img-responsive"/></td>
-       <td>&nbsp;</td>
-       <td colspan="3"><img src="images/encyclopedia_teasers/list_description_interaction.png" alt="" class="img-responsive"/></td>
-     </tr>
-     <tr>
-       <td>&nbsp;</td>
-       <td><a href="#up_quark"><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="img-responsive encyclopedia_teaser_img up_quark_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#charm_quark"><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="img-responsive encyclopedia_teaser_img charm_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#top_quark"><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="img-responsive encyclopedia_teaser_img top_encyclopedia_teaser_img"/></a></td>
-       <td>&nbsp;</td>
-       <td><a href="#higgs"><img src="images/encyclopedia_teasers/higgs.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="higgs_encyclopedia_teaser_img"/></a></td>
-       <td colspan="2"><img src="images/encyclopedia_teasers/list_description_higgs.png" alt="" class="img-responsive" /></td>
-     </tr>
-     <tr>
-       <td>&nbsp;</td>
-       <td><a href="#down_quark"><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="down_quark_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#strange_quark"><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="strange_quark_encyclopedia_teaser_img"/></a></td>
-       <td><a href="#bottom_quark"><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="bottom_quark_encyclopedia_teaser_img"/></a></td>
-       <td>&nbsp;</td>
-       <td colspan="2"><img src="images/encyclopedia_teasers/list_description_wimps.png" alt="" class="img-responsive"/></td>
-       <td><a href="#wimp"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="img-responsive encyclopedia_teaser_img"  id="wimp_encyclopedia_teaser_img"/></a></td>
-     </tr>
-   </table>
-
-   <div id="encyclopedia_stage"></div>
-
- </div> <!-- /.content -->
-
- <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-  <div data-role="navbar">
-    <ul>
-      <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-      <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-      <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-    </ul>
-  </div> <!-- /.navbar -->
-</div> <!-- /.footer -->
-</div> <!-- /.page-->
-
-
-<div data-role="page" class="page" id="page-options">
-
-  <div data-role="header">
-    <h1>Optionen</h1>
-    <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-  </div> <!-- /.header -->
-  
-  <div data-role="content" class="paintedWood">
-    <h1 class="title">Optionen</h1>
-    <form>
-      <fieldset data-role="controlgroup">
-        <input type="radio" name="radio-language" id="radio-language_DE_DU" value="DE_DU" checked="checked">
-        <label for="radio-language_DE_DU">Deutsch (Du)</label>
-        <input type="radio" name="radio-language" id="radio-language_DE_SIE" value="DE_SIE">
-        <label for="radio-language_DE_SIE">Deutsch (Sie)</label>
-        <input type="radio" name="radio-language" id="radio-language_EN" value="EN">
-        <label for="radio-language_EN">English</label>
-      </fieldset>
-    </form>
-  </div> <!-- /.content -->
-  
-  <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-      </ul>
-    </div> <!-- /.navbar -->
-  </div> <!-- /.footer -->
-</div> <!-- /.page-->
+    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
+          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
+          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
+        </ul>
+      </div> <!-- /.navbar -->
+    </div> <!-- /.footer -->
+  </div> <!-- /.page-->
 
 </body>
 </html>
