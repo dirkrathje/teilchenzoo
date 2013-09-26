@@ -379,12 +379,15 @@ function onDeviceReady() {
     "use strict";
 
     var uuid = device.uuid;
+    $("#UUID").html(uuid);
 
     if ($.inArray(uuid, particlomaticOnlyUUIDs)) {
         $("a[href='#page-home']").hide();
         $("div[data-role='footer']").hide();
     }
 }
+document.addEventListener("deviceready", onDeviceReady, false);
+
 
 function onReady() {
     "use strict";
