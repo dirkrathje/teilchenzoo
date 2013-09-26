@@ -357,7 +357,6 @@ function onDeviceReady() {
 
 function onReady() {
 
-    console.log("onReady");
     FastClick.attach(document.body);
 }
 
@@ -411,7 +410,6 @@ function initParticlomatic() {
         });
     });
 }
-
 
 
 $(document).on("pageinit", "#page-particlomatic", function (event) {

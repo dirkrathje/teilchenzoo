@@ -8,35 +8,24 @@
   width: 12%;
   height: auto;
 }
-#quiz-form-col {
-  margin-top: 50px;
-}
 @media (min-width: 992px) {
-  iframe {
-    position: fixed;
-    top: 290px;
-    right: 0px;
-  }
   .questions_teaser {
     width: 25%;
     height: auto;
   }
-  #particlomatic_result {
-    /*
-  	position: fixed; 
-  	left: 40px;
-  	z-index: 0;
-  	width: 45%;*/
-  
+  .app #particlomatic_result {
+    position: fixed;
+    width: 45%;
   }
-  #quiz-form-col {
-    /*	height: 640px;
-  	overflow: scroll;*/
-  
+  .app #quiz-form-col {
     float: right;
   }
-  #quiz-form-col {
+  .app #quiz-form-col {
     margin-top: 0px;
+  }
+  .app #particlomatic_result_top3 {
+    max-height: 500px;
+    overflow: scroll;
   }
 }
 @media (min-width: 768px) {
@@ -56,7 +45,7 @@
     margin: 0;
     border-style: solid;
     border-width: 50px;
-    -moz-border-image: url(background-paint.png) 50repeat;
+    -moz-border-image: url(background-paint.png) 50 repeat;
     -webkit-border-image: url(background-paint.png) 50 repeat;
     -o-border-image: url(background-paint.png) 50 repeat;
     border-image: url(background-paint.png) 50 fill repeat;
@@ -551,6 +540,11 @@ body .modal-dialog {
   width: 91%;
   margin: auto;
 }
+.encylopedia_table {
+  position: absolute;
+  top: 5px;
+  left: 25px;
+}
 .video_teaser_table td,
 .encylopedia_table td {
   margin: 0px;
@@ -733,11 +727,12 @@ em {
 .particleDescription {
   font-size: 90%;
 }
+#page-content .encyclopedia_teaser_img,
 #page-content .encyclopedia_teaser_img {
   width: 85px;
   margin-right: 20px;
 }
-#ecyclopedia_index {
+#encyclopedia_index {
   height: 100px;
   overflow: scroll;
   overflow-y: hidden;
@@ -745,10 +740,10 @@ em {
   width: 99%;
   margin-bottom: 30px;
 }
-#ecyclopedia_stage h1 {
+#encyclopedia_stage h1 {
   font-size: 3em;
 }
-#ecyclopedia_stage h2 {
+#encyclopedia_stage h2 {
   font-size: 1.5em;
 }
 a[href="#page-options"] {
