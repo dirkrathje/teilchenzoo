@@ -1,7 +1,7 @@
 // JavaScript Document
 /*jslint browser: true*/
 /*jslint regexp: true */
-/*global $, jQuery, FastClick, jwplayer, device*/
+/*global $, jQuery, FastClick, jwplayer, device, appName */
 
 function sortByKey(array, key) {
     "use strict";
@@ -37,14 +37,14 @@ function checkScreensaver() {
         $("#screensaver").show();
         bypassScreensaver = false;
     }
-    setTimeout(checkScreensaver, 4000);
+    setTimeout(checkScreensaver, 2000);
 }
 
 /*var particlomaticOnlyUUIDs = [
     "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
 ];*/
 
-var playlist_de = 
+var playlist_de =
     [
         {
             image: "images/video_teasers/video_1.png",
@@ -53,17 +53,23 @@ var playlist_de =
         },
         {
             image: "images/video_teasers/video_2.png",
-            file: "media/videos/video_1.mp4",
+            file: "media/videos/video_2.mp4",
             title: "Einführung",
             description: "Die Welt von Higgs, Quarks und Photonen"
         },
         {
             image: "images/video_teasers/video_3.png",
-            file: "media/videos/video_1.mp4",
+            file: "media/videos/video_3.mp4",
             title: "Elektronen &amp; Co.",
             description: "Das Elektron und seine Verwandten"
+        },
+        {
+            image: "images/video_teasers/video_5.png",
+            file: "media/videos/video_5.mp4",
+            title: "Photonen, Gluonen &hellip;",
+            description: "&hellip; und andere Austauschteilchen"
         }
-];
+    ];
 
 var playlist = playlist_de;
 
@@ -398,13 +404,13 @@ function onReady() {
 
     FastClick.attach(document.body);
 
-    if (appName == "Teilchomat") {
+    if (appName === "Teilchomat") {
         $("a[href='#page-home']").hide();
         $("div[data-role='footer']").hide();
         $.mobile.changePage($("#page-particlomatic"), "none");
     }
 
-    $(document).bind('tap', function () {bypassScreensaver = true;} ); 
+    $(document).bind('tap', function () {bypassScreensaver = true; });
     checkScreensaver();
 }
 
