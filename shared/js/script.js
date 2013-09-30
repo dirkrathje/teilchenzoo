@@ -167,7 +167,7 @@ var particles = [
             name: "bottom_quark",
             rgb: "#359745",
             properties: [22, -33, 0, 47, 0, 100, 52, 0, 100, 0],
-            title_de: "Botton-Quark",
+            title_de: "Bottom-Quark",
             description_de: "Das Bottom-Quark ist eines von sechs Quark-Sorten. Es ist ein <em>Schwergewicht</em>. Bottom-Quarks sind elektrisch negativ geladen. (Man könnte sie daher als <em>pessimistisch</em> beschreiben.) Gemeinsam ist allen sechs Quark-Sorten, dass sie niemals alleine vorkommen: Quarks sind <em>Gruppenwesen</em>. Sie setzen sich immer in Zweier- oder Dreiergruppen zu anderen Teilchen zusammen. Das Bottom-Quark wurde erst 1977 experimentell nachgewiesen wurden. Der Name »Quark« geht auf eine Passage aus einem Roman von James Joyce zurück."
         },
         {
