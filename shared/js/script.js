@@ -441,6 +441,8 @@ function stopVideoplayer() {
 
 function initVideoPlayer() {
 
+    $("#videoplayer").height("500px");
+
     $(".videocontroller li").on("click", function() {
 
         $(".videocontroller li").removeClass("selected");
