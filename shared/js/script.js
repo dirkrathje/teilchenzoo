@@ -40,38 +40,6 @@ function checkScreensaver() {
     setTimeout(checkScreensaver, 2000);
 }
 
-/*var particlomaticOnlyUUIDs = [
-    "3D8BDC61-3BB7-49E6-8D79-B4F19EB54CCD"
-];*/
-
-var playlist_de =
-    [
-        {
-            image: "images/video_teasers/video_1.png",
-            file: "media/videos/video_1.mp4",
-            title: "Was sind Teilchen?"
-        },
-        {
-            image: "images/video_teasers/video_2.png",
-            file: "media/videos/video_2.mp4",
-            title: "Einführung",
-            description: "Die Welt von Higgs, Quarks und Photonen"
-        },
-        {
-            image: "images/video_teasers/video_3.png",
-            file: "media/videos/video_3.mp4",
-            title: "Elektronen &amp; Co.",
-            description: "Das Elektron und seine Verwandten"
-        },
-        {
-            image: "images/video_teasers/video_5.png",
-            file: "media/videos/video_5.mp4",
-            title: "Photonen, Gluonen &hellip;",
-            description: "&hellip; und andere Austauschteilchen"
-        }
-    ];
-
-var playlist = playlist_de;
 
 var particles = [
         {
@@ -458,38 +426,34 @@ function initParticlomatic() {
 
         event.preventDefault();
         $("#quiz-form input").each(function () {
-
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
-            $(this).slider('refresh');
         });
     });
 }
 
+function stopVideoplayer() {
+    var videoplayer = document.getElementsByTagName('video')[0];
+    if (videoplayer.stop !== "undefined")
+    videoplayer.stop(); 
+}
 
-$(document).on("pageinit", "#page-particlomatic", function () {
-    "use strict";
 
-    initParticlomatic();
-});
+function initVideoPlayer() {
 
+    $(".videocontroller li").on("click", function() {
 
-$(document).on("pageinit", "#page-videos", function () {
-    "use strict";
+        $(".videocontroller li").removeClass("selected");
+        $(this).addClass("selected");
+        var videoplayer = $("#videoplayer")[0],
+            src = $(this).attr("data-video-href");
+        $("#videoplayer").hide(); 
+        videoplayer.src = src;
+        videoplayer.play();
+        $("#videoplayer").show(); 
+    });
 
-    if (jwplayer !== "undefined") {
-        jwplayer("video_stage").setup({
-            playlist: playlist,
-            height: 688,
-            listbar: {
-                position: 'right',
-                size: 200
-            },
-            width: "100%"
-        });
-    }
-
-});
+};
 
 
 $(document).on("pageinit", "#page-content", function () {
@@ -650,7 +614,8 @@ var app = {
     route: function() {
         var self = this,
             hash = window.location.hash;
-        console.log(hash);
+
+        //stopVideoplayer(); 
         if (!hash) {
 /*            if (this.homePage) {
                 this.slidePage(this.homePage);
@@ -670,16 +635,21 @@ var app = {
             $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
         } else
         if (hash === "#page-particlomatic") {
-            $("#navbar_fixed_top h1").html("Teilch-o-mat"); 
+            $(".navbar-fixed-top").show();
+            $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
             initParticlomatic();
 
         } else
         if (hash === "#page-videos") {
-            $("#navbar_fixed_top h1").html("Teilchenzoo-Videos"); 
+            $(".navbar-fixed-top").hide();
+            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
+            initVideoPlayer();
         } else
         if (hash === "#page-content") {
-            $("#navbar_fixed_top h1").html("Teilchenzoo-Steckbriefe"); 
+            $(".navbar-fixed-top").show();
+            $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
         }
+        $(document).scrollTop(0);
     },
     registerEvents: function() {
 

@@ -12,7 +12,6 @@
   <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
   <script src="shared/lib/fastclick.js"></script>
   <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="shared/lib/jwplayer/jwplayer.js"></script>
   <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
   <script type="text/javascript" src="shared/lib/jquery/scrollToFixed/jquery-scrolltofixed-min.js"></script>
   <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
@@ -376,10 +375,33 @@
     <div data-role="content"  class="content">
       <div class="videocontroller">
 
-
+<ul>
+    <li data-video-href="media/videos/video_1.mp4" class="selected">
+        <h2>Was sind Teilchen?</h2>
+    </li><li data-video-href="media/videos/video_2.mp4">
+        <h2>Einführung</h2>
+        <p>Die Welt von Higgs, Quarks und Photonen</p>
+    </li><li data-video-href="media/videos/video_3.mp4">
+        <h2>Elektronen &amp; Co.</h2>
+        <p>Das Elektron und seine Verwandten</p>
+    </li><li data-video-href="media/videos/video_4.mp4">
+        <h2>Quarks</h2>
+        <p></p>
+    </li><li data-video-href="media/videos/video_5.mp4">
+        <h2>Photonen, Gluonen </h2>
+        <p>und andere Austauschteilchen</p>
+    </li><li data-video-href="media/videos/video_6.mp4">
+        <h2>Higgs</h2>
+        <p>Das Geheimnis der Masse</p>
+    </li><li data-video-href="media/videos/video_7.mp4">
+        <h2>Und jetzt?</h2>
+        <p>Spannende Fragen und Antworten</p>
+    </li>
+</ul>
+         
       </div>
 
-      <video src="media/videos/video_1.mp4" controls></video>
+      <video id="videoplayer" src="media/videos/video_1.mp4" controls></video>
       </div> <!-- /.content -->
 
   </div> <!-- /.page-->
