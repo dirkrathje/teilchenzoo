@@ -533,6 +533,10 @@ var animateScroll = function (targetElement, speed) {
     );
 };
 
+function adjustPageHeight() {
+    $(".page").css("min-height", $(document).height());
+}
+
 function initPageHome() {
     "use strict";
 
@@ -609,6 +613,7 @@ var app = {
         var self = this;
         this.registerEvents();
         self.route();
+        adjustPageHeight(); 
     },
 
     route: function() {
@@ -677,6 +682,8 @@ var app = {
         }
 
         $(window).on('hashchange', $.proxy(this.route, this));
+        $(window).on('resize', adjustPageHeight);
+
     },
 
     showAlert: function(message, title) {
