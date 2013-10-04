@@ -617,6 +617,8 @@ var app = {
 
         //stopVideoplayer(); 
         if (!hash) {
+            hash = "#page-home";
+        }
 /*            if (this.homePage) {
                 this.slidePage(this.homePage);
                 this.homePage.findByName();
@@ -627,7 +629,7 @@ var app = {
                 this.homePage.findByName();
             }
             return;*/
-        }
+        
 //        var match = hash.match(this.detailsURL);
         $(".page").hide(); 
         $(hash).show(); 
