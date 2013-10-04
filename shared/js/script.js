@@ -383,9 +383,9 @@ function updateQuiz() {
     });
 
     if (show_particlomatic_info) {
-        $('#particlomatic_result_control_info').trigger("click");
-    } else if ($('#particlomatic_result_control_info').hasClass("btn-success")) {
-        $('#particlomatic_result_control_table').trigger("click");
+        $('.particlomatic_result_control_info').trigger("click");
+    } else if ($('.particlomatic_result_control_info').hasClass("btn-success")) {
+        $('.particlomatic_result_control_table').trigger("click");
     }
 }
 
@@ -422,26 +422,27 @@ function initParticlomatic() {
     updateQuiz();
     show_particlomatic_info = false;
 
-    $("#particlomatic_button_hide_info").hide();
-    $("#particlomatic_button_show_info").on("click", function (event) {
+    $(".particlomatic_button_hide_info").hide();
+    $(".particlomatic_button_show_info").on("click", function (event) {
         event.preventDefault();
         $(this).hide();
-        $("#particlomatic_button_hide_info").show();
+        $(".particlomatic_button_hide_info").show();
         $(".particlomaticHelp").show();
     });
-    $("#particlomatic_button_hide_info").on("click", function (event) {
+    $(".particlomatic_button_hide_info").on("click", function (event) {
         event.preventDefault();
         $(this).hide();
-        $("#particlomatic_button_show_info").show();
+        $(".particlomatic_button_show_info").show();
         $(".particlomaticHelp").hide();
     });
 
-    $("#particlomatic_info").show();
-    $("#particlomatic_result_table").hide();
-    $("#particlomatic_result_top3").hide();
+    $(".particlomatic_info").show();
+    $(".particlomatic_result_table").hide();
+    $(".particlomatic_result_top3").hide();
 
-    $(".particlomatic_result_control_button").on("click", function () {
+    $(".particlomatic_result_control_button").on("click", function (event) {
 
+        event.preventDefault();
         $(".particlomatic_result_control_button").removeClass("btn-success");
         $(".particlomatic_result_control_button").addClass("btn-info");
 
@@ -453,7 +454,7 @@ function initParticlomatic() {
         $(paneId).show();
     });
 
-    $("#particlomatic_button_reset").on("click", function (event) {
+    $(".particlomatic_button_reset").on("click", function (event) {
 
         event.preventDefault();
         $("#quiz-form input").each(function () {
@@ -461,7 +462,6 @@ function initParticlomatic() {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
             $(this).slider('refresh');
-            $('#particlomatic_result_tab a[href="#particlomatic_info"]').tab('show');
         });
     });
 }
@@ -636,5 +636,86 @@ function initPageParticlomatic() {
         }
     }));
 }
+
+
+
+var app = {
+
+    initialize: function() {
+        var self = this;
+        this.registerEvents();
+        self.route();
+    },
+
+    route: function() {
+        var self = this,
+            hash = window.location.hash;
+        console.log(hash);
+        if (!hash) {
+/*            if (this.homePage) {
+                this.slidePage(this.homePage);
+                this.homePage.findByName();
+
+            } else {
+                this.homePage = new HomeView(this.store).render();
+                this.slidePage(this.homePage);
+                this.homePage.findByName();
+            }
+            return;*/
+        }
+//        var match = hash.match(this.detailsURL);
+        $(".page").hide(); 
+        $(hash).show(); 
+        if (hash === "#page-home") {
+            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
+        } else
+        if (hash === "#page-particlomatic") {
+            $("#navbar_fixed_top h1").html("Teilch-o-mat"); 
+            initParticlomatic();
+
+        } else
+        if (hash === "#page-videos") {
+            $("#navbar_fixed_top h1").html("Teilchenzoo-Videos"); 
+        } else
+        if (hash === "#page-content") {
+            $("#navbar_fixed_top h1").html("Teilchenzoo-Steckbriefe"); 
+        }
+    },
+    registerEvents: function() {
+
+        var self = this;
+
+        if (document.documentElement.hasOwnProperty('ontouchstart')) {
+            /*... if yes: register touch event listener
+            to change the 'selected' state of the item */
+            $('body').on('touchstart', 'a', function(event) {
+                $(event.target).addClass('tappable-active');
+            });
+            $('body').on('touchend', 'a', function(event) {
+                $(event.target).removeClass('tappable-active');
+            });
+        } else {
+            // ... if not: register mouse events instead
+            $('body').on('mousedown', 'a', function(event) {
+                $(event.target).addClass('tappable-active');
+            });
+            $('body').on('mouseup', 'a', function(event) {
+                $(event.target).removeClass('tappable-active');
+            });
+        }
+
+        $(window).on('hashchange', $.proxy(this.route, this));
+    },
+
+    showAlert: function(message, title) {
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
+        } else {
+            alert(title ? (title + ': ' + message) : message);
+        }
+    }
+};
+
+
 
 

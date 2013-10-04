@@ -406,83 +406,6 @@
 
 
 
-/*
-3D
-*/
-#perspective {
-	background-color: hsla(0,0%,0%,.1);
-	background-image: 
-	-webkit-linear-gradient(hsla(0,50%,40%,.1) 2.5%, transparent 2.5%, transparent 97.5%, hsla(0,0%,0%,.1) 97.5%), 
-	-webkit-linear-gradient(left, hsla(0,40%,0%,.1) 2.5%, transparent 2.5%, transparent 97.5%, hsla(0,0%,0%,.1) 97.5%);
-	background-size: 3em 3em;
-	box-shadow: 0 0 0 .25em hsla(0,0%,0%,.2);
-	height: 30em;
-	margin-left: 10%;
-	padding: 0em;
-	width: 30em;
-	height: 39em;
-	top: 0%;
-	.transform(perspective(800) rotateX(45deg) rotateZ(15deg));
-	-webkit-transform-style: preserve-3d;
-	-moz-transform: preserve-3d;
-}
-.cube {
-	width: 3em;
-	height: 3em;
-	position: absolute;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform: preserve-3d;
-}
-.cube figure {
-	width: 3em;
-	height: 3em;
-	display: block;
-	position: absolute;
-	box-shadow: inset 0 0 0 .2em hsla(0,0%,0%,.2);
-	margin: 0px;
-}
-.cube .front {
-	-webkit-transform: translateZ( 3em );
-	-moz-transform: translateZ( 3em );
-	-o-transform: translateZ( 3em );
-	transform: translateZ( 3em );
-}
-.cube .back {
-	-webkit-transform: translateZ( 0em );
-	-moz-transform: translateZ( 0em );
-	-o-transform: translateZ( 0em );
-	transform: translateZ( 0em );
-}
-.cube .right {
-	-webkit-transform-origin: left top;
-	-webkit-transform: rotateY( -90deg ) translateZ( 0em );
-	-moz-transform: rotateY( 90deg ) translateZ( 0em );
-	-o-transform: rotateY( 90deg ) translateZ( 0em );
-	transform: rotateY( 90deg ) translateZ( 0em );
-}
-.cube .left {
-	-webkit-transform-origin: left top;
-	-webkit-transform: rotateY( -90deg ) translateZ( -3em );
-	-moz-transform: rotateY( -90deg ) translateZ( 0em );
-	-o-transform: rotateY( -90deg ) translateZ( 0em );
-	transform: rotateY( -90deg ) translateZ( 0em );
-}
-.cube .top {
-	-webkit-transform-origin: left top;
-	-webkit-transform: rotateX( 90deg ) translateZ( 0em );
-	-moz-transform: rotateX( 90deg ) translateZ( 1.5em );
-	-o-transform: rotateX( 90deg ) translateZ( 1.5em );
-	transform: rotateX( 90deg ) translateZ( 1.5em );
-}
-.cube .bottom {
-	-webkit-transform-origin: left top;
-	-webkit-transform: rotateX( 90deg ) translateZ( -3em );
-	-moz-transform: rotateX( -90deg ) translateZ( 1.5em );
-	-o-transform: rotateX( -90deg ) translateZ( 1.5em );
-	transform: rotateX( -90deg ) translateZ( 1.5em );
-}
-
-
 .question {
 	color: #888888; 	
 }
@@ -525,10 +448,12 @@
 	width: 1%;
 }
 .quiz-form-item-title-middle-td {
-	width: 99%;
+	width: 1%;
+	text-align: center;
 }
 .quiz-form-item-title-right-td {
 	width: 1%;
+	text-align: right;
 }
 
 
@@ -678,9 +603,6 @@ body .modal-dialog {
 }
 
 .encylopedia_table {
-	position: absolute; 
-	top: 5px;
-	left: 25px;
 }
 
 .video_teaser_table td,
@@ -825,6 +747,7 @@ body .modal-dialog {
 	text-decoration: underline;
 }
 .particlomaticHelp {
+	margin-top: 1em;
 	display: none;
 }
 
@@ -856,6 +779,12 @@ em {
 	background-color: none;
 	padding-top: -0px;
 }
+
+#page-particlomatic .content h1 {
+	margin-bottom: 0.5em; 
+	font-size: 400%;
+}
+
 
 #particlomatic_info .particle {
 	width: 20%;
@@ -939,3 +868,72 @@ a[href="#page-options"] {
     display: none;
 }
 
+
+
+.app .navbar {
+	background-color: rgba(44, 62, 80, 0.95);
+	margin: 0px;
+	min-height: 50px;
+	border: none;
+}
+
+.app .navbar ul {
+	list-style: none;
+	width: 100%;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+.app .navbar ul li {
+	display: inline-block; 
+	width: 33%;
+	text-align: center;
+	min-height: 50px;
+	padding: 15px 20px;
+
+
+}
+.app .navbar ul li.left {
+	text-align: left;
+}
+
+.app .navbar ul li.right {
+	text-align: right;
+}
+
+input[type="range"] {
+	width: 100%;
+	margin: 20px 0px;
+	padding: 10px 0px;
+    -webkit-appearance: none;
+    background-color: #DDDDDD;
+    height:10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #5bc0de;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.app .navbar ul li a {
+	color: white;
+}
+
+.app .page {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.app #navbar_fixed_top h1 {
+	font-size: 100%;
+	color: white;
+	margin: 0;
+	font-weight: normal;
+}
+.app .page {
+	min-height: 640px;
+}

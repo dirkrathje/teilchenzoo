@@ -16,8 +16,10 @@
   <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
   <script type="text/javascript" src="shared/lib/jquery/scrollToFixed/jquery-scrolltofixed-min.js"></script>
   <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+  <!--
   <script type="text/javascript" src="shared/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
   <link rel="stylesheet" href="shared/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
+-->
 
   <link rel="stylesheet" href="shared/lib/reset/reset.css">
   <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
@@ -31,20 +33,37 @@
 
   <script src="shared/js/script.js"></script>
   <script>
-    $(document).ready(function(){onReady();});
+
+    $(document).ready(function(){
+      app.initialize();
+      onReady();});
   </script>
 </head>
 
 <body class="app">
 
-  <div data-role="page" class="page" id="page-home">
+  <nav id="navbar_fixed_top" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul>
+      <li class="left"><a href="#page-home">Übersicht</a></li>
+      <li><h1>Filme</h1></li>
+      <li class="right"><a href="#page-settings">Einstellungen</a></li>
+    </ul>
+  </nav>
 
-    <div data-role="header">
-      <h1>Teilchenzoo</h1>
-      <a href="#page-options" data-icon="gear" class="ui-btn-right" data-transition="none">Optionen</a>
-    </div><!-- .header -->
 
-    <div data-role="content" class="content paintedWood" style="min-height: 1200px;">
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <ul>
+      <li><a href="#page-particlomatic">Teilch-o-mat</a></li>
+      <li><a href="#page-videos">Filme</a></li>
+      <li><a href="#page-content">Steckbriefe</a></li>
+    </ul>
+  </nav>
+
+  
+
+  <div class="page" id="page-home">
+
+    <div data-role="content" class="content paintedWood">
 
       <img class="img-responsive" src="images/teilchenzoo-title-and-particles.png" alt="Teilchenzoo - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen."> 
 
@@ -101,32 +120,19 @@
      </div> <!-- /.row -->
    </div> <!-- /.content -->
 
-   <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-        <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-        <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-      </ul>
-    </div> <!-- /.navbar -->
-  </div> <!-- /.footer -->
 </div> <!-- /#page-home-->
 
 <div data-role="page" class="page" id="page-particlomatic">
-  <div data-role="header" data-position="fixed" >
-    <h1>Teilch-o-mat</h1>
-    <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-    <a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
-  </div> <!-- /.header -->
-  
-  <div data-role="content" class="content paintedWood" style="min-height: 1200px; overflow:hidden;">
+
+
+  <div data-role="content" class="content paintedWood">
 
     <div class="row" style="width: 99%; overflow: hidden;">
       <div class="col-md-6" id="particlomatic_result">
         <div class="quiz-form-item" style="text-align: center;" id="particlomatic_result_control">
-          <a class="btn btn-success particlomatic_result_control_button" href="#particlomatic_info" id="particlomatic_result_control_info">Info</a>
-          <a class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_table" id="particlomatic_result_control_table"><i class="icon-white icon-align-left"></i>Tabelle</a> 
-          <a class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_top3" id="particlomatic_result_control_top3">Top-3</a> 
+          <button class="btn btn-success particlomatic_result_control_button particlomatic_result_control_info" href="#particlomatic_info">Info</button>
+          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_table" href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
+          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3</button> 
         </div>
         <div class="particlomatic_result_pane paintedGray" id="particlomatic_info" style="padding-top: 0em;">
           <h1>Teilch-o-mat</h1>
@@ -145,9 +151,9 @@
       <div class="col-md-6" id="quiz-form-col" style="overflow:hidden;">
         <form id="quiz-form">
           <div class="quiz-form-item" style="text-align: center;">
-            <a class="btn btn-info" id="particlomatic_button_reset">Löschen</a>
-            <a class="btn btn-info" id="particlomatic_button_show_info">Beschreibung</a> 
-            <a class="btn btn-success" id="particlomatic_button_hide_info">Beschreibung</a> 
+            <button class="btn btn-info particlomatic_button_reset">Löschen</button>
+            <button class="btn btn-info particlomatic_button_show_info">Beschreibung</button> 
+            <button class="btn btn-success particlomatic_button_hide_info">Beschreibung</button> 
           </div>            
           <div class="quiz-form-item">
             <table class="quiz-form-item-title">
@@ -158,11 +164,13 @@
               </tr>
             </table>
             <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
-            <div class="ui-grid-b slide-description">
-              <div class="ui-block-a" style="text-align:left;">federleicht</div>
-              <div class="ui-block-b" style="text-align:center;">normal</div>
-              <div class="ui-block-c" style="text-align:right;">superschwer</div>
-            </div>
+            <table class="quiz-form-item-title">
+              <tr>
+                <td class="quiz-form-item-title-left-td">federleicht</td>
+                <td class="quiz-form-item-title-middle-td">normal</td>
+                <td class="quiz-form-item-title-right-td">superschwer</td>
+              </tr>
+            </table>
             <div class="particlomaticHelp">
               <p>Wie wir Menschen sind auch Elementarteilchen verschieden schwer. Die Bandbreite ist dabei gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos.</p>
             </div>
@@ -177,11 +185,13 @@
                 </tr>
               </table>
               <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
-              <div class="ui-grid-b slide-description">
-                <div class="ui-block-a" style="text-align:left;">pessimistisch<br>(negativ)</div>
-                <div class="ui-block-b" style="text-align:center;">gelassen<br>(neutral)</div>
-                <div class="ui-block-c" style="text-align:right;">optimistisch<br>(positiv)</div>
-              </div>
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td">pessimistisch<br>(negativ)</td>
+                  <td class="quiz-form-item-title-middle-td">gelassen<br>(neutral)</td>
+                  <td class="quiz-form-item-title-right-td">optimistisch<br>(positiv)</td>
+                </tr>
+              </table>
               <div class="particlomaticHelp">
                 <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver unterwegs. Elementarteilchen haben eine elektrische Ladung, die negativ, neutral oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen.</p>
               </div>
@@ -195,10 +205,13 @@
                 </tr>
               </table>
               <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
-              <div class="ui-grid-a slide-description">
-                <div class="ui-block-a" style="text-align:left;">Mich wirft nichts aus der Bahn.</div>
-                <div class="ui-block-b" style="text-align:right;">Bin für jede Ablenkung zu haben.</div>
-              </div> <!-- /grid-b -->
+              <table class="quiz-form-item-title">
+                <tr>
+                  <td class="quiz-form-item-title-left-td">Mich wirft nichts aus der Bahn.</td>
+                  <td class="quiz-form-item-title-middle-td"></td>
+                  <td class="quiz-form-item-title-right-td">Bin für jede Ablenkung zu haben.</td>
+                </tr>
+              </table>
               <div class="particlomaticHelp">
                <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
              </div>
@@ -212,10 +225,12 @@
               </tr>
             </table>
             <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
-            <div class="ui-grid-a slide-description">
-              <div class="ui-block-a" style="text-align:left;">Nein, mich macht nichts kaputt.</div>
-              <div class="ui-block-b" style="text-align:right;">Ja! Bin superempfindlich.</div>
-            </div>
+            <table class="quiz-form-item-title">
+              <tr>
+                <td class="quiz-form-item-title-left-td">Nein, mich macht nichts kaputt.</td>
+                <td class="quiz-form-item-title-right-td">Ja!<br> Ich bin superempfindlich.</td>
+              </tr>
+            </table>
             <div class="particlomaticHelp">
              <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradiesische Ewigkeit. </p>
            </div>
@@ -229,11 +244,13 @@
             </tr>
           </table>
           <input type="range" name="quiz-oscillation" id="quiz-oscillation" min="0" max="100" value="50">
-          <div class="ui-grid-a slide-description">
-            <div class="ui-block-a" style="text-align:left;">Nein, mich gibt es nur einmal.</div>
-            <div class="ui-block-b" style="text-align:right;">Ja! In mir schlummern viele Seelen.</div>
-          </div>
-          <!-- /grid-b -->
+            <table class="quiz-form-item-title">
+              <tr>
+                <td class="quiz-form-item-title-left-td">Nein, mich gibt es nur einmal.</td>
+                <td class="quiz-form-item-title-right-td">Ja! In mir schlummern viele Seelen.</td>
+              </tr>
+            </table>
+
           <div class="particlomaticHelp">
            <p>Es gibt drei verschiedene Neutrino-Sorten: Elektron-, Myon- und Tauon-Neutrinos. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrino-Sorten erhalten daher 100 Punkte, der Rest bekommt nix.</p>
          </div>
@@ -247,10 +264,12 @@
           </tr>
         </table>
         <input type="range" name="quiz-confined" id="quiz-confined" min="0" max="100" value="50">
-        <div class="ui-grid-a slide-description">
-          <div class="ui-block-a" style="text-align:left;">Ich bin Einzelgänger und lieber alleine.</div>
-          <div class="ui-block-b" style="text-align:right;">Ohne Freunde oder Familie geht gar nichts.</div>
-        </div>
+        <table class="quiz-form-item-title">
+          <tr>
+            <td class="quiz-form-item-title-left-td">Ich bin Einzelgänger und lieber alleine.</td>
+            <td class="quiz-form-item-title-right-td">Ohne Freunde oder Familie geht gar nichts.</td>
+          </tr>
+        </table>
         <div class="particlomaticHelp">
          <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenwesenwert der Quarks ist daher 100, der der restlichen Teilchen liegt bei Null.</p>
        </div>
@@ -264,10 +283,12 @@
         </tr>
       </table>
       <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
-      <div class="ui-grid-a slide-description">
-        <div class="ui-block-a" style="text-align:left;">Nein, ich stehe gern im Rampenlicht!</div>
-        <div class="ui-block-b" style="text-align:right;">Ja, ich bin ein schüchternes Mauerblümchen.</div>
-      </div>
+      <table class="quiz-form-item-title">
+        <tr>
+          <td class="quiz-form-item-title-left-td">Nein, ich stehe gern im Rampenlicht!</td>
+          <td class="quiz-form-item-title-right-td">Ja, ich bin ein schüchternes Mauerblümchen.</td>
+        </tr>
+      </table>
       <div class="particlomaticHelp">
        <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkennen gegeben. Das Elektron kennt man seit 1897, das Higgs-Teilchen wurde erst 2012 nachgewiesen. Je später sich ein Teilchen nachgewiesen wurde, umso mehr Punkte bekommt es. Das Higgs-Teilchen erhält 75 Punkte. Die noch nicht gesichteten Gravitonen und Wimps bekommen 100 Punkte.</p>
      </div>
@@ -281,10 +302,13 @@
       </tr>
     </table>
     <input type="range" name="quiz-communicativeness" id="quiz-communicativeness" min="0" max="100" value="50">
-    <div class="ui-grid-a slide-description">
-      <div class="ui-block-a" style="text-align:left;">Ich bin kein großer Redner.</div>
-      <div class="ui-block-b" style="text-align:right;">Ja, ich unterhalte gerne.</div>
-    </div>
+      <table class="quiz-form-item-title">
+        <tr>
+          <td class="quiz-form-item-title-left-td">Ich bin kein großer Redner.</td>
+          <td class="quiz-form-item-title-right-td">Ja, ich unterhalte gerne.</td>
+        </tr>
+      </table>
+
     <div class="particlomaticHelp">
       <p>In der modernen Physik werden Kräfte zwischen Teilchen durch den Austausch von anderen Teilchen beschrieben – den Wechselwirkungsteilchen. Über diese Wechselwirkungsteilchen können Teilchen quasi kommunizieren: Die Wechselwirkungsteilchen bekommen hier daher 100 Punkte, der Rest geht leer aus. Im »Teilchenzoo« sind die Wechselwirkungsteilchen an offenen Mündern zu erkennen.</p>
     </div>
@@ -298,10 +322,13 @@
       </tr>
     </table>
     <input type="range" name="quiz-parityviolating" id="quiz-parityviolating" min="0" max="100" value="50">
-    <div class="ui-grid-a slide-description">
-      <div class="ui-block-a" style="text-align:left;">Spiegel bringen mir nichts.</div>
-      <div class="ui-block-b" style="text-align:right;">Ja, ich stehe ständig davor.</div>
-    </div>
+      <table class="quiz-form-item-title">
+        <tr>
+          <td class="quiz-form-item-title-left-td">Spiegel bringen mir nichts.</td>
+          <td class="quiz-form-item-title-right-td">Ja, ich stehe ständig davor.</td>
+        </tr>
+      </table>
+
     <!-- /grid-b -->
     <div class="particlomaticHelp">
      <p>Prozesse, an denen die W- und das Z-Teilchen beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Das hat lange für Aufregung gesorgt, weil man dachte, dass das eigentlich nicht sein kann. Daher 100 Punkte an W-minus, W-plus und Z-null.</p>
@@ -316,24 +343,22 @@
     </tr>
   </table>
   <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
-  <div class="ui-grid-a slide-description">
-    <div class="ui-block-a" style="text-align:left;">Ich träume allerhöchstens nachts.</div>
-    <div class="ui-block-b" style="text-align:right;">Ich tauche gerne in die Fantasie ab.</div>
-  </div>
+   <table class="quiz-form-item-title">
+        <tr>
+          <td class="quiz-form-item-title-left-td">Ich träume höchstens nachts.</td>
+          <td class="quiz-form-item-title-right-td">Ich tauche gerne in die Fantasie ab.</td>
+        </tr>
+      </table>
   <div class="particlomaticHelp">
    <p>Bis auf die Gravitonen und Wimps wurden alle Teilchen aus unserem »Teilchenzoo« nachgewiesen. Vielleicht sind Gravitonen und Wimps nur schüchtern, vielleicht bleiben sie aber auch Phantasie. Daher bekommen die beiden 100 Punkte, der Rest keine.</p>
  </div>
-</div> <!-- /.quiz-form-item -->
-            <!--
-            <fieldset class="ui-grid-a">
-                <div class="ui-block-a">
-                  <button type="submit" data-theme="d">Cancel</button>
-                </div>
-                <div class="ui-block-b">
-                  <button type="submit" data-theme="a">Submit</button>
-                </div>
-              </fieldset>
-            -->
+</div>
+ <div class="quiz-form-item" style="text-align: center;">
+
+<button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3 anzeigen</button> 
+</div>
+</div>           
+
             
           </form>
           <!-- /quiz-form --> 
@@ -342,51 +367,29 @@
       </div>
     </div> <!-- /.content --> 
 
-    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-        </ul>
-      </div> <!-- /.navbar -->
-    </div> <!-- /.footer -->
   </div> <!-- /.page-->
 
 
 
   <div data-role="page" class="page" id="page-videos">
-    <div data-role="header">
-      <h1>Teilchenzoo-Filme</h1>
-      <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-      <a href="#page-options" data-icon="gear" class="ui-btn-right" data-transition="none">Optionen</a>
-    </div> <!-- /.header -->
 
-    <div data-role="content"  class="content" style="min-height: 1200px; background-color: black;	">
-      <div id="video_stage" style="">Loading the player...</div>
-    </div> <!-- /.content -->
-    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-        </ul>
-      </div> <!-- /.navbar -->
-    </div> <!-- /.footer -->
+    <div data-role="content"  class="content">
+      <div class="videocontroller">
+
+
+      </div>
+
+      <video src="media/videos/video_1.mp4" controls></video>
+      </div> <!-- /.content -->
+
   </div> <!-- /.page-->
 
 
-  <div data-role="page" class="page" id="page-content">
-    <div data-role="header">
-      <h1>Steckbriefe</h1>
-      <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-      <a href="#page-options" data-icon="gear" class="ui-btn-right"  data-transition="none">Optionen</a>
-    </div> <!-- /.header -->
+  <div class="page" id="page-content">
 
-    <div data-role="content"  class="content paintedWood" style="min-height: 1200px; position: relative; overflow: hidden;">
+    <div class="content paintedWood clearfix" >
 
-      <div id="encyclopedia_index">
+      <div id="encyclopedia_index" class="clearfix">
         <a href="#overview"><img src="images/encyclopedia_teasers/overview.png" alt="" class="encyclopedia_teaser_img overview_encyclopedia_teaser_img"/></a>
         <a href="#electron" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a>
         <a href="#myon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon.png" alt="" class="encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a>
@@ -459,24 +462,11 @@
       <div id="encyclopedia_stage"></div>
     </div> <!-- /.content -->
 
-    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-        </ul>
-      </div> <!-- /.navbar -->
-    </div> <!-- /.footer -->
+
   </div> <!-- /.page-->
 
 
-  <div data-role="page" class="page" id="page-options">
-
-    <div data-role="header">
-      <h1>Optionen</h1>
-      <a href="#page-home" data-icon="home" data-transition="none">Übersicht</a>
-    </div> <!-- /.header -->
+  <div class="page" id="page-settings">
 
     <div data-role="content" class="paintedWood">
       <h1 class="title">Optionen</h1>
@@ -492,15 +482,6 @@
       </form>
     </div> <!-- /.content -->
 
-    <div data-role="footer" data-position="fixed" data-id="f1" data-tap-toggle="false">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#page-particlomatic" data-role="tab" data-transition="none">Teilch-o-mat</a></li>
-          <li><a href="#page-videos" data-role="tab" data-transition="none">Filme</a></li>
-          <li><a href="#page-content" data-role="tab" data-transition="none">Steckbriefe</a></li>
-        </ul>
-      </div> <!-- /.navbar -->
-    </div> <!-- /.footer -->
   </div> <!-- /.page-->
 
   <div id="screensaver">&nbsp;</div>
