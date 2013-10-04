@@ -564,7 +564,7 @@ var animateScroll = function (targetElement, speed) {
 };
 
 function adjustPageHeight() {
-    $(".page").css("min-height", "768px");
+//    $(".page").css("min-height", "768px");
 }
 
 function initPageHome() {
