@@ -2,7 +2,11 @@
 /*jslint browser: true*/
 /*jslint regexp: true */
 /*global $, jQuery, FastClick, jwplayer, device, appName */
-
+if ( typeof String.prototype.endsWith != 'function' ) {
+  String.prototype.endsWith = function( str ) {
+    return this.substring( this.length - str.length, this.length ) === str;
+  }
+};
 function sortByKey(array, key) {
     "use strict";
     return array.sort(function (a, b) {
@@ -434,25 +438,49 @@ function initParticlomatic() {
 
 function stopVideoplayer() {
     var videoplayer = document.getElementsByTagName('video')[0];
-    if (videoplayer.stop !== "undefined")
-    videoplayer.stop(); 
+    if (videoplayer.pause !== "undefined")
+    videoplayer.pause(); 
 }
 
 
 function initVideoPlayer() {
 
-    $("#videoplayer").height("500px");
+    $("#videoplayer").height("576px");
+
+    $("#videoplayer").on("click", function() {
+
+        var videoplayer = document.getElementsByTagName('video')[0];
+        videoplayer.play();
+
+
+    });
 
     $(".videocontroller li").on("click", function() {
 
-        $(".videocontroller li").removeClass("selected");
-        $(this).addClass("selected");
         var videoplayer = $("#videoplayer")[0],
             src = $(this).attr("data-video-href");
-        $("#videoplayer").hide(); 
-        videoplayer.src = src;
-        videoplayer.play();
-        $("#videoplayer").show(); 
+
+        if ($(this).hasClass("selected")) { 
+
+            console.log("pause");
+            videoplayer.pause();
+            $(".videocontroller li").removeClass("selected");
+        
+        } else {
+
+            $(".videocontroller li").removeClass("selected");
+            $(this).addClass("selected");
+            if (videoplayer.src.endsWith(src)) {
+                videoplayer.play();
+            } else {
+                 videoplayer.src = src;
+                videoplayer.load();
+                videoplayer.play();
+            }
+
+                
+        }
+
     });
 
 };
@@ -536,7 +564,7 @@ var animateScroll = function (targetElement, speed) {
 };
 
 function adjustPageHeight() {
-    $(".page").css("min-height", $(document).height());
+    $(".page").css("min-height", "768px");
 }
 
 function initPageHome() {
@@ -622,7 +650,7 @@ var app = {
         var self = this,
             hash = window.location.hash;
 
-        //stopVideoplayer(); 
+        stopVideoplayer(); 
         if (!hash) {
             hash = "#page-home";
         }
