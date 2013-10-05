@@ -377,13 +377,15 @@ function onReady() {
     FastClick.attach(document.body);
 
     if (appName === "Teilchomat") {
-        $("a[href='#page-home']").hide();
-        $(".navbar-fixed-bottom").hide();
+        $(".navbar").hide();
+        $(".page").hide(); 
+        $("#page-particlomatic").show(); 
         initParticlomatic();
     }
 
-    $(document).bind('tap', function () {bypassScreensaver = true; });
-    checkScreensaver();
+    //$(document).bind('click', function () {bypassScreensaver = true; });
+    //$(document).bind('tap', function () {bypassScreensaver = true; });
+    //checkScreensaver();
 }
 
 function initParticlomatic() {
