@@ -378,8 +378,8 @@ function onReady() {
 
     if (appName === "Teilchomat") {
         $("a[href='#page-home']").hide();
-        $("div[data-role='footer']").hide();
-        $.mobile.changePage($("#page-particlomatic"), "none");
+        $(".navbar-fixed-bottom").hide();
+        initParticlomatic();
     }
 
     $(document).bind('tap', function () {bypassScreensaver = true; });
@@ -408,23 +408,22 @@ function initParticlomatic() {
         $(".particlomaticHelp").hide();
     });
 
-    $(".particlomatic_info").show();
-    $(".particlomatic_result_table").hide();
-    $(".particlomatic_result_top3").hide();
+    $("#particlomatic_info").show();
+    $("#particlomatic_result_table").hide();
+    $("#particlomatic_result_top3").hide();
+
 
     $(".particlomatic_result_control_button").on("click", function (event) {
 
+        var targetSelector = $(this).attr("href");
         event.preventDefault();
         $(".particlomatic_result_control_button").removeClass("btn-success");
         $(".particlomatic_result_control_button").addClass("btn-info");
-
-        $(this).removeClass("btn-info");
-        $(this).addClass("btn-success");
-
+        $(".particlomatic_result_control_button[href='" + targetSelector + "']").removeClass("btn-info");
+        $(".particlomatic_result_control_button[href='" + targetSelector + "']").addClass("btn-success");
         $(".particlomatic_result_pane").hide();
-        var paneId = $(this).attr("href");
-        $(paneId).show();
-    });
+        $(targetSelector).show();
+    });    
 
     $(".particlomatic_button_reset").on("click", function (event) {
 
@@ -442,31 +441,54 @@ function stopVideoplayer() {
     videoplayer.pause(); 
 }
 
+var lastClickMilliseconds = 0;
 
 function initVideoPlayer() {
+    "use strict";
+    
+    var videoplayer = document.getElementsByTagName('video')[0];
+    $("#videoplayer").height("600px");
+    videoplayer.load(); 
 
-    $("#videoplayer").height("576px");
+    $(".videocontroller li").removeClass("selected");
+    
+    $("#videoplayer").on("click", function(event) {
 
-    $("#videoplayer").on("click", function() {
+        var videoplayer = document.getElementsByTagName('video')[0],
+            milliseconds = new Date().getTime();
+        console.log(milliseconds);
 
-        var videoplayer = document.getElementsByTagName('video')[0];
-        videoplayer.play();
+        event.stopImmediatePropagation();
+
+        console.log("#videoplayer.click");
+        console.log("#videoplayer.click: videoplayer.paused = " + videoplayer.paused);
+        if (videoplayer.paused) {
+            videoplayer.play();
+        } else {
+
+            videoplayer.pause();
+        }
 
 
     });
 
-    $(".videocontroller li").on("click", function() {
+    $(".videocontroller li").on("click", function(event) {      
 
         var videoplayer = $("#videoplayer")[0],
             src = $(this).attr("data-video-href");
 
+        event.stopImmediatePropagation();
+        
         if ($(this).hasClass("selected")) { 
 
+            console.log("selected");
             console.log("pause");
             videoplayer.pause();
             $(".videocontroller li").removeClass("selected");
         
         } else {
+
+            console.log("not selected");
 
             $(".videocontroller li").removeClass("selected");
             $(this).addClass("selected");
@@ -477,32 +499,34 @@ function initVideoPlayer() {
                 videoplayer.load();
                 videoplayer.play();
             }
-
-                
         }
-
     });
-
 };
 
 
-$(document).on("pageinit", "#page-content", function () {
+function initEncyclopedia() {
     "use strict";
 
-    $(".encyclopedia_link_detail").hide();
+    $("#encyclopedia_index").hide();
+    $("#encyclopedia_overview").show();
+    $("#encyclopedia_stage").html("");
+
     $("#encyclopedia_index a, #encyclopedia_overview a").on("click", function (event) {
 
         var target = $(this).attr("href").substr(1),
             contentFileName = "encyclopedia/" + target + ".html";
+
         if (target === "overview") {
+
             $("#encyclopedia_overview").show();
-            $(".encyclopedia_link_detail").hide();
+            $("#encyclopedia_index").hide();
+            $("#encyclopedia_stage").html("");
+        
         } else {
+
             $("#encyclopedia_overview").hide();
-            $(".encyclopedia_link_detail").show();
-        }
-        event.preventDefault();
-        $("#encyclopedia_stage").load(contentFileName, function () {
+            $("#encyclopedia_index").show();
+            $("#encyclopedia_stage").load(contentFileName, function () {
             $("#encyclopedia_stage a").on("click", function (event) {
 
                 var target2 = $(this).attr("href").substr(1),
@@ -517,10 +541,11 @@ $(document).on("pageinit", "#page-content", function () {
                 event.preventDefault();
                 $("#encyclopedia_stage").load(contentFileName2);
             });
-        });
+        });        }
+        event.preventDefault();
+       
     });
-});
-
+}
 
 var animateScroll = function (targetElement, speed) {
     "use strict";
@@ -654,18 +679,7 @@ var app = {
         if (!hash) {
             hash = "#page-home";
         }
-/*            if (this.homePage) {
-                this.slidePage(this.homePage);
-                this.homePage.findByName();
 
-            } else {
-                this.homePage = new HomeView(this.store).render();
-                this.slidePage(this.homePage);
-                this.homePage.findByName();
-            }
-            return;*/
-        
-//        var match = hash.match(this.detailsURL);
         $(".page").hide(); 
         $(hash).show(); 
         if (hash === "#page-home") {
@@ -685,6 +699,7 @@ var app = {
         if (hash === "#page-content") {
             $(".navbar-fixed-top").show();
             $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
+            initEncyclopedia(); 
         }
         $(document).scrollTop(0);
     },
@@ -710,6 +725,12 @@ var app = {
                 $(event.target).removeClass('tappable-active');
             });
         }
+
+        $(".navbar-fixed-bottom a").on("click", function(){
+
+            $(".navbar-fixed-bottom a").removeClass("selected");
+            $(this).addClass("selected");            
+        });
 
         $(window).on('hashchange', $.proxy(this.route, this));
         $(window).on('resize', adjustPageHeight);

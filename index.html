@@ -38,17 +38,15 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <ul>
       <li class="left"><a href="#page-home">Übersicht</a></li>
-      <li><a href="#page-videos"><h1>Filme</h1></a></li>
-      <li class="right language_selector"><a href="#">Du</a> | <a href="#">Sie</a> | <a href="#">You</a></li>
+      <li><h1>Filme</h1></li>
+<!--      <li class="right language_selector"><a href="#">Du</a> | <a href="#">Sie</a> | <a href="#">You</a></li>-->
     </ul>
   </nav>
 
 
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <ul>
-      <li><a href="#page-particlomatic">Teilch-o-mat</a></li>
-      <li><a href="#page-videos">Filme</a></li>
-      <li><a href="#page-content">Steckbriefe</a></li>
+      <li><a href="#page-particlomatic">Teilch-o-mat</a></li><li><a href="#page-videos">Filme</a></li><li><a href="#page-content">Steckbriefe</a></li>
     </ul>
   </nav>
 
@@ -115,17 +113,22 @@
 
 </div> <!-- /#page-home-->
 
-<div data-role="page" class="page" id="page-particlomatic">
+<div class="page" id="page-particlomatic">
 
 
-  <div data-role="content" class="content paintedWood">
+  <div class="content paintedWood">
 
+<!--    <div class="row" style="width: 99%; overflow: hidden;">
+        <div class="col-md-6 paintedGray">AAA</div>
+        <div class="col-md-6 paintedGray">BBB</div>
+    </div>
+-->
     <div class="row" style="width: 99%; overflow: hidden;">
-      <div class="col-md-6" id="particlomatic_result">
-        <div class="quiz-form-item" style="text-align: center;" id="particlomatic_result_control">
-          <button class="btn btn-success particlomatic_result_control_button particlomatic_result_control_info" href="#particlomatic_info">Info</button>
-          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_table" href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
-          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3</button> 
+      <div id="particlomatic_result">
+        <div class="quiz-form-item paintedGray"  style="text-align: center;" id="particlomatic_result_control">
+          <button class="btn btn-success particlomatic_result_control_button" href="#particlomatic_info">Info</button>
+          <button class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
+          <button class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_top3">Top-3</button> 
         </div>
         <div class="particlomatic_result_pane paintedGray" id="particlomatic_info" style="padding-top: 0em;">
           <h1>Teilch-o-mat</h1>
@@ -141,7 +144,7 @@
         <div class="paintedGray particlomatic_result_pane" id="particlomatic_result_top3"></div>
       </div>
 
-      <div class="col-md-6" id="quiz-form-col" style="overflow:hidden;">
+      <div class="" id="quiz-form-col" style="overflow:hidden;">
         <form id="quiz-form">
           <div class="quiz-form-item" style="text-align: center;">
             <button class="btn btn-info particlomatic_button_reset">Löschen</button>
@@ -348,7 +351,7 @@
 </div>
  <div class="quiz-form-item" style="text-align: center;">
 
-<button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3 anzeigen</button> 
+<button class="btn btn-info particlomatic_result_control_button" href="#particlomatic_result_top3">Top-3 anzeigen</button> 
 </div>
 </div>           
 
@@ -364,39 +367,32 @@
 
 
 
-  <div data-role="page" class="page" id="page-videos">
-
-      <div class="videocontroller">
-
-  <ul>
-    <li data-video-href="media/videos/video_1.mp4" class="selected">
+  <div class="page" id="page-videos">
+    <div class="videocontroller">
+      <ul>
+        <li data-video-href="media/videos/video_1.mp4" class="selected">
         <h2>Was sind Teilchen?</h2>
-    </li><li data-video-href="media/videos/video_2.mp4">
+      </li><li data-video-href="media/videos/video_2.mp4">
         <h2>Einführung</h2>
         <p>Die Welt von Higgs, Quarks und Photonen</p>
-    </li><li data-video-href="media/videos/video_3.mp4">
+      </li><li data-video-href="media/videos/video_3.mp4">
         <h2>Elektronen &amp; Co.</h2>
         <p>Das Elektron und seine Verwandten</p>
-    </li><li data-video-href="media/videos/video_4.mp4">
+      </li><li data-video-href="media/videos/video_4.mp4">
         <h2>Quarks</h2>
         <p></p>
-    </li><li data-video-href="media/videos/video_5.mp4">
+      </li><li data-video-href="media/videos/video_5.mp4">
         <h2>Photonen, Gluonen </h2>
         <p>und andere Austauschteilchen</p>
-    </li><li data-video-href="media/videos/video_6.mp4">
+      </li><li data-video-href="media/videos/video_6.mp4">
         <h2>Higgs</h2>
         <p>Das Geheimnis der Masse</p>
-    </li><li data-video-href="media/videos/video_7.mp4">
+      </li><li data-video-href="media/videos/video_7.mp4">
         <h2>Und jetzt?</h2>
-        <p>Spannende Fragen und Antworten</p>
-    </li>
-</ul>
-         
-      </div>
-
-      <video id="videoplayer" src="media/videos/video_1.mp4"></video>
-
-  </div> <!-- /.page-->
+        <p>Spannende Fragen und Antworten</p></li></ul>
+    </div>
+    <video id="videoplayer" src="media/videos/video_1.mp4"></video>
+  </div> <!-- /.page #page-videos -->
 
 
   <div class="page" id="page-content">
@@ -404,7 +400,7 @@
     <div class="content paintedWood clearfix" >
 
       <div id="encyclopedia_index" class="clearfix">
-        <a href="#overview"><img src="images/encyclopedia_teasers/overview.png" alt="" class="encyclopedia_teaser_img overview_encyclopedia_teaser_img"/></a>
+        <a href="#overview"  class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/overview.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a>
         <a href="#electron" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a>
         <a href="#myon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon.png" alt="" class="encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a>
         <a href="#tauon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a>
@@ -427,9 +423,9 @@
         <a href="#wimp" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="encyclopedia_teaser_img wimp_encyclopedia_teaser_img"/></a>
         <a href="#antimatter" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/antimatter.png" alt="" class="encyclopedia_teaser_img antimatter_encyclopedia_teaser_img"/></a>
       </div>
-      <table class="encylopedia_table" id="encyclopedia_overview" style="width: 90%; margin: auto;">
+      <table class="encylopedia_table" id="encyclopedia_overview" style="width: 90%;">
         <tr>
-          <td>&nbsp;</td>
+          <td><a href="#overview"><img src="images/encyclopedia_teasers/overview.png" alt="" class="img-responsive encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a></td>
           <td><a href="#electron"><img src="images/encyclopedia_teasers/electron.png" alt="" class="img-responsive encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a></td>
           <td><a href="#myon"><img src="images/encyclopedia_teasers/myon.png" alt="" class="img-responsive encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a></td>
           <td><a href="#tauon"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="img-responsive encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a></td>
@@ -479,24 +475,6 @@
 
   </div> <!-- /.page-->
 
-
-  <div class="page" id="page-settings">
-
-    <div data-role="content" class="paintedWood">
-      <h1 class="title">Optionen</h1>
-      <form>
-        <fieldset data-role="controlgroup">
-          <input type="radio" name="radio-language" id="radio-language_DE_DU" value="DE_DU" checked="checked">
-          <label for="radio-language_DE_DU">Deutsch (Du)</label>
-          <input type="radio" name="radio-language" id="radio-language_DE_SIE" value="DE_SIE">
-          <label for="radio-language_DE_SIE">Deutsch (Sie)</label>
-          <input type="radio" name="radio-language" id="radio-language_EN" value="EN">
-          <label for="radio-language_EN">English</label>
-        </fieldset>
-      </form>
-    </div> <!-- /.content -->
-
-  </div> <!-- /.page-->
 
   <div id="screensaver">&nbsp;</div>
 </body>
