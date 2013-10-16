@@ -1,3 +1,33 @@
+h1, h2, h3, h4, h5 {
+	font-family: 'SourceSansPro', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+}
+h2 {
+	font-size: 48px;
+	line-height: 24px;
+	
+}
+h3 {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 24px;
+}
+h4 {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 24px;
+}
+.content ul {
+	margin: 24px 0px;
+}
+p {
+	margin: 0px;
+	margin-bottom: 16px;
+}
+
 @screen-phone-max: 768px;
 @screen-tablet: 768px; 
 @screen-medium-device: 992px; 
@@ -26,23 +56,35 @@
 		height: auto;
 	}
 	
+	
 	.app #particlomatic_result {
 		position: fixed;
 		width: 46%;
+	}
+	.website #particlomatic_result {
+		width: 42%;
+		position: absolute;
 	}
 
 	.app #quiz-form-col {
 		float: right; 
 		width: 46%;
 	}
+	.website #quiz-form-col {
+		width: 50%;
+		margin-left: 50%;
+		top: 0;
+	}
+
 	.app #quiz-form-col {
 		margin-top: 0px;
 	}
 
 	.app #particlomatic_result_top3 {
-		max-height: 500px;
+		max-height: 575  px;
 		overflow: scroll;
 	}
+
 
 
 }
@@ -65,7 +107,7 @@
 		margin: 0;
 		border-style: solid;
 		border-width: 50px;
-		-moz-border-image: url(background-paint.png) 50repeat;
+		-moz-border-image: url(background-paint.png) 50 repeat;
 		-webkit-border-image: url(background-paint.png) 50 repeat;
 		-o-border-image: url(background-paint.png) 50 repeat;
 		border-image: url(background-paint.png) 50  fill repeat;
@@ -229,9 +271,6 @@
 	.homeRow {
 		padding-top: 0px;	
 		margin-bottom: 50px;	
-	}
-	p {
-		margin-bottom: 1em;
 	}
 	#titleimg, #titleimg2 {
 		width: 100%;
@@ -547,13 +586,14 @@ ol {
 #page_news h3 {
 	padding: 0px;
 	margin: 0px;
-	margin-bottom: 16px;
+	margin-bottom: 0px;
 }
 .newsDate {
 	font-size: 80%;
 	padding: 0px;
 	margin: 0px;
-	color: #666666;	
+	margin-top: 48px;
+	color: #666666;
 }
 
 #privacy_promise {
@@ -732,6 +772,7 @@ ol {
 	color: black;
 	border-bottom: 1px dotted gray;
 }
+#page_programme #sitemenu_programme a,
 #page_home #sitemenu_home a,
 #page_news #sitemenu_news a,
 #page_particlomatic #sitemenu_particlomatic a {
@@ -758,7 +799,7 @@ em {
 
 #page-particlomatic .content h1 {
 	margin-bottom: 0.5em; 
-	font-size: 400%;
+	font-size: 300%;
 }
 
 
@@ -849,7 +890,7 @@ a[href="#page-options"] {
 
 
 .app .navbar {
-	background-color: #636f72; //rgba(44, 62, 80, 1);
+	background-color: #2c393a; //#636f72; //rgba(44, 62, 80, 1);
 	margin: 0px;
 	min-height: 50px;
 	border: none;
@@ -931,8 +972,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .app .page {
-	padding-top: 30px;
-	padding-bottom: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .app #page-videos {
@@ -991,9 +1032,13 @@ input[type="range"]::-webkit-slider-thumb {
 	background-color: #46b7da; //(44, 62, 80, 1);
 	min-height: 80px;
 	border-right: white 2px solid;
+	cursor: pointer;
 }
-.app .videocontroller li.selected {
+.app .videocontroller li.playing {
 	background-color: #47a447; //(44, 62, 80, 0.2);
+}
+.app .videocontroller li.pausing {
+	background-color: #536b53; //(44, 62, 80, 0.2);
 }
 .app .videocontroller li:last-child {
 	border-right: none;
@@ -1013,8 +1058,8 @@ li[data-video-href="media/videos/video_7.mp4"] {
 	display: none !important;
 }
 
-
-
 a, a:hover, a:focus {
 	color: #46b7da;
 }
+
+

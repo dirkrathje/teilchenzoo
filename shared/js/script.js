@@ -378,14 +378,16 @@ function onReady() {
 
     if (appName === "Teilchomat") {
         $(".navbar").hide();
+        $(".navbar-fixed-bottom").hide();
+        $("a[href='#page-home']").hide();
         $(".page").hide(); 
         $("#page-particlomatic").show(); 
         initParticlomatic();
     }
 
-    //$(document).bind('click', function () {bypassScreensaver = true; });
-    //$(document).bind('tap', function () {bypassScreensaver = true; });
-    //checkScreensaver();
+    $(document).bind('click', function () {bypassScreensaver = true; });
+    $(document).bind('tap', function () {bypassScreensaver = true; });
+    checkScreensaver();
 }
 
 function initParticlomatic() {
@@ -435,7 +437,11 @@ function initParticlomatic() {
             $(this).val(mediumValue);
         });
     });
+
+
 }
+
+var videoPlaylist = [];
 
 function stopVideoplayer() {
     var videoplayer = document.getElementsByTagName('video')[0];
@@ -443,22 +449,54 @@ function stopVideoplayer() {
     videoplayer.pause(); 
 }
 
-var lastClickMilliseconds = 0;
+function playNextVideo() {
+
+    var videoplayer = document.getElementsByTagName('video')[0],
+        i,
+        indexOfPlayingVideo;
+
+    console.log("videoplayer.src: " + videoplayer.src);
+    console.log("videoPlaylist.size: " + videoPlaylist.length);
+    indexOfPlayingVideo = -1;
+    for (i = 0; i < videoPlaylist.length-1; i += 1) {
+        console.log(">>> videoPlaylist[i]: " +videoPlaylist[i]);
+        if (videoplayer.src.endsWith(videoPlaylist[i])) {
+            indexOfPlayingVideo = i;
+        }
+    }
+    console.log("playing next video: " + videoPlaylist[indexOfPlayingVideo+1]);
+    $(".videocontroller li[data-video-href='" + videoPlaylist[indexOfPlayingVideo+1] + "']").trigger("click");
+
+
+}
+
 
 function initVideoPlayer() {
     "use strict";
+
+    console.log("initialize videoplayer");
+
+    console.log("initialize videoPlaylist");
+    videoPlaylist = []; 
+    $(".videocontroller li").each(function(){
+        videoPlaylist.push($(this).attr("data-video-href"));
+    });
+
+    console.log(videoPlaylist);
     
     var videoplayer = document.getElementsByTagName('video')[0];
-    $("#videoplayer").height("600px");
-    videoplayer.load(); 
+    $("#videoplayer").height("576px");
+    videoplayer.addEventListener('ended', playNextVideo);
 
-    $(".videocontroller li").removeClass("selected");
-    
+    videoplayer.src = ""; 
+    videoplayer.load();
+    $(".videocontroller li").removeClass("playing");
+    $(".videocontroller li").removeClass("pausing");
+
+/*
     $("#videoplayer").on("click", function(event) {
 
-        var videoplayer = document.getElementsByTagName('video')[0],
-            milliseconds = new Date().getTime();
-        console.log(milliseconds);
+        var videoplayer = document.getElementsByTagName('video')[0];
 
         event.stopImmediatePropagation();
 
@@ -471,8 +509,8 @@ function initVideoPlayer() {
             videoplayer.pause();
         }
 
+    });*/
 
-    });
 
     $(".videocontroller li").on("click", function(event) {      
 
@@ -481,28 +519,31 @@ function initVideoPlayer() {
 
         event.stopImmediatePropagation();
         
-        if ($(this).hasClass("selected")) { 
+        if ($(this).hasClass("playing")) { 
 
-            console.log("selected");
-            console.log("pause");
             videoplayer.pause();
-            $(".videocontroller li").removeClass("selected");
+            $(".videocontroller li").removeClass("playing");
+            $(".videocontroller li").removeClass("pausing");
+            $(this).addClass("pausing");
         
         } else {
 
-            console.log("not selected");
-
-            $(".videocontroller li").removeClass("selected");
-            $(this).addClass("selected");
+            console.log("not playing");
+            $(".videocontroller li").removeClass("playing");
+            $(".videocontroller li").removeClass("pausing");
+            $(this).addClass("playing");
             if (videoplayer.src.endsWith(src)) {
                 videoplayer.play();
             } else {
-                 videoplayer.src = src;
+                videoplayer.src = src;
                 videoplayer.load();
                 videoplayer.play();
             }
         }
     });
+
+
+    $(".videocontroller li:first-child").trigger("click");
 };
 
 
@@ -682,6 +723,8 @@ var app = {
             hash = "#page-home";
         }
 
+        $(".navbar-fixed-bottom a").removeClass("selected");
+            
         $(".page").hide(); 
         $(hash).show(); 
         if (hash === "#page-home") {
@@ -690,17 +733,23 @@ var app = {
         if (hash === "#page-particlomatic") {
             $(".navbar-fixed-top").show();
             $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
+            $(".navbar-fixed-bottom a[href='#page-particlomatic']").addClass("selected");            
+
             initParticlomatic();
 
         } else
         if (hash === "#page-videos") {
             $(".navbar-fixed-top").hide();
             $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
+            $(".navbar-fixed-bottom a[href='#page-videos']").addClass("selected");            
+
             initVideoPlayer();
         } else
         if (hash === "#page-content") {
             $(".navbar-fixed-top").show();
             $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
+            $(".navbar-fixed-bottom a[href='#page-content']").addClass("selected");            
+
             initEncyclopedia(); 
         }
         $(document).scrollTop(0);
@@ -729,9 +778,6 @@ var app = {
         }
 
         $(".navbar-fixed-bottom a").on("click", function(){
-
-            $(".navbar-fixed-bottom a").removeClass("selected");
-            $(this).addClass("selected");            
         });
 
         $(window).on('hashchange', $.proxy(this.route, this));
