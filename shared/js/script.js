@@ -393,6 +393,33 @@ function onReady() {
 function initParticlomatic() {
     "use strict";
 
+
+    $(".particlomatic-mass").on("click", function() {
+
+        event.preventDefault();
+        var rangeElement = $("#quiz-mass"),
+            minValue = parseFloat($(rangeElement).attr("min")),
+            maxValue = parseFloat($(rangeElement).attr("max")),
+            buttonValue = parseFloat($(this).attr("data-value")),
+            newRangeElementValue = minValue + (maxValue-minValue)*buttonValue/10;
+
+        $(".particlomatic-mass").removeClass("btn-success");
+        $(".particlomatic-mass").addClass("btn-info");
+        $(".particlomatic-mass").each(function() {
+
+            if (parseFloat($(this).attr("data-value")) <= buttonValue) {
+              $(this).addClass("btn-success");
+              $(this).removeClass("btn-info");
+
+            }
+
+        });
+
+        $(rangeElement).val(newRangeElementValue);
+        $(rangeElement).trigger("change");
+
+    }); 
+
     $("#quiz-form input").on("change", $.throttle(400, function () {updateQuiz(); }));
     show_particlomatic_info = true;
     updateQuiz();
@@ -423,8 +450,8 @@ function initParticlomatic() {
         event.preventDefault();
         $(".particlomatic_result_control_button").removeClass("btn-success");
         $(".particlomatic_result_control_button").addClass("btn-info");
-        $(".particlomatic_result_control_button[href='" + targetSelector + "']").removeClass("btn-info");
-        $(".particlomatic_result_control_button[href='" + targetSelector + "']").addClass("btn-success");
+        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").removeClass("btn-info");
+        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").addClass("btn-success");
         $(".particlomatic_result_pane").hide();
         $(targetSelector).show();
     });    
