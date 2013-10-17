@@ -419,7 +419,7 @@ function initParticlomatic() {
 
     $(".particlomatic_result_control_button").on("click", function (event) {
 
-        var targetSelector = $(this).attr("href");
+        var targetSelector = $(this).attr("data-href");
         event.preventDefault();
         $(".particlomatic_result_control_button").removeClass("btn-success");
         $(".particlomatic_result_control_button").addClass("btn-info");
