@@ -665,6 +665,9 @@ function adjustPageHeight() {
 function initPageHome() {
     "use strict";
 
+
+    FastClick.attach(document.body);
+    
     var countdownDays = getCountdownDays();
     if (countdownDays > 1) {
         $("#countdown").show();
@@ -708,6 +711,8 @@ function initPageHome() {
 function initPageParticlomatic() {
     "use strict";
 
+    FastClick.attach(document.body);
+    
     initParticlomatic();
     /*
     $(window).on("scroll", $.throttle(100, function () {
