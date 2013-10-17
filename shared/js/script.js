@@ -394,18 +394,20 @@ function initParticlomatic() {
     "use strict";
 
 
-    $(".particlomatic-mass").on("click", function(event) {
+    $(".particlomatic-range-input button").on("click", function(event) {
 
         event.preventDefault();
-        var rangeElement = $("#quiz-mass"),
+        var parent = $(this).parent(),
+            data_input_ref = $(parent).attr("data-input-ref"),
+            rangeElement = $("#" + data_input_ref),
             minValue = parseFloat($(rangeElement).attr("min")),
             maxValue = parseFloat($(rangeElement).attr("max")),
             buttonValue = parseFloat($(this).attr("data-value")),
             newRangeElementValue = minValue + (maxValue-minValue)*buttonValue/10;
 
-        $(".particlomatic-mass").removeClass("btn-success");
-        $(".particlomatic-mass").addClass("btn-info");
-        $(".particlomatic-mass").each(function() {
+        $(".btn", parent).removeClass("btn-success");
+        $(".btn", parent).addClass("btn-info");
+        $(".btn", parent).each(function() {
 
             if (parseFloat($(this).attr("data-value")) <= buttonValue) {
               $(this).addClass("btn-success");
@@ -419,6 +421,9 @@ function initParticlomatic() {
         $(rangeElement).trigger("change");
 
     }); 
+
+    $(".particlomatic-range-input button[data-value='5']").trigger("click");
+
 
     $("#quiz-form input").on("change", $.throttle(400, function () {updateQuiz(); }));
     show_particlomatic_info = true;
@@ -459,6 +464,9 @@ function initParticlomatic() {
     $(".particlomatic_button_reset").on("click", function (event) {
 
         event.preventDefault();
+        $(".particlomatic-range-input button[data-value='5']").trigger("click");
+
+
         $("#quiz-form input").each(function () {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
