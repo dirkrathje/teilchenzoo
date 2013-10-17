@@ -394,7 +394,7 @@ function initParticlomatic() {
     "use strict";
 
 
-    $(".particlomatic-mass").on("click", function() {
+    $(".particlomatic-mass").on("click", function(event) {
 
         event.preventDefault();
         var rangeElement = $("#quiz-mass"),
