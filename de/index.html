@@ -15,43 +15,40 @@
 <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
 <link rel="stylesheet" href="shared/lib/reset/reset.css">
 
-<script type="text/javascript" src="shared2/lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
-<link rel="stylesheet" href="shared2/lib/jquery-mobile-flat-ui-theme/generated/jquery.mobile.flatui.min.css">
-
 <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
-<script src="shared/lib/fastclick.js"></script>
 <script src="shared/js/script.js"></script>
 <link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
-<!--[if lte IE 8]>
+<!--[if lte IE 7]>
 <link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
 <![endif]-->
-
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
 <script type='text/javascript'>//<![CDATA[ 
 $(function(){
 	initPageHome();
-	$(".fitText").fitText(1.3);
 });//]]>  
 </script>
 <div class="page" id="page_home">
 
-	<div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht besonders gut dargestellt. Es gibt viele kostenlose Alternativen.</div>
-	<div id="header">
-	<div id="sitemenu"><ul><li id="sitemenu_home"><a href="../de/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="../teilchomat/">Teilch-o-mat</a></li><li id="sitemenu_news"><a href="../neuigkeiten/">Neuigkeiten</a></li></ul></div>
-  </div>  
-	<div class="content paintedWood clearfix">
-  
-      <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
-    <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
-    <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
-    <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
+    <div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht besonders gut dargestellt. Es gibt viele kostenlose Alternativen.</div>
+
+    <div id="header">
+        <div id="sitemenu"><ul><li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li></ul></div>
+    </div>
+
+    <div id="main">
+        <div class="content">
+
+            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+            <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
+            <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
     
-    <div class="row homeRow homeRowFirst paintedGray clearfix" style="margin-top: 48px;">
+    <div class="row paintedGray" style="margin-top: 24px;">
       <div class="col-md-6 col-md-push-6">
-        <h2 class="fitText">Woraus ist die Welt gemacht?</h2>
+        <h1>Woraus ist die Welt gemacht?</h1>
         <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
       </div>
       <div class="col-md-6 col-md-pull-6">
@@ -59,9 +56,9 @@ $(function(){
       </div>
 
     </div>
-    <div class="row homeRow paintedGray">
+    <div class="row paintedGray">
       <div class="col-md-6 col-md-push-6">
-        <h2 class="fitText">Welches Teilchen passt zu dir?</h2>
+        <h1>Welches Teilchen passt zu dir?</h1>
         <p><span class="question">Unter den Bausteinen der modernen Teilchenphysik gibt es Federgewichte, Einzelgänger, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>
         <p class="hidden-ie-lte8"><a href="../teilchomat/">Zum Teilch-o-maten</a></p>      
       </div>
@@ -69,10 +66,10 @@ $(function(){
         <div id="quizTeaser"></div>       
       </div>
     </div>
-    <div class="row homeRow paintedGray">
+    <div class="row paintedGray">
       <div class="col-md-8">
-        <h2 class="fitText">Wir suchen Antworten<br>
-          und finden Fragen</h2>
+        <h1>Wir suchen Antworten<br>
+          und finden Fragen</h1>
         <p><span class="question">Auch wenn die Teilchenphysik in den letzten 150 Jahren unglaubliche Antworten fand – viele spannende Fragen bleiben offen:</span> <span class="answer">Wieso gibt es so viele Elementarteilchen? Sind es alle? Und kann unser aktuelles Weltbild überhaupt stimmen? Der »Teilchenzoo« zeigt, wie Forscherinnen und Forscher bei DESY immer tiefer in Materie und Kosmos blicken. Mach' dich mit auf die Reise!</span></p>
       </div>
       <div class="col-md-4">
@@ -82,9 +79,9 @@ $(function(){
     </div>
     
     
-    <div class="row homeRow paintedGray"  style="margin-top: 48px">
+    <div class="row paintedGray"  style="margin-top: 48px">
       <div class="col-md-8">
-        <h2>Bleib auf dem Laufenden!</h2>
+        <h1>Bleib auf dem Laufenden!</h1>
         <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden. Du kannst dich auch über <a href="https://twitter.com/Teilchen_Zoo">Twitter</a> und Facebook über Neuigkeiten zur Ausstellung informieren lassen.</p>
       </div>
       <div class="col-md-4">
@@ -97,51 +94,47 @@ $(function(){
       </div>
     </div>
     
-      <div class="row homeRow paintedGray  clearfix">
-    
-       <div class="col-md-6">
-       		<h2>Öffnungszeiten und Preise</h2>
-           <p>Die Sonderausstellung Teilchenzoo im Universum<span class="reg">&reg;</span> Bremen findet von 27. September 2013 bis 30. Juni 2014 statt, </p>
-      		<ul>
-        		<li>montags bis freitags: von 9:00 bis 18:00 Uhr</li>
-        		<li>samstags, sonntags und feiertags: von 10:00 bis 18:00 Uhr</li>
-      		</ul>
-      		<p>Die Sonderausstellung kann mit einem Ticket des Universum<span class="reg">&reg;</span> Bremen besucht werden. <a href="http://www.universum-bremen.de/de/startseite/information/eintrittspreise.html">Zu den Eintrittspreisen</a></p>
-			
-  			<h2>Anmeldung für Gruppen</h2>
-        <p>Gruppen ab 15 Personen werden gebeten, sich unter der Telefonnummer <a href="tel:+494213346333">0421 33 46-333</a> anzumelden.</p>
+        <div class="row paintedGray inforow">
+
+            <div class="col-md-4">
+                <h2>Öffnungszeiten und Preise</h2>
+                <p>Die Sonderausstellung Teilchenzoo im Universum<span class="reg">&reg;</span> Bremen findet von 27. September 2013 bis 30. Juni 2014 statt, </p>
+                <ul>
+                    <li>montags bis freitags: von 9:00 bis 18:00 Uhr</li>
+                    <li>samstags, sonntags und feiertags: von 10:00 bis 18:00 Uhr</li>
+                </ul>
+                <p>Die Sonderausstellung kann mit einem Ticket des Universum<span class="reg">&reg;</span> Bremen besucht werden. <a href="http://www.universum-bremen.de/de/startseite/information/eintrittspreise.html">Zu den Eintrittspreisen</a></p>
+
+            </div>
+            <div class="col-md-4">
+                <h2>Ort und Hinkommen</h2>
+                <p>Das Universum<span class="reg">&reg;</span> Bremen befindet sich<br/>
+                    Wiener Str. 1a<br/>
+                    28359 Bremen</p>
+                <p><a href="http://goo.gl/maps/txkRq">Google Maps</a></p>
+                <p><a href="http://www.universum-bremen.de/de/startseite/information/anfahrt.html">Mehr Infomation bei www.universum-bremen.de</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Begleitprogramm</h2>
+                <p>Für die Zeit der Sonderausstellung bietet das Universum<span class="reg">&reg;</span> ein attraktives Begleitprogramm.</p>
+                <h2>Anmeldung für Gruppen</h2>
+                <p>Gruppen ab 15 Personen werden gebeten, sich unter der Telefonnummer <a href="tel:+494213346333">0421 33 46-333</a> anzumelden.</p>
+                <h2>Kontakt</h2>
+                <p>Bei Fragen zum Besuch hilft eine Mail an <a href="mailto:info@universum-bremen.de">info@universum-bremen.de</a> oder ein Anruf bei <a href="tel:+4942133460">0421 33 46-0</a>
+            </div>
     </div>
-       <div class="col-md-6">
-       		<h2>Ort und Hinkommen</h2>
-			<p>Das Universum<span class="reg">&reg;</span> Bremen befindet sich<br/>
-        Wiener Str. 1a<br/>
-        28359 Bremen</p>
-      <p><a href="http://goo.gl/maps/txkRq">Google Maps</a></p>
-      <p><a href="http://www.universum-bremen.de/de/startseite/information/anfahrt.html">Mehr Infomation bei www.universum-bremen.de</a></p>
-	<h2>Kontakt</h2>
-        <p>Bei Fragen zum Besuch: </p>
-        <ul>
-        <li><a href="mailto:info@universum-bremen.de">info@universum-bremen.de</a></li>
-        <li><a href="tel:+4942133460">0421 33 46-0</a></li>
-				</ul><!--      <h4>Mit dem Auto</h4>
-      <p>Sie erreichen das Universum<span class="reg">&reg;</span> über die Autobahn A 27 Abfahrt Bremen Universität. Nach Verlassen der Autobahn biegen Sie an der zweiten Möglichkeit rechts in die Universitätsallee ein. Nach etwa 500 Metern sehen Sie das Universum<span class="reg">&reg;</span> auf der rechten Seite.</p>
-      <p>Das Universum<span class="reg">&reg;</span> Bremen liegt außerhalb der Bremer Umweltzone. </p>
-      <h4>Mit öffentlichen Verkehrsmitteln</h4>
-      <p>Die Straßenbahnlinie 6 bringt Sie in 15 Minuten vom Hauptbahnhof Richtung Universität zum Universum<span class="reg">&reg;</span> Bremen (Haltestelle Universität/NW1). In etwa 5 Gehminuten entlang der Universitätsallee erreichen Sie das Universum<span class="reg">&reg;</span> Bremen.</p>-->
-  	</div>
-	</div>
- 
-    
     </div>
-    
-    <div id="footer">
-    
-        <h2>Ein Gemeinschaftsprojekt</h2>
-        <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
-        <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
-        <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
-    	<p> <a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+    </div> <!-- /#main -->
+
+        <div id="footer">
+            <div id="footerInterior"><span class="visible-xs">XS</span><span class="visible-sm">SM</span><span class="visible-md">MD</span><span class="visible-lg">LG</span>
+                <h1>Ein Gemeinschaftsprojekt</h1>
+                <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+                <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+                <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+                <p><a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+            </div> <!-- /#footerInterior -->
+        </div> <!-- /#footer -->
     </div>
-  </div>
 </body>
 </html>

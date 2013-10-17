@@ -304,7 +304,7 @@ function getBestMatchView(quizModel) {
     "use strict";
 
     var result;
-    result = "<h2>" + particles[quizModel.sortedResults[0].particle].title_de + "</h2>";
+    result = "<h1>" + particles[quizModel.sortedResults[0].particle].title_de + "</h1>";
     result += "<div id='rank1'><img class='rank1_img' src='images/particles/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
     result += "<p>" + particles[quizModel.sortedResults[0].particle].description_de + "</p>";
     return result;
@@ -314,13 +314,13 @@ function getQuizTop3View(quizModel) {
     "use strict";
 
     var result;
-    result = "<div class='particlomatic_result_top3_rank'><h2>1. " + particles[quizModel.sortedResults[0].particle].title_de  + " </h2>";
+    result = "<div class='particlomatic_result_top3_rank'><h1>1. " + particles[quizModel.sortedResults[0].particle].title_de  + " </h1>";
     result += "<div class='body'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
     result += "<p class='particleDescription'>" + particles[quizModel.sortedResults[0].particle].description_de  + "</p></div></div>";
-    result += "<div class='particlomatic_result_top3_rank'><h2>2. " + particles[quizModel.sortedResults[1].particle].title_de  + " </h2>";
+    result += "<div class='particlomatic_result_top3_rank'><h1>2. " + particles[quizModel.sortedResults[1].particle].title_de  + " </h1>";
     result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[1].particle].name + ".png'></div>";
     result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[1].particle].description_de  + "</p></div></div>";
-    result += "<div class='particlomatic_result_top3_rank'><h2>3. " + particles[quizModel.sortedResults[2].particle].title_de  + " </h2>";
+    result += "<div class='particlomatic_result_top3_rank'><h1>3. " + particles[quizModel.sortedResults[2].particle].title_de  + " </h1>";
     result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[2].particle].name + ".png'></div>";
     result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[2].particle].description_de  + "</p></div></div>";
     return result;
@@ -349,7 +349,7 @@ function updateQuiz() {
 
     $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
-    $("#particlomatic_result_top3 h2").on("click", function () {
+    $("#particlomatic_result_top3 h1").on("click", function () {
         $(".body", $(this).parent().parent).hide();
         $(".body", $(this).parent()).show();
     });
@@ -638,8 +638,6 @@ function adjustPageHeight() {
 function initPageHome() {
     "use strict";
 
-    FastClick.attach(document.body);
-
     var countdownDays = getCountdownDays();
     if (countdownDays > 1) {
         $("#countdown").show();
@@ -684,6 +682,7 @@ function initPageParticlomatic() {
     "use strict";
 
     initParticlomatic();
+    /*
     $(window).on("scroll", $.throttle(100, function () {
 
         if ($(document).width() > 992) {
@@ -700,7 +699,7 @@ function initPageParticlomatic() {
                 $("#particlomatic_result").css("margin-top", quiz_form_col_height - particlomatic_result_height + "px");
             }
         }
-    }));
+    }));*/
 }
 
 

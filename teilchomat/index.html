@@ -20,57 +20,38 @@
 <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
 <script src="shared/js/script.js"></script>
 <link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
-<!--[if lte IE 8]>
+<!--[if lte IE 7]>
 <link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
 <![endif]-->
-
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
 <script type='text/javascript'>//<![CDATA[ 
-	var jwplayer;
-	$(function(){
-initPageParticlomatic();
+$(function(){
+    initPageParticlomatic();
 });//]]>  
 </script>
 <div class="page" id="page_particlomatic">
 
-	<div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
-	
-  <div id="header">
-	<div id="sitemenu"><ul><li id="sitemenu_home"><a href="../de">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="../teilch-o-mat">Teilch-o-mat</a></li><li id="sitemenu_news"><a href="../neuigkeiten">Neuigkeiten</a></li></ul></div>
-  </div>  
+    <div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
 
+    <div id="header">
+        <div id="sitemenu"><ul><li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li></ul></div>
+    </div>
 
- <div class="content paintedWood">
- <!--
-       <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
-    <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
-    <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
-    <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
--->
-    <div class="row" style="width: 99%; overflow: hidden;">
-      <div id="particlomatic_result" style="margin-left: 20px">
-        <div class="quiz-form-item paintedGray"  style="text-align: center;" id="particlomatic_result_control">
-          <button class="btn btn-success particlomatic_result_control_button particlomatic_result_control_info" href="#particlomatic_info">Info</button>
-          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_table" href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
-          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3</button> 
-        </div>
-        <div class="particlomatic_result_pane paintedGray" id="particlomatic_info" style="padding-top: 0em;">
-          <h1>Teilch-o-mat</h1>
-          <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
-          <p>Bist du eine Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
-          <p><img class="particle" src="images/particles/myon.png" alt="Myon"><img class="particle" src="images/particles/down_quark.png"  alt="Down-Qurk"><img class="particle" src="images/particles/w_plus.png"  alt="W-plus"><img class="particle" src="images/particles/gluon.png" alt="Gluon"><img class="particle" src="images/particles/photon.png"  alt="Phton"><img class="particle" src="images/particles/electron_neutrino.png"  alt="Elektron-Neutrino"><img class="particle" src="images/particles/up_quark.png" alt="Up-Quark"><img class="particle" src="images/particles/higgs.png"  alt="Higgs-Teilchen"><img class="particle" src="images/particles/electron.png"  alt="Elektron"><img class="particle" src="images/particles/bottom_quark.png"  alt="Bottom-Quark"></p>
-        </div>
-        <div class="paintedGray clearfix particlomatic_result_pane" id="particlomatic_result_table">
-          <div id="leptons"></div>
-          <div id="quarks"></div>
-          <div id="remaining"></div>
-        </div>
-        <div class="paintedGray particlomatic_result_pane" id="particlomatic_result_top3"></div>
-      </div>
+    <div id="main">
+        <div class="content">
 
-      <div class="" id="quiz-form-col" style="overflow:hidden;">
+            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+            <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
+            <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
+        
+            <div class="row"style="margin-top: 24px;">
+
+        
+
+      <div id="quiz-form-col" class="col-md-6 col-md-push-6">
         <form id="quiz-form">
           <div class="quiz-form-item" style="text-align: center;">
             <button class="btn btn-info particlomatic_button_reset">Löschen</button>
@@ -284,20 +265,43 @@ initPageParticlomatic();
             
           </form>
           <!-- /quiz-form --> 
+
+        <div id="particlomatic_result" class="col-md-6 col-md-pull-6">
+                    <div class="sidebar paintedGray" data-spy="affix" data-offset-top="500" data-offset-bottom="400">
+
+        <div class="quiz-form-item" style="text-align: center; " id="particlomatic_result_control">
+          <button class="btn btn-success particlomatic_result_control_button particlomatic_result_control_info" href="#particlomatic_info">Info</button>
+          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_table" href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
+          <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" href="#particlomatic_result_top3">Top-3</button> 
+        </div>
+        <div class="particlomatic_result_pane" id="particlomatic_info" style="padding-top: 0em;">
+          <h1>Teilch-o-mat</h1>
+          <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>      
+          <p>Bist du eine Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
+          <p><img class="particle" src="images/particles/myon.png" alt="Myon"><img class="particle" src="images/particles/down_quark.png"  alt="Down-Qurk"><img class="particle" src="images/particles/w_plus.png"  alt="W-plus"><img class="particle" src="images/particles/gluon.png" alt="Gluon"><img class="particle" src="images/particles/photon.png"  alt="Phton"><img class="particle" src="images/particles/electron_neutrino.png"  alt="Elektron-Neutrino"><img class="particle" src="images/particles/up_quark.png" alt="Up-Quark"><img class="particle" src="images/particles/higgs.png"  alt="Higgs-Teilchen"><img class="particle" src="images/particles/electron.png"  alt="Elektron"><img class="particle" src="images/particles/bottom_quark.png"  alt="Bottom-Quark"></p>
+        </div>
+        <div class="particlomatic_result_pane paintedGray clearfix" id="particlomatic_result_table">
+          <div id="leptons"></div>
+          <div id="quarks"></div>
+          <div id="remaining"></div>
+        </div>
+        <div class="particlomatic_result_pane paintedGray" id="particlomatic_result_top3"></div>
+      </div>
+      </div>
         </div>
         
-      </div>
     </div> <!-- /.content --> 
+    </div> <!-- /#main  --> 
 
-
-	<div id="footer" class="clearfix">
-    
-		<h2>Ein Gemeinschaftsprojekt</h2>
-		<p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
-		<p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
-		<p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
-		<p> <a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
-  </div>
-</div>
+        <div id="footer">
+            <div id="footerInterior">
+                <h2>Ein Gemeinschaftsprojekt</h2>
+                <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+                <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+                <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+                <p><a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+            </div> <!-- /#footerInterior -->
+        </div> <!-- /#footer -->
+    </div>
 </body>
 </html>

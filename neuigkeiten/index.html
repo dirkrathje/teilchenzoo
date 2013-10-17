@@ -13,29 +13,20 @@
 <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
 <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
 <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
-<link rel="stylesheet" href="shared/lib/reset/reset.css">^
-<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
-<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
-<script src="shared/lib/fastclick.js"></script>
-<script src="shared/js/script.js"></script>
-<link rel="stylesheet/less" type="text/css" href="shared/css/styles.less" />
-<script src="shared/lib/less/less-1.4.1.min.js"></script>
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
 
+<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+<script src="shared/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
 <!--[if lte IE 7]>
 <link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
 <![endif]-->
 <script src="shared/lib/respond/respond.min.js"></script>
-</head>
+</head> 
 <body class="website">
-<script type='text/javascript'>//<![CDATA[ 
-$(function(){
-	initPageHome();
-	$(".fitText").fitText(1.3);
-});//]]>  
-</script>
 <div class="page" id="page_news">
-
+<div class="sympa">
 <dtml-call "REQUEST.set('process_result','')">
 <dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
 	<dtml-call "REQUEST.set('process_form', '1')">
@@ -63,17 +54,22 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
 <dtml-call "REQUEST.set('process_result', '')">
 </dtml-if>
 </dtml-if>
+</div>
 
-	<div id="header">
-	<div id="sitemenu"><ul><li id="sitemenu_home"><a href="de/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilch-o-mat/">Teilch-o-mat</a></li><li id="sitemenu_news"><a href="neuigkeiten/">Neuigkeiten</a></li></ul></div>
-  </div>
-    
-	<div class="content paintedWood">
+    <div id="header">
+        <div id="sitemenu"><ul><li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li></ul></div>
+    </div>
 
-	<img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="Teilchenzoo - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen">
+    <div id="main">
+        <div class="content">
+
+            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+            <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
+            <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
    
-  <div class="row paintedGray" style="margin-top: 48px">
-      <div class="col-md-12 clearfix">
+            <div class="row paintedGray" style="margin-top: 24px">
+                <div class="col-md-12">
 
         <h2>E-Mail-Verteiler für Neuigkeiten</h2>
 
@@ -129,16 +125,18 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
     </div>
   </div>
 </div>
+</div>
 
-    <div id="footer">
-    
-        <h2>Ein Gemeinschaftsprojekt</h2>
-        <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
-        <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
-        <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
-    	<p> <a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+
+        <div id="footer">
+            <div id="footerInterior">
+                <h2>Ein Gemeinschaftsprojekt</h2>
+                <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+                <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+                <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+                <p><a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+            </div> <!-- /#footerInterior -->
+        </div> <!-- /#footer -->
     </div>
-  </div>
-
 </body>
 </html>
