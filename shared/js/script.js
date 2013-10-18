@@ -405,13 +405,13 @@ function initParticlomatic() {
             buttonValue = parseFloat($(this).attr("data-value")),
             newRangeElementValue = minValue + (maxValue-minValue)*buttonValue/10;
 
-        $(".btn", parent).removeClass("btn-success");
-        $(".btn", parent).addClass("btn-info");
+        $(".btn", parent).removeClass("btn-active");
+        $(".btn", parent).addClass("btn-inactive");
         $(".btn", parent).each(function() {
 
             if (parseFloat($(this).attr("data-value")) <= buttonValue) {
-              $(this).addClass("btn-success");
-              $(this).removeClass("btn-info");
+              $(this).addClass("btn-active");
+              $(this).removeClass("btn-inactive");
 
             }
 

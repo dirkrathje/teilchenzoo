@@ -392,47 +392,37 @@ h4 {
  PARTICLOMATIC
 ***************************************/
 
+input[type="range"] {
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    -webkit-appearance: none;
+    background-color: #DDDDDD;
+    height:10px;
+    display: none; 
+}
 
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #5bc0de;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-width: 0px;
+}
 
+ #titleimg, #titleimg2 {
+    width: 100%;
+}
 
-
-    input.ui-slider-input {
-        display : none !important;
-    }
-    .ui-slider {
-        margin: 0 2% 0 0px;
-        width: 100% !important;
-    }
-    .ui-slider-track, .ui-slider-switch {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .slide-description {
-        margin-top: 0px;
-        margin-bottom: 10px;
-        font-size: 80%;
-
-    }
-    .slide-description h2 {
-        padding: 0px;
-        margin: 0px;
-        font-size: 150% !important;
-
-    }
-
-  
-
-    #titleimg, #titleimg2 {
-        width: 100%;
-    }
-
-    #teilchenzoo_teaser_teilchen_roll_stage {
-        background-image: url(teilchenzoo-teaser-teilchen-roll.png);
-        background-repeat: repeat-x;
-        overflow: hidden;
-        height: 200px;
-        background-size: auto; 
-    }
+#teilchenzoo_teaser_teilchen_roll_stage {
+    background-image: url(teilchenzoo-teaser-teilchen-roll.png);
+    background-repeat: repeat-x;
+    overflow: hidden;
+    height: 200px;
+    background-size: auto; 
+}
 
 
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
@@ -462,14 +452,9 @@ h4 {
         opacity: 0.1;
         top: 0;    display: none;
     }
-
-
-
-
     #test_teaser_container {
         height: 200px;
         width: 100%;
-
     }
     .test_teaser {
         font-family: 'SansCulottesRegular';
@@ -520,7 +505,6 @@ h4 {
         clear:both;
         color: #333333;
     }
-
     .institution_logo {
         width: 100px;
         height: auto;
@@ -677,31 +661,21 @@ h4 {
 #particlomatic_result_table div {
     float: left;     
     width: 33%;
-
 }
-
-
-ol {
-    list-style: decimal;
-}
-
 .rank1_img {
     float: right; 
     width: 40%;
-    margin: 0px;    
+    margin: 0px;
 }
 
-#page_news h3 {
-    padding: 0px;
-    margin: 0px;
-    margin-bottom: 0px;
-}
 .newsDate {
     font-size: 14px;
     padding: 0px;
     margin: 0px !important;
-    margin-top: 48px  !important;
     color: #666666;
+}
+#page_programme .newsDate {
+    margin-top: 48px  !important;
 }
 
 #privacy_promise {
@@ -1020,25 +994,7 @@ a[href="#page-options"] {
 }
 
 
-input[type="range"] {
-    width: 100%;
-    margin: 20px 0px;
-    padding: 10px 0px;
-    -webkit-appearance: none;
-    background-color: #DDDDDD;
-    height:10px;
-    display: none; 
-}
 
-input[type="range"]::-webkit-slider-thumb {
-     -webkit-appearance: none;
-    background-color: #5bc0de;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 4px;
-    border-width: 0px;
-}
 
 .app .navbar ul li a {
     color: white;
@@ -1134,3 +1090,17 @@ li[data-video-href="media/videos/video_7.mp4"] {
 a, a:hover, a:focus {
     color: #46b7da;
 }
+
+
+
+.btn-active {
+    color: #fff;
+    background-color: #47a447;
+    border-color: #398439;
+}
+.btn-inactive {
+    color: #fff;
+    background-color: lighten(#39b3d7, 40%);
+    border-color: lighten(#269abc, 40%);
+}
+

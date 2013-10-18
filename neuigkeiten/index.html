@@ -34,7 +34,7 @@
 </head> 
 <body class="website">
 <div class="page" id="page_news">
-<div class="sympa">
+<div class="dtml">
 <dtml-call "REQUEST.set('process_result','')">
 <dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
 	<dtml-call "REQUEST.set('process_form', '1')">
@@ -76,11 +76,10 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
             <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
             <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
    
-            <div class="row paintedGray" style="margin-top: 24px">
-                <div class="col-md-12">
-
-        <h2>E-Mail-Verteiler für Neuigkeiten</h2>
-
+            <div class="row" style="margin-top: 24px">
+                <div class="col-md-12 paintedGray">
+                    <h2>E-Mail-Verteiler für Neuigkeiten</h2>
+<div class="dtml">
 <dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
 <dtml-if "REQUEST.get('add')">
   <p style="color: green; margin-top: 24px;">Es wurde eine E-Mail an »<dtml-var "REQUEST.get('email_address')">« verschickt. Wenn diese E-Mail bestätigt wird, ist die Adresse aufgenommen.</p>
@@ -89,15 +88,13 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
   <p style="color: green; margin-top: 24px;">Die E-Mail-Adresse »<dtml-var "REQUEST.get('email_address')">« wurde aus dem E-Mail-Verteiler entfernt.</p>
 </dtml-if>
 </dtml-if>
-
-
+</div>
 
 <dtml-if "REQUEST.get('no_errors') != '1'">
-        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden. </p>
+        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden.</p>
+</div>
 
-    </div>
-
-          <div class="col-md-12 clearfix">
+          <div class="col-md-12 paintedGray">
 
         <form name="subscription_form" id="subscription_form" method="get" action="neuigkeiten/">   
 
@@ -125,13 +122,20 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
    
    
 
-  <div class="row homeRow paintedGray">
-    <div class="col-md-12">
-      <p class="newsDate">27. August 2013</p>
-      <h3>Website online</h3>
-      <p>Heute ging die Website zum »Teilchenzoo« online. Sie wird in den nächsten Wochen ausgebaut werden. Trage Dich in unseren E-Mail-Verteiler ein, um auf dem Laufenden gehalten zu werden.</p>
+    <div class="row newsrow">
+        <div class="col-md-12 paintedGray">
+            <p class="newsDate">27. September 2013</p>
+            <h3>Ausstellung eröffnet</h3>
+            <p>Heute wurde die Ausstellung »Teilchenzoo« eröffnet. Wer wissen möchte, welches Teilchen am besten zur eigenen Person passt, näheres zu den Teilchen erfahren möchte und spannende Experimente ausprobieren mag, ist ab sofort im Universum Bremen bestens aufgehoben.</p>
+        </div>
     </div>
-  </div>
+    <div class="row newsrow">
+        <div class="col-md-12 paintedGray">
+            <p class="newsDate">27. August 2013</p>
+            <h3>Website online</h3>
+            <p>Heute ging die Website zum »Teilchenzoo« online. Sie wird in den nächsten Wochen ausgebaut werden. Trage Dich in unseren E-Mail-Verteiler ein, um auf dem Laufenden gehalten zu werden.</p>
+        </div>
+    </div>
 </div>
 </div>
 
