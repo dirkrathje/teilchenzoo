@@ -317,11 +317,11 @@ function updateParticlomaticTableView(model) {
    //     if (model.particleToBeShown[i] === 1) {
 
             particle = particles[i];
-          normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
-     //normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
+     //     normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+     normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
      //       normalizedValue = 100 - (model.bestMatches[i]); 
 
-    //     $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
+         $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
    //     }
     }
 
