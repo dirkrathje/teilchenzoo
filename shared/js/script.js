@@ -317,8 +317,8 @@ function updateParticlomaticTableView(model) {
    //     if (model.particleToBeShown[i] === 1) {
 
             particle = particles[i];
-    //      normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
-     normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
+          normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+     //normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
      //       normalizedValue = 100 - (model.bestMatches[i]); 
 
          $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
@@ -359,29 +359,24 @@ function updateQuiz() {
     $("#particlomaticForm input").each(function () {
         inputValues.push($(this).val());
     });
-
     quizModel = getQuizModel(inputValues);
 
-    if ($(".quizResultTable").length > 0) {
 
-      updateParticlomaticTableView(quizModel);
+    if ($("#particlomatic_result_table").is(":visible")) {
 
-    } else {  
-
-        quizModel.particleToBeShown  = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $("#particlomatic_result_table #leptons").html(getQuizView(quizModel));
-        quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
-        $("#particlomatic_result_table #quarks").html(getQuizView(quizModel));
-        quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1];
-        $("#particlomatic_result_table #remaining").html(getQuizView(quizModel));
+        updateParticlomaticTableView(quizModel);
+    
     }
 
-    $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
+    if ($("#particlomatic_result_top3").is(":visible")) {
 
-    $("#particlomatic_result_top3 h1").on("click", function () {
-        $(".body", $(this).parent().parent).hide();
-        $(".body", $(this).parent()).show();
-    });
+        $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
+
+        $("#particlomatic_result_top3 h1").on("click", function () {
+            $(".body", $(this).parent().parent).hide();
+            $(".body", $(this).parent()).show();
+        });
+    }
 
     if (show_particlomatic_info) {
         $('.particlomatic_result_control_info').trigger("click");
@@ -501,6 +496,22 @@ function initParticlomatic() {
             $(this).val(mediumValue);
         });
     });
+
+
+    var inputValues = [],
+        quizModel;
+
+    $("#particlomaticForm input").each(function () {
+        inputValues.push($(this).val());
+    });
+    quizModel = getQuizModel(inputValues);
+    quizModel.particleToBeShown  = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    $("#particlomatic_result_table #leptons").html(getQuizView(quizModel));
+    quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
+    $("#particlomatic_result_table #quarks").html(getQuizView(quizModel));
+    quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1];
+    $("#particlomatic_result_table #remaining").html(getQuizView(quizModel));
+    $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
 
 
