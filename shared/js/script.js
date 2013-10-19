@@ -292,8 +292,8 @@ function getQuizView(model) {
 
 
             tableView += "<tr>";
-//            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_small/" + particle.name + ".png' alt=''/></td>";
-            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_small/top_quark.png' alt=''/></td>";
+            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_small/" + particle.name + ".png' alt=''/></td>";
+//            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped/top_quark.png' alt=''/></td>";
             tableView += "<td class='value'><div id='resultBin"+ particle.name + "' class='resultBin "+ particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
             tableView += "</tr>";
         }
