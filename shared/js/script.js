@@ -286,11 +286,13 @@ function getQuizView(model) {
         if (model.particleToBeShown[i] === 1) {
 
             particle = particles[i];
-            normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+          normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+    // normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
+     //       normalizedValue = 100 - (model.bestMatches[i]); 
 
             tableView += "<tr>";
             tableView += "<td class='particleThumbnail'><img src='images/particles_cropped/" + particle.name + ".png' alt=''/></td>";
-            tableView += "<td class='value'><div class='resultBin' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
+            tableView += "<td class='value'><div id='resultBin"+ particle.name + "' class='resultBin "+ particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
             tableView += "</tr>";
         }
     }
@@ -300,15 +302,35 @@ function getQuizView(model) {
     return tableView;
 }
 
-function getBestMatchView(quizModel) {
+
+function updateParticlomaticTableView(model) {
     "use strict";
 
-    var result;
-    result = "<h1>" + particles[quizModel.sortedResults[0].particle].title_de + "</h1>";
-    result += "<div id='rank1'><img class='rank1_img' src='images/particles/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
-    result += "<p>" + particles[quizModel.sortedResults[0].particle].description_de + "</p>";
-    return result;
+    var i,
+        tableView = "<table class='quizResultTable'>",
+        particlesLength = particles.length,
+        particle,
+        normalizedValue;
+
+    for (i = 0; i < particlesLength; i += 1) {
+
+   //     if (model.particleToBeShown[i] === 1) {
+
+            particle = particles[i];
+    //      normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+     normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
+     //       normalizedValue = 100 - (model.bestMatches[i]); 
+
+         $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
+   //     }
+    }
+
+    tableView += "</table>";
+
+    return tableView;
 }
+
+
 
 function getQuizTop3View(quizModel) {
     "use strict";
@@ -334,18 +356,25 @@ function updateQuiz() {
     var inputValues = [],
         quizModel;
 
-    $("#quiz-form input").each(function () {
+    $("#particlomaticForm input").each(function () {
         inputValues.push($(this).val());
     });
 
     quizModel = getQuizModel(inputValues);
 
-    quizModel.particleToBeShown  = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    $("#particlomatic_result_table #leptons").html(getQuizView(quizModel));
-    quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
-    $("#particlomatic_result_table #quarks").html(getQuizView(quizModel));
-    quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1];
-    $("#particlomatic_result_table #remaining").html(getQuizView(quizModel));
+    if ($(".quizResultTable").length > 0) {
+
+      updateParticlomaticTableView(quizModel);
+
+    } else {  
+
+        quizModel.particleToBeShown  = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $("#particlomatic_result_table #leptons").html(getQuizView(quizModel));
+        quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
+        $("#particlomatic_result_table #quarks").html(getQuizView(quizModel));
+        quizModel.particleToBeShown  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1];
+        $("#particlomatic_result_table #remaining").html(getQuizView(quizModel));
+    }
 
     $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
@@ -425,7 +454,7 @@ function initParticlomatic() {
     $(".particlomatic-range-input button[data-value='5']").trigger("click");
 
 
-    $("#quiz-form input").on("change", $.throttle(400, function () {updateQuiz(); }));
+    $("#particlomaticForm input").on("change", $.throttle(100, function () {updateQuiz(); }));
     show_particlomatic_info = true;
     updateQuiz();
     show_particlomatic_info = false;
@@ -467,11 +496,14 @@ function initParticlomatic() {
         $(".particlomatic-range-input button[data-value='5']").trigger("click");
 
 
-        $("#quiz-form input").each(function () {
+        $("#particlomaticForm input").each(function () {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
         });
     });
+
+
+
 
 
 }
@@ -722,24 +754,7 @@ function initPageParticlomatic() {
     FastClick.attach(document.body);
     
     initParticlomatic();
-    /*
-    $(window).on("scroll", $.throttle(100, function () {
 
-        if ($(document).width() > 992) {
-            var scrollTop = $(document).scrollTop(),
-                scrollPosition = scrollTop / $(document).height(),
-                quiz_form_col_height = $("#quiz-form-col").height(),
-                particlomatic_result_height = $("#particlomatic_result").height();
-
-            updateQuizTeaser((scrollPosition * 250 - 50) * 3);
-
-            if (quiz_form_col_height - particlomatic_result_height > scrollTop) {
-                $("#particlomatic_result").css("margin-top", scrollTop + "px");
-            } else {
-                $("#particlomatic_result").css("margin-top", quiz_form_col_height - particlomatic_result_height + "px");
-            }
-        }
-    }));*/
 }
 
 
@@ -751,6 +766,10 @@ var app = {
         this.registerEvents();
         self.route();
         adjustPageHeight(); 
+
+        initParticlomatic();
+        initEncyclopedia();
+
     },
 
     route: function() {
@@ -767,29 +786,28 @@ var app = {
         $(".page").hide(); 
         $(hash).show(); 
         if (hash === "#page-home") {
-            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
+//            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
+            $(".navbar-fixed-bottom a[href='#page-home']").addClass("selected");            
         } else
         if (hash === "#page-particlomatic") {
-            $(".navbar-fixed-top").show();
+//            $(".navbar-fixed-top").show();
             $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
             $(".navbar-fixed-bottom a[href='#page-particlomatic']").addClass("selected");            
 
-            initParticlomatic();
 
         } else
         if (hash === "#page-videos") {
-            $(".navbar-fixed-top").hide();
-            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
+//            $(".navbar-fixed-top").hide();
+//            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
             $(".navbar-fixed-bottom a[href='#page-videos']").addClass("selected");            
-
             initVideoPlayer();
         } else
         if (hash === "#page-content") {
-            $(".navbar-fixed-top").show();
-            $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
+//            $(".navbar-fixed-top").show();
+ //           $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
             $(".navbar-fixed-bottom a[href='#page-content']").addClass("selected");            
 
-            initEncyclopedia(); 
+             
         }
         $(document).scrollTop(0);
     },
