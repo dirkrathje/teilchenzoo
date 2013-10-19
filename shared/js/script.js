@@ -321,7 +321,7 @@ function updateParticlomaticTableView(model) {
      //normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
      //       normalizedValue = 100 - (model.bestMatches[i]); 
 
-         $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
+    //     $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
    //     }
     }
 
@@ -364,12 +364,14 @@ function updateQuiz() {
 
     if ($("#particlomatic_result_table").is(":visible")) {
 
+        console.log("updateParticlomaticTableView");
         updateParticlomaticTableView(quizModel);
     
     }
 
     if ($("#particlomatic_result_top3").is(":visible")) {
 
+        console.log("updating particlomatic_result_top3");
         $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
         $("#particlomatic_result_top3 h1").on("click", function () {
