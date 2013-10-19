@@ -13,6 +13,11 @@
     -o-transform: @param;
     transform: @param;
 }
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  box-shadow:         @style @c;
+  -webkit-box-shadow: @style @c;
+  -moz-box-shadow:    @style @c;
+}
 
 /***************************************
  LAYOUT
@@ -21,6 +26,9 @@
 .sympa {
     visibility: hidden;
     display: none;
+}
+#ielte7_message {
+    display: none; 
 }
 
 body {
@@ -73,6 +81,9 @@ body {
     color: black;
 }
 
+#titleimg, #titleimg2 {
+    width: 100%;
+}
 
 
 #footer {
@@ -80,21 +91,14 @@ body {
     background-color: rgba(128, 128, 128, 0.2);
 }
 
-
-
 .affix {
     position: relative;
-}
-
-.btn.particlomatic-mass {
-    width: 8%;
-    font-size: 12px !important;
 }
 
 
 @media (max-width: @screen-sm) {    
 
-    #main {
+    .main {
         padding: 0px 25px 10px 25px;
     }
     #footer {
@@ -133,7 +137,7 @@ body {
         background-position: top center;
     }
 
-    #main {
+    .main {
         margin: 0 auto;
         width: 768px;
     }
@@ -156,18 +160,10 @@ body {
         margin: 0px 0px;
     }
 
-    .app .content {
-        height: 100%; 
-        width: 100%; 
-        overflow: scroll;
-        top: 0; right: 0; bottom: 0; left: 0; 
-    }
-
     #page_home .row {
         margin-bottom: 25px;
         padding: 25px;
     }
-
 
     #countdown {
         font-size: 100%;
@@ -191,7 +187,7 @@ body {
 
 @media (min-width: @screen-md) {
 
-    #main {
+    .main {
         margin: 0 auto;
         width: 992px;
     }
@@ -227,36 +223,6 @@ body {
     .content {
         padding: 50px 75px;
     }
-
-    
-/*    
-    .app #particlomatic_result {
-        position: fixed;
-        width: 46%;
-    }
-    .website #particlomatic_result {
-        width: 42%;
-        position: absolute;
-    }
-
-    .app #quiz-form-col {
-        float: right; 
-        width: 46%;
-    }
-    .website #quiz-form-col {
-        width: 50%;
-        margin-left: 50%;
-        top: 0;
-    }
-
-    .app #quiz-form-col {
-        margin-top: 0px;
-    }*/
-
-    .app #particlomatic_result_top3 {
-        max-height: 575px;
-        overflow: scroll;    
-    }
     .sidebar.affix {
         width: 400px;
         position: fixed;
@@ -269,6 +235,11 @@ body {
         top: auto;
         bottom: 400;  //height of the footer
     }
+
+        .particlomatic-range-input button {
+        width: 9% !important;
+    }
+
 
 
 } /* / @media (min-width: @screen-md) */
@@ -284,7 +255,7 @@ body {
 
 @media (min-width: @screen-lg) {
 
-    #main {
+    .main {
         width: 1200px;
         margin-left: auto;
         margin-right: auto;
@@ -296,7 +267,6 @@ body {
     .csstransforms #countdown  {
         right: 110px;
     }
-
     
     .page {
         background-image: url(background-white-paint_1200px.png);
@@ -318,12 +288,10 @@ body {
     }
 
     .particlomatic-range-input button {
-        width: 8% !important;
+        width: 9% !important;
     }
 
-
 } /* / @media (min-width: @screen-md) */
-
 
 
 
@@ -336,14 +304,15 @@ body {
     white-space: nowrap;
 }
 
+em {
+    font-style: italic;
+}
+
 h1, h2, h3, h4, h5 {
     margin: 0;
     padding: 0;
 }
 
-body {
-    position: relative;
-}
 h1 {
     font-family: 'SansCulottesRegular';
     font-size: 32px;
@@ -365,56 +334,22 @@ h4 {
     font-size: 16px;
     line-height: 20px;
 }
-
-    
+   
 .content ul {
-    margin: 24px 0px;
+    margin: 20px 0px;
 }
 .content p {
     margin: 0px;
     margin-bottom: 20px;
 }
-.hidden-exhibition {
+.app .hidden-exhibition {
     display: none;
 }
-
-#ielte7_message {
-    display: none; 
-}
-
 #subscription_form_label {
     display: none;
 }
 
 
-
-/***************************************
- PARTICLOMATIC
-***************************************/
-
-input[type="range"] {
-    width: 100%;
-    margin: 20px 0px;
-    padding: 10px 0px;
-    -webkit-appearance: none;
-    background-color: #DDDDDD;
-    height:10px;
-    display: none; 
-}
-
-input[type="range"]::-webkit-slider-thumb {
-     -webkit-appearance: none;
-    background-color: #5bc0de;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    border-radius: 4px;
-    border-width: 0px;
-}
-
- #titleimg, #titleimg2 {
-    width: 100%;
-}
 
 #teilchenzoo_teaser_teilchen_roll_stage {
     background-image: url(teilchenzoo-teaser-teilchen-roll.png);
@@ -425,116 +360,46 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
         
-        #teilchenzoo_teaser_teilchen_roll_stage {
-            background-image: url(teilchenzoo-teaser-teilchen-roll_2x.png);
-            background-size: 6297px 175px;
+    #teilchenzoo_teaser_teilchen_roll_stage {
+        background-image: url(teilchenzoo-teaser-teilchen-roll_2x.png);
+        background-size: 6297px 175px;
 
-        }
     }
-
-
-    #test_teaser_text_container {
-        height: 100px;
-        width: 100%;
-        position: relative;
-    }
-    .test_teaser_text {
-        position: absolute;     
-        font-family: 'SansCulottesRegular';
-        font-size: 2em;
-        line-height: 0.9em;
-        position: absolute;
-        opacity: 0.1;
-        top: 0;    display: none;
-    }
-    #test_teaser_container {
-        height: 200px;
-        width: 100%;
-    }
-    .test_teaser {
-        font-family: 'SansCulottesRegular';
-        font-size: 3em;
-        line-height: 0.9em;
-        position: absolute;
-        opacity: 0.1;
-    }
-    .test_teaser_or {
-        font-size: .5em;
-    }
-
-    img.test_teaser {
-        width: 100%; 
-    }
-
-    div#test_teaser_group {
-        color:hsl(0, 50%, 50%);
-    }
-    div#test_teaser_communicativeness  {
-        color:hsl(10, 50%, 50%);
-    }
-    div#test_teaser_shyness {
-        color:hsl(20, 50%, 50%);
-    }
-    div#test_teaser_mass {
-        color:hsl(30, 50%, 50%);
-    }
-    div#test_teaser_charge {
-        color:hsl(40, 50%, 50%);
-    }
-    div#test_teaser_fantasy {
-        color:hsl(-10, 50%, 50%);
-    }
-
-    .quotes_teaser {
-        width: 20%;
-    }
-
-
-    #questions_teaser_stage {
-        height: 400px;
-    }
+}
 
 
 
-    .institution_description {
-        clear:both;
-        color: #333333;
-    }
-    .institution_logo {
-        width: 100px;
-        height: auto;
-    }
-    #institution_logo_desy {
-        float: right; 
-        padding-left: 20px;     
-    }
-    #institution_logo_universum {
-        float: right; 
-        padding-left: 20px;     
-    }
+a, a:hover, a:focus {
+    color: #46b7da;
+}
 
+.institution_description {
+    clear:both;
+    color: #333333;
+}
+.institution_logo {
+    width: 100px;
+    height: auto;
+}
+#institution_logo_desy {
+    float: right; 
+    padding-left: 20px;     
+}
+#institution_logo_universum {
+    float: right; 
+    padding-left: 20px;     
+}
 
-
-
-
-
-    .ui-btn-text {
-        line-height: 100%;
-    }
-    #page-home .thumb {
-        width: 22%;
-    }
-    span.reg {
-        position: relative;
-        top: -0.5em;
-        font-size: 80%;
-    }
-
+span.reg {
+    position: relative;
+    top: -0.5em;
+    font-size: 80%;
+}
 
 
 .question {
@@ -544,61 +409,37 @@ input[type="range"]::-webkit-slider-thumb {
     color: black;     
 }
 
-
-
-
-#particlomatic_button_hide_info {
-
-}
-
-#particlomatic_result_bestMatch p {
-    font-size: 100%;
-}
-
-
-
-
-
-.quiz-form-item {
-    padding: 0px 0px;
-    margin-bottom: 10px;
-}
-.quiz-form-item h2  {
-    font-size: 120%;
-    line-height: 1em; 
-    margin: 0px;
+.newsDate {
+    font-size: 14px;
     padding: 0px;
-    text-align: center;
-    vertical-align: middle;
+    margin: 0px !important;
+    color: #666666;
+}
+#page_programme .newsDate {
+    margin-top: 48px  !important;
 }
 
-.quiz-form-item-title {
-    width: 100%; 
+#privacy_promise {
+    font-size: 80%;    
 }
-.quiz-form-item-title-left-td {
-    width: 1%;
-}
-.quiz-form-item-title-middle-td {
-    width: 1%;
-    text-align: center;
-}
-.quiz-form-item-title-right-td {
-    width: 1%;
-    text-align: right;
+.dtml {
+    display: none;
 }
 
 
-.symbol_left {
-    vertical-align: middle;
-    float: left;
+
+/***************************************
+ PARTICLOMATIC
+***************************************/
+
+#particlomatic_info img.particle {
+    width: 20%;
 }
-.symbol_right {
-    vertical-align: middle;
-    float: right;
+#particlomatic_result_top3 h1 {
+    cursor: pointer;
 }
-#test_result_2d {
-    width: 160px;
-    background-color: white;
+.particleDescription {
+    font-size: 90%;
 }
 
 .resultBin {
@@ -638,24 +479,8 @@ input[type="range"]::-webkit-slider-thumb {
     vertical-align: middle;
 }
 
-
-
-
-#particle_teaser_table img{
-    width: 100%;
-    height: auto;
-}
-#particle_teaser_table td {
-    width: 25%;
-}
-#quizTeaser .quizResultTable {
+.quizResultTable {
     width: 100%;     
-}
-
-#particlomatic_result_table .quizResultTable {
-    width: 100%;
-    margin-top: 20px;
-
 }
 
 #particlomatic_result_table div {
@@ -665,26 +490,81 @@ input[type="range"]::-webkit-slider-thumb {
 .rank1_img {
     float: right; 
     width: 40%;
-    margin: 0px;
 }
 
-.newsDate {
-    font-size: 14px;
-    padding: 0px;
-    margin: 0px !important;
-    color: #666666;
-}
-#page_programme .newsDate {
-    margin-top: 48px  !important;
+
+
+input[type="range"] {
+    width: 100%;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    -webkit-appearance: none;
+    background-color: #DDDDDD;
+    height:10px;
 }
 
-#privacy_promise {
-    font-size: 80%;    
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #5bc0de;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-width: 0px;
 }
-.dtml {
+
+.particlomaticFormItem {
+    padding: 25px;
+    margin-bottom: 20px;
+    background-color: #FAFAFA;
+}
+.particlomaticFormItem h2  {
+    line-height: 1em; 
+}
+
+.particlomaticFormItem-title-left-td {
+    width: 1%;
+}
+.particlomaticFormItem-title-middle-td {
+    width: 1%;
+    text-align: center;
+}
+.particlomaticFormItem-title-right-td {
+    width: 1%;
+    text-align: right;
+}
+.btn-active {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+}
+.btn-inactive {
+    color: #fff;
+    background-color: lighten(#39b3d7, 40%);
+    border-color: lighten(#269abc, 40%);
+}
+.particlomaticHelp {
+    margin-top: 1em;
     display: none;
 }
+.particlomatic-range-input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
+
+
+/***************************************
+ HOMEPAGE
+***************************************/
+
+
+
+/***************************************
+ VIDEOS
+***************************************/
 
 
 #video_page_introduction {
@@ -699,341 +579,6 @@ input[type="range"]::-webkit-slider-thumb {
     bottom: 125px;
     right: 350px;
 }
-
-
-
-.encylopedia_table {
-}
-
-.encylopedia_table td {
-    margin: 0px; 
-    line-height: 0px;
-    padding: 5px;
-    width: 10%;
-}
-.encylopedia_table tr {
-    margin: 0px;
-}
-
-
-.video_teaser_img, 
-.encyclopedia_teaser_img {
-    -webkit-box-shadow: 2px 2px 4px #666; 
-}
-
-.quiz-form-item {
-    background-color: #FAFAFA;
-    padding: 25px;
-}
-
-
-#page-content h2 {
-    margin-top: 2em;
-}
-#page-content .h2intro {
-    color: rgba(0,0,0,0.5); 
-    display: block;
-    font-size: 150%;
-    line-height: 1em;
-}
-#page-content .h2intro:after {
-    content: '';
-}
-
-
-
-.myon_encyclopedia_teaser_img,
-.tauon_encyclopedia_teaser_img,
-.myon_neutrino_encyclopedia_teaser_img,
-.charm_quark_encyclopedia_teaser_img,
-.top_quark_encyclopedia_teaser_img,
-.photon_encyclopedia_teaser_img,
-.w_plus_encyclopedia_teaser_img,
-.w_minus_encyclopedia_teaser_img,
-.wimp_encyclopedia_teaser_img {
-    .transform(rotate(-0.5deg));
-}
-
-.electron_encyclopedia_teaser_img,
-.electron_neutrino_encyclopedia_teaser_img,
-.tauon_neutrino_encyclopedia_teaser_img,
-.down_quark_encyclopedia_teaser_img,
-.top_quark_encyclopedia_teaser_img,
-.bottom_quark_encyclopedia_teaser_img,
-.z_null_encyclopedia_teaser_img,
-.gluon_encyclopedia_teaser_img,
-.graviton_encyclopedia_teaser_img,
-.higgs_encyclopedia_teaser_img {
-    .transform(rotate(1deg));
-}
-.up_quark_encyclopedia_teaser_img,
-.strange_quark_encyclopedia_teaser_img,
-.w_plus_encyclopedia_teaser_img  {
-    .transform(rotate(-1deg));
-}
-
-.ui-body-c .ui-link:visited, .ui-body-c .ui-link:hover, .ui-body-c .ui-link:active,
-.ui-body-c .ui-link {
-    color: black;
-}
-
-
-.panel {
-    border: none; 
-    background: none; 
-    box-shadow: none; 
-    -webkit-box-shadow: none;
-}
-.panel-default>.panel-heading {
-    border: none; 
-}
-.ui-body-c .ui-link {
-    font-weight: normal;
-    text-decoration: underline;
-}
-.panel-body,
-.panel-heading {
-    padding: 0;
-}
-.panel-heading {
-    padding-bottom: 1em;
-}
-
-.home_icon {
-    float: right;
-    width: 20%;
-    background-color: #FAFAFA;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-#particlomatic_info_toggle {
-    text-decoration: underline;
-}
-.particlomaticHelp {
-    margin-top: 1em;
-    display: none;
-}
-
-
-.website a {
-    color: black;
-    border-bottom: 1px dotted gray;
-}
-
-
-.nav-tabs a {
-    text-decoration: none !important;
-}
-
-em {
-    font-style:italic;
-}
-
-
-#page-particlomatic .content {
-    background-color: none;
-    padding-top: -0px;
-}
-
-#page-particlomatic .content h1 {
-    margin-bottom: 0.5em; 
-    font-size: 300%;
-}
-
-
-#particlomatic_info .particle {
-    width: 20%;
-}
-
-.ui-slider-handle {
-    background: rgb(0,166,235);
-
-    border: 1px solid rgb(0,166,235);
-
-}
-.ui-body-c .btn-info,
-.ui-body-c .btn-success {
-    color: #fff !important;
-    text-decoration: none;
-}
-
-.ui-body-c .btn-info {
-    background-color: rgb(0,166,235);
-    border-color: rgb(0,166,235);
-}
-
-#particlomatic_result_top3 h1 {
-    cursor: pointer;
-}
-
-.particlomatic_result_top3_img {
-    float: right;
-    width: 20%;
-}
-.particleDescription {
-    font-size: 90%;
-}
-
-
-
-#page-content .encyclopedia_teaser_img,
-#page-content .encyclopedia_teaser_img {
-    width: 85px;
-    margin-right: 20px;
-}
-
-#encyclopedia_index {
-    height: 100px;
-    overflow:scroll;
-    overflow-y:hidden;
-    white-space:nowrap;
-    width: 99%; 
-    margin-bottom: 30px;
-}
-
-
-#encyclopedia_stage h1 {
-    font-size: 3em;
-}
-#encyclopedia_stage h2 {
-    font-size: 1.5em;
-}
-
-a[href="#page-options"] {
-    display: none !important; 
-}
-
-#page-videos.page {
-    background: none; 
-}
-
-#page-videos .ui-content {
-    padding: 0px;
-}
-
-
-#screensaver {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 2000px;
-    height: 2000px;
-    background-color: black;
-    z-index: 1000;
-    display: none;
-}
-
-
-
-
-
-.app .navbar {
-    background-color: #2c393a; //#636f72; //rgba(44, 62, 80, 1);
-    margin: 0px;
-    min-height: 50px;
-    border: none;
-}
-
-.app .navbar ul {
-    list-style: none;
-    width: 100%;
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-}
-.app .navbar ul li {
-}
-.app .navbar-fixed-bottom {
-    background-color: #46b7da;
-    border-top: 2px solid white;
-}
-.app .navbar ul li  {
-    display: inline-block; 
-    width: 33.3%;
-    text-align: center;
-    min-height: 49px;
-}
-.app .navbar-fixed-bottom ul li  {
-    border-right: 2px solid white;
-}
-.app .navbar ul li:last-child {
-    border-right: none; 
-} 
-.app .navbar-fixed-bottom ul li a {
-    background-color: #46b7da;
-}
-.app .navbar-fixed-bottom ul li a.selected {
-    background-color: #47a447;
-}
-.app .navbar ul li.selected {
-    background-color: rgba(44, 62, 80, 0.5);
-}
-.app .navbar ul li.left {
-    text-align: left;
-}
-
-.app .navbar ul li.right {
-    text-align: right;
-}
-
-.app .navbar ul li a {
-    display: inline-block; 
-    width: 100%;
-    padding: 15px 20px;
-}
-
-.app .navbar .language_selector a {
-    display: inline;
-}
-
-.particlomatic-range-input {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-
-
-.app .navbar ul li a {
-    color: white;
-}
-
-.app .page {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.app #page-videos {
-    padding: 0px;
-/*    height: 1200px;
-    min-height: 1200px;
-    overflow: hidden;*/
-}
-.app .navbar-fixed-top {
-    display: none; 
-}
-.app .navbar-fixed-top ul {
-    margin: 0px !important;
-    min-height: 40px;
-    height: 50px;
-}
-.app .navbar-fixed-top h1 {
-    font-size: 100%;
-    color: white;
-    margin: 0;
-    font-weight: normal;
-}
-
-.navbar-fixed-bottom {
-    min-height: 49px;
-
-}
-
-.app .page {
-}
-
 .app .videocontroller h2 {
     font-size: 16px;
     line-height: 16px;
@@ -1087,20 +632,163 @@ li[data-video-href="media/videos/video_7.mp4"] {
     display: none !important;
 }
 
-a, a:hover, a:focus {
-    color: #46b7da;
+
+/***************************************
+ ENCYCLOPEDIA
+***************************************/
+
+.encylopedia_table td {
+    margin: 0px; 
+    line-height: 0px;
+    padding: 5px;
+    width: 10%;
+}
+.encyclopedia_teaser_img {
+    .box-shadow(2px 2px 4px, #666); 
+}
+#page-content h2 {
+    margin-top: 2em;
+}
+#page-content .h2intro {
+    color: rgba(0,0,0,0.5); 
+    display: block;
+}
+#page-content .encyclopedia_teaser_img {
+    width: 85px;
+    margin-right: 20px;
+}
+#encyclopedia_index {
+    height: 100px;
+    overflow:scroll;
+    overflow-y:hidden;
+    white-space:nowrap;
+    width: 99%; 
+    margin-bottom: 30px;
+}
+.myon_encyclopedia_teaser_img,
+.tauon_encyclopedia_teaser_img,
+.myon_neutrino_encyclopedia_teaser_img,
+.charm_quark_encyclopedia_teaser_img,
+.top_quark_encyclopedia_teaser_img,
+.photon_encyclopedia_teaser_img,
+.w_plus_encyclopedia_teaser_img,
+.w_minus_encyclopedia_teaser_img,
+.wimp_encyclopedia_teaser_img {
+    .transform(rotate(-0.5deg));
+}
+.electron_encyclopedia_teaser_img,
+.electron_neutrino_encyclopedia_teaser_img,
+.tauon_neutrino_encyclopedia_teaser_img,
+.down_quark_encyclopedia_teaser_img,
+.top_quark_encyclopedia_teaser_img,
+.bottom_quark_encyclopedia_teaser_img,
+.z_null_encyclopedia_teaser_img,
+.gluon_encyclopedia_teaser_img,
+.graviton_encyclopedia_teaser_img,
+.higgs_encyclopedia_teaser_img {
+    .transform(rotate(1deg));
+}
+.up_quark_encyclopedia_teaser_img,
+.strange_quark_encyclopedia_teaser_img,
+.w_plus_encyclopedia_teaser_img  {
+    .transform(rotate(-1deg));
 }
 
 
+/***************************************
+ APP
+***************************************/
 
-.btn-active {
-    color: #fff;
+#screensaver {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 2000px;
+    height: 2000px;
+    background-color: black;
+    z-index: 1000;
+    display: none;
+}
+.app .navbar {
+    background-color: #2c393a; //#636f72; //rgba(44, 62, 80, 1);
+    margin: 0px;
+    border: none;
+}
+.app .navbar ul {
+    list-style: none;
+    width: 100%;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+.app .navbar ul li {
+}
+.app .navbar-fixed-bottom {
+    background-color: #46b7da;
+    border-top: 2px solid white;
+}
+.app .navbar ul li  {
+    display: inline-block; 
+    width: 25%;
+    text-align: center;
+    height: 49px;
+}
+.app .navbar-fixed-bottom ul li  {
+    border-right: 2px solid white;
+}
+.app .navbar ul li:last-child {
+    border-right: none; 
+} 
+.app .navbar-fixed-bottom ul li a {
+    background-color: #46b7da;
+}
+.app .navbar-fixed-bottom ul li a.selected {
     background-color: #47a447;
-    border-color: #398439;
 }
-.btn-inactive {
-    color: #fff;
-    background-color: lighten(#39b3d7, 40%);
-    border-color: lighten(#269abc, 40%);
+.app .navbar ul li.selected {
+    background-color: rgba(44, 62, 80, 0.5);
+}
+.app .navbar ul li.left {
+    text-align: left;
 }
 
+.app .navbar ul li.right {
+    text-align: right;
+}
+
+.app .navbar ul li a {
+    display: inline-block; 
+    width: 100%;
+    padding: 15px 20px;
+}
+.app .navbar .language_selector a {
+    display: inline;
+}
+.app .navbar ul li a {
+    color: white;
+}
+
+
+.app .navbar-fixed-top {
+    display: none; 
+}
+.app .navbar-fixed-top ul {
+    margin: 0px !important;
+    min-height: 40px;
+    height: 50px;
+}
+.app .navbar-fixed-top h1 {
+    font-size: 100%;
+    color: white;
+    margin: 0;
+    font-weight: normal;
+}
+.app .home_icon {
+    float: right;
+    width: 20%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.app .nav-tabs a {
+    text-decoration: none !important;
+}

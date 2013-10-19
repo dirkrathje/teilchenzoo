@@ -46,7 +46,7 @@ $(function(){
         <div id="sitemenu"><ul><li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li></ul></div>
     </div>
 
-    <div id="main">
+    <div class="main">
         <div class="content">
 
             <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
@@ -55,337 +55,237 @@ $(function(){
             <div id="countdown" class="hidden-xs">28. Sept. 2013 &ndash; 30. Juni 2014</div>
 
             <div class="row" style="margin-top: 24px;">
-                <div id="quiz-form-col" class="col-md-6 col-md-push-6">
-                    <form id="quiz-form">
-                        <div class="quiz-form-item" style="text-align: center;">
+                <div class="col-md-6 col-md-push-6">
+                    <form id="particlomaticForm">
+                        <div class="particlomaticFormItem" style="text-align: center;">
                             <button class="btn btn-info particlomatic_button_reset">Löschen</button>
                             <button class="btn btn-info particlomatic_button_show_info">Beschreibung</button> 
                             <button class="btn btn-success particlomatic_button_hide_info">Beschreibung</button> 
                         </div>            
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-mass" id="quiz-mass" min="-0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-mass" data-input-ref="quiz-mass">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">federleicht</td>
-                                    <td class="quiz-form-item-title-middle-td">normal</td>
-                                    <td class="quiz-form-item-title-right-td">superschwer</td>
+                                    <td class="particlomaticFormItem-title-left-td">federleicht</td>
+                                    <td class="particlomaticFormItem-title-middle-td">normal</td>
+                                    <td class="particlomaticFormItem-title-right-td">superschwer</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Wie wir Menschen sind auch Elementarteilchen verschieden schwer. Die Bandbreite ist dabei gewaltig: So wiegt das Top-Quark rund 340.000-mal so viel wie ein Elektron. Neutrinos sind noch leichter als Elektronen. Einige Teilchen wie die Photonen und Gluonen sind sogar ganz masselos.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Bist du eher<br>pessimistisch oder optimistisch?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du eher<br>pessimistisch oder optimistisch?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-charge" id="quiz-charge" min="-100" max="100" value="0">
                             <div class="particlomatic-range-input" data-input-ref="quiz-charge">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">pessimistisch<br>(negativ)</td>
-                                    <td class="quiz-form-item-title-middle-td">gelassen<br>(neutral)</td>
-                                    <td class="quiz-form-item-title-right-td">optimistisch<br>(positiv)</td>
+                                    <td class="particlomaticFormItem-title-left-td">pessimistisch<br>(negativ)</td>
+                                    <td class="particlomaticFormItem-title-middle-td">gelassen<br>(neutral)</td>
+                                    <td class="particlomaticFormItem-title-right-td">optimistisch<br>(positiv)</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Pessimistische Menschen sind negativ eingestellt, optimistische sind positiver unterwegs. Elementarteilchen haben eine elektrische Ladung, die negativ, neutral oder positiv sein kann. Einfach negativ geladene Teilchen bekommen -100 Punkte, einfach positiv geladene +100 Punkte. Der Rest verteilt sich dazwischen.</p>
                            </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-straightforwardness" id="quiz-straightforwardness" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-straightforwardness" data-input-ref="quiz-straightforwardness">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>                            
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">Mich wirft nichts aus der Bahn.</td>
-                                    <td class="quiz-form-item-title-middle-td">&nbsp;</td>
-                                    <td class="quiz-form-item-title-right-td">Bin für jede Ablenkung zu haben.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Mich wirft nichts aus der Bahn.</td>
+                                    <td class="particlomaticFormItem-title-middle-td">&nbsp;</td>
+                                    <td class="particlomaticFormItem-title-right-td">Bin für jede Ablenkung zu haben.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Wenn etwas geladen und leicht ist, lässt es sich leicht ablenken.</p>
                            </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Hast du ein zerbrechliches Gemüt?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Hast du ein zerbrechliches Gemüt?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-unstableness" id="quiz-unstableness" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-unstableness" data-input-ref="quiz-unstableness">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">Nein, mich macht nichts kaputt.</td>
-                                    <td class="quiz-form-item-title-right-td">Ja!<br> Ich bin superempfindlich.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Nein, mich macht nichts kaputt.</td>
+                                    <td class="particlomaticFormItem-title-right-td">Ja!<br> Ich bin superempfindlich.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Einige Elementarteilchen können unendlich alt werden, für andere ist schon die Dauer eines Wimpernschlages paradiesische Ewigkeit. </p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Wechselst du zwischen verschiedenen Persönlichkeiten?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Wechselst du zwischen verschiedenen Persönlichkeiten?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-oscillation" id="quiz-oscillation" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-oscillation" data-input-ref="quiz-oscillation">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">Nein, mich gibt es nur einmal.</td>
-                                    <td class="quiz-form-item-title-right-td">Ja! In mir schlummern viele Seelen.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Nein, mich gibt es nur einmal.</td>
+                                    <td class="particlomaticFormItem-title-right-td">Ja! In mir schlummern viele Seelen.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Es gibt drei verschiedene Neutrino-Sorten: Elektron-, Myon- und Tauon-Neutrinos. Diese können sich ohne äußeres Zutun ineinander umwandeln. Die drei Neutrino-Sorten erhalten daher 100 Punkte, der Rest bekommt nix.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Bist du ein Gruppenmensch?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du ein Gruppenmensch?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-confined" id="quiz-confined" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-confined" data-input-ref="quiz-confined">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                  <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">Ich bin Einzelgänger und lieber alleine.</td>
-                                    <td class="quiz-form-item-title-right-td">Ohne Freunde oder Familie geht gar nichts.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Ich bin Einzelgänger und lieber alleine.</td>
+                                    <td class="particlomaticFormItem-title-right-td">Ohne Freunde oder Familie geht gar nichts.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Quarks wurden noch nie einzeln beobachtet. Sie treten immer in Gruppen zu zweit oder dritt auf. Der Gruppenwesenwert der Quarks ist daher 100, der der restlichen Teilchen liegt bei Null.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">            
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">            
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Bist du schüchtern?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du schüchtern?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td
                                 </tr>
                             </table>
                             <input type="range" name="quiz-shyness" id="quiz-shyness" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-shyness" data-input-ref="quiz-shyness">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td">Nein, ich stehe gern im Rampenlicht!</td>
-                                    <td class="quiz-form-item-title-right-td">Ja, ich bin ein schüchternes Mauerblümchen.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Nein, ich stehe gern im Rampenlicht!</td>
+                                    <td class="particlomaticFormItem-title-right-td">Ja, ich bin ein schüchternes Mauerblümchen.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                <p>Menschen sind mehr oder minder schüchtern, die verschiedenen Teilchen haben sich später oder früher zu erkennen gegeben. Das Elektron kennt man seit 1897, das Higgs-Teilchen wurde erst 2012 nachgewiesen. Je später sich ein Teilchen nachgewiesen wurde, umso mehr Punkte bekommt es. Das Higgs-Teilchen erhält 75 Punkte. Die noch nicht gesichteten Gravitonen und Wimps bekommen 100 Punkte.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Bist du kommunikativ?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du kommunikativ?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td
                                 </tr>
                             </table>
                             <input type="range" name="quiz-communicativeness" id="quiz-communicativeness" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-communicativeness" data-input-ref="quiz-communicativeness">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                <tr>
-                                    <td class="quiz-form-item-title-left-td">Ich bin kein großer Redner.</td
-                                    <td class="quiz-form-item-title-right-td">Ja, ich unterhalte gerne.</td>
+                                    <td class="particlomaticFormItem-title-left-td">Ich bin kein großer Redner.</td
+                                    <td class="particlomaticFormItem-title-right-td">Ja, ich unterhalte gerne.</td>
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>In der modernen Physik werden Kräfte zwischen Teilchen durch den Austausch von anderen Teilchen beschrieben – den Wechselwirkungsteilchen. Über diese Wechselwirkungsteilchen können Teilchen quasi kommunizieren: Die Wechselwirkungsteilchen bekommen hier daher 100 Punkte, der Rest geht leer aus. Im »Teilchenzoo« sind die Wechselwirkungsteilchen an offenen Mündern zu erkennen.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Schaust du gern in Spiegel?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Schaust du gern in Spiegel?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-parityviolating" id="quiz-parityviolating" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-parityviolating" data-input-ref="quiz-parityviolating">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                  <td class="quiz-form-item-title-left-td">Spiegel bringen mir nichts.</td>
-                                  <td class="quiz-form-item-title-right-td">Ja, ich stehe ständig davor.</td>
+                                  <td class="particlomaticFormItem-title-left-td">Spiegel bringen mir nichts.</td>
+                                  <td class="particlomaticFormItem-title-right-td">Ja, ich stehe ständig davor.</td>
                               </tr>
                             </table>
                            <div class="particlomaticHelp">
                                 <p>Prozesse, an denen die W- und das Z-Teilchen beteiligt sind, würden in einem gespiegelten Universum anders ablaufen. Das hat lange für Aufregung gesorgt, weil man dachte, dass das eigentlich nicht sein kann. Daher 100 Punkte an W-minus, W-plus und Z-null.</p>
                             </div>
-                        </div> <!-- /.quiz-form-item -->
-                        <div class="quiz-form-item">
-                            <table class="quiz-form-item-title">
+                        </div> <!-- /.particlomaticFormItem -->
+                        <div class="particlomaticFormItem">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                    <td class="quiz-form-item-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
-                                    <td class="quiz-form-item-title-middle-td"><h2>Lebst du in einer Traumwelt?</h2></td>
-                                    <td class="quiz-form-item-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
+                                    <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2>Lebst du in einer Traumwelt?</h2></td>
+                                    <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
                                 </tr>
                             </table>
                             <input type="range" name="quiz-fantasy" id="quiz-fantasy" min="0" max="100" value="50">
                             <div class="particlomatic-range-input" id="particlomatic-range-input-fantasy" data-input-ref="quiz-fantasy">
-                                <button class="btn" data-value="0">&nbsp;</button>
-                                <button class="btn" data-value="1">&nbsp;</button>
-                                <button class="btn" data-value="2">&nbsp;</button>
-                                <button class="btn" data-value="3">&nbsp;</button>
-                                <button class="btn" data-value="4">&nbsp;</button>
-                                <button class="btn" data-value="5">&nbsp;</button>
-                                <button class="btn" data-value="6">&nbsp;</button>
-                                <button class="btn" data-value="7">&nbsp;</button>
-                                <button class="btn" data-value="8">&nbsp;</button>
-                                <button class="btn" data-value="9">&nbsp;</button>
-                                <button class="btn" data-value="10">&nbsp;</button>
+                                        <button class="btn" data-value="0">&nbsp;</button><button class="btn" data-value="1">&nbsp;</button><button class="btn" data-value="2">&nbsp;</button><button class="btn" data-value="3">&nbsp;</button><button class="btn" data-value="4">&nbsp;</button><button class="btn" data-value="5">&nbsp;</button><button class="btn" data-value="6">&nbsp;</button><button class="btn" data-value="7">&nbsp;</button><button class="btn" data-value="8">&nbsp;</button><button class="btn" data-value="9">&nbsp;</button><button class="btn" data-value="10">&nbsp;</button>
                             </div>
-                            <table class="quiz-form-item-title">
+                            <table class="particlomaticFormItem-title">
                                 <tr>
-                                  <td class="quiz-form-item-title-left-td">Ich träume höchstens nachts.</td>
-                                  <td class="quiz-form-item-title-right-td">Ich tauche gerne in die Fantasie ab.</td>
+                                  <td class="particlomaticFormItem-title-left-td">Ich träume höchstens nachts.</td>
+                                  <td class="particlomaticFormItem-title-right-td">Ich tauche gerne in die Fantasie ab.</td>
                               </tr>
                             </table>
                             <div class="particlomaticHelp">
                                 <p>Bis auf die Gravitonen und Wimps wurden alle Teilchen aus unserem »Teilchenzoo« nachgewiesen. Vielleicht sind Gravitonen und Wimps nur schüchtern, vielleicht bleiben sie aber auch Phantasie. Daher bekommen die beiden 100 Punkte, der Rest keine.</p>
                             </div>
                         </div>
-                        <div class="quiz-form-item" style="text-align: center;">
+                        <div class="particlomaticFormItem" style="text-align: center;">
                             <button class="btn btn-info particlomatic_result_control_button" data-href="#particlomatic_result_top3">Top-3 anzeigen</button> 
                         </div>
                     </form>
@@ -394,7 +294,7 @@ $(function(){
                 <div id="particlomatic_result" class="col-md-6 col-md-pull-6">
                     <div class="sidebar paintedGray" data-spy="affix" data-offset-top="395" data-offset-bottom="400">
 
-                        <div class="quiz-form-item" style="text-align: center; " id="particlomatic_result_control">
+                        <div class="particlomaticFormItem" style="text-align: center; " id="particlomatic_result_control">
                             <button class="btn btn-success particlomatic_result_control_button particlomatic_result_control_info" data-href="#particlomatic_info">Info</button>
                             <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_table" data-href="#particlomatic_result_table"><i class="icon-white icon-align-left"></i>Tabelle</button> 
                             <button class="btn btn-info particlomatic_result_control_button particlomatic_result_control_top3" data-href="#particlomatic_result_top3">Top-3</button> 
@@ -415,7 +315,7 @@ $(function(){
                 </div>
             </div>
     </div> <!-- /.content --> 
-</div> <!-- /#main  --> 
+</div> <!-- /.main  --> 
 
 <div id="footer">
     <div id="footerInterior">
