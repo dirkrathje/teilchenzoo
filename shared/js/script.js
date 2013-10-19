@@ -291,7 +291,7 @@ function getQuizView(model) {
      //       normalizedValue = 100 - (model.bestMatches[i]); 
 
             tableView += "<tr>";
-            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped/" + particle.name + ".png' alt=''/></td>";
+            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_/" + particle.name + ".png' alt=''/></td>";
             tableView += "<td class='value'><div id='resultBin"+ particle.name + "' class='resultBin "+ particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
             tableView += "</tr>";
         }
