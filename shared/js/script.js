@@ -802,11 +802,13 @@ var app = {
         $(hash).show(); 
         if (hash === "#page-home") {
 //            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
+            $("body").removeClass("videoBody");
             $(".navbar-fixed-bottom a[href='#page-home']").addClass("selected");            
         } else
         if (hash === "#page-particlomatic") {
 //            $(".navbar-fixed-top").show();
-            $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
+//            $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
+            $("body").removeClass("videoBody");
             $(".navbar-fixed-bottom a[href='#page-particlomatic']").addClass("selected");            
 
 
@@ -814,12 +816,14 @@ var app = {
         if (hash === "#page-videos") {
 //            $(".navbar-fixed-top").hide();
 //            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
+            $("body").addClass("videoBody");
             $(".navbar-fixed-bottom a[href='#page-videos']").addClass("selected");            
             initVideoPlayer();
         } else
         if (hash === "#page-content") {
 //            $(".navbar-fixed-top").show();
  //           $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
+            $("body").removeClass("videoBody");
             $(".navbar-fixed-bottom a[href='#page-content']").addClass("selected");            
 
              
