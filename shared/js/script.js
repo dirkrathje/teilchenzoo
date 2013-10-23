@@ -876,5 +876,17 @@ var app = {
 };
 
 
-
+window.onload = function(){
+    if (window.navigator.userAgent.indexOf("Safari") > -1) {
+        var upSafari = {
+            status: true,
+            Start: function(){
+                document.getElementById('electronAnimationFrame').style.opacity = this.status ? 1 : .99;
+                this.status=!this.status;
+            }
+        };
+        window.upSafari = upSafari;
+        setInterval("upSafari.Start()",100);
+    }
+}
 
