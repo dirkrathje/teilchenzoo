@@ -877,7 +877,7 @@ var app = {
 
 
 window.onload = function(){
-    if (window.navigator.userAgent.indexOf("Safari") > -1) {
+    if (true || window.navigator.userAgent.indexOf("Safari") > -1) {
         var upSafari = {
             status: true,
             Start: function(){
