@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="borderimage">
+<head>
+  <base href=""/>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+  <title>Teilchenzoo-App</title>
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript">var appName = "";</script>
+  <script type="text/javascript" charset="utf-8" src="appname.js"></script>
+  <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="shared/lib/fastclick.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+
+  <link rel="stylesheet" href="shared/lib/reset/reset.css">
+  <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+  <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css">
+
+  <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="shared/css/styles.css" />
+
+  <script src="shared/js/script.js"></script>
+  <script>
+
+    $(document).ready(function(){
+      app.initialize();
+      onReady();});
+  </script>
+</head>
+
+<body class="app">
+<!--
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <ul>
+      <li class="left"><a href="#page-home">Übersicht</a></li>
+      <li><h1>Filme</h1></li>-->
+<!--      <li class="right language_selector"><a href="#">Du</a> | <a href="#">Sie</a> | <a href="#">You</a></li>-->
+<!--    </ul>
+  </nav>
+-->
+
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <ul>
+      <li class="home"><a href="#page-home">Start</a></li><li><a href="#page-particlomatic">Teilch-o-mat</a></li><li><a href="#page-videos">Filme</a></li><li><a href="#page-content">Steckbriefe</a></li><li class="language"><a href="index.html">Du</a></li><li class="language"><a href="index_de_sie.html"  class="active">Sie</a></li><li class="language"><a href="index_en.html">You</a></li>
+    </ul>
+  </nav>
+
+
+  
+
+  <div class="page" id="page-home">
+
+        <div class="main">
+    <div data-role="content" class="content paintedWood">
+
+      <img class="img-responsive" src="images/teilchenzoo-title-and-particles.png" alt="Teilchenzoo - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen." style="margin-top: 18px;">
+
+   </div> <!-- /.content -->
+   </div> <!-- /.main -->
+
+</div> <!-- /#page-home-->
+
+
+
+  <div id="screensaver">&nbsp;</div>
+</body>
+</html>
