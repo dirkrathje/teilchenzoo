@@ -384,7 +384,7 @@ function updateQuiz() {
 
     if (show_particlomatic_info) {
         $('.particlomatic_result_control_info').trigger("click");
-    } else if ($('.particlomatic_result_control_info').hasClass("btn-success")) {
+    } else if ($('.particlomatic_result_control_info').hasClass("btn-active")) {
         $('.particlomatic_result_control_table').trigger("click");
     }
 }
@@ -481,10 +481,10 @@ function initParticlomatic() {
 
         var targetSelector = $(this).attr("data-href");
         event.preventDefault();
-        $(".particlomatic_result_control_button").removeClass("btn-success");
-        $(".particlomatic_result_control_button").addClass("btn-info");
-        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").removeClass("btn-info");
-        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").addClass("btn-success");
+        $(".particlomatic_result_control_button").removeClass("btn-active");
+        $(".particlomatic_result_control_button").addClass("btn-inactive");
+        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").removeClass("btn-inactive");
+        $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").addClass("btn-active");
         $(".particlomatic_result_pane").hide();
         $(targetSelector).show();
     });    
