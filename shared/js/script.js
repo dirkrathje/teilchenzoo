@@ -885,6 +885,7 @@ window.onload = function(){
                 this.status=!this.status;
             }
         };
+        console.log("upSafari");
         window.upSafari = upSafari;
         setInterval("upSafari.Start()",100);
     }
