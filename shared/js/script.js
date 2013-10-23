@@ -633,6 +633,9 @@ function initEncyclopedia() {
     "use strict";
 
     $("#encyclopedia_index").hide();
+    //$("#encyclopedia_index .encyclopedia_link_detail").css("opacity", "0.1");
+
+
     $("#encyclopedia_overview").show();
     $("#encyclopedia_stage").html("");
 

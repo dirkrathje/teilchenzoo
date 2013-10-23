@@ -649,15 +649,32 @@ li[data-video-href="media/videos/video_7.mp4"] {
  ENCYCLOPEDIA
 ***************************************/
 
+#page-content .content {
+    padding-top: 50px;
+}
+
+#encyclopedia_index {
+    height: 100px;
+    overflow:scroll;
+    overflow-y:hidden;
+    white-space:nowrap;
+    margin-bottom: 30px;
+}
+
 .encylopedia_table td {
     margin: 0px; 
+    padding-right: 20px;
     line-height: 0px;
-    padding: 5px;
-    width: 10%;
+    padding: 0px;
+    height: 100px;
 }
-.encyclopedia_teaser_img {
-    .box-shadow(2px 2px 4px, #666); 
+#page-content .encyclopedia_teaser_img {
+    width: 80px;
+    margin-right: 20px;
 }
+
+
+
 #page-content h2 {
     margin-top: 2em;
 }
@@ -665,18 +682,7 @@ li[data-video-href="media/videos/video_7.mp4"] {
     color: rgba(0,0,0,0.5); 
     display: block;
 }
-#page-content .encyclopedia_teaser_img {
-    width: 85px;
-    margin-right: 20px;
-}
-#encyclopedia_index {
-    height: 100px;
-    overflow:scroll;
-    overflow-y:hidden;
-    white-space:nowrap;
-    width: 99%; 
-    margin-bottom: 30px;
-}
+
 .myon_encyclopedia_teaser_img,
 .tauon_encyclopedia_teaser_img,
 .myon_neutrino_encyclopedia_teaser_img,
@@ -687,6 +693,7 @@ li[data-video-href="media/videos/video_7.mp4"] {
 .w_minus_encyclopedia_teaser_img,
 .wimp_encyclopedia_teaser_img {
     .transform(rotate(-0.5deg));
+    .box-shadow(2px 2px 4px, #666); 
 }
 .electron_encyclopedia_teaser_img,
 .electron_neutrino_encyclopedia_teaser_img,
@@ -699,11 +706,13 @@ li[data-video-href="media/videos/video_7.mp4"] {
 .graviton_encyclopedia_teaser_img,
 .higgs_encyclopedia_teaser_img {
     .transform(rotate(1deg));
+    .box-shadow(2px 2px 4px, #666); 
 }
 .up_quark_encyclopedia_teaser_img,
 .strange_quark_encyclopedia_teaser_img,
 .w_plus_encyclopedia_teaser_img  {
     .transform(rotate(-1deg));
+    .box-shadow(2px 2px 4px, #666); 
 }
 
 
