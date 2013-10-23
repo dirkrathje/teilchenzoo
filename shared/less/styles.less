@@ -134,11 +134,17 @@ body {
     body {
         background: url(wood.png) left top repeat;
     }
+    body.videoBody  {
+        background: black;
+    }
 
     .page {
         background-image: url(background-white-paint_768px.png);
         background-repeat: repeat-y;
         background-position: top center;
+    }
+    body.videoBody .page {
+        background-image: none;
     }
 
     .main {
@@ -588,24 +594,21 @@ input[type="range"]::-webkit-slider-thumb {
 .app .videocontroller ul {
     width: 100%;
     margin: 0px auto;
-    background-color: white;
-    border-bottom: white 2px solid;
+    margin-bottom: 20px;
+    background-color: black;
+    border-bottom: transparent 2px solid;
     margin-left: -1px;
-}
-.app .videocontroller p {
-    font-size: 12px;
-    line-height: 12px;
 }
 .app .videocontroller li {
     color: white; 
-    width: percentage(1 / 4);
+    width: 25%;
     display: inline-block;
     vertical-align: top;
     padding: 5px;
     padding-top: 10px;
     background-color: @btn-inactive; //(44, 62, 80, 1);
     min-height: 80px;
-    border: white 1px solid;
+    border: black 2px solid;
     cursor: pointer;
     border-radius: 5px;
     border-top: none;
@@ -621,6 +624,11 @@ input[type="range"]::-webkit-slider-thumb {
 .app .videocontroller li:last-child {
     border-right: none;
 }
+.app .videocontroller p {
+    font-size: 12px;
+    line-height: 12px;
+}
+
 
 #videoplayer {
     width: 100%;
@@ -716,9 +724,12 @@ li[data-video-href="media/videos/video_7.mp4"] {
 
 
 .app .navbar {
-    background-color: white; //black; //@btn-inactive; // #2c393a; //#636f72; //rgba(44, 62, 80, 1);
+    background-color: white; 
     margin: 0px;
     border: none;
+}
+.videoBody .navbar {
+    background-color: transparent;
 }
 .app .navbar ul {
     list-style: none;
@@ -727,20 +738,20 @@ li[data-video-href="media/videos/video_7.mp4"] {
     margin: 0;
     padding: 0;
     height: 50px;
-    border-top: 3px solid white;
+    border-top: 3px solid transparent;
 }
 .app .navbar ul li  {
     display: inline-block; 
     width: 25%;
     text-align: center;
     height: 49px;
-    border-right: 3px solid white;
+    border-right: 3px solid transparent;
 }
 .app .navbar ul li.home  {
     width: 13%;
 }
 .app .navbar ul li.language  {
-    width: 4.1%;
+    width: 6%;
 }
 .app .navbar ul li  {
 }
