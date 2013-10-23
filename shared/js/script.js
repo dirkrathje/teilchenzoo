@@ -875,7 +875,7 @@ var app = {
     }
 };
 
-
+/*
 $(document).ready(function(){
 //    if (true || window.navigator.userAgent.indexOf("Safari") > -1) {
         var upSafari = {
@@ -889,5 +889,5 @@ $(document).ready(function(){
         window.upSafari = upSafari;
         setInterval("upSafari.Start()",100);
 //    }
-}
+}*/
 
