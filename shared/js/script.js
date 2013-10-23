@@ -823,7 +823,9 @@ var app = {
         if (hash === "#page-content") {
 //            $(".navbar-fixed-top").show();
  //           $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
+
             $("body").removeClass("videoBody");
+            $(".content").css("min-height", ($(window).height()-50)+'px');
             $(".navbar-fixed-bottom a[href='#page-content']").addClass("selected");            
 
              
