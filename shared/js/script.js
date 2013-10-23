@@ -876,8 +876,8 @@ var app = {
 };
 
 
-window.onload = function(){
-    if (true || window.navigator.userAgent.indexOf("Safari") > -1) {
+$(document).ready(function(){
+//    if (true || window.navigator.userAgent.indexOf("Safari") > -1) {
         var upSafari = {
             status: true,
             Start: function(){
@@ -888,6 +888,6 @@ window.onload = function(){
         console.log("upSafari");
         window.upSafari = upSafari;
         setInterval("upSafari.Start()",100);
-    }
+//    }
 }
 
