@@ -503,7 +503,6 @@ span.reg {
 }
 
 
-
 input[type="range"] {
     width: 100%;
     margin: 20px 0px;
@@ -511,6 +510,9 @@ input[type="range"] {
     -webkit-appearance: none;
     background-color: #DDDDDD;
     height:10px;
+}
+.no-inputtype-range input[type="range"] {
+    display: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -563,6 +565,9 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: desaturate(@btn-active, 50%);
     border-color: darken(@btn-active, 15%);
 }*/
+.inputtype-range .particlomatic-range-input {
+    display: none;
+}
 
 
 
