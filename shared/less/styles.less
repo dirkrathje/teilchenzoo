@@ -116,7 +116,8 @@ body {
         text-align: right;
         padding: 5px;
     }
-    #page_home .row {
+    #page_home .row , 
+    #page_news .row {
         margin-bottom: 25px;
     }
     .questions_teaser {
@@ -170,7 +171,8 @@ body {
         margin: 0px 0px;
     }
 
-    #page_home .row {
+    #page_home .row , 
+    #page_news .row {
         margin-bottom: 25px;
         padding: 25px;
     }
@@ -221,7 +223,7 @@ body {
 
     .csstransforms #countdown  {
         position: absolute;
-        top: 40px;
+        top: 10px;
         right: 60px;
         .transform(rotate(2deg));
     }
@@ -231,13 +233,15 @@ body {
         background-position: top center;
     }
     .content {
-        padding: 20px 75px 50px 75px;;
+        padding: 20px 75px 50px 75px;
     }
+
+    .row {position:  relative;}
     .sidebar.affix {
         width: 406px;
         position: fixed;
         top: 20px;  //height of the nav
-        margin-left: -435px;
+//        margin-left: -435px;
     }
     .affix-bottom {
         width: 400px;
@@ -259,6 +263,7 @@ body {
 }
 .particlomatic_result_pane {
     padding: 25px;
+    position: relative;
 
 }
 
@@ -271,7 +276,7 @@ body {
         margin-right: auto;
     }
     #footerInterior {
-        width: 1000px;
+        width: 950px;
     }
 
     .csstransforms #countdown  {
