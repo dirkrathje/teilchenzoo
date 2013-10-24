@@ -286,14 +286,11 @@ function getQuizView(model) {
         if (model.particleToBeShown[i] === 1) {
 
             particle = particles[i];
-          normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
-    // normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
-     //       normalizedValue = 100 - (model.bestMatches[i]); 
+            normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
 
 
             tableView += "<tr>";
             tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_100/" + particle.name + ".png' alt=''/></td>";
-//            tableView += "<td class='particleThumbnail'><img src='images/particles_cropped/top_quark.png' alt=''/></td>";
             tableView += "<td class='value'><div id='resultBin"+ particle.name + "' class='resultBin "+ particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
             tableView += "</tr>";
         }
@@ -316,15 +313,14 @@ function updateParticlomaticTableView(model) {
 
     for (i = 0; i < particlesLength; i += 1) {
 
-   //     if (model.particleToBeShown[i] === 1) {
+        if (model.particleToBeShown[i] === 1) {
 
             particle = particles[i];
-     //     normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
-     normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
-     //       normalizedValue = 100 - (model.bestMatches[i]); 
+            normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
+    //      normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
 
-         $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
-   //     }
+            $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
+        }
     }
 
     tableView += "</table>";
@@ -366,14 +362,12 @@ function updateQuiz() {
 
     if ($("#particlomatic_result_table").is(":visible")) {
 
-        console.log("updateParticlomaticTableView");
         updateParticlomaticTableView(quizModel);
     
     }
 
     if ($("#particlomatic_result_top3").is(":visible")) {
 
-        console.log("updating particlomatic_result_top3");
         $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
         $("#particlomatic_result_top3 h1").on("click", function () {
@@ -420,7 +414,6 @@ function onReady() {
 
 function initParticlomatic() {
     "use strict";
-
 
     $(".particlomatic-range-input button").on("click", function(event) {
 
@@ -541,12 +534,10 @@ function playNextVideo() {
     console.log("videoPlaylist.size: " + videoPlaylist.length);
     indexOfPlayingVideo = -1;
     for (i = 0; i < videoPlaylist.length-1; i += 1) {
-        console.log(">>> videoPlaylist[i]: " +videoPlaylist[i]);
         if (videoplayer.src.endsWith(videoPlaylist[i])) {
             indexOfPlayingVideo = i;
         }
     }
-    console.log("playing next video: " + videoPlaylist[indexOfPlayingVideo+1]);
     $(".videocontroller li[data-video-href='" + videoPlaylist[indexOfPlayingVideo+1] + "']").trigger("click");
 
 
@@ -556,16 +547,11 @@ function playNextVideo() {
 function initVideoPlayer() {
     "use strict";
 
-    console.log("initialize videoplayer");
-
-    console.log("initialize videoPlaylist");
     videoPlaylist = []; 
     $(".videocontroller li").each(function(){
         videoPlaylist.push($(this).attr("data-video-href"));
     });
 
-    console.log(videoPlaylist);
-    
     var videoplayer = document.getElementsByTagName('video')[0];
     $("#videoplayer").height("576px");
     videoplayer.addEventListener('ended', playNextVideo);
@@ -575,23 +561,6 @@ function initVideoPlayer() {
     $(".videocontroller li").removeClass("playing");
     $(".videocontroller li").removeClass("pausing");
 
-/*
-    $("#videoplayer").on("click", function(event) {
-
-        var videoplayer = document.getElementsByTagName('video')[0];
-
-        event.stopImmediatePropagation();
-
-        console.log("#videoplayer.click");
-        console.log("#videoplayer.click: videoplayer.paused = " + videoplayer.paused);
-        if (videoplayer.paused) {
-            videoplayer.play();
-        } else {
-
-            videoplayer.pause();
-        }
-
-    });*/
 
 
     $(".videocontroller li").on("click", function(event) {      
@@ -610,7 +579,6 @@ function initVideoPlayer() {
         
         } else {
 
-            console.log("not playing");
             $(".videocontroller li").removeClass("playing");
             $(".videocontroller li").removeClass("pausing");
             $(this).addClass("playing");
@@ -769,9 +737,16 @@ function initPageHome() {
 function initPageParticlomatic() {
     "use strict";
 
+    console.log(Modernizr.inputtypes.range);
+    if (Modernizr.inputtypes.range) {
+        $("html").addClass("inputtype-range"); 
+    } else {
+        $("html").addClass("no-inputtype-range"); 
+    }
+
     FastClick.attach(document.body);
-    
     initParticlomatic();
+
 
 }
 
