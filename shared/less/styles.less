@@ -546,13 +546,18 @@ input[type="range"]::-webkit-slider-thumb {
 .btn-active {
     color: #fff;
     background-color: @btn-active;
-    border-color: lighten(@btn-active, 5%);
+    border-color: white; //lighten(@btn-active, 0%);
 }
 .btn-inactive {
     color: #fff;
     background-color: @btn-inactive;
-    border-color: lighten(@btn-inactive, 5%);
+    border-color: white; //lighten(@btn-inactive, 0%);
 }
+
+.btn:hover {
+    color: #DDD;
+}
+
 /*
 .particlomatic-range-input .btn-active {
     background-color: desaturate(@btn-active, 50%);
