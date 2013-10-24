@@ -530,8 +530,8 @@ function playNextVideo() {
         i,
         indexOfPlayingVideo;
 
-    console.log("videoplayer.src: " + videoplayer.src);
-    console.log("videoPlaylist.size: " + videoPlaylist.length);
+    //console.log("videoplayer.src: " + videoplayer.src);
+    //console.log("videoPlaylist.size: " + videoPlaylist.length);
     indexOfPlayingVideo = -1;
     for (i = 0; i < videoPlaylist.length-1; i += 1) {
         if (videoplayer.src.endsWith(videoPlaylist[i])) {
@@ -737,7 +737,7 @@ function initPageHome() {
 function initPageParticlomatic() {
     "use strict";
 
-    console.log(Modernizr.inputtypes.range);
+    
     if (Modernizr.inputtypes.range) {
         $("html").addClass("inputtype-range"); 
     } else {
