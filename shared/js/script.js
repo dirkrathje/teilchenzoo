@@ -465,10 +465,6 @@ function initParticlomatic() {
         $(".particlomaticHelp").hide();
     });
 
-    $("#particlomatic_info").show();
-    $("#particlomatic_result_table").hide();
-    $("#particlomatic_result_top3").hide();
-
 
     $(".particlomatic_result_control_button").on("click", function (event) {
 
@@ -486,8 +482,6 @@ function initParticlomatic() {
 
         event.preventDefault();
         $(".particlomatic-range-input button[data-value='5']").trigger("click");
-
-
         $("#particlomaticForm input").each(function () {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
@@ -514,7 +508,6 @@ function initParticlomatic() {
         $(".body", $(this).parent().parent()).hide();
         $(".body", $(this).parent()).show();
     });
-
 
 
 }
