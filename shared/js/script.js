@@ -509,6 +509,8 @@ function initParticlomatic() {
         $(".body", $(this).parent()).show();
     });
 
+    updateQuiz(); 
+
 
 }
 
