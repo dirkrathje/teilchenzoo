@@ -237,20 +237,32 @@ body {
     }
 
     .row {position:  relative;}
-    .sidebar.affix {
+  
+    .sidebar {
         width: 406px;
-        position: fixed;
-        top: 20px;  //height of the nav
-//        margin-left: -435px;
     }
+  
+    .affix {
+        position: fixed;
+        left: 50%;
+        top: 20px; 
+    }
+    .affix .affixInterior {
+        margin-left: -420px;
+        width: 406px;
+    }
+ 
     .affix-bottom {
-        width: 400px;
         position: absolute;
-        top: auto;
+        left: 50%;
         bottom: 400;  //height of the footer
     }
-
-        .particlomatic-range-input button {
+    .affix-bottom .affixInterior {
+        margin-left: -203px;
+        width: 406px;
+    }
+    
+    .particlomatic-range-input button {
         width: 9% !important;
     }
 
@@ -266,7 +278,9 @@ body {
     position: relative;
 
 }
-
+.affixInterior.paintedGray {
+    padding: 0px;
+}
 
 @media (min-width: @screen-lg) {
 
@@ -293,20 +307,40 @@ body {
         padding-top: 50px;
     }
 
-    .sidebar.affix {
+    .sidebar {
         width: 485px;
-        margin-left: -515px;
+    }
+
+    .affix-top {
+    }
+
+    .affix {
     }
 
     .affix-bottom {
+    }
+
+    .affixInterior {
+/*        margin-left: -485px;
+        width: 485px;*/
+    }
+
+    .affix .affixInterior {
+        margin-left: -500px;
         width: 485px;
     }
+ 
+    .affix-bottom .affixInterior {
+        margin-left: -242px;
+        width: 485px;
+    }
+
 
     .particlomatic-range-input button {
         width: 9% !important;
     }
 
-} /* / @media (min-width: @screen-md) */
+} /* / @media (min-width: @screen-lg) */
 
 
 
