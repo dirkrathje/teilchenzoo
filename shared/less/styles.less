@@ -95,10 +95,6 @@ body {
     background-color: rgba(128, 128, 128, 0.2);
 }
 
-.affix {
-    position: relative;
-}
-
 
 @media (max-width: @screen-sm) {    
 
@@ -248,7 +244,7 @@ body {
         top: 20px; 
     }
     .affix .affixInterior {
-        margin-left: -420px;
+       margin-left: -420px;
         width: 406px;
     }
  
@@ -323,6 +319,7 @@ body {
     .affixInterior {
 /*        margin-left: -485px;
         width: 485px;*/
+        z-index: -20000;
     }
 
     .affix .affixInterior {
@@ -486,6 +483,7 @@ span.reg {
 }
 #particlomatic_result_top3 h1 {
     cursor: pointer;
+    z-index: 100;
 }
 .particleDescription {
     font-size: 90%;

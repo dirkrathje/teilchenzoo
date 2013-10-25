@@ -510,7 +510,10 @@ function initParticlomatic() {
     $("#particlomatic_result_table #remaining").html(getQuizView(quizModel));
     $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
-
+    $("#particlomatic_result_top3 h1").on("click", function () {
+        $(".body", $(this).parent().parent()).hide();
+        $(".body", $(this).parent()).show();
+    });
 
 
 
