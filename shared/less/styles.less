@@ -48,46 +48,27 @@ body {
 
 .navbar-default {
     line-height: 1em;
-    background-color: #FFFFFF;
+    background-color: #999999;
     background-color: rgba(128, 128, 128, 0.2);
     border: none;
-}
-.navbar-nav.nav-justified > li{
-    float:none;
 }
 .navbar-nav.nav-justified {
     display:table;
 }
-
 .navbar-nav.nav-justified > li{
     float:none;
+    background-color: #999999;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 5px;
 }
-
+.navbar-nav, .navbar-collapse {
+    padding: 0;
+    margin: 0;
+}
 #languageSelector {
     float: right; 
 }
-#sitemenu ul {
-    font-size: 100%; 
-    text-align: center;
-    color: #999999;
-    list-style: none;
-}
-#sitemenu li {
-    display: inline;
-    padding: 0px 0px;
-}
-#sitemenu li a {
-    display: inline;
-    margin: 0px 15px;
-    border: none;
-    color: gray;
-}
-#sitemenu li:after {
-    content: '|';
-}
-#sitemenu li:last-child:after {
-    content: '';
-}
+
 #page_programme #sitemenu_programme a,
 #page_home #sitemenu_home a,
 #page_news #sitemenu_news a,

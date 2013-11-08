@@ -602,7 +602,7 @@ function initEncyclopedia() {
     $("#encyclopedia_index a, #encyclopedia_overview a").on("click", function (event) {
 
         var target = $(this).attr("href").substr(1),
-            contentFileName = "encyclopedia/" + target + ".html";
+            contentFileName = "encyclopedia/" + target + "_en.html";
 
         if (target === "overview") {
 
@@ -618,7 +618,7 @@ function initEncyclopedia() {
             $("#encyclopedia_stage a").on("click", function (event) {
 
                 var target2 = $(this).attr("href").substr(1),
-                    contentFileName2 = "encyclopedia/" + target2 + ".html";
+                    contentFileName2 = "encyclopedia/" + target2 + "_en.html";
                 if (target2 === "overview") {
                     $("#encyclopedia_overview").show();
                     $(".encyclopedia_link_detail").hide();
