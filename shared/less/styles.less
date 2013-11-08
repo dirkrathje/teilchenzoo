@@ -46,13 +46,23 @@ body {
     position: relative;
 }
 
-#header {
+.navbar-default {
     line-height: 1em;
     background-color: #FFFFFF;
     background-color: rgba(128, 128, 128, 0.2);
-    padding: 5px;
-    margin: 0px 0px;
+    border: none;
 }
+.navbar-nav.nav-justified > li{
+    float:none;
+}
+.navbar-nav.nav-justified {
+    display:table;
+}
+
+.navbar-nav.nav-justified > li{
+    float:none;
+}
+
 #languageSelector {
     float: right; 
 }
@@ -101,8 +111,12 @@ body {
     .main {
         padding: 0px 10px 10px 10px;
     }
+    .row {
+        padding: 25px 5px 10px 5px;
+
+    }
     #footer {
-        padding: 25px 25px 10px 25px;
+        padding: 25px 15px 10px 15px;
     }
     #header {
         margin-bottom: 32px;
@@ -378,7 +392,7 @@ h1 {
     font-family: 'SansCulottesRegular';
     font-size: 24px;
     line-height: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 h2 {
     font-family: 'SansCulottesRegular';
