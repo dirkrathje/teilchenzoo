@@ -360,21 +360,15 @@ function updateQuiz() {
     quizModel = getQuizModel(inputValues);
 
 
-    if ($("#particlomatic_result_table").is(":visible")) {
+    updateParticlomaticTableView(quizModel);
 
-        updateParticlomaticTableView(quizModel);
-    
-    }
+    $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
 
-    if ($("#particlomatic_result_top3").is(":visible")) {
+    $("#particlomatic_result_top3 h1").on("click", function () {
+        $(".body", $(this).parent().parent).hide();
+        $(".body", $(this).parent()).show();
+    });
 
-        $("#particlomatic_result_top3").html(getQuizTop3View(quizModel));
-
-        $("#particlomatic_result_top3 h1").on("click", function () {
-            $(".body", $(this).parent().parent).hide();
-            $(".body", $(this).parent()).show();
-        });
-    }
 
     if (show_particlomatic_info) {
         $('.particlomatic_result_control_info').trigger("click");
