@@ -42,22 +42,34 @@ $(function(){
 
     <div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
 
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav nav-justified">
-          <li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
+   <header class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="languageSelector">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Du</a></li>
+                            <li><a href="#">Sie</a></li>
+                            <li><a href="#">You</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <div class="main">
         <div class="content">
 

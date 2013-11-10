@@ -46,36 +46,40 @@ body {
     position: relative;
 }
 
-.navbar-default {
-    line-height: 1em;
-    background-color: #999999;
-    background-color: rgba(0, 0, 0, 0.05);
+.sitemenu_language {
+    font-size: 80%;
+}
+
+#languageSelector {
+    display: none;
+}
+
+#sitemenu_qaa a {
+   display: none;
+}
+.navbar-inverse .nav>li>a {
+    padding: 15px 10px;
+    color: #28a3dc;
+}
+
+.navbar-inverse {
+    background-color: rgba(128,128,128,0.2);
     border: none;
 }
-.navbar-nav.nav-justified {
-    display:table;
+.navbar-inverse .navbar-toggle {
+    border-color: #28a3dc;
+
 }
-.navbar-nav.nav-justified > li{
-    float:none;
-    background-color: #999999;
-    background-color: #eee;
-    margin-bottom: 5px;
+.navbar-inverse .navbar-toggle  .icon-bar {
+    background-color: #28a3dc;
+;
+}
+.navbar-inverse .navbar-nav>li>a:hover, 
+.navbar-inverse .navbar-nav>li>a:focus {
+    color: black;
 }
 
-.navbar-default .navbar-toggle {
-    border-color: #999;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color:  #999;
-}
-.navbar-nav, .navbar-collapse {
-    padding: 0;
-    margin: 0;
-}
-#languageSelector {
-    float: right; 
-}
-
+#page_qaa #sitemenu_programme a,
 #page_programme #sitemenu_programme a,
 #page_home #sitemenu_home a,
 #page_news #sitemenu_news a,
@@ -95,12 +99,20 @@ body {
 
 
 @media (max-width: @screen-sm) {    
+    body {
+        background: url(wood.png) left top repeat;
+    }
+
+    .page {
+        background-color: rgba(255,255,255,0.5);
+    }
 
     .main {
         padding: 0px 10px 10px 10px;
     }
     .row {
         padding: 25px 5px 10px 5px;
+        background-color: rgba(255,255,255,0.7);
 
     }
     #footer {
@@ -204,6 +216,10 @@ body {
     .box {
         padding: 25px;
     }
+            ul.nav {
+    padding: 0px 35px;
+    font-size: 80%;
+}
 
 
 } /* / @media (min-width: @screen-sm) */
@@ -279,6 +295,11 @@ body {
         width: 9% !important;
     }
 
+        ul.nav {
+    padding: 0px 35px;
+    font-size: 100%;
+}
+
 
 
 } /* / @media (min-width: @screen-md) */
@@ -353,6 +374,11 @@ body {
     .particlomatic-range-input button {
         width: 9% !important;
     }
+
+    ul.nav {
+    padding: 0px 55px;
+}
+
 
 } /* / @media (min-width: @screen-lg) */
 
