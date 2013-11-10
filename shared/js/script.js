@@ -663,7 +663,7 @@ var animateScroll = function (targetElement, speed) {
         stepNumber += 7;
     newBackgroundPositionX = (stepNumber) * elementsAndGapWidth + (width - elementWidth) / 2;
     newBackgroundPosition  = newBackgroundPositionX + "px 0px";
-    console.log("newBackgroundPosition: " + newBackgroundPosition);  
+    //console.log("newBackgroundPosition: " + newBackgroundPosition);  
 
     $(targetElement).animate(
         {
