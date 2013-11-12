@@ -34,7 +34,6 @@
 </head> 
 <body class="website">
 <div class="page" id="page_news">
-<div class="dtml">
 <dtml-call "REQUEST.set('process_result','')">
 <dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
 	<dtml-call "REQUEST.set('process_form', '1')">
@@ -62,7 +61,6 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
 <dtml-call "REQUEST.set('process_result', '')">
 </dtml-if>
 </dtml-if>
-</div>
 
     <header class="navbar navbar-inverse" role="banner">
         <div class="container">
@@ -102,7 +100,6 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
             <div class="row paintedGray" style="margin-top: 24px">
                 <div class="col-md-12">
                     <h1>E-Mail-Verteiler für Neuigkeiten</h1>
-<div class="dtml">
 <dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
 <dtml-if "REQUEST.get('add')">
   <p style="color: green; margin-top: 24px;">Es wurde eine E-Mail an »<dtml-var "REQUEST.get('email_address')">« verschickt. Wenn diese E-Mail bestätigt wird, ist die Adresse aufgenommen.</p>
@@ -111,7 +108,6 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
   <p style="color: green; margin-top: 24px;">Die E-Mail-Adresse »<dtml-var "REQUEST.get('email_address')">« wurde aus dem E-Mail-Verteiler entfernt.</p>
 </dtml-if>
 </dtml-if>
-</div>
 
 <dtml-if "REQUEST.get('no_errors') != '1'">
         <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden.</p>
@@ -180,5 +176,6 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
             </div> <!-- /#footerInterior -->
         </div> <!-- /#footer -->
     </div>
+<dtml-var piwik_tracking_code>
 </body>
 </html>
