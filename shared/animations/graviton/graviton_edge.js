@@ -12,9 +12,9 @@ var resources = [
 ];
 var symbols = {
 "stage": {
-   version: "2.0.0",
+   version: "2.0.1",
    minimumCompatibleVersion: "2.0.0",
-   build: "2.0.0.250",
+   build: "2.0.1.268",
    baseState: "Base State",
    initialState: "Base State",
    gpuAccelerate: false,
@@ -35,17 +35,17 @@ var symbols = {
       },
    states: {
       "Base State": {
-         "${_graviton}": [
-            ["style", "top", '24px'],
-            ["style", "left", '91px'],
-            ["transform", "scaleY", '0.61742'],
-            ["transform", "scaleX", '0.61742']
-         ],
          "${_Stage}": [
             ["color", "background-color", 'rgba(255,255,255,0.00)'],
-            ["style", "width", '420px'],
+            ["style", "overflow", 'hidden'],
             ["style", "height", '305px'],
-            ["style", "overflow", 'hidden']
+            ["style", "width", '420px']
+         ],
+         "${_graviton}": [
+            ["style", "top", '24px'],
+            ["transform", "scaleX", '0.61742'],
+            ["style", "left", '91px'],
+            ["transform", "scaleY", '0.61742']
          ]
       }
    },
@@ -56,9 +56,9 @@ var symbols = {
          duration: 28413,
          autoPlay: true,
          timeline: [
-            { id: "eid72", tween: [ "transform", "${_graviton}", "scaleX", '0.61742', { fromValue: '0.61742'}], position: 7328, duration: 0 },
-            { id: "eid80", tween: [ "style", "${_graviton}", "top", '24px', { fromValue: '24px'}], position: 7328, duration: 0 },
             { id: "eid78", tween: [ "style", "${_graviton}", "left", '91px', { fromValue: '91px'}], position: 7328, duration: 0 },
+            { id: "eid80", tween: [ "style", "${_graviton}", "top", '24px', { fromValue: '24px'}], position: 7328, duration: 0 },
+            { id: "eid72", tween: [ "transform", "${_graviton}", "scaleX", '0.61742', { fromValue: '0.61742'}], position: 7328, duration: 0 },
             { id: "eid73", tween: [ "transform", "${_graviton}", "scaleY", '0.61742', { fromValue: '0.61742'}], position: 7328, duration: 0 },
             { id: "eid79", trigger: [ function executeSymbolFunction(e, data) { this._executeSymbolAction(e, data); }, ['play', '${_graviton}', [] ], ""], position: 7328 },
             { id: "eid81", trigger: [ function executeSymbolFunction(e, data) { this._executeSymbolAction(e, data); }, ['play', '${_graviton}', [] ], ""], position: 14331 },
@@ -67,9 +67,9 @@ var symbols = {
    }
 },
 "graviton": {
-   version: "2.0.0",
+   version: "2.0.1",
    minimumCompatibleVersion: "2.0.0",
-   build: "2.0.0.250",
+   build: "2.0.1.268",
    baseState: "Base State",
    initialState: "Base State",
    gpuAccelerate: false,
@@ -134,10 +134,9 @@ var symbols = {
             ["style", "height", '350px'],
             ["style", "width", '238px']
          ],
-         "${_grabody2}": [
-            ["style", "top", '0px'],
-            ["style", "opacity", '0'],
-            ["style", "left", '0px']
+         "${_grairis}": [
+            ["style", "top", '167px'],
+            ["style", "left", '115px']
          ],
          "${_grabody1}": [
             ["style", "top", '4px'],
@@ -149,9 +148,10 @@ var symbols = {
             ["style", "opacity", '0'],
             ["style", "left", '0px']
          ],
-         "${_grairis}": [
-            ["style", "top", '167px'],
-            ["style", "left", '115px']
+         "${_grabody2}": [
+            ["style", "top", '0px'],
+            ["style", "opacity", '0'],
+            ["style", "left", '0px']
          ]
       }
    },
