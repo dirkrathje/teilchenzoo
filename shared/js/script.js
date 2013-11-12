@@ -113,7 +113,7 @@ var particles = [
         {
             shortname: "c",
             name: "charm_quark",
-            rgb: "#118953",
+            rgb: "#00A88C",
             properties: [12, 67, 2, 48, 0, 100, 50, 0, 100, 0],
             title_de: "Charm-Quark",
             description_de: "Das Charm-Quark ist eines von sechs Quark-Sorten. Es ist ein <em>Mittelgewicht</em>. Charm-Quarks sind elektrisch positiv geladen. (Man könnte sie daher als <em>optimistisch</em> beschreiben.) Gemeinsam ist allen sechs Quark-Sorten, dass sie niemals alleine vorkommen: Quarks sind <em>Gruppenwesen</em>. Sie setzen sich immer in Zweier- oder Dreiergruppen zu anderen Teilchen zusammen. Das Charm-Quark wurde 1974 experimentell nachgewiesen. Der Name »Quark« geht auf eine Passage aus einem Roman von James Joyce zurück."
@@ -129,7 +129,7 @@ var particles = [
         {
             shortname: "t",
             name: "top_quark",
-            rgb: "#00A88C",
+            rgb: "#118953",
             properties: [100, 67, 0, 96, 0, 100, 64, 0, 100, 0],
             title_de: "Top-Quark",
             description_de: "Das Top-Quark ist eines von sechs Quark-Sorten. Es ist ein <em>Schwergewicht</em>. Top-Quarks sind elektrisch positiv geladen. (Man könnte sie daher als <em>optimistisch</em> beschreiben.) Gemeinsam ist allen sechs Quark-Sorten, dass sie niemals alleine vorkommen: Quarks sind <em>Gruppenwesen</em>. Sie setzen sich immer in Zweier- oder Dreiergruppen zu anderen Teilchen zusammen. Das <em>schüchterne</em> Top-Quark wurde erst 1995 experimentell nachgewiesen wurden. Der Name »Quark« geht auf eine Passage aus einem Roman von James Joyce zurück."
