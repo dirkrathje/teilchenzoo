@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head>
+<base href="../">
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+</script><![endif]-->
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Neuigkeiten (Teilchenzoo)</title>
+<script src="shared/lib/modernizr/modernizr.custom.js"></script>
+<script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+<script src="shared/lib/fastclick.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+<script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+<link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+<link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+<link rel="stylesheet" href="shared/lib/reset/reset.css">
+
+<script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+<script src="shared/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/css/styles.css?v=1" />
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
+<![endif]-->
+<script src="shared/lib/respond/respond.min.js"></script>
+</head> 
+<body class="website">
+<div class="page" id="page_news">
+<dtml-call "REQUEST.set('process_result','')">
+<dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
+	<dtml-call "REQUEST.set('process_form', '1')">
+</dtml-if>
+<dtml-if "REQUEST.get('process_form')=='1' and (REQUEST.get('email_address')!='')">
+<dtml-call "REQUEST.set('no_errors', '1')">
+</dtml-if>
+<dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
+<dtml-if "REQUEST.get('add')">
+<dtml-sendmail mailhost="MailHost">
+To: sympa@desy.de
+From: <dtml-var "REQUEST.get('email_address')">
+Bcc: dirk.rathje@desy.de
+Subject: SUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_address')">
+</dtml-sendmail>
+<dtml-call "REQUEST.set('process_result', '')">
+</dtml-if>
+<dtml-if "REQUEST.get('remove')">
+<dtml-sendmail mailhost="MailHost"> 
+To: sympa@desy.de
+Bcc: dirk.rathje@desy.de
+From: <dtml-var "REQUEST.get('email_address')">
+Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_address')">
+</dtml-sendmail>
+<dtml-call "REQUEST.set('process_result', '')">
+</dtml-if>
+</dtml-if>
+
+    <header class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="languageSelector">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Du</a></li>
+                            <li><a href="#">Sie</a></li>
+                            <li><a href="#">You</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="main">
+        <div class="content">
+
+            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+            <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
+            <div id="countdown" class="hidden-xs">27. Sept. 2013 &ndash; 30. Juni 2014</div>
+   
+            <div class="row paintedGray" style="margin-top: 24px">
+                <div class="col-md-12">
+                    <h1>E-Mail-Verteiler für Neuigkeiten</h1>
+<dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
+<dtml-if "REQUEST.get('add')">
+  <p style="color: green; margin-top: 24px;">Es wurde eine E-Mail an »<dtml-var "REQUEST.get('email_address')">« verschickt. Wenn diese E-Mail bestätigt wird, ist die Adresse aufgenommen.</p>
+</dtml-if>
+<dtml-if "REQUEST.get('remove')">
+  <p style="color: green; margin-top: 24px;">Die E-Mail-Adresse »<dtml-var "REQUEST.get('email_address')">« wurde aus dem E-Mail-Verteiler entfernt.</p>
+</dtml-if>
+</dtml-if>
+
+<dtml-if "REQUEST.get('no_errors') != '1'">
+        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden.</p>
+</div>
+
+          <div class="col-md-12">
+
+        <form name="subscription_form" id="subscription_form" method="get" action="neuigkeiten/">   
+
+	<dtml-if "REQUEST.get('email_address')">
+          <input name="email_address" id="email_address" type="email" placeholder="E-Mail-Adresse" class="form-control" value="<dtml-var "REQUEST.get('email_address')">">
+        <dtml-else>
+          <input name="email_address" id="email_address" type="email" placeholder="E-Mail-Adresse" class="form-control">
+        </dtml-if>
+        
+
+
+          <dtml-if "REQUEST.get('process_form')=='1' and (REQUEST.get('email_address')=='' or REQUEST.get('email_address')=='None')">
+          <p style="color: red;">Keine Adresse angegeben.</p>
+          </dtml-if>
+          <input name="add" type="submit" value="Adresse hinzufügen" class="form-control btn btn-success" style="margin-top:12px" />
+          <input name="remove" type="submit" value="Adresse entfernen" class="form-control  btn btn-danger" style="margin-top:12px"  />
+        </form>
+          </div>
+      <div class="col-md-12 clearfix">
+      <p id="privacy_promise" style="margin-top: 12px;">Versprochen: Wir werden deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+
+</dtml-if>
+</div>
+</div>
+   
+   
+   
+
+    <div class="row newsrow paintedGray">
+        <div class="col-md-12 ">
+            <p class="newsDate">08. Oktober 2013</p>
+            <h2>Physik-Nobelpreis für den Higgs-Mechanismus</h2>
+            <p>Passend zur Ausstellung »Teilchenzoo« wurde der diesjährige Physik-Nobelpreis für den sogenannten Higgs-Mechanismus verliehen. Was es damit auf sich hat, kann man in der Ausstellung erfahren.</p>
+        </div>
+    </div>    <div class="row newsrow paintedGray">
+        <div class="col-md-12 ">
+            <p class="newsDate">27. September 2013</p>
+            <h2>Ausstellung eröffnet</h2>
+            <p>Heute wurde die Ausstellung »Teilchenzoo« eröffnet. Wer wissen möchte, welches Teilchen am besten zur eigenen Person passt, Näheres zu den Teilchen erfahren möchte und spannende Experimente ausprobieren mag, ist ab sofort im Universum<span class="reg">&reg;</span> Bremen bestens aufgehoben.</p>
+        </div>
+    </div>
+    <div class="row newsrow paintedGray">
+        <div class="col-md-12 ">
+            <p class="newsDate">27. August 2013</p>
+            <h2>Website online</h2>
+            <p>Heute ging die Website zum »Teilchenzoo« online. Sie wird in den nächsten Wochen ausgebaut werden. Trage dich in unseren E-Mail-Verteiler ein, um auf dem Laufenden gehalten zu werden.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+        <div id="footer">
+            <div id="footerInterior">
+                <h2>Ein Gemeinschaftsprojekt</h2>
+                <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+                <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+                <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+                <p><a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+            </div> <!-- /#footerInterior -->
+        </div> <!-- /#footer -->
+    </div>
+<dtml-var piwik_tracking_code>
+</body>
+</html>
