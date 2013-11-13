@@ -224,6 +224,11 @@ body {
     font-size: 80%;
 }
 
+    .particlomaticFormItem h2 {
+        font-size: 120%;
+    }
+
+
 
 } /* / @media (min-width: @screen-sm) */
 
@@ -445,26 +450,33 @@ h4 {
 
 
 #teilchenzoo_teaser_teilchen_roll_stage {
-    background-image: url(teilchenzoo-teaser-teilchen-roll.png);
+    background-image: url(teilchenzoo-teaser-roll_de.png);
     background-repeat: repeat-x;
     overflow: hidden;
     height: 200px;
     background-size: auto; 
 }
+.en #teilchenzoo_teaser_teilchen_roll_stage {
+    background-image: url(teilchenzoo-teaser-roll_en.png);
+}
 
-
+  
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min--moz-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
         
     #teilchenzoo_teaser_teilchen_roll_stage {
-        background-image: url(teilchenzoo-teaser-teilchen-roll_2x.png);
+        background-image: url(teilchenzoo-teaser-roll_de_2x.png);
         background-size: 6297px 175px;
-
     }
+    
+    .en #teilchenzoo_teaser_teilchen_roll_stage {
+        background-image: url(teilchenzoo-teaser-roll_en_2x.png);
+        background-size: 6297px 175px;
+    } 
 }
-
+   
 
 
 a, a:hover, a:focus {
@@ -762,6 +774,9 @@ li[data-video-href="media/videos/video_7.mp4"] {
     margin-bottom: 30px;
 }
 
+.encylopedia_table {
+    margin: 0 auto;
+}
 .encylopedia_table td {
     margin: 0px; 
     padding-right: 20px;
@@ -856,11 +871,18 @@ li[data-video-href="media/videos/video_7.mp4"] {
 }
 .app .navbar ul li  {
     display: inline-block; 
-    width: 25%;
     text-align: center;
     height: 49px;
     border-right: 3px solid transparent;
 }
+.en .app .navbar ul li  {
+    width: 37.5%;
+}
+.de .app .navbar ul li  {
+    width: 25%;
+}
+
+
 .app .navbar ul li.home  {
     width: 13%;
 }
@@ -936,4 +958,8 @@ li[data-video-href="media/videos/video_7.mp4"] {
 .particleAnimationStageObject {
     height: 305px; 
     width: 420px;
+}
+
+.app #page-home h1 {
+    font-size: 150%;
 }

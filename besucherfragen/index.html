@@ -11,7 +11,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>Neuigkeiten (Teilchenzoo)</title>
+<title>Veranstaltungen (Teilchenzoo)</title>
 <script src="shared/lib/modernizr/modernizr.custom.js"></script>
 <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
 <script src="shared/lib/fastclick.js"></script>
@@ -33,36 +33,9 @@
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
-<div class="page" id="page_news">
-<dtml-call "REQUEST.set('process_result','')">
-<dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
-	<dtml-call "REQUEST.set('process_form', '1')">
-</dtml-if>
-<dtml-if "REQUEST.get('process_form')=='1' and (REQUEST.get('email_address')!='')">
-<dtml-call "REQUEST.set('no_errors', '1')">
-</dtml-if>
-<dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
-<dtml-if "REQUEST.get('add')">
-<dtml-sendmail mailhost="MailHost">
-To: sympa@desy.de
-From: <dtml-var "REQUEST.get('email_address')">
-Bcc: dirk.rathje@desy.de
-Subject: SUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_address')">
-</dtml-sendmail>
-<dtml-call "REQUEST.set('process_result', '')">
-</dtml-if>
-<dtml-if "REQUEST.get('remove')">
-<dtml-sendmail mailhost="MailHost"> 
-To: sympa@desy.de
-Bcc: dirk.rathje@desy.de
-From: <dtml-var "REQUEST.get('email_address')">
-Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_address')">
-</dtml-sendmail>
-<dtml-call "REQUEST.set('process_result', '')">
-</dtml-if>
-</dtml-if>
+<div class="page" id="page_programme">
 
-    <header class="navbar navbar-inverse" role="banner">
+   <header class="navbar navbar-inverse" role="banner">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -74,7 +47,7 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
             </div>
             <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li id="sitemenu_home"><a href="de/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                    <li id="sitemenu_home"><a href="ausstellung/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="languageSelector">
                     <li class="dropdown">
@@ -89,86 +62,99 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
             </nav>
         </div>
     </header>
+
     <div class="main">
         <div class="content">
 
-            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle.png" alt="Sonderausstellung im Universum Bremen"> 
-            <img id="titleimg" src="images/teilchenzoo-title-and-particles.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle_de.png" alt="Sonderausstellung im Universum Bremen"> 
+            <img id="titleimg" src="images/teilchenzoo-title_de.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen"> 
             <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
             <div id="countdown" class="hidden-xs">27. Sept. 2013 &ndash; 30. Juni 2014</div>
    
-            <div class="row paintedGray" style="margin-top: 24px">
-                <div class="col-md-12">
-                    <h1>E-Mail-Verteiler für Neuigkeiten</h1>
-<dtml-if "REQUEST.get('process_form') == '1' and REQUEST.get('no_errors') == '1'">
-<dtml-if "REQUEST.get('add')">
-  <p style="color: green; margin-top: 24px;">Es wurde eine E-Mail an »<dtml-var "REQUEST.get('email_address')">« verschickt. Wenn diese E-Mail bestätigt wird, ist die Adresse aufgenommen.</p>
-</dtml-if>
-<dtml-if "REQUEST.get('remove')">
-  <p style="color: green; margin-top: 24px;">Die E-Mail-Adresse »<dtml-var "REQUEST.get('email_address')">« wurde aus dem E-Mail-Verteiler entfernt.</p>
-</dtml-if>
-</dtml-if>
+  <div class="row" style="margin-top: 24px;">
+    <div class="col-md-12">
+        <div class="paintedGray">
 
-<dtml-if "REQUEST.get('no_errors') != '1'">
-        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden.</p>
+    	<h1>Besucher fragen ]ndash; DESY antwortet!</h1>
+
+      <h2></h2>
+      <p>Anhand einer Gravitationswaage wird die Anziehung zwischen Massen für die Besucher sichtbar. Das hochsensible physikalische Experiment wird dreimal täglich von einem Universum<span class="reg">&reg;</span>-Mitarbeiter vorgeführt. Weitere Versuche erklären die Grundlagen der Gravitation ganz ohne schulische Formeln und Gleichungen.</p>
+      
+      <p class="newsDate">jeden Freitag: 14 Uhr</p>
+      <h2>Begleiteter Rundgang</h2>
+      <p>Bei einem begleiteten Rundgang durch den »Teilchenzoo« erfahren die Gäste spannende Hintergründe zu den Objekten und Mitmachexponaten. Inhaltliche Aspekte werden verständlich erklärt und es bieten sich viele Möglichkeiten für Fragen. Das Angebot ist im Eintrittspreis inbegriffen, eine Anmeldung ist nicht erforderlich.</p>
+      
+      <p class="newsDate">09. und 10. November 2013: jeweils 12 Uhr bis 16 Uhr</p>
+      <h2>Offenes ForscherAtelier: Monster-Machen</h2>
+      <p>Welches Teilchenmonster gefällt dir am besten? Welche Eigenschaften haben Teilchenmonster? Wie würde dein Lieblingsmonster aussehen? Mit Andrea Petry vom Näh-Atelier Pynguin werden Kinder von 6 bis 12 Jahren zu Monster-Machern. Mit Stoffen, Knöpfen, Nadel, Faden und etwas Geduld erschafft sich jedes Kind sein eigenes Monster. Das Angebot ist im Eintrittspreis inbegriffen. Eine Anmeldung ist nicht erforderlich, die Anzahl der Plätze ist jedoch begrenzt.</p>
+      
+      <p class="newsDate">23. November 2013: 13 Uhr und 15 Uhr</p>
+      <h2>PhilosophierZeit für Familien</h2>
+      <p>Wie ist das Universum entstanden? Wie groß ist es? Was ist unendlich? Svantje Guinebert, wissenschaftliche Mitarbeiterin am Institut für Philosophie der Universität Bremen, lädt Kinder von 6 bis 12 Jahren zu einem philosophischen Spaziergang rund um den »Teilchenzoo« ein. Die Dauer beträgt 1 Stunde, das Angebot ist im Eintrittspreis inbegriffen. Eine Anmeldung ist nicht erforderlich, jedoch können max. 15 Kinder teilnehmen. </p>
+      
+      
+      <p class="newsDate">08. Januar, 05. Februar, 05. März 2014: jeweils 15 Uhr</p>
+      <h2>Senioren-Nachmittag</h2>
+      <p>In einer anschaulichen Präsentation werden Senioren in die Thematik der Sonderausstellung »Teilchenzoo« eingeführt. Anhand beeindruckender Bilder und interessanter Geschichten erhalten sie dabei auch einen Einblick in den spannenden Alltag des Forschungszentrums DESY. Es folgt ein begleiteter Rundgang durch die Ausstellung, bei dem die Senioren selbst forschen und Fragen stellen können. Abgerundet wird der Nachmittag durch einen gemütlichen Austausch bei Kaffee und Kuchen. Eine vorherige Anmeldung unter der Telefonnummer 0421 / 33 46 333 ist erforderlich, der Preis für das Seniorenprogramm beträgt 15 Euro inkl. Kaffee und Kuchen.</p>
+      
+<h2 style="margin-top: 3em">Vorträge</h2>
+<p>Bekannte Referenten greifen in populärwissenschaftlichen Vorträgen verschiedene Aspekte der Sonderausstellung auf. Eine Anmeldung ist nicht erforderlich, die Anzahl der Plätze ist jedoch begrenzt. Die Vorträge sind kostenfrei &ndash; das Universum<span class="reg">&reg;</span> freut sich über eine Spende für ein gemeinnütziges Schulprojektl.</p>
+
+
+
+      <p class="newsDate">21. Februar 2014: 19 Uhr</p>
+      <h3>Vortrag: Star Trek &ndash; Auf der Suche nach den anderen</h3>
+      <p>Prof. Dr. Melin Tolan</p>
+
+      <p class="newsDate">07. März 2014: 19 Uhr</p>
+      <h3>Vortrag: Bis(s) ins Innere des Protons &ndash; ein Science-Slam und mehr &ndash; durch die Welt der Elementarteilchen, der Beschleuniger und Supernerds</h3>
+      <p>Boris Lemmer</p>
+      
+      <p class="newsDate">09. Mai 2014: 19 Uhr</p>
+      <h3>Vortrag: Physik für Philosophen &ndash; Wir irren uns empor</h3>
+      <p>Prof. Dr. Harald Lesch</p>
+      
+      
+
+      
+      
+      
+  </div>
+  </div>
+    <div class="col-md-6">
+        <div class="paintedGray" >
+    	<h1>Programm für Schulklassen</h1>
+      <p class="newsDate">wochentags: 9.30 bis 12:00 Uhr</p>
+      <h2>ForscherZeiten</h2>
+      <p>Begleitend zur Sonderausstellung »Teilchenzoo« können angemeldete Schulklassen an einer ForscherZeit teilnehmen. Im Rahmen eines 2,5-stündigen Workshops erforschen und vertiefen sie im ForscherAtelier spannende Aspekte der Sonderausstellung. Die Kosten inkl. Eintritt und Betreuung betragen 10 Euro pro Schüler, zwei begleitende Lehrer erhalten freien Eintritt. Das Angebot ist bis zum 30. Juni 2014 wochentags von 09.30 Uhr bis 12.00 Uhr buchbar. Eine Anmeldung unter Tel. 0421 / 33 46 333 oder per E-Mail an <a href="mailto:vertrieb@universum-bremen.de">vertrieb@universum-bremen.de</a> ist erforderlich.</p>
+      
+      <p>Folgende Themen stehen zur Auswahl:</p>
+      <ul>
+      <li>
+      <h3>»Ich sehe was, was du nicht siehst! Erkennen, beobachten und vorhersagen« (5. bis 8. Klasse)</h3>
+      <p>Wie arbeiten eigentlich Forscher? Und was machen sie, wenn ihr Untersuchungsgegenstand nicht sichtbar ist? Anhand der »Black-Box-Methode« erfahren die Schüler in Teams am praktischen Beispiel die Grundzüge des naturwissenschaftlichen Arbeitens. Anschließend folgt ein begleiteter Ausstellungsbesuch.</p>      
+    </li>
+      <li>      
+        <h3>»Gesucht? Gefunden!« (8. bis 11. Klasse)</h3>
+        <p>Wie kann man nur Ordnung in dieses Elementarteilchengewimmel bringen? Welche Eigenschaften haben Elementarteilchen? Wo unterscheiden sich die Teilchen und wo haben sie Gemeinsamkeiten? Diese ForscherZeit führt in die Elementarteilchenphysik ein und vertieft so die Ausstellungsinhalte. Anschließend folgt ein begleiteter Ausstellungsrundgang.</p>
+</li>
+    </ul>
+      <p class="newsDate">05. Dezember 2013, 11. Februar 2014, 18. April 2014, 13. Mai 2014:<br /> jeweils von 09.30 Uhr bis 12.00 Uhr</p>
+        <h2>PhilosophierZeit für Kinder</h2>
+      <p>Wie ist das Universum entstanden? Wie groß ist es? Was ist unendlich? Svantje Guinebert, wissenschaftliche Mitarbeiterin am Institut für Philosophie der Universität Bremen, lädt Kinder der Jahrgangsstufen 1 bis 6 zu einem philosophischen Spaziergang rund um den »Teilchenzoo« ein. Die Kosten inkl. Eintritt und Betreuung betragen 10 Euro pro Schüler, zwei begleitende Lehrer erhalten freien Eintritt. Eine Anmeldung unter Tel. 0421 / 33 46 333 oder per E-Mail an <a href="mailto:vertrieb@universum-bremen.de">vertrieb@universum-bremen.de</a> ist erforderlich.</p>
+      
+
+      
+  </div>
+  </div>
+</div>
 </div>
 
-          <div class="col-md-12">
 
-        <form name="subscription_form" id="subscription_form" method="get" action="neuigkeiten/">   
-
-	<dtml-if "REQUEST.get('email_address')">
-          <input name="email_address" id="email_address" type="email" placeholder="E-Mail-Adresse" class="form-control" value="<dtml-var "REQUEST.get('email_address')">">
-        <dtml-else>
-          <input name="email_address" id="email_address" type="email" placeholder="E-Mail-Adresse" class="form-control">
-        </dtml-if>
-        
-
-
-          <dtml-if "REQUEST.get('process_form')=='1' and (REQUEST.get('email_address')=='' or REQUEST.get('email_address')=='None')">
-          <p style="color: red;">Keine Adresse angegeben.</p>
-          </dtml-if>
-          <input name="add" type="submit" value="Adresse hinzufügen" class="form-control btn btn-success" style="margin-top:12px" />
-          <input name="remove" type="submit" value="Adresse entfernen" class="form-control  btn btn-danger" style="margin-top:12px"  />
-        </form>
-          </div>
-      <div class="col-md-12 clearfix">
-      <p id="privacy_promise" style="margin-top: 12px;">Versprochen: Wir werden deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
-
-</dtml-if>
-</div>
-</div>
-   
-   
-   
-
-    <div class="row newsrow paintedGray">
-        <div class="col-md-12 ">
-            <p class="newsDate">08. Oktober 2013</p>
-            <h2>Physik-Nobelpreis für den Higgs-Mechanismus</h2>
-            <p>Passend zur Ausstellung »Teilchenzoo« wurde der diesjährige Physik-Nobelpreis für den sogenannten Higgs-Mechanismus verliehen. Was es damit auf sich hat, kann man in der Ausstellung erfahren.</p>
-        </div>
-    </div>    <div class="row newsrow paintedGray">
-        <div class="col-md-12 ">
-            <p class="newsDate">27. September 2013</p>
-            <h2>Ausstellung eröffnet</h2>
-            <p>Heute wurde die Ausstellung »Teilchenzoo« eröffnet. Wer wissen möchte, welches Teilchen am besten zur eigenen Person passt, Näheres zu den Teilchen erfahren möchte und spannende Experimente ausprobieren mag, ist ab sofort im Universum<span class="reg">&reg;</span> Bremen bestens aufgehoben.</p>
-        </div>
-    </div>
-    <div class="row newsrow paintedGray">
-        <div class="col-md-12 ">
-            <p class="newsDate">27. August 2013</p>
-            <h2>Website online</h2>
-            <p>Heute ging die Website zum »Teilchenzoo« online. Sie wird in den nächsten Wochen ausgebaut werden. Trage dich in unseren E-Mail-Verteiler ein, um auf dem Laufenden gehalten zu werden.</p>
-        </div>
-    </div>
-</div>
-</div>
-
-
+        </div>  <!-- /#main -->
         <div id="footer">
             <div id="footerInterior">
-                <h2>Ein Gemeinschaftsprojekt</h2>
+                <h1>Ein Gemeinschaftsprojekt</h1>
                 <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
                 <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
                 <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
