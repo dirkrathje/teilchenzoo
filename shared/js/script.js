@@ -385,13 +385,13 @@ function getQuizTop3View(quizModel) {
 
     var result;
     result = "<div class='particlomatic_result_top3_rank'><h1>1. " + particles[quizModel.sortedResults[0].particle][titleKey]  + " </h1>";
-    result += "<div class='body'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
+    result += "<div class='body'><div id='rank1'><img class='rank1_img' src='images/particles_cropped_500/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
     result += "<p class='particleDescription'>" + particles[quizModel.sortedResults[0].particle][descriptionKey]  + "</p></div></div>";
     result += "<div class='particlomatic_result_top3_rank'><h1>2. " + particles[quizModel.sortedResults[1].particle][titleKey]  + " </h1>";
-    result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[1].particle].name + ".png'></div>";
+    result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped_500/" + particles[quizModel.sortedResults[1].particle].name + ".png'></div>";
     result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[1].particle][descriptionKey]  + "</p></div></div>";
     result += "<div class='particlomatic_result_top3_rank'><h1>3. " + particles[quizModel.sortedResults[2].particle][titleKey]  + " </h1>";
-    result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped/" + particles[quizModel.sortedResults[2].particle].name + ".png'></div>";
+    result += "<div class='body' style='display: none;'><div id='rank1'><img class='rank1_img' src='images/particles_cropped_500/" + particles[quizModel.sortedResults[2].particle].name + ".png'></div>";
     result += "<p  class='particleDescription'>" + particles[quizModel.sortedResults[2].particle][descriptionKey]  + "</p></div></div>";
     return result;
 }
@@ -526,7 +526,6 @@ function initParticlomatic() {
         $("#particlomaticForm input").each(function () {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
-            console.log("X");
         });
 
 
@@ -553,6 +552,7 @@ function initParticlomatic() {
         $(".body", $(this).parent()).show();
     });
 
+     $(".particlomatic_result_control_info").trigger("click");
 
 }
 
