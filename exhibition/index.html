@@ -51,15 +51,15 @@ $(function(){
             </div>
             <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li id="sitemenu_home"><a href="exhibition/index.html">Exhibition</a></li><li id="sitemenu_particlomatic"><a href="particlomatic/index.html">Particl-o-matic</a>
+                    <li id="sitemenu_home"><a href="exhibition/">Exhibition</a></li><li id="sitemenu_particlomatic"><a href="particlomatic/">Particl-o-matic</a>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="languageSelector">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">You <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Du</a></li>
-                            <li><a href="#">Sie</a></li>
-                            <li><a href="#">You</a></li>
+                            <li><a href="ausstellung/">Du</a></li>
+                            <li><a href="ausstellung/?l=de_sie">Sie</a></li>
+                            <li><a href="exhibition/">You</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,7 +67,7 @@ $(function(){
         </div>
     </header>
 
-    <div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangbot wird darin nicht besonders gut dargestellt. Es gibt viele kostenlose Alternativen.</div>
+    <div class="ielte7_message">You are using an old web browser, which does not display the “Particle Zoo” web site  well. There are many free alternatives.</div>
 
     <div class="main">
         <div class="content">
@@ -79,8 +79,8 @@ $(function(){
     
     <div class="row paintedGray" style="margin-top: 24px;">
       <div class="col-md-6 col-md-push-6">
-        <h1>Woraus ist die Welt gemacht?</h1>
-        <p><span class="question">Seit Jahrtausenden fragen sich Menschen: Aus welchen Bausteinen ist die Welt gemacht?</span> <span class="answer">Die Ausstellung »Teilchenzoo« stellt die Antworten der modernen Teilchenphysik vor und begibt sich dabei auf die Spuren von Higgs, Quarks und Photonen.</span></p>
+        <h1>What is the world made of?</h1>
+        <p><span class="question">For thousands of years, people have been asking themselves: what building blocks is the world made of?</span> <span class="answer">The exhibition “Particle Zoo” presents the answers of modern particle physics and goes on the trail of Higgs, quarks and photons.</span></p>
       </div>
       <div class="col-md-6 col-md-pull-6">
               <div class="img-responsive" id="teilchenzoo_teaser_teilchen_roll_stage"></div>
@@ -89,9 +89,10 @@ $(function(){
     </div>
     <div class="row paintedGray">
       <div class="col-md-6 col-md-push-6">
-        <h1>Welches Teilchen passt zu dir?</h1>
-        <p><span class="question">Unter den Bausteinen der modernen Teilchenphysik gibt es Federgewichte, Einzelgänger, Rampensäue und Quasselstrippen.</span> <span class="answer">Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</span></p>
-        <p class="hidden-ie-lte8"><a href="particlomatic/index.html">Zum Teilch-o-maten</a></p>      
+        <h1>Which particle fits you best?</h1>
+        <p><span class="question">In particle physics, there are lightweights, stage hogs and chatterboxes. </span> <span class="answer">Our “Particl-o-matic” shows which particle fits you best!</span></p>
+        <p class="hidden-ie-lte8"><a href="particlomatic/">Open Particl-o-matic</a></p>      
+      
       </div>
       <div class="col-md-6 col-md-pull-6">
         <div id="quizTeaser"></div>

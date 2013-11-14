@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="de" class="de de_du"><head>
 <base href="../">
 <!--[if IE]><script type="text/javascript">
     // Fix for IE ignoring relative base tags.
@@ -33,6 +33,11 @@
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+  website.initialize(); 
+});//]]>  
+</script>
 <div class="page" id="page_news">
 <dtml-call "REQUEST.set('process_result','')">
 <dtml-if "REQUEST.get('add') or REQUEST.get('remove')">
@@ -71,18 +76,18 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div> 
             <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li id="sitemenu_home"><a href="ausstellung/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                    <li id="sitemenu_home"><a class="i18nable" href="ausstellung/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a class="i18nable" href="teilchomat/">Teilch-o-mat</a></li><li id="sitemenu_programme"><a class="i18nable" href="veranstaltungen/">Veranstaltungen</a></li><li id="sitemenu_news"><a class="i18nable" href="neuigkeiten/">Neuigkeiten</a></li><li id="sitemenu_qaa"><a class="i18nable" href="besucherfragen/">Fragen der Woche</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="languageSelector">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="visible-de_sie">Sie</span><span class="visible-de_du">Du</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Du</a></li>
-                            <li><a href="#">Sie</a></li>
-                            <li><a href="#">You</a></li>
+                            <li><a href="neuigkeiten/">Du</a></li>
+                            <li><a href="neuigkeiten/?l=de_sie">Sie</a></li>
+                            <li><a href="exhibition/">You</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -110,7 +115,9 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
 </dtml-if>
 
 <dtml-if "REQUEST.get('no_errors') != '1'">
-        <p>Trage dich in unseren E-Mail-Verteiler ein und wir halten dich über Neuigkeiten zum »Teilchenzoo« auf dem Laufenden.</p>
+      <p class="visible-de_du">Versprochen: Wir werden deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+      <p class="visible-de_sie">Versprochen: Wir werden Ihre Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+
 </div>
 
           <div class="col-md-12">
@@ -133,7 +140,9 @@ Subject: UNSUBSCRIBE teilchenzoo-neuigkeiten <dtml-var "REQUEST.get('email_addre
         </form>
           </div>
       <div class="col-md-12 clearfix">
-      <p id="privacy_promise" style="margin-top: 12px;">Versprochen: Wir werden deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+      <p class="privacy_promise visible-de_du">Versprochen: Wir werden deine Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+      <p class="privacy_promise visible-de_sie">Versprochen: Wir werden Ihre Daten vertraulich behandeln und nicht an Dritte weitergeben.</p>
+
 
 </dtml-if>
 </div>

@@ -781,7 +781,6 @@ function initPageHome() {
 function initPageParticlomatic() {
     "use strict";
 
-    
     if (Modernizr.inputtypes.range) {
         $("html").addClass("inputtype-range"); 
     } else {
@@ -790,10 +789,38 @@ function initPageParticlomatic() {
 
     FastClick.attach(document.body);
     initParticlomatic();
-
-
 }
 
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var website = {
+
+    initialize: function() {
+
+        language = getParameterByName("l");
+        if (language === "de_sie") {
+
+            $("html").removeClass("de_du");
+            $("html").addClass("de_sie");
+            $(".i18nable").each(function() {
+                $(this).attr("href",  $(this).attr("href") + "?l=de_sie");
+            });
+        
+        } else {
+
+            if ($("html").hasClass("en")) {
+                language = "en";
+                languageSuffix = "_en"; 
+            }
+        }
+    }
+}
 
 
 var app = {

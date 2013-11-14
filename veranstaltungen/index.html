@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="de" class="de de_du"><head>
 <base href="../">
 <!--[if IE]><script type="text/javascript">
     // Fix for IE ignoring relative base tags.
@@ -11,7 +11,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<title>besucher (Teilchenzoo)</title>
+<title>Veranstaltungen (Teilchenzoo)</title>
 <script src="shared/lib/modernizr/modernizr.custom.js"></script>
 <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
 <script src="shared/lib/fastclick.js"></script>
@@ -33,9 +33,14 @@
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+  website.initialize(); 
+});//]]>  
+</script>
 <div class="page" id="page_programme">
 
-   <header class="navbar navbar-inverse" role="banner">
+    <header class="navbar navbar-inverse" role="banner">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -44,18 +49,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div> 
             <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li id="sitemenu_home"><a href="ausstellung/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                    <li id="sitemenu_home"><a class="i18nable" href="ausstellung/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a class="i18nable" href="teilchomat/">Teilch-o-mat</a></li><li id="sitemenu_programme"><a class="i18nable" href="veranstaltungen/">Veranstaltungen</a></li><li id="sitemenu_news"><a class="i18nable" href="neuigkeiten/">Neuigkeiten</a></li><li id="sitemenu_qaa"><a class="i18nable" href="besucherfragen/">Fragen der Woche</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="languageSelector">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="visible-de_sie">Sie</span><span class="visible-de_du">Du</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Du</a></li>
-                            <li><a href="#">Sie</a></li>
-                            <li><a href="#">You</a></li>
+                            <li><a href="veranstaltungen/">Du</a></li>
+                            <li><a href="veranstaltungen/?l=de_sie">Sie</a></li>
+                            <li><a href="exhibition/">You</a></li>
                         </ul>
                     </li>
                 </ul>

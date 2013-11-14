@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="de" class="de de_du"><head>
 <base href="../">
 <!--[if IE]><script type="text/javascript">
     // Fix for IE ignoring relative base tags.
@@ -33,16 +33,20 @@
 <script src="shared/lib/respond/respond.min.js"></script>
 </head> 
 <body class="website">
+    
 <script type='text/javascript'>//<![CDATA[ 
 $(function(){
+    website.initialize(); 
     initPageParticlomatic();
 });//]]>  
 </script>
+
 <div class="page" id="page_particlomatic">
 
-    <div id="ielte7_message">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangebot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
+    <div class="ielte7_message visible-de_du">Du benutzt einen alten Webbrowser. Das »Teilchenzoo«-Webangebot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
+    <div class="ielte7_message  visible-de_du">Sie verwenden einen alten Webbrowser. Das »Teilchenzoo«-Webangebot wird darin nicht ideal dargestellt. Es gibt viele kostenlose Alternativen.</div>
 
-   <header class="navbar navbar-inverse" role="banner">
+    <header class="navbar navbar-inverse" role="banner">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -51,18 +55,18 @@ $(function(){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div> 
             <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li id="sitemenu_home"><a href="ausstellung/index.html">Ausstellung</a></li><li id="sitemenu_particlomatic"><a href="teilchomat/index.html">Teilch-o-mat</a></li><li id="sitemenu_programme"><a href="veranstaltungen/index.html">Veranstaltungen</a></li><li id="sitemenu_news"><a href="neuigkeiten/index.html">Neuigkeiten</a></li><li id="sitemenu_qaa"><a href="besucherfragen/index.html">Fragen der Woche</a></li>
+                    <li id="sitemenu_home"><a class="i18nable" href="ausstellung/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a class="i18nable" href="teilchomat/">Teilch-o-mat</a></li><li id="sitemenu_programme"><a class="i18nable" href="veranstaltungen/">Veranstaltungen</a></li><li id="sitemenu_news"><a class="i18nable" href="neuigkeiten/">Neuigkeiten</a></li><li id="sitemenu_qaa"><a class="i18nable" href="besucherfragen/">Fragen der Woche</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="languageSelector">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Du <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="visible-de_sie">Sie</span><span class="visible-de_du">Du</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Du</a></li>
-                            <li><a href="#">Sie</a></li>
-                            <li><a href="#">You</a></li>
+                            <li><a href="teilchomat/">Du</a></li>
+                            <li><a href="teilchomat/?l=de_sie">Sie</a></li>
+                            <li><a href="particlomatic/">You</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,7 +94,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/light.png" width="50" height="50" alt="[Icon] Leichte Feder"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Wie schwer fühlst du dich?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Wie schwer fühlst du dich?</h2><h2 class="visible-de_sie">Wie schwer fühlen Sie sich?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/heavy.png" width="50" height="50"  alt="[Icon] Schweres Gewicht"/></td>
                                 </tr>
                             </table>
@@ -113,7 +117,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/minus.png" width="50" height="50"  alt="[Icon] Minuszeicen"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du eher<br>pessimistisch oder optimistisch?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Bist du eher<br>pessimistisch oder optimistisch?</h2><h2 class="visible-de_sie">Sie Sie eher <br>pessimistisch oder optimistisch?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/plus.png" width="50" height="50"  alt="[Icon] Pluszeichen"/></td>
                                 </tr>
                             </table>
@@ -136,7 +140,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/focussed.png" width="50" height="50" alt="[Icon] geradeaus"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Lässt du dich leicht ablenken?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Lässt du dich leicht ablenken?</h2><h2 class="visible-de_sie">Lassen Sie sich leicht ablenken?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/deflectable.png" width="50" height="50" alt="[Icon] hin und her"/></td>
                                 </tr>
                             </table>
@@ -159,7 +163,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/diamond.png" width="50" height="50" alt="[Icon] Diamant"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Hast du ein zerbrechliches Gemüt?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Hast du ein zerbrechliches Gemüt?</h2><h2 class="visible-de_sie">Haben Sie ein zerbrechliches Gemüt?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/bubble.png" width="50" height="50" alt="[Icon] Seifenblase"/></td>
                                 </tr>
                             </table>
@@ -181,7 +185,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/nonchangeable.png" width="50" height="50" alt="[Icon] kein Chamäleon"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Wechselst du zwischen verschiedenen Persönlichkeiten?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Wechselst du zwischen verschiedenen Persönlichkeiten?</h2><h2 class="visible-de_sie">Wechseln Sie zwischen verschiedenen Persönlichkeiten?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/changeable.png" width="50" height="50" alt="[Icon] Chamäleon"/></td>
                                 </tr>
                             </table>
@@ -203,7 +207,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/solo.png" width="50" height="50" alt="[Icon] Einzelgänger"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du ein Gruppenmensch?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Bist du ein Gruppenmensch?</h2><h2 class="visible-de_sie">Sind Sie ein Gruppenmensch?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/group.png" width="50" height="50" alt="[Icon] Gruppenmensch"/></td>
                                 </tr>
                             </table>
@@ -225,7 +229,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/onstage.png" width="50" height="50" alt="[Icon] Mensch auf Bühne"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du schüchtern?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Bist du schüchtern?</h2><h2 class="visible-de_sie">Sind Sie schüchtern?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/wallflower.png" width="50" height="50" alt="[Icon] Blümchen auf Mauer"/></td
                                 </tr>
                             </table>
@@ -247,7 +251,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/silent.png" width="50" height="50" alt="[Icon] Durchgestrichener Lautsprecher"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Bist du kommunikativ?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Bist du kommunikativ?</h2><h2 class="visible-de_sie">Sind Sie kommunikativ?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/communicative.png" width="50" height="50" alt="[Icon] Sprechblase"/></td
                                 </tr>
                             </table>
@@ -262,14 +266,14 @@ $(function(){
                                 </tr>
                             </table>
                             <div class="particlomaticHelp">
-                                <p>In der modernen Physik werden Kräfte zwischen Teilchen durch den Austausch von anderen Teilchen beschrieben – den Wechselwirkungsteilchen. Über diese Wechselwirkungsteilchen können Teilchen quasi kommunizieren: Die Wechselwirkungsteilchen bekommen hier daher 100 Punkte, der Rest geht leer aus. Im »Teilchenzoo« sind die Wechselwirkungsteilchen an offenen Mündern zu erkennen.</p>
+                                <p>In der modernen Physik werden Kräfte zwischen Teilchen durch den Austausch von anderen Teilchen beschrieben &ndash; den Wechselwirkungsteilchen. Über diese Wechselwirkungsteilchen können Teilchen quasi kommunizieren: Die Wechselwirkungsteilchen bekommen hier daher 100 Punkte, der Rest geht leer aus. Im »Teilchenzoo« sind die Wechselwirkungsteilchen an offenen Mündern zu erkennen.</p>
                             </div>
                         </div> <!-- /.particlomaticFormItem -->
                         <div class="particlomaticFormItem">
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/vampire.png" width="50" height="50" alt="[Icon] Vampirzähne"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Schaust du gern in Spiegel?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Schaust du gern in Spiegel?</h2><h2 class="visible-de_sie">Schauen Sie gern in Spiegel?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/mirror.png" width="50" height="50" alt="[Icon] Spiegel"/></td>
                                 </tr>
                             </table>
@@ -291,7 +295,7 @@ $(function(){
                             <table class="particlomaticFormItem-title">
                                 <tr>
                                     <td class="particlomaticFormItem-title-left-td"><img src="images/particl-o-matic_icons/realist.png" width="50" height="50" alt="[Icon] Traum + Mond"/></td>
-                                    <td class="particlomaticFormItem-title-middle-td"><h2>Lebst du in einer Traumwelt?</h2></td>
+                                    <td class="particlomaticFormItem-title-middle-td"><h2 class="visible-de_du">Lebst du in einer Traumwelt?</h2><h2 class="visible-de_sie">Leben Sie in einer Traumwelt?</h2></td>
                                     <td class="particlomaticFormItem-title-right-td"><img src="images/particl-o-matic_icons/dreamer.png" width="50" height="50" alt="[Icon] Traum + Sonne"/></td>
                                 </tr>
                             </table>
@@ -306,7 +310,7 @@ $(function(){
                               </tr>
                             </table>
                             <div class="particlomaticHelp">
-                                <p>Bis auf die Gravitonen und Wimps wurden alle Teilchen aus unserem »Teilchenzoo« nachgewiesen. Vielleicht sind Gravitonen und Wimps nur schüchtern, vielleicht bleiben sie aber auch Phantasie. Daher bekommen die beiden 100 Punkte, der Rest keine.</p>
+                                <p>Bis auf die Gravitonen und WIMPs wurden alle Teilchen aus unserem »Teilchenzoo« nachgewiesen. Vielleicht sind Gravitonen und WIMPs nur schüchtern, vielleicht bleiben sie aber auch Fantasie. Daher bekommen die beiden 100 Punkte, der Rest keine.</p>
                             </div>
                         </div>
                         <div class="particlomaticFormItem hidden-xs" style="text-align: center;">
@@ -325,8 +329,10 @@ $(function(){
                         </div>
                         <div class="particlomatic_result_pane" id="particlomatic_info" style="padding-top: 0em;">
                             <h1>Teilch-o-mat</h1>
-                            <p>In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>
-                            <p>Bist du ein Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
+                            <p class="visible-de_du">In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu dir passt!</p>
+                            <p class="visible-de_du">Bist du ein Photon, ein Elektron oder vielleicht sogar ein Higgs? Lege deine Eigenschaften fest und sieh', welches Teilchen dabei herauskommt.</p>
+                            <p class="visible-de_sie">In der Teilchenphysik gibt es Leichtgewichte, Rampensäue und Quasselstrippen. Unser »Teilch-o-mat« zeigt, welches Teilchen am besten zu Ihnen passt!</p>
+                            <p class="visible-de_sie">Sind Sie ein Photon, ein Elektron oder vielleicht sogar ein Higgs? Legen Sie Ihre Eigenschaften fest und sehen Sie, welches Teilchen dabei herauskommt.</p>
                             <p><img class="particle" src="images/particles/myon.png" alt="Myon"><img class="particle" src="images/particles/down_quark.png"  alt="Down-Qurk"><img class="particle" src="images/particles/w_plus.png"  alt="W-plus"><img class="particle" src="images/particles/gluon.png" alt="Gluon"><img class="particle" src="images/particles/photon.png"  alt="Phton"><img class="particle" src="images/particles/electron_neutrino.png"  alt="Elektron-Neutrino"><img class="particle" src="images/particles/up_quark.png" alt="Up-Quark"><img class="particle" src="images/particles/higgs.png"  alt="Higgs-Teilchen"><img class="particle" src="images/particles/electron.png"  alt="Elektron"><img class="particle" src="images/particles/bottom_quark.png"  alt="Bottom-Quark"></p>
                         </div>
                         <div class="particlomatic_result_pane paintedGray clearfix" id="particlomatic_result_table">

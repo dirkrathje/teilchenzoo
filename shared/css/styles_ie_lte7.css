@@ -6,7 +6,7 @@
 } 
 @media (min-width: 768px) {
 }
-#ielte7_message {
+.ielte7_message {
     display: block;
     background-color: red;
     padding: 10px;
