@@ -924,6 +924,8 @@ li[data-video-href="media/videos/video_7.mp4"] {
     padding: 15px 0px;
  
 }
+
+
 .app .navbar ul li a.selected {
     background-color: @btn-active;
 }
@@ -956,6 +958,30 @@ li[data-video-href="media/videos/video_7.mp4"] {
     color: white;
 }
 
+
+.particlomaticOnlyApp .home,
+.particlomaticOnlyApp .navbarParticlomatic,
+.particlomaticOnlyApp .navbarVideos,
+.particlomaticOnlyApp .navbarContent,
+.particlomaticOnlyApp .home,
+ {
+    display: none !important;
+}
+.particlomaticOnlyApp .language_de_du {
+    margin-left: 120px;
+}
+.particlomaticOnlyApp .app .navbar ul li.language a  {
+    background-color: darken(@btn-inactive, 0%);
+}
+.particlomaticOnlyApp.de_du .app .navbar ul li.language.language_de_du a  {
+    background-color: lighten(@btn-active, 0%);
+}
+.particlomaticOnlyApp.de_sie .app .navbar ul li.language.language_de_sie a  {
+    background-color: lighten(@btn-active, 0%);
+}
+.particlomaticOnlyApp.en .app .navbar ul li.language.language_en a  {
+    background-color: lighten(@btn-active, 0%);
+}
 
 .app .navbar h1 {
     font-size: 100%;

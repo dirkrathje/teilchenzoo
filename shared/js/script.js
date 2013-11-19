@@ -441,9 +441,11 @@ function onReady() {
     FastClick.attach(document.body);
 
     if (appName === "Teilchomat") {
-        $(".navbar").hide();
+        $("html").addClass("particlomaticOnlyApp");
+/*        $(".navbar").hide();
         $(".navbar-fixed-bottom").hide();
-        $("a[href='#page-home']").hide();
+        $("a[href='#page-home']").hide();*/
+
         $(".page").hide(); 
         $("#page-particlomatic").show(); 
         initParticlomatic();
