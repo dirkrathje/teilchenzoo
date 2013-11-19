@@ -22,14 +22,14 @@ var symbols = {
    content: {
          dom: [
          {
-            id:'Symbol_1',
+            id:'myon',
             type:'rect',
             rect:['144','30','auto','auto','auto','auto']
          }],
          symbolInstances: [
          {
-            id:'Symbol_1',
-            symbolName:'Symbol_1'
+            id:'myon',
+            symbolName:'myon'
          }
          ]
       },
@@ -41,11 +41,12 @@ var symbols = {
             ["style", "height", '305px'],
             ["style", "overflow", 'hidden']
          ],
-         "${_Symbol_1}": [
+         "${_myon}": [
             ["style", "top", '50px'],
-            ["style", "left", '74px'],
             ["transform", "scaleY", '0.93561'],
-            ["transform", "scaleX", '0.93561']
+            ["style", "overflow", 'visible'],
+            ["transform", "scaleX", '0.93561'],
+            ["style", "left", '74px']
          ]
       }
    },
@@ -56,15 +57,15 @@ var symbols = {
          duration: 5250,
          autoPlay: true,
          timeline: [
-            { id: "eid472", tween: [ "transform", "${_Symbol_1}", "scaleX", '0.93561', { fromValue: '0.93561'}], position: 2301, duration: 0 },
-            { id: "eid476", tween: [ "style", "${_Symbol_1}", "left", '74px', { fromValue: '74px'}], position: 2301, duration: 0 },
-            { id: "eid477", tween: [ "style", "${_Symbol_1}", "top", '50px', { fromValue: '50px'}], position: 2301, duration: 0 },
-            { id: "eid473", tween: [ "transform", "${_Symbol_1}", "scaleY", '0.93561', { fromValue: '0.93561'}], position: 2301, duration: 0 },
-            { id: "eid478", trigger: [ function executeSymbolFunction(e, data) { this._executeSymbolAction(e, data); }, ['play', '${_Symbol_1}', [] ], ""], position: 2500 }         ]
+            { id: "eid476", tween: [ "style", "${_myon}", "left", '74px', { fromValue: '74px'}], position: 2301, duration: 0 },
+            { id: "eid472", tween: [ "transform", "${_myon}", "scaleX", '0.93561', { fromValue: '0.93561'}], position: 2301, duration: 0 },
+            { id: "eid477", tween: [ "style", "${_myon}", "top", '50px', { fromValue: '50px'}], position: 2301, duration: 0 },
+            { id: "eid473", tween: [ "transform", "${_myon}", "scaleY", '0.93561', { fromValue: '0.93561'}], position: 2301, duration: 0 },
+            { id: "eid478", trigger: [ function executeSymbolFunction(e, data) { this._executeSymbolAction(e, data); }, ['play', '${_myon}', [] ], ""], position: 2500 }         ]
       }
    }
 },
-"Symbol_1": {
+"myon": {
    version: "2.0.1",
    minimumCompatibleVersion: "2.0.0",
    build: "2.0.1.268",
@@ -93,10 +94,10 @@ var symbols = {
       fill: ['rgba(0,0,0,0)','images/myonpiksi.png','0px','0px']
    },
    {
-      transform: [[0,0],[],[],['0.83256']],
-      id: 'myonpiksiCopy9',
-      type: 'image',
       rect: ['-3px','16px','268px','212px','auto','auto'],
+      id: 'myonpiksiCopy9',
+      transform: [[0,0],[],[],['0.83256']],
+      type: 'image',
       fill: ['rgba(0,0,0,0)','images/myonpiksi.png','0px','0px']
    },
    {
@@ -186,20 +187,9 @@ var symbols = {
             ["style", "left", '160px'],
             ["style", "top", '118px']
          ],
-         "${_myonpiksiCopy10}": [
-            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
-            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["transform", "rotateZ", '-10deg'],
-            ["transform", "scaleX", '0.83256'],
-            ["style", "opacity", '0'],
-            ["style", "left", '-3px'],
-            ["style", "top", '16px'],
-            ["transform", "skewY", '0deg'],
-            ["transform", "skewX", '1deg'],
-            ["transform", "scaleY", '1']
+         "${_mynose}": [
+            ["style", "left", '136px'],
+            ["style", "top", '151px']
          ],
          "${_myonpiksiCopy9}": [
             ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
@@ -224,15 +214,20 @@ var symbols = {
             ["style", "left", '155px'],
             ["style", "top", '114px']
          ],
-         "${_RoundRect}": [
-            ["style", "top", '76px'],
-            ["style", "border-bottom-left-radius", [57,57], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["transform", "rotateZ", '28deg'],
-            ["style", "border-bottom-right-radius", [55,55], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["style", "height", '21px'],
-            ["color", "background-color", 'rgba(8,82,158,1.00)'],
-            ["style", "left", '101px'],
-            ["style", "width", '45px']
+         "${_myonpiksiCopy10}": [
+            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
+            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["transform", "rotateZ", '-10deg'],
+            ["transform", "scaleX", '0.83256'],
+            ["style", "opacity", '0'],
+            ["style", "left", '-3px'],
+            ["style", "top", '16px'],
+            ["transform", "skewY", '0deg'],
+            ["transform", "skewX", '1deg'],
+            ["transform", "scaleY", '1']
          ],
          "${_myonface}": [
             ["style", "top", '61px'],
@@ -242,18 +237,16 @@ var symbols = {
             ["style", "left", '142px'],
             ["style", "top", '204px']
          ],
-         "${_myonpiksi}": [
-            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
-            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
-            ["transform", "skewY", '0deg'],
-            ["transform", "rotateZ", '0deg'],
-            ["transform", "scaleX", '0.93153'],
-            ["transform", "skewX", '1deg'],
-            ["style", "left", '-3px'],
-            ["style", "top", '16px']
+         "${_RoundRectCopy}": [
+            ["color", "background-color", 'rgba(8,82,158,1.00)'],
+            ["style", "border-top-left-radius", [48,48], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["transform", "rotateZ", '65deg'],
+            ["transform", "scaleX", '0.56965'],
+            ["style", "left", '85px'],
+            ["style", "width", '47px'],
+            ["style", "top", '142px'],
+            ["style", "height", '26px'],
+            ["style", "border-top-right-radius", [17,17], {valueTemplate:'@@0@@px @@1@@px'} ]
          ],
          "${_RoundRectCopy3}": [
             ["color", "background-color", 'rgba(8,82,158,1)'],
@@ -280,28 +273,36 @@ var symbols = {
             ["style", "height", '264px'],
             ["style", "width", '260px']
          ],
-         "${_myrightpupil}": [
-            ["style", "left", '112px'],
-            ["style", "top", '119px']
-         ],
          "${_myleftleg}": [
             ["style", "left", '70px'],
             ["style", "top", '203px']
          ],
-         "${_mynose}": [
-            ["style", "left", '136px'],
-            ["style", "top", '151px']
+         "${_myrightpupil}": [
+            ["style", "left", '112px'],
+            ["style", "top", '119px']
          ],
-         "${_RoundRectCopy}": [
+         "${_myonpiksi}": [
+            ["style", "-webkit-transform-origin", [52.61,55.66], {valueTemplate:'@@0@@% @@1@@%'} ],
+            ["style", "-moz-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-ms-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "msTransformOrigin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["style", "-o-transform-origin", [52.61,55.66],{valueTemplate:'@@0@@% @@1@@%'}],
+            ["transform", "skewY", '0deg'],
+            ["transform", "rotateZ", '0deg'],
+            ["transform", "scaleX", '0.93153'],
+            ["transform", "skewX", '1deg'],
+            ["style", "left", '-3px'],
+            ["style", "top", '16px']
+         ],
+         "${_RoundRect}": [
+            ["style", "top", '76px'],
+            ["style", "border-bottom-left-radius", [57,57], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["transform", "rotateZ", '28deg'],
+            ["style", "border-bottom-right-radius", [55,55], {valueTemplate:'@@0@@px @@1@@px'} ],
+            ["style", "height", '21px'],
             ["color", "background-color", 'rgba(8,82,158,1.00)'],
-            ["style", "border-top-left-radius", [48,48], {valueTemplate:'@@0@@px @@1@@px'} ],
-            ["transform", "rotateZ", '65deg'],
-            ["transform", "scaleX", '0.56965'],
-            ["style", "left", '85px'],
-            ["style", "width", '47px'],
-            ["style", "top", '142px'],
-            ["style", "height", '26px'],
-            ["style", "border-top-right-radius", [17,17], {valueTemplate:'@@0@@px @@1@@px'} ]
+            ["style", "left", '101px'],
+            ["style", "width", '45px']
          ]
       }
    },
@@ -362,10 +363,10 @@ var symbols = {
             { id: "eid278", tween: [ "transform", "${_myonpiksiCopy9}", "rotateZ", '0deg', { fromValue: '-32deg'}], position: 1592, duration: 73, easing: "swing" },
             { id: "eid287", tween: [ "transform", "${_myonpiksiCopy9}", "rotateZ", '701deg', { fromValue: '0deg'}], position: 1665, duration: 85, easing: "swing" },
             { id: "eid3", tween: [ "style", "${_myonpiksi}", "-webkit-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid503", tween: [ "style", "${_myonpiksi}", "-moz-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid504", tween: [ "style", "${_myonpiksi}", "-ms-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid505", tween: [ "style", "${_myonpiksi}", "msTransformOrigin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
-            { id: "eid506", tween: [ "style", "${_myonpiksi}", "-o-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid527", tween: [ "style", "${_myonpiksi}", "-moz-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid528", tween: [ "style", "${_myonpiksi}", "-ms-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid529", tween: [ "style", "${_myonpiksi}", "msTransformOrigin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
+            { id: "eid530", tween: [ "style", "${_myonpiksi}", "-o-transform-origin", [52.61,55.66], { valueTemplate: '@@0@@% @@1@@%', fromValue: [52.61,55.66]}], position: 574, duration: 0 },
             { id: "eid336", tween: [ "style", "${_RoundRectCopy2}", "left", '140px', { fromValue: '141px'}], position: 950, duration: 215, easing: "swing" },
             { id: "eid346", tween: [ "style", "${_RoundRectCopy2}", "left", '141px', { fromValue: '140px'}], position: 1665, duration: 215, easing: "swing" }         ]
       }
