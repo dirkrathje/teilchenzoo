@@ -653,6 +653,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .particlomaticFormItem-title-left-td {
     width: 1%;
+    padding-right: 10px;
 }
 .particlomaticFormItem-title-middle-td {
     width: 1%;
@@ -661,6 +662,8 @@ input[type="range"]::-webkit-slider-thumb {
 .particlomaticFormItem-title-right-td {
     width: 1%;
     text-align: right;
+        padding-left: 10px;
+
 }
 .btn-active {
     color: #fff;
@@ -873,6 +876,7 @@ li[data-video-href="media/videos/video_7.mp4"] {
     background-color: rgba(255,255,255,0.5); 
     margin: 0px;
     border: none;
+    z-index: 20000;
 }
 .videoBody .navbar {
     background-color: transparent;
@@ -926,9 +930,16 @@ li[data-video-href="media/videos/video_7.mp4"] {
 .app .navbar ul li.language a  {
     background-color: darken(@btn-inactive, 25%);
 }
-.app .navbar ul li.language a.active  {
+.de_du .app .navbar ul li.language.language_de_du a  {
     background-color: lighten(@btn-active, 25%);
 }
+.de_sie .app .navbar ul li.language.language_de_sie a  {
+    background-color: lighten(@btn-active, 25%);
+}
+.en .app .navbar ul li.language.language_en a  {
+    background-color: lighten(@btn-active, 25%);
+}
+
 
 
 
@@ -980,6 +991,14 @@ li[data-video-href="media/videos/video_7.mp4"] {
 
 .app #page-home h1 {
     font-size: 150%;
+}
+.app #page-particlomatic h1 {
+    margin-bottom: 0.5em;
+    font-size: 200%;
+}
+
+.app .particlomatic_result_pane {
+    padding-top: 0px;
 }
 
 .de_du .visible-de_sie {

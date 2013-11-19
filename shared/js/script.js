@@ -728,10 +728,6 @@ var animateScroll = function (targetElement, speed) {
     );
 };
 
-function adjustPageHeight() {
-//    $(".page").css("min-height", "768px");
-}
-
 function initPageHome() {
     "use strict";
 
@@ -809,7 +805,11 @@ var website = {
             $("html").removeClass("de_du");
             $("html").addClass("de_sie");
             $(".i18nable").each(function() {
-                $(this).attr("href",  $(this).attr("href") + "?l=de_sie");
+
+                var href = $(this).attr("href");
+                var url = href.substr(0, href.indexOf("#"));
+                var hash = href.substr(href.indexOf("#"));
+                $(this).attr("href",  url + "?l=de_sie" + hash);
             });
         
         } else {
@@ -827,15 +827,30 @@ var app = {
 
     initialize: function() {
 
-        language = $("html").attr("lang");
-        if (language === "en") {
-            languageSuffix = "_en"; 
-        }
+        language = getParameterByName("l");
 
+        if (language === "de_sie") {
+
+            $("html").removeClass("de_du");
+            $("html").addClass("de_sie");
+            $(".i18nable").each(function() {
+                var href = $(this).attr("href");
+                var url = href.substr(0, href.indexOf("#"));
+                var hash = href.substr(href.indexOf("#"));
+                $(this).attr("href",  url + "?l=de_sie" + hash);
+            });
+        
+        } else {
+
+            if ($("html").hasClass("en")) {
+                language = "en";
+                languageSuffix = "_en"; 
+            }
+        }
+        
         var self = this;
         this.registerEvents();
         self.route();
-        adjustPageHeight(); 
 
         initParticlomatic();
         initEncyclopedia();
@@ -858,13 +873,13 @@ var app = {
         if (hash === "#page-home") {
 //            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
             $("body").removeClass("videoBody");
-            $(".navbar-fixed-bottom a[href='#page-home']").addClass("selected");            
+            $("a.navbarHomeLink").addClass("selected");            
         } else
         if (hash === "#page-particlomatic") {
 //            $(".navbar-fixed-top").show();
 //            $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
             $("body").removeClass("videoBody");
-            $(".navbar-fixed-bottom a[href='#page-particlomatic']").addClass("selected");            
+            $("a.navbarParticlomaticLink").addClass("selected");            
 
 
         } else
@@ -872,7 +887,7 @@ var app = {
 //            $(".navbar-fixed-top").hide();
 //            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
             $("body").addClass("videoBody");
-            $(".navbar-fixed-bottom a[href='#page-videos']").addClass("selected");            
+            $("a.navbarVideosLink").addClass("selected");            
             initVideoPlayer();
         } else
         if (hash === "#page-content") {
@@ -881,7 +896,7 @@ var app = {
 
             $("body").removeClass("videoBody");
             $(".content").css("min-height", ($(window).height()-50)+'px');
-            $(".navbar-fixed-bottom a[href='#page-content']").addClass("selected");            
+            $("a.navbarContentLink").addClass("selected");            
 
              
         }
@@ -914,7 +929,6 @@ var app = {
         });
 
         $(window).on('hashchange', $.proxy(this.route, this));
-        $(window).on('resize', adjustPageHeight);
 
     },
 
@@ -926,20 +940,4 @@ var app = {
         }
     }
 };
-
-/*
-$(document).ready(function(){
-//    if (true || window.navigator.userAgent.indexOf("Safari") > -1) {
-        var upSafari = {
-            status: true,
-            Start: function(){
-                document.getElementById('electronAnimationFrame').style.opacity = this.status ? 1 : .99;
-                this.status=!this.status;
-            }
-        };
-        console.log("upSafari");
-        window.upSafari = upSafari;
-        setInterval("upSafari.Start()",100);
-//    }
-}*/
 
