@@ -829,9 +829,10 @@ var app = {
         this.registerEvents();
 
         if (appName === "Teilchomat") {
-
             $("html").addClass("particlomaticOnlyApp");
-            $("#page-particlomatic").show();
+            window.location.hash = "#page-particlomatic";
+//            $("#page-particlomatic").show();
+            self.route();
             initParticlomatic();
 
         } else {
