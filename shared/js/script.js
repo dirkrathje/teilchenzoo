@@ -453,7 +453,7 @@ function onReady() {
 
     $(document).bind('click', function () {bypassScreensaver = true; });
     $(document).bind('tap', function () {bypassScreensaver = true; });
-    checkScreensaver();
+    setTimeout(checkScreensaver, 10000);
 }
 
 function initParticlomatic() {
