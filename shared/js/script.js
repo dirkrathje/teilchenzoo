@@ -1,12 +1,15 @@
 // JavaScript Document
 /*jslint browser: true*/
 /*jslint regexp: true */
-/*global $, jQuery, FastClick, jwplayer, device, appName */
-if ( typeof String.prototype.endsWith != 'function' ) {
-  String.prototype.endsWith = function( str ) {
-    return this.substring( this.length - str.length, this.length ) === str;
-  }
-};
+/*jshint globalstrict: true*/
+/*global $, jQuery, FastClick, jwplayer, device, appName, Modernizr */
+if (typeof String.prototype.endsWith !== 'function') {
+    String.prototype.endsWith = function(str) {
+        "use strict";
+        return this.substring(this.length - str.length, this.length) === str;
+    };
+}
+
 function sortByKey(array, key) {
     "use strict";
     return array.sort(function (a, b) {
@@ -25,19 +28,16 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
-var mode,   /* app, website */  
+var mode, /* app, website */
     language = "",
-    languageSuffix = ""; 
+    languageSuffix = "",
+    bypassScreensaver = false;
 
-
-var bypassScreensaver = false;
 function checkScreensaver() {
     "use strict";
 
     var now = new Date(),
-        hours = now.getHours(),
-        minutes = now.getMinutes(),
-        seconds = now.getSeconds();
+        hours = now.getHours();
 
     if ((hours > 7 && hours < 19) || bypassScreensaver) {
         $("#screensaver").hide();
@@ -47,10 +47,12 @@ function checkScreensaver() {
     }
     setTimeout(checkScreensaver, 2000);
 }
-function isAppMode () {
+function isAppMode() {
+    "use strict";
     return mode === "app";
 }
-function isWebsiteMode () {
+function isWebsiteMode() {
+    "use strict";
     return mode === "website";
 }
 
@@ -327,7 +329,7 @@ function getQuizView(model) {
 
             tableView += "<tr>";
             tableView += "<td class='particleThumbnail'><img src='images/particles_cropped_100/" + particle.name + ".png' alt=''/></td>";
-            tableView += "<td class='value'><div id='resultBin"+ particle.name + "' class='resultBin "+ particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
+            tableView += "<td class='value'><div id='resultBin" + particle.name + "' class='resultBin " + particle.name + "' style='background-color: " + particle.rgb + ";width: " + normalizedValue + "%;'></td>";
             tableView += "</tr>";
         }
     }
@@ -355,7 +357,7 @@ function updateParticlomaticTableView(model) {
             normalizedValue = testEasingQuad(100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100);
     //      normalizedValue = 100 - (model.bestMatches[i] - model.bestMatchesMin) / (model.bestMatchesMax - model.bestMatchesMin) * 100;
 
-            $("#resultBin"+ particle.name).css("width", normalizedValue + "%");
+            $("#resultBin" + particle.name).css("width", normalizedValue + "%");
         }
     }
 
@@ -369,7 +371,10 @@ function updateParticlomaticTableView(model) {
 function getQuizTop3View(quizModel) {
     "use strict";
 
-    var titleKey, descriptionKey;
+    var titleKey,
+        descriptionKey,
+        result;
+
     if (language === "en") {
         titleKey = "title_en";
         descriptionKey = "description_en";
@@ -378,7 +383,6 @@ function getQuizTop3View(quizModel) {
         descriptionKey = "description_de";
     }
 
-    var result;
     result = "<div class='particlomatic_result_top3_rank'><h1>1. " + particles[quizModel.sortedResults[0].particle][titleKey]  + " </h1>";
     result += "<div class='body'><div id='rank1'><img class='rank1_img' src='images/particles_cropped_500/" + particles[quizModel.sortedResults[0].particle].name + ".png'></div>";
     result += "<p class='particleDescription'>" + particles[quizModel.sortedResults[0].particle][descriptionKey]  + "</p></div></div>";
@@ -452,22 +456,21 @@ function initParticlomatic() {
             minValue = parseFloat($(rangeElement).attr("min")),
             maxValue = parseFloat($(rangeElement).attr("max")),
             buttonValue = parseFloat($(this).attr("data-value")),
-            newRangeElementValue = minValue + (maxValue-minValue)*buttonValue/10;
+            newRangeElementValue = minValue + (maxValue - minValue) * buttonValue / 10;
 
         $(".btn", parent).removeClass("btn-active");
         $(".btn", parent).addClass("btn-inactive");
         $(".btn", parent).each(function() {
 
             if (parseFloat($(this).attr("data-value")) <= buttonValue) {
-              $(this).addClass("btn-active");
-              $(this).removeClass("btn-inactive");
-
+                $(this).addClass("btn-active");
+                $(this).removeClass("btn-inactive");
             }
         });
 
         $(rangeElement).val(newRangeElementValue);
         $(rangeElement).trigger("change");
-    }); 
+    });
 
     if (isWebsiteMode()) {
         $(".particlomatic-range-input button[data-value='5']").trigger("click");
@@ -504,7 +507,7 @@ function initParticlomatic() {
         $(".particlomatic_result_control_button[data-href='" + targetSelector + "']").addClass("btn-active");
         $(".particlomatic_result_pane").hide();
         $(targetSelector).show();
-    });    
+    });
 
     $(".particlomatic_button_reset").on("click", function (event) {
 
@@ -541,13 +544,15 @@ function initParticlomatic() {
 var videoPlaylist = [];
 
 function stopVideoplayer() {
+    "use strict";
     var videoplayer = document.getElementsByTagName('video')[0];
-    if (videoplayer.pause !== "undefined")
-    videoplayer.pause(); 
+    if (videoplayer.pause !== "undefined") {
+        videoplayer.pause();
+    }
 }
 
 function playNextVideo() {
-
+    "use strict";
     var videoplayer = document.getElementsByTagName('video')[0],
         i,
         indexOfPlayingVideo;
@@ -555,12 +560,12 @@ function playNextVideo() {
     //console.log("videoplayer.src: " + videoplayer.src);
     //console.log("videoPlaylist.size: " + videoPlaylist.length);
     indexOfPlayingVideo = -1;
-    for (i = 0; i < videoPlaylist.length-1; i += 1) {
+    for (i = 0; i < videoPlaylist.length - 1; i += 1) {
         if (videoplayer.src.endsWith(videoPlaylist[i])) {
             indexOfPlayingVideo = i;
         }
     }
-    $(".videocontroller li[data-video-href='" + videoPlaylist[indexOfPlayingVideo+1] + "']").trigger("click");
+    $(".videocontroller li[data-video-href='" + videoPlaylist[indexOfPlayingVideo + 1] + "']").trigger("click");
 
 
 }
@@ -569,8 +574,8 @@ function playNextVideo() {
 function initVideoPlayer() {
     "use strict";
 
-    videoPlaylist = []; 
-    $(".videocontroller li").each(function(){
+    videoPlaylist = [];
+    $(".videocontroller li").each(function() {
         videoPlaylist.push($(this).attr("data-video-href"));
     });
 
@@ -578,27 +583,27 @@ function initVideoPlayer() {
     $("#videoplayer").height("576px");
     videoplayer.addEventListener('ended', playNextVideo);
 
-    videoplayer.src = ""; 
+    videoplayer.src = "";
     videoplayer.load();
     $(".videocontroller li").removeClass("playing");
     $(".videocontroller li").removeClass("pausing");
 
 
 
-    $(".videocontroller li").on("click", function(event) {      
+    $(".videocontroller li").on("click", function(event) {
 
         var videoplayer = $("#videoplayer")[0],
             src = $(this).attr("data-video-href");
 
         event.stopImmediatePropagation();
-        
-        if ($(this).hasClass("playing")) { 
+
+        if ($(this).hasClass("playing")) {
 
             videoplayer.pause();
             $(".videocontroller li").removeClass("playing");
             $(".videocontroller li").removeClass("pausing");
             $(this).addClass("pausing");
-        
+
         } else {
 
             $(".videocontroller li").removeClass("playing");
@@ -615,7 +620,7 @@ function initVideoPlayer() {
     });
 
     $(".videocontroller li:first-child").trigger("click");
-};
+}
 
 
 function initEncyclopedia() {
@@ -638,29 +643,29 @@ function initEncyclopedia() {
             $("#encyclopedia_overview").show();
             $("#encyclopedia_index").hide();
             $("#encyclopedia_stage").html("");
-        
+
         } else {
 
             $("#encyclopedia_overview").hide();
             $("#encyclopedia_index").show();
             $("#encyclopedia_stage").load(contentFileName, function () {
-            $("#encyclopedia_stage a").on("click", function (event) {
+                $("#encyclopedia_stage a").on("click", function (event) {
 
-                var target2 = $(this).attr("href").substr(1),
-                    contentFileName2 = "encyclopedia/" + target2 + languageSuffix + ".html";
-                if (target2 === "overview") {
-                    $("#encyclopedia_overview").show();
-                    $(".encyclopedia_link_detail").hide();
-                } else {
-                    $("#encyclopedia_overview").hide();
-                    $(".encyclopedia_link_detail").show();
-                }
-                event.preventDefault();
-                $("#encyclopedia_stage").load(contentFileName2);
+                    var target2 = $(this).attr("href").substr(1),
+                        contentFileName2 = "encyclopedia/" + target2 + languageSuffix + ".html";
+                    if (target2 === "overview") {
+                        $("#encyclopedia_overview").show();
+                        $(".encyclopedia_link_detail").hide();
+                    } else {
+                        $("#encyclopedia_overview").hide();
+                        $(".encyclopedia_link_detail").show();
+                    }
+                    event.preventDefault();
+                    $("#encyclopedia_stage").load(contentFileName2);
+                });
             });
-        });        }
+        }
         event.preventDefault();
-       
     });
 }
 
@@ -687,12 +692,12 @@ var animateScroll = function (targetElement, speed) {
     }
 
     stepNumber = Math.floor(background_position_x / elementsAndGapWidth);
-    stepNumber -= 2; 
-    if (stepNumber < -7)
+    stepNumber -= 2;
+    if (stepNumber < -7) {
         stepNumber += 7;
-    newBackgroundPositionX = (stepNumber) * elementsAndGapWidth + (width - elementWidth) / 2;
-    newBackgroundPosition  = newBackgroundPositionX + "px 0px";
-    //console.log("newBackgroundPosition: " + newBackgroundPosition);  
+    }
+    newBackgroundPositionX = stepNumber * elementsAndGapWidth + (width - elementWidth) / 2;
+    newBackgroundPosition = newBackgroundPositionX + "px 0px";
 
     $(targetElement).animate(
         {
@@ -752,9 +757,9 @@ function initPageParticlomatic() {
     "use strict";
 
     if (Modernizr.inputtypes.range) {
-        $("html").addClass("inputtype-range"); 
+        $("html").addClass("inputtype-range");
     } else {
-        $("html").addClass("no-inputtype-range"); 
+        $("html").addClass("no-inputtype-range");
     }
 
     FastClick.attach(document.body);
@@ -763,15 +768,17 @@ function initPageParticlomatic() {
 
 
 function getParameterByName(name) {
+    "use strict";
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
 var website = {
 
     initialize: function() {
+        "use strict";
 
         mode = "website";
         language = getParameterByName("l");
@@ -781,26 +788,27 @@ var website = {
             $("html").addClass("de_sie");
             $(".i18nable").each(function() {
 
-                var href = $(this).attr("href");
-                var url = href.substr(0, href.indexOf("#"));
-                var hash = href.substr(href.indexOf("#"));
+                var href = $(this).attr("href"),
+                    url = href.substr(0, href.indexOf("#")),
+                    hash = href.substr(href.indexOf("#"));
                 $(this).attr("href",  url + "?l=de_sie" + hash);
             });
-        
+
         } else {
 
             if ($("html").hasClass("en")) {
                 language = "en";
-                languageSuffix = "_en"; 
+                languageSuffix = "_en";
             }
         }
     }
-}
+};
 
 
 var app = {
 
     initialize: function() {
+        "use strict";
 
         mode = "app";
         language = getParameterByName("l");
@@ -810,30 +818,30 @@ var app = {
             $("html").removeClass("de_du");
             $("html").addClass("de_sie");
             $(".i18nable").each(function() {
-                var href = $(this).attr("href");
-                var url = href.substr(0, href.indexOf("#"));
-                var hash = href.substr(href.indexOf("#"));
+                var href = $(this).attr("href"),
+                    url = href.substr(0, href.indexOf("#")),
+                    hash = href.substr(href.indexOf("#"));
                 $(this).attr("href",  url + "?l=de_sie" + hash);
             });
-        
+
         } else {
 
             if ($("html").hasClass("en")) {
                 language = "en";
-                languageSuffix = "_en"; 
+                languageSuffix = "_en";
             }
         }
-        
+
         var self = this;
         this.registerEvents();
 
         if (appName === "Teilchomat") {
 
             $("html").addClass("particlomaticOnlyApp");
-            $(".page").hide(); 
-            $("#page-particlomatic").show(); 
+            $(".page").hide();
+            $("#page-particlomatic").show();
             initParticlomatic();
-        
+
         } else {
 
             self.route();
@@ -843,41 +851,40 @@ var app = {
     },
 
     route: function() {
+        "use strict";
 
         var self = this,
             hash = window.location.hash;
 
-        stopVideoplayer(); 
+        stopVideoplayer();
         if (!hash) {
             hash = "#page-home";
         }
 
         $(".navbar-fixed-bottom a").removeClass("selected");
-            
-        $(".page").hide(); 
-        $(hash).show(); 
+
+        $(".page").hide();
+        $(hash).show();
         if (hash === "#page-home") {
             $("body").removeClass("videoBody");
-            $("a.navbarHomeLink").addClass("selected");            
-        } else
-        if (hash === "#page-particlomatic") {
+            $("a.navbarHomeLink").addClass("selected");
+        } else if (hash === "#page-particlomatic") {
             $("body").removeClass("videoBody");
-            $("a.navbarParticlomaticLink").addClass("selected");            
-        } else
-        if (hash === "#page-videos") {
+            $("a.navbarParticlomaticLink").addClass("selected");
+        } else if (hash === "#page-videos") {
             $("body").addClass("videoBody");
-            $("a.navbarVideosLink").addClass("selected");            
+            $("a.navbarVideosLink").addClass("selected");
             initVideoPlayer();
-        } else
-        if (hash === "#page-content") {
+        } else if (hash === "#page-content") {
             $("body").removeClass("videoBody");
-            $(".content").css("min-height", ($(window).height()-50)+'px');
+            $(".content").css("min-height", ($(window).height() - 50) + 'px');
             $("a.navbarContentLink").addClass("selected");
         }
         $(document).scrollTop(0);
     },
 
     registerEvents: function() {
+        "use strict";
 
         var self = this;
 
@@ -900,17 +907,6 @@ var app = {
             });
         }
 
-        $(".navbar-fixed-bottom a").on("click", function(){
-        });
-
         $(window).on('hashchange', $.proxy(this.route, this));
-    },
-
-    showAlert: function(message, title) {
-        if (navigator.notification) {
-            navigator.notification.alert(message, null, title, 'OK');
-        } else {
-            alert(title ? (title + ': ' + message) : message);
-        }
     }
 };
