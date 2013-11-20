@@ -366,8 +366,6 @@ function updateParticlomaticTableView(model) {
     return tableView;
 }
 
-
-
 function getQuizTop3View(quizModel) {
     "use strict";
 
@@ -434,19 +432,10 @@ function updateQuizTeaser(scrollPosition) {
     $("#quizTeaser").html(getQuizView(quizModel));
 }
 
-function onReady() {
-    "use strict";
-
-    FastClick.attach(document.body);
-
-    $(document).bind('click', function () {bypassScreensaver = true; });
-    $(document).bind('tap', function () {bypassScreensaver = true; });
-    setTimeout(checkScreensaver, 10000);
-}
-
 function initParticlomatic() {
     "use strict";
 
+    console.log("initParticlomatic");
     $(".particlomatic-range-input button").on("click", function(event) {
 
         event.preventDefault();
@@ -627,8 +616,6 @@ function initEncyclopedia() {
     "use strict";
 
     $("#encyclopedia_index").hide();
-    //$("#encyclopedia_index .encyclopedia_link_detail").css("opacity", "0.1");
-
 
     $("#encyclopedia_overview").show();
     $("#encyclopedia_stage").html("");
@@ -810,6 +797,12 @@ var app = {
     initialize: function() {
         "use strict";
 
+        FastClick.attach(document.body);
+
+        $(document).bind('click', function () {bypassScreensaver = true; });
+        $(document).bind('tap', function () {bypassScreensaver = true; });
+        setTimeout(checkScreensaver, 10000);
+
         mode = "app";
         language = getParameterByName("l");
 
@@ -838,7 +831,6 @@ var app = {
         if (appName === "Teilchomat") {
 
             $("html").addClass("particlomaticOnlyApp");
-            $(".page").hide();
             $("#page-particlomatic").show();
             initParticlomatic();
 
