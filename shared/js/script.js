@@ -479,7 +479,6 @@ function initParticlomatic() {
               $(this).removeClass("btn-inactive");
 
             }
-
         });
 
         $(rangeElement).val(newRangeElementValue);
@@ -529,10 +528,7 @@ function initParticlomatic() {
             var mediumValue = (parseFloat($(this).attr("max")) + parseFloat($(this).attr("min"))) / 2;
             $(this).val(mediumValue);
         });
-
-
     });
-
 
     var inputValues = [],
         quizModel;
@@ -931,7 +927,6 @@ var app = {
         });
 
         $(window).on('hashchange', $.proxy(this.route, this));
-
     },
 
     showAlert: function(message, title) {
@@ -942,4 +937,3 @@ var app = {
         }
     }
 };
-
