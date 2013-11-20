@@ -830,8 +830,8 @@ var app = {
 
         if (appName === "Teilchomat") {
 //            window.location.hash = "#page-particlomatic";
-            $("#page-particlomatic").show();
-//            self.route();
+//            $("#page-particlomatic").show();
+            self.route();
             initParticlomatic();
 //           initEncyclopedia();
 //            $("html").addClass("particlomaticOnlyApp");
