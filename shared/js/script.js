@@ -833,7 +833,8 @@ var app = {
             window.location.hash = "#page-particlomatic";
             $("html").addClass("particlomaticOnlyApp");
             initParticlomatic();
-            setTimeout("app.route()", 1000);
+            app.route();
+//            setTimeout("", 5000);
 //           initEncyclopedia();
 
         } else {
@@ -874,7 +875,7 @@ var app = {
             $(".content").css("min-height", ($(window).height() - 50) + 'px');
             $("a.navbarContentLink").addClass("selected");
         }
-        $(document).scrollTop(0);
+//        $(document).scrollTop(0);
     },
 
     registerEvents: function() {
