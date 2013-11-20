@@ -25,6 +25,10 @@ function animationFunctionSpike(x, d) {
     }
     return -Math.abs(x / d) + 1;
 }
+var mode,   /* app, website */  
+    language = "",
+    languageSuffix = ""; 
+
 
 var bypassScreensaver = false;
 function checkScreensaver() {
@@ -43,9 +47,12 @@ function checkScreensaver() {
     }
     setTimeout(checkScreensaver, 2000);
 }
-
-var language = ""; 
-var languageSuffix = ""; 
+function isAppMode () {
+    return mode === "app";
+}
+function isWebsiteMode () {
+    return mode === "website";
+}
 
 var particles = [
         {
@@ -486,7 +493,9 @@ function initParticlomatic() {
 
     }); 
 
-    $(".particlomatic-range-input button[data-value='5']").trigger("click");
+    if (isWebsiteMode()) {
+        $(".particlomatic-range-input button[data-value='5']").trigger("click");
+    }
 
     $("#particlomaticForm input").on("change", $.throttle(100, function () {updateQuiz(); }));
     show_particlomatic_info = true;
@@ -494,19 +503,20 @@ function initParticlomatic() {
     show_particlomatic_info = false;
 
     $(".particlomatic_button_hide_info").hide();
+
     $(".particlomatic_button_show_info").on("click", function (event) {
         event.preventDefault();
         $(this).hide();
         $(".particlomatic_button_hide_info").show();
         $(".particlomaticHelp").show();
     });
+
     $(".particlomatic_button_hide_info").on("click", function (event) {
         event.preventDefault();
         $(this).hide();
         $(".particlomatic_button_show_info").show();
         $(".particlomaticHelp").hide();
     });
-
 
     $(".particlomatic_result_control_button").on("click", function (event) {
 
@@ -549,8 +559,6 @@ function initParticlomatic() {
         $(".body", $(this).parent().parent()).hide();
         $(".body", $(this).parent()).show();
     });
-
-     $(".particlomatic_result_control_info").trigger("click");
 
 }
 
@@ -629,7 +637,6 @@ function initVideoPlayer() {
             }
         }
     });
-
 
     $(".videocontroller li:first-child").trigger("click");
 };
@@ -729,7 +736,6 @@ var animateScroll = function (targetElement, speed) {
 function initPageHome() {
     "use strict";
 
-
     FastClick.attach(document.body);
     
     var countdownDays = getCountdownDays();
@@ -797,6 +803,7 @@ var website = {
 
     initialize: function() {
 
+        mode = "website";
         language = getParameterByName("l");
         if (language === "de_sie") {
 
@@ -825,6 +832,7 @@ var app = {
 
     initialize: function() {
 
+        mode = "app";
         language = getParameterByName("l");
 
         if (language === "de_sie") {
