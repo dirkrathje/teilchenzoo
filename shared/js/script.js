@@ -258,18 +258,6 @@ var particles = [
     ];
 
 
-function getCountdownDays() {
-    "use strict";
-
-    var oneDay = 24 * 60 * 60 * 1000, // hours*minutes*seconds*milliseconds
-        firstDate = new Date(),
-        secondDate = new Date(2013, 8, 28),
-        countdownDays = -Math.round((firstDate.getTime() - secondDate.getTime()) / oneDay);
-
-    return countdownDays;
-}
-
-
 function getQuizModel(inputValues) {
     "use strict";
 
@@ -447,17 +435,6 @@ function onReady() {
 
     FastClick.attach(document.body);
 
-    if (appName === "Teilchomat") {
-        $("html").addClass("particlomaticOnlyApp");
-/*        $(".navbar").hide();
-        $(".navbar-fixed-bottom").hide();
-        $("a[href='#page-home']").hide();*/
-
-        $(".page").hide(); 
-        $("#page-particlomatic").show(); 
-        initParticlomatic();
-    }
-
     $(document).bind('click', function () {bypassScreensaver = true; });
     $(document).bind('tap', function () {bypassScreensaver = true; });
     setTimeout(checkScreensaver, 10000);
@@ -490,7 +467,6 @@ function initParticlomatic() {
 
         $(rangeElement).val(newRangeElementValue);
         $(rangeElement).trigger("change");
-
     }); 
 
     if (isWebsiteMode()) {
@@ -737,12 +713,6 @@ function initPageHome() {
     "use strict";
 
     FastClick.attach(document.body);
-    
-    var countdownDays = getCountdownDays();
-    if (countdownDays > 1) {
-        $("#countdown").show();
-        $("#countdownNrOfDays").html(countdownDays);
-    }
 
     animateScroll($("#teilchenzoo_teaser_teilchen_roll_stage"), 200);
     updateQuizTeaser(0);
@@ -856,14 +826,24 @@ var app = {
         
         var self = this;
         this.registerEvents();
-        self.route();
 
-        initParticlomatic();
-        initEncyclopedia();
+        if (appName === "Teilchomat") {
 
+            $("html").addClass("particlomaticOnlyApp");
+            $(".page").hide(); 
+            $("#page-particlomatic").show(); 
+            initParticlomatic();
+        
+        } else {
+
+            self.route();
+            initParticlomatic();
+            initEncyclopedia();
+        }
     },
 
     route: function() {
+
         var self = this,
             hash = window.location.hash;
 
@@ -877,37 +857,26 @@ var app = {
         $(".page").hide(); 
         $(hash).show(); 
         if (hash === "#page-home") {
-//            $("#navbar_fixed_top h1").html("Teilchenzoo-App"); 
             $("body").removeClass("videoBody");
             $("a.navbarHomeLink").addClass("selected");            
         } else
         if (hash === "#page-particlomatic") {
-//            $(".navbar-fixed-top").show();
-//            $(".navbar-fixed-top h1").html("Teilch-o-mat"); 
             $("body").removeClass("videoBody");
             $("a.navbarParticlomaticLink").addClass("selected");            
-
-
         } else
         if (hash === "#page-videos") {
-//            $(".navbar-fixed-top").hide();
-//            $(".navbar-fixed-top h1").html("Teilchenzoo-Videos"); 
             $("body").addClass("videoBody");
             $("a.navbarVideosLink").addClass("selected");            
             initVideoPlayer();
         } else
         if (hash === "#page-content") {
-//            $(".navbar-fixed-top").show();
- //           $(".navbar-fixed-top h1").html("Teilchenzoo-Steckbriefe"); 
-
             $("body").removeClass("videoBody");
             $(".content").css("min-height", ($(window).height()-50)+'px');
-            $("a.navbarContentLink").addClass("selected");            
-
-             
+            $("a.navbarContentLink").addClass("selected");
         }
         $(document).scrollTop(0);
     },
+
     registerEvents: function() {
 
         var self = this;
