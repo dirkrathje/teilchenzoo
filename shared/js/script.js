@@ -833,7 +833,7 @@ var app = {
             window.location.hash = "#page-particlomatic";
             $("html").addClass("particlomaticOnlyApp");
             initParticlomatic();
-            setTimeout("app.route()", 500);
+            setTimeout("app.route()", 1000);
 //           initEncyclopedia();
 
         } else {
