@@ -829,9 +829,9 @@ var app = {
         this.registerEvents();
 
         if (appName === "Teilchomat") {
-//            window.location.hash = "#page-particlomatic";
+ //           window.location.hash = "#page-particlomatic";
 //            ;
-            $("html").addClass("particlomaticOnlyApp");
+//            $("html").addClass("particlomaticOnlyApp");
             initParticlomatic();
             setTimeout("$('#page-particlomatic').show()", 100);
 //           initEncyclopedia();
