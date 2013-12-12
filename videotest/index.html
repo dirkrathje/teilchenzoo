@@ -1,30 +1,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de"><!DOCTYPE html>
 <html lang="de" class="de de_du"><head>
-  <base href="../videos/">
+<base href="../">
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+  </script><![endif]-->
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <title>Teilchenzoo</title>
-  <script src="../shared/lib/modernizr/modernizr.custom.js"></script>
-  <script src="../shared/lib/jquery/jquery-1.9.1.min.js"></script>
-  <script src="../shared/lib/fastclick.js"></script>
-  <script type="text/javascript" src="../shared/lib/jquery/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="../shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
-  <script type="text/javascript" src="../shared/lib/jquery/fitText/jquery.fittext.js"></script>
-  <script type="text/javascript" src="../shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
-  <link rel="stylesheet" href="../shared/fonts/sansculottes/stylesheet.css">
-  <link rel="stylesheet" href="../shared/fonts/sourcesanspro/stylesheet.css" >
-  <link rel="stylesheet" href="../shared/lib/reset/reset.css">
+  <script src="shared/lib/modernizr/modernizr.custom.js"></script>
+  <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="shared/lib/fastclick.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+  <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+  <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+  <link rel="stylesheet" href="shared/lib/reset/reset.css">
 
-  <script type="text/javascript" src="../shared/lib/bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../shared/lib/bootstrap/css/bootstrap.min.css">
-  <script src="../shared/js/script.js"></script>
-  <link rel="stylesheet" type="text/css" href="../shared/css/styles.css?v=2" />
+  <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+  <script src="shared/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="shared/css/styles.css?v=2" />
 <!--[if lte IE 7]>
-<link rel="stylesheet" type="text/css" href="../shared/css/styles_ie_lte7.css" />
+<link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
 <![endif]-->
-<script src="../shared/lib/respond/respond.min.js"></script>
+<script src="shared/lib/respond/respond.min.js"></script>
 </head>
 
 
@@ -42,13 +49,13 @@
   }
   </style>
 
-<script type="text/javascript" src="../shared/lib/jwplayer/jwplayer.js"></script>
+<script type="text/javascript" src="shared/lib/jwplayer/jwplayer.js"></script>
 <script type='text/javascript'>//<![CDATA[
 $(function(){
   website.initialize();
 
   jwplayer("container-1").setup({
-    image: "/videos/teilchenzoo-preview.png",
+    image: "videos/teilchenzoo-preview.png",
     file: "http://webcast.desy.de/teilchenzoo/TeilchenzooFilm1.mp4",
     width: 950,
     height: 535,
