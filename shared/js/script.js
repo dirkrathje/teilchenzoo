@@ -340,6 +340,7 @@ function getQuizView(model) {
 }
 
 
+
 function updateParticlomaticTableView(model) {
     "use strict";
 
@@ -429,7 +430,13 @@ function updateQuizTeaser(scrollPosition) {
         quizModel = getQuizModel(inputValues);
 
     quizModel.particleToBeShown = [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0];
+
+    if ($("#quizTeaser .quizResultTable").length == 0){
     $("#quizTeaser").html(getQuizView(quizModel));
+    } else {
+    updateParticlomaticTableView(quizModel);
+
+    }
 }
 
 function initParticlomatic() {

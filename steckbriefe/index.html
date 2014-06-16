@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de"><!DOCTYPE html>
+<html lang="de" class="de de_du"><head>
+<base href="../">
+<!--[if IE]><script type="text/javascript">
+    // Fix for IE ignoring relative base tags.
+    (function() {
+        var baseTag = document.getElementsByTagName('base')[0];
+        baseTag.href = baseTag.href;
+    })();
+  </script><![endif]-->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Teilchenzoo</title>
+  <script src="shared/lib/modernizr/modernizr.custom.js"></script>
+  <script src="shared/lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="shared/lib/fastclick.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="shared/lib/backgroundPos/jquery.backgroundpos.min.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/fitText/jquery.fittext.js"></script>
+  <script type="text/javascript" src="shared/lib/jquery/throttle_debounce/jquery.ba-throttle-debounce.min.js"></script>
+  <link rel="stylesheet" href="shared/fonts/sansculottes/stylesheet.css">
+  <link rel="stylesheet" href="shared/fonts/sourcesanspro/stylesheet.css" >
+  <link rel="stylesheet" href="shared/lib/reset/reset.css">
+
+  <script type="text/javascript" src="shared/lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/lib/bootstrap/css/bootstrap.min.css">
+  <script src="shared/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="shared/css/styles.css?v=2" />
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="shared/css/styles_ie_lte7.css" />
+<![endif]-->
+<script src="shared/lib/respond/respond.min.js"></script>
+
+</head>
+<body class="website">
+<!-- snip -->
+
+
+
+<style>
+.steckbriefe_index li {
+  display: inline-block;
+}
+
+.h2intro{color:#999;color:rgba(0,0,0,0.5);display:block}
+
+#stage {
+  margin-top:24px;
+}
+#stage h1 {
+  font-size: 32px;
+  margin-bottom:  32px;
+}
+
+
+</style>
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+  website.initialize();
+
+
+  $(".steckbriefe_index .encyclopedia_link_detail").on("click", function(evnt){
+
+    var target = $(this).attr("href").substr(1),
+    contentFileName = "encyclopedia/" + target  + ".html";
+    $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
+    $("#stage .col-md-pull-6 .paintedGray").load(contentFileName + " .col-md-pull-6 > *");
+
+    evnt.preventDefault();
+    location.href = "/steckbriefe/#stage"; 
+    return false;
+
+
+  });
+
+      contentFileName = "encyclopedia/electron.html";
+    $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
+    $("#stage .col-md-pull-6 .paintedGray").load(contentFileName + " .col-md-pull-6 > *");
+
+
+});//]]>
+</script>
+
+
+
+<div class="page" id="page_profiles">
+  <header class="navbar navbar-inverse" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
+        <ul class="nav navbar-nav" style="padding-right: 0px;">
+          <li id="sitemenu_home"><a class="i18nable" href="ausstellung/">Ausstellung</a></li><li id="sitemenu_particlomatic"><a class="i18nable" href="teilchomat/">Teilch-o-mat</a></li><li id="sitemenu_videos"><a class="i18nable" href="videos/">Videos</a></li><li id="sitemenu_profiles"><a class="i18nable" href="steckbriefe/">Steckbriefe</a></li><li id="sitemenu_qaa"><a class="i18nable" href="besucherfragen/">Besucherfragen</a></li><li id="sitemenu_programme"><a class="i18nable" href="veranstaltungen/">Veranstaltungen</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" id="languageSelector">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="visible-de_sie">Sie</span><span class="visible-de_du">Du</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="steckbriefe/">Du</a></li>
+              <li><a href="steckbriefe/?l=de_sie">Sie</a></li>
+              <li><a href="profiles/">You</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="content">
+
+<!--      <img id="titleimg2" class="hidden-xs" src="images/teilchenzoo-subtitle_de.png" alt="Sonderausstellung im Universum Bremen">
+      <img id="titleimg" src="images/teilchenzoo-title_de.png" alt="TEILCHENZOO - Auf den Spuren von Higgs, Quarks und Photonen. Sonderausstellung im Universum Bremen">
+      <p class="subtitle visible-xs">Sonderausstellung im Universum<span class="reg">&reg;</span> Bremen</p>
+      <div id="countdown" class="hidden-xs">27. Sept. 2013 &ndash; 30. Juni 2014</div>-->
+
+      <div class="row" style="margin-top: 0px;">
+
+        <div class="col-md-6">
+          <div class="paintedGray">
+            <h2>Elektronen und Neutrinos</h2>
+            <ul class="steckbriefe_index">
+              <li><a href="#electron" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron.png" alt="" class="encyclopedia_teaser_img electron_encyclopedia_teaser_img"/></a></li><li><a href="#myon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon.png" alt="" class="encyclopedia_teaser_img myon_encyclopedia_teaser_img"/></a></li><li><a href="#tauon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon.png" alt="" class="encyclopedia_teaser_img tauon_encyclopedia_teaser_img"/></a></li><li><a href="#electron_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/electron_neutrino.png" alt="" class="encyclopedia_teaser_img electron_neutrino_encyclopedia_teaser_img"/></a></li><li><a href="#myon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/myon_neutrino.png" alt="" class="encyclopedia_teaser_img myon_neutrino_encyclopedia_teaser_img"/></a></li><li><a href="#tauon_neutrino" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/tauon_neutrino.png" alt="" class="encyclopedia_teaser_img tauon_neutrino_encyclopedia_teaser_img"/></a></li></ul>
+
+            <h2>Quarks</h2>
+            <ul class="steckbriefe_index">
+
+              <li><a href="#up_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/up_quark.png" alt="" class="encyclopedia_teaser_img up_quark_encyclopedia_teaser_img"/></a></li><li><a href="#down_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/down_quark.png" alt="" class="encyclopedia_teaser_img down_quark_encyclopedia_teaser_img"/></a></li><li><a href="#charm_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/charm_quark.png" alt="" class="encyclopedia_teaser_img charm_quark_encyclopedia_teaser_img"/></a></li><li><a href="#strange_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/strange_quark.png" alt="" class="encyclopedia_teaser_img strange_quark_encyclopedia_teaser_img"/></a></li><li><a href="#top_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/top_quark.png" alt="" class="encyclopedia_teaser_img top_quark_encyclopedia_teaser_img"/></a></li><li><a href="#bottom_quark" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/bottom_quark.png" alt="" class="encyclopedia_teaser_img bottom_quark_encyclopedia_teaser_img"/></a></li>
+
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="paintedGray">
+            <h2>Kräfteteilchen</h2>
+            <ul class="steckbriefe_index"><li><a href="#photon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/photon.png" alt="" class="encyclopedia_teaser_img photon_encyclopedia_teaser_img"/></a></li><li><a href="#w_minus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_minus.png" alt="" class="encyclopedia_teaser_img w_minus_encyclopedia_teaser_img"/></a></li><li><a href="#z_null" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/z_null.png" alt="" class="encyclopedia_teaser_img z_null_encyclopedia_teaser_img"/></a></li><li><a href="#w_plus" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/w_plus.png" alt="" class="encyclopedia_teaser_img w_plus_encyclopedia_teaser_img"/></a></li><li><a href="#gluon" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/gluon.png" alt="" class="encyclopedia_teaser_img gluon_encyclopedia_teaser_img"/></a></li><li><a href="#graviton" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/graviton.png" alt="" class="encyclopedia_teaser_img graviton_encyclopedia_teaser_img"/></a></li></ul>
+            <h2>Weitere Teilchen</h2>
+            <ul class="steckbriefe_index">
+            <li><a href="#higgs" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/higgs.png" alt="" class="encyclopedia_teaser_img higgs_encyclopedia_teaser_img"/></a></li><li><a href="#wimp" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/wimp.png" alt="" class="encyclopedia_teaser_img wimp_encyclopedia_teaser_img"/></a></li><li><a href="#antimatter" class="encyclopedia_link_detail"><img src="images/encyclopedia_teasers/antimatter.png" alt="" class="encyclopedia_teaser_img antimatter_encyclopedia_teaser_img"/></a></li>      
+            </ul>
+          </div>
+        </div>
+
+      </div> <!-- /.row -->
+      <div id="stage">
+
+        <div class="row">
+          <div class="col-md-6 col-md-push-6 particleAnimationStage">
+            <div class="paintedGray"></div>
+          </div>
+          <div class="col-md-6 col-md-pull-6">
+            <div class="paintedGray"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+  <!-- snap -->
+
+
+  <!-- /ZMSTextarea.standard_html -->
+
+
+
+
+
+
+
+  <!-- /bodyContentZMSLib_page -->
+
+
+  <script language="JavaScript" type="text/javascript">
+<!--//
+function LgReviewImg_e222480_OnClick()
+{
+  var img = document.getElementById('LgReviewImg_e222480');
+  var div = document.getElementById('LgReviewDiv_e222480');
+  if (img.src.indexOf('/p_/pl')>=0) {
+    img.src = '/p_/mi';
+    div.style.display = 'inline';
+    div.style.visibility = 'visible';
+  }
+  else {
+    img.src = '/p_/pl';
+    div.style.display = 'none';
+    div.style.visibility = 'hidden';
+  }
+}
+//-->
+</script>
+
+
+
+<!--// EO bodyContent //-->
+<div id="footer">
+  <div id="footerInterior">
+    <h1>Ein Gemeinschaftsprojekt</h1>
+    <p>Die Ausstellung »Teilchenzoo« ist ein Gemeinschaftsprojekt des Forschungszentrums DESY und des Universum<span class="reg">&reg;</span> Bremen.</p>
+    <p class="institution_description"><a href="http://www.desy.de"><img src="images/logo_desy.png" alt="" class="institution_logo" id="institution_logo_desy"/></a>DESY zählt zu den weltweit führenden Teilchenbeschleuniger-Zentren. Mit den DESY-Großgeräten erkunden Forscherinnen und Forscher den Mikrokosmos in seiner ganzen Vielfalt &ndash; vom Wechselspiel kleinster Elementarteilchen über das Verhalten neuartiger Nanowerkstoffe bis hin zu jenen lebenswichtigen Prozessen, die zwischen Biomolekülen ablaufen.</p>
+    <p class="institution_description"><a href="http://www.universum-bremen.de/de/"><img src="images/logo_universum_bremen.png" alt="" class="institution_logo" id="institution_logo_universum"/></a>Im Universum<span class="reg">&reg;</span> Bremen wird Wissenschaft zum Abenteuer. Im Science Center gibt es zahlreiche Mitmach-Exponate zu den Themen Mensch, Erde und Kosmos. Der EntdeckerPark bietet weitere Stationen zum Thema Bewegung sowie einen 27 Meter hohen Turm der Lüfte mit Experimenten zu Wind und Wetter. In der SchauBox werden zusätzlich wechselnde Sonderausstellungen gezeigt &ndash; wie etwa der »Teilchenzoo«.</p>
+    <p><a href="http://www.desy.de/impressum/index_ger.html">Impressum und Datenschutz</a> </p>
+  </div> <!-- /#footerInterior -->
+</div> <!-- /#footer -->
+</div>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://wof-piwik.desy.de/piwik/" : "http://wof-piwik.desy.de/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+var piwik_id='345';
+try {
+  var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 345);
+  piwikTracker.trackPageView();
+  piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src='http://wof-piwik.desy.de/piwik/piwik.php?idsite=345' style='border:0' alt='' /></p></noscript>
+<!-- End Piwik Tracking Tag -->
+
+</body>
+</html>
+
+
