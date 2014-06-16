@@ -63,25 +63,34 @@
 $(function(){
   website.initialize();
 
-
   $(".steckbriefe_index .encyclopedia_link_detail").on("click", function(evnt){
 
     var target = $(this).attr("href").substr(1),
     contentFileName = "encyclopedia/" + target  + ".html";
-    $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
     $("#stage .col-md-pull-6 .paintedGray").load(contentFileName + " .col-md-pull-6 > *");
-
+    $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
+    $("#stage .row").attr("id", target);
     evnt.preventDefault();
-    location.href = "/steckbriefe/#stage"; 
+    $('html, body').animate({
+      scrollTop: $("#" + target).offset().top
+    }, 400);
+    location.href = "/steckbriefe/#" + target; 
     return false;
-
 
   });
 
-      contentFileName = "encyclopedia/electron.html";
-    $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
-    $("#stage .col-md-pull-6 .paintedGray").load(contentFileName + " .col-md-pull-6 > *");
+  var target = document.location.hash.substr(1),
+    contentFileName = "encyclopedia/" + target  + ".html";
+  if (target === "") {
+    contentFileName = "encyclopedia/electron.html";
+  }
 
+  $("#stage .col-md-pull-6 .paintedGray").load(contentFileName + " .col-md-pull-6 > *");
+  $("#stage .col-md-push-6 .paintedGray").load(contentFileName + " .col-md-push-6 > *");
+  $("#stage .row").attr("id", target);
+  $('html, body').animate({
+    scrollTop: $("#" + target).offset().top
+  }, 400);
 
 });//]]>
 </script>
